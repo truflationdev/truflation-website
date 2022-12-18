@@ -1,3 +1,18 @@
+<script setup lang="ts">
+
+    interface Options {
+        country: string
+        rate: number
+        change: number
+    }
+
+    const options: Options = reactive({
+        country: "USA",
+        rate: 19.5,
+        change: 0.9
+    });
+</script>
+
 <template>
     <div class="main-background ">
         <header class="flex justify-between text-gray-600 py-8 px-16">
@@ -156,14 +171,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<style scoped>
 
-    interface Options {
-        country: string
-    }
-
-    const options: Options = reactive({
-        country: "USA"
-    });
-</script>
+</style>
     
