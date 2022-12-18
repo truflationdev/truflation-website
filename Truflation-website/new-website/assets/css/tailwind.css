@@ -4,9 +4,15 @@
 
 @layer components {
     .btn {
-        @apply text-white px-4 py-2 rounded-2xl text-sm bg-[#002152] w-fit
+        @apply text-white px-5 py-3 rounded-2xl text-sm bg-[#002152] w-fit h-fit
     }
+
+    .text-light {
+        @apply text-[#FFFFFFA3]
+    }
+
     .main-background {
         @apply bg-[url('assets/img/hero-background.svg')] h-screen
     }
+
 }
