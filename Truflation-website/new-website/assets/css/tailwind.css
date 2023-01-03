@@ -15,4 +15,8 @@
         @apply bg-[url('assets/img/hero-background.svg')] h-screen
     }
 
+    .category-selected {
+        @apply border-b-2 border-[#0D58C6] text-[#0D58C6] font-semibold px-2
+    }
+
 }

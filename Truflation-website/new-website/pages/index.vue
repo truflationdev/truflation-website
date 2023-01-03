@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { CategoryList } from "~~/components/categoryTypes";
+import {categoryData} from "../static/data/categoryData"
+import {useDataStore} from "../store/stateStore"
 
     interface Options {
         country: string
@@ -6,11 +9,13 @@
         change: number
     }
 
+
     const options: Options = reactive({
         country: "USA",
         rate: 19.5,
         change: 0.9
     });
+
 </script>
 
 <template>
@@ -82,6 +87,27 @@
                 <P>The US Inflation Rate by Truflation is 15.90%, <span class="text-green-600">0.59%</span> increase over the last day. </P>
             </div>
             <DataChart :locationOptions="options"  />
+            <div class="flex flex-col container mx-auto mt-5 gap-3">
+                <h1 class="text-xl font-semibold">Categories</h1>
+                <ul class="flex flex-row justify-between text-gray-600">
+                    <li><button class="category-selected">Food & Beverage</button></li>
+                    <li><button>Housing</button></li>
+                    <li><button>Transportation</button></li>
+                    <li><button>Utilities</button></li>
+                    <li><button>Health</button></li>
+                    <li><button>Household Daily Items</button></li>
+                </ul>
+                <ul class="flex flex-row justify-between text-gray-600">
+                    <li><button>Alcohol & Tobacco</button></li>
+                    <li><button>Clothing & Footwear</button></li>
+                    <li><button>Communications</button></li>
+                    <li><button>Education</button></li>
+                    <li><button>Recreation & Culture</button></li>
+                    <li><button>Others</button></li>
+                </ul>
+            </div>
+            <Category :category="categoryData" />
+            <SubDrivers :category="categoryData"/>
             <div class="flex flex-col container mx-auto items-center gap-2 mt-20">
                 <h1 class="text-3xl font-semibold">Data Partners</h1>
                 <div class="flex flex-row">
@@ -127,8 +153,8 @@
                 <input class="ml-auto h-fit px-5 py-3 rounded-2xl border-gray-10 border" type="text" placeholder="John@gmail.com">
                 <button class="btn">Subscribe</button>
             </div>
-        </body>
-        <footer class="flex flex-col bg-[#181818] py-8 px-16 mt-10 gap-5 text-light items-center">
+
+       <div class="flex flex-col bg-[#181818] py-8 px-16 mt-10 gap-5 text-light items-center">
             <div class="flex flex-row py-8 px-10 gap-12 w-full">
                 <div class="flex flex-col">
                     <a href="/"><img src="~/assets/img/logo.svg" alt=""></a>
@@ -167,7 +193,8 @@
             </div>
             <div class="w-full h-1 bg-[#FFFFFF29]"></div>
             <p class=" font-light"><a href="">Privacy Policy</a>  |  © 2022. Truflation - All Rights Reserved.</p>
-        </footer>
+        </div> 
+    </body>
     </div>
 </template>
 
