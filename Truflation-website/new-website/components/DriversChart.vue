@@ -48,7 +48,7 @@ console.log(options)
                <p class=" text-lg font-semibold">{{ main.list[0].categoryType }} Drivers</p>
             </div>
             <div class="flex flex-col gap-2">
-              <div class="py-1 px-3 text-gray-500 font-light" v-for="subCategory in main.list[0].subCategories">
+              <div class="py-1 px-3 text-gray-600 text-sm font-light" v-for="subCategory in main.list[0].subCategories">
                 <div class="flex flex-row"><button>{{ main.list[0].categoryDrivers[0].title}} {{ main.list[0].categoryDrivers[0].latestValue }}</button></div>
               </div>
             </div>

@@ -1,7 +1,17 @@
 
 export enum CategoryType {
     FoodAndBev = "Food & Beverage",
-    Housing = "Housing"
+    Housing = "Housing",
+    Transportation = "Transportation",
+    Utilities = "Utilities",
+    Health = 'Health',
+    HouseDailyItems = "House Daily Items",
+    AlchTobac = "Alcohol & Tobacco",
+    Clothing = "Clothing & Footwear",
+    Communications = "Communications",
+    Education = "Education",
+    Recreation = "Recreation",
+    Others = "Others"
 }
 
 export interface GraphData {
@@ -54,5 +64,6 @@ export interface CategoryData{
 }
 
 export interface CategoryList {
+    selectedCategory: CategoryType
     list: CategoryData[]
 }

@@ -8,7 +8,7 @@ const data: CategoryData = category.list[0]
 </script>
 
 <template>
-    <div class="flex flex-col container mx-auto h-max mt-8">
+    <div class="flex flex-col container mx-auto h-max mt-20 gap-5">
         <div class="flex flex-row">
             <div class=" font-light w-2/3">
                 <h2 class=" font-semibold text-lg">{{ data.categoryType }} Category Drivers</h2>

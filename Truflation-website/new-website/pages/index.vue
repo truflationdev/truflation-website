@@ -1,14 +1,20 @@
 <script setup lang="ts">
-import { CategoryList } from "~~/components/categoryTypes";
+import { CategoryList, CategoryType } from "~~/components/categoryTypes";
 import {categoryData} from "../static/data/categoryData"
-import {useDataStore} from "../store/stateStore"
+import {useSelectionState} from "../compostables/state"
+import { useDataStore } from "~~/store/stateStore";
+import { storeToRefs } from 'pinia'
+
+
+
+const main = useDataStore();
+const {selectedCategory} = storeToRefs(main)
 
     interface Options {
         country: string
         rate: number
         change: number
     }
-
 
     const options: Options = reactive({
         country: "USA",
@@ -90,8 +96,8 @@ import {useDataStore} from "../store/stateStore"
             <div class="flex flex-col container mx-auto mt-5 gap-3">
                 <h1 class="text-xl font-semibold">Categories</h1>
                 <ul class="flex flex-row justify-between text-gray-600">
-                    <li><button class="category-selected">Food & Beverage</button></li>
-                    <li><button>Housing</button></li>
+                    <li><button @click="main.updateCategory(CategoryType.FoodAndBev)" class="category-selected">Food & Beverage</button></li>
+                    <li ><button @click="main.updateCategory(CategoryType.Housing)">Housing</button></li>
                     <li><button>Transportation</button></li>
                     <li><button>Utilities</button></li>
                     <li><button>Health</button></li>
@@ -106,7 +112,7 @@ import {useDataStore} from "../store/stateStore"
                     <li><button>Others</button></li>
                 </ul>
             </div>
-            <Category :category="categoryData" />
+            <Category  :category="selectedCategory" />
             <SubDrivers :category="categoryData"/>
             <div class="flex flex-col container mx-auto items-center gap-2 mt-20">
                 <h1 class="text-3xl font-semibold">Data Partners</h1>
@@ -144,7 +150,7 @@ import {useDataStore} from "../store/stateStore"
                         <img class=" w-2/5 ml-auto" src="~/assets/img/mail.svg" alt="">
                 </div>
             </div>
-            <div class="flex flex-row mx-auto container mt-10 items-center">
+            <div class="flex flex-row mx-auto container my-5 items-center p-6 rounded bg-slate-100">
                 <div class="flex flex-col">
                     <p class=" font-semibold">Subscribe to our newsletter</p>
                     <p class=" text-gray-600">Get a summary of what we’ve shipped during the last <br>

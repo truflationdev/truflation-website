@@ -61,7 +61,7 @@ console.log(options)
         </div>
         <div class="flex flex-col w-4/5 ml-3 bg-slate-100 p-5 gap-4 rounded">
           <div class="flex flex-row items-center">
-            <h2 class=" font-semibold">Today's Truflation Rate TimeFrame</h2>
+            <h2 class=" font-semibold">Rate Trend</h2>
             <ul class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center">
               <li class="p-0.5"><button class="bg-white p-1 rounded">1W</button></li>
               <li class="p-0.5"><button>1M</button></li>
