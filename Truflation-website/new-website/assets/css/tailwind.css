@@ -4,7 +4,7 @@
 
 @layer components {
     .btn {
-        @apply text-white px-5 py-3 rounded-2xl text-sm bg-[#002152] w-fit h-fit
+        @apply flex flex-row items-center gap-4 text-white px-5 py-3 rounded-2xl text-sm bg-[#002152] w-fit h-fit
     }
 
     .text-light {
@@ -13,6 +13,10 @@
 
     .main-background {
         @apply bg-[url('assets/img/hero-background.svg')] h-screen
+    }
+
+    .about-hero {
+        @apply bg-[url('assets/img/about-background.svg')]
     }
 
     .category-selected {

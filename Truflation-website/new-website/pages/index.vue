@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { CategoryList, CategoryType } from "~~/components/categoryTypes";
 import {categoryData} from "../static/data/categoryData"
-import {useSelectionState} from "../compostables/state"
 import { useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from 'pinia'
-
 
 
 const main = useDataStore();
@@ -26,16 +24,7 @@ const {selectedCategory} = storeToRefs(main)
 
 <template>
     <div class="main-background ">
-        <header class="flex justify-between text-gray-600 py-8 px-16">
-            <a href="/"><img src="~/assets/img/logo.svg" alt=""></a>
-
-            <ul class="flex flex-row gap-8">
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">Methodology</a></li>
-                <li><a href="#">Developers</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
-        </header>
+            <Banner />
         <body>
             <div class="container mx-auto flex flex-row gap-10">
                 <div class="flex flex-row w-2/3 mx-auto bg-white rounded-md">
@@ -150,56 +139,8 @@ const {selectedCategory} = storeToRefs(main)
                         <img class=" w-2/5 ml-auto" src="~/assets/img/mail.svg" alt="">
                 </div>
             </div>
-            <div class="flex flex-row mx-auto container my-5 items-center p-6 rounded bg-slate-100">
-                <div class="flex flex-col">
-                    <p class=" font-semibold">Subscribe to our newsletter</p>
-                    <p class=" text-gray-600">Get a summary of what we’ve shipped during the last <br>
-                     month, behind the scenes updates, and team picks.</p>
-                </div>
-                <input class="ml-auto h-fit px-5 py-3 rounded-2xl border-gray-10 border" type="text" placeholder="John@gmail.com">
-                <button class="btn">Subscribe</button>
-            </div>
-
-       <div class="flex flex-col bg-[#181818] py-8 px-16 mt-10 gap-5 text-light items-center">
-            <div class="flex flex-row py-8 px-10 gap-12 w-full">
-                <div class="flex flex-col">
-                    <a href="/"><img src="~/assets/img/logo.svg" alt=""></a>
-                    <p>Independent, economic & financial <br> data in real time on-chain.</p>
-                </div>
-                <div class="flex flex-col ml-auto">
-                    <p class="text-white font-bold mb-3">Use Truflation</p>
-                    <ul class="flex flex-col gap-2">
-                        <li><a href="">Truflation Dapp</a></li>
-                        <li><a href="">Marketplace</a></li>
-                        <li><a href="">Ecosystem</a></li>
-                        <li><a href="">TRU Token</a></li>
-                    </ul>
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-white font-bold mb-3">Developers</p>
-                    <ul class="flex flex-col gap-2">
-                        <li><a href="">Get Started</a></li>
-                        <li><a href="">Developer Guide</a></li>
-                        <li><a href="">Github</a></li>
-                        <li><a href="">Whitepaper</a></li>
-                        <li><a href="">Forum</a></li>
-                    </ul>
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-white font-bold mb-3">Resources</p>
-                    <ul class="flex flex-col gap-2">
-                        <li><a href=""></a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Media Kit</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">Terms of Use</a></li>
-                        <li><a href="">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w-full h-1 bg-[#FFFFFF29]"></div>
-            <p class=" font-light"><a href="">Privacy Policy</a>  |  © 2022. Truflation - All Rights Reserved.</p>
-        </div> 
+        <NewsLetter />
+        <FooterComp />
     </body>
     </div>
 </template>
