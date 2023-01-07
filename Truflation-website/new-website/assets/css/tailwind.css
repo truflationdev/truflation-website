@@ -11,9 +11,18 @@
         @apply text-[#FFFFFFA3]
     }
 
+    .header-light {
+        @apply text-white
+    }
+
+    .header-dark {
+        @apply text-gray-600
+    }
+
     .main-background {
         @apply bg-[url('assets/img/hero-background.svg')] h-screen
     }
+
 
     .about-hero {
         @apply bg-[url('assets/img/about-background.svg')]

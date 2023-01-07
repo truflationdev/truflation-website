@@ -7,22 +7,7 @@
         </div>
         <body>
             <div class="about-hero">
-                <div class="flex flex-col gap-2 about-hero h-80 py-5 px-12">
-                    <header class="flex justify-between text-white py-8 px-16">
-                    <a href="/"><img src="~/assets/img/logo-light.svg" alt=""></a>
-
-                    <ul class="flex flex-row gap-8">
-                     <li><a href="#">Solutions</a></li>
-                    <li><a href="#">Methodology</a></li>
-                    <li><a href="#">Developers</a></li>
-                    <li><a href="#">Resources</a></li>
-                    </ul>
-                     </header>
-                    <div class=" w-full flex flex-col px-12 mt-5 justify-center">
-                        <h1 class=" text-white text-5xl font-semibold">About Truflation</h1>
-                        <p class="text-white">Solving the measurement problems of the past, <br> so you can grow the future</p>
-                    </div>
-                </div>
+                <Banner :isLight="true" />
             </div>
             <div class=" flex flex-col gap-4 container mx-auto mt-10">
              <h1 class=" text-xl font-semibold">Verifiable Truth is in Short Supply</h1>

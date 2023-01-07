@@ -1,10 +1,13 @@
 <script setup lang="ts">
+    const {isLight} = defineProps(['isLight'])
 
 </script>
 
 <template>
-        <header class="flex flex-row items-center justify-between text-gray-600 py-8 px-16">
-            <a href="/"><img src="~/assets/img/logo.svg" alt=""></a>
+        <header class="flex flex-row items-center justify-between  py-8 px-16" :class="{'header-light': isLight, 'header-dark': !isLight} ">
+            <a href="/">
+                <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="">
+                <img v-if="!isLight" src="~/assets/img/logo.svg" alt=""></a>
 
             <ul class="flex flex-row gap-8">
                 <li><a href="#">Solutions</a></li>

@@ -124,3 +124,19 @@ export const resourcePoints: CustomerData = {
         }
     ]
 }
+
+export const devData: BlogData = {
+    list: [{
+            name: "Check out a video our CEO made with Chainlink Labs",
+            date: "Nov 14 2022"
+    },
+    {
+        name: "Check out Truflation AMA on Based Space",
+        date: "Nov 14 2022"
+    },
+    {
+        name: "Truflation Decentralized Inflation Data: Use Cases and Why It Matters",
+        date: "Nov 14 2022"
+    }
+]
+}
