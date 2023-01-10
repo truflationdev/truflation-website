@@ -19,10 +19,10 @@ import {resourcePoints, blogData} from "../static/data/staffData"
             </div>
             <div class=" flex container justify-center mx-auto">
                         <div class="flex flex-col flex-wrap mt-16 justify-center items-center">
-                            <div class="flex flex-col gap-4 h-full w-full my-4 items-center ">
+                            <div class="flex flex-col gap-4 h-full my-4 items-center ">
                                 <h1 class=" text-xl text-blue-700">OVERVIEW</h1>
                                 <div class="flex mt-4 flex-row flex-wrap gap-8">
-                                    <ul class="flex flex-row flex-wrap gap-4 items-center justify-center">
+                                    <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
                                         <li class="flex flex-col max-w-xs" v-for="item in methodologyTitle.list">
                                             <p>{{ item.title }}</p>
                                             <h1 class=" text-3xl font-semibold">{{ item.amount }}</h1>

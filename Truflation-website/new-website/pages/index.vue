@@ -103,7 +103,7 @@ const {selectedCategory} = storeToRefs(main)
             </div>
             <Category  :category="selectedCategory" />
             <SubDrivers :category="categoryData"/>
-           <DataPartners />
+           <DataPartners/>
             <div class="container mx-auto flex flex-row gap-10 mt-20">
                 <div class="flex flex-row w-1/2 mx-auto text-white bg-gradient-to-br from-blue-800 to-white rounded-md">
                         <div class="flex flex-col gap-3 p-8">

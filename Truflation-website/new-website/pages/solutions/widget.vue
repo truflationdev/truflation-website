@@ -5,7 +5,7 @@
           <div class="bg-[url('assets/img/widget-background.svg')] bg-cover w-full">
                     <Banner :isLight="true"/>
                     <div class=" flex container mx-auto">
-                        <div class="flex flex-row flex-wrap mt-4">
+                        <div class="flex flex-col items-center justify-center w-full  lg:flex-row mt-4">
                             <div class="flex flex-col gap-4 h-full my-4  ">
                                 <div class=" w-fit px-2 text-white">TRUFLATION WIDGET</div>
                                 <h1 class=" text-5xl text-white">Embed Daily
@@ -15,7 +15,7 @@
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.73441 1.13275C7.04683 0.820333 7.55336 0.820333 7.86578 1.13275L12.6658 5.93275C12.9782 6.24517 12.9782 6.7517 12.6658 7.06412L7.86578 11.8641C7.55336 12.1765 7.04683 12.1765 6.73441 11.8641C6.42199 11.5517 6.42199 11.0452 6.73441 10.7328L10.1687 7.29844L0.900098 7.29844C0.458271 7.29844 0.100098 6.94026 0.100098 6.49844C0.100098 6.05661 0.458271 5.69844 0.900098 5.69844H10.1687L6.73441 2.26412C6.42199 1.9517 6.42199 1.44517 6.73441 1.13275Z" fill="white"/>
                                 </svg></button>
                             </div>
-                                <img src="../../assets/img/widget.png" alt="">
+                                <img src="../../assets/img/widget.svg" alt="">
                         </div>
                     </div>
             </div>
