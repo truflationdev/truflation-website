@@ -28,6 +28,11 @@
         @apply bg-[url('assets/img/about-background.svg')]
     }
 
+    .widget-hero {
+        @apply bg-[url('assets/img/widget-background.svg')]
+
+    }
+
     .category-selected {
         @apply border-b-2 border-[#0D58C6] text-[#0D58C6] font-semibold px-2
     }

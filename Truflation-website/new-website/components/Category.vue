@@ -7,6 +7,7 @@ import { storeToRefs } from 'pinia'
 const {category} = defineProps(['category'])
 const main = useDataStore();
 const {selectedCategory} = storeToRefs(main)
+const amount = 10
 </script>
 
 <template>
@@ -46,11 +47,17 @@ const {selectedCategory} = storeToRefs(main)
                 <div>
 
                 </div>
-                <div class="flex-col flex">
+                <div class="flex-row gap-2 flex">
+                    <div class="flex items-center justify-center">
+                        <RadialProgress :value=" main?.getByCategoryType(selectedCategory)?.relativeImportance" />
+                    </div>
+                    <div class="flex flex-col">
                     <p class=" font-semibold"> Relative Importance</p>
                     <p>The Relative Importance is the percentage weight <br>
                         influence on the overall inflation data. Learn more.</p>
-                </div>
+                    </div>
+
+                    </div>
             </div>
         </div>
         <div class="flex flex-row">
@@ -60,5 +67,4 @@ const {selectedCategory} = storeToRefs(main)
 </template>
 
 <style scoped>
-
 </style>

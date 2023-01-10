@@ -3,8 +3,8 @@
 </script>
 
 <template>
-     <div class="flex flex-row mx-auto container my-5 items-center p-6 rounded bg-slate-100">
-                <div class="flex flex-col">
+     <div class="flex flex-row flex-wrap gap-5 mx-auto container my-5 items-center p-6 rounded bg-slate-100">
+                <div class="flex flex-col flex-wrap">
                     <p class=" font-semibold">Subscribe to our newsletter</p>
                     <p class=" text-gray-600">Get a summary of what we’ve shipped during the last <br>
                      month, behind the scenes updates, and team picks.</p>
