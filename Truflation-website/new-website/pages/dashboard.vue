@@ -25,9 +25,8 @@ const {selectedCategory} = storeToRefs(main)
 <template>
     <div class="main-background ">
             <Banner />
-        <body>
-            <div class="container mx-auto flex flex-row gap-10">
-                <div class="flex flex-row w-2/3 mx-auto bg-white rounded-md">
+            <div class="container mx-auto flex flex-row flex-wrap-reverse lg:flex-nowrap gap-10">
+                <div class="flex flex-row mx-auto bg-white rounded-md">
                         <div class="flex flex-col gap-4 p-8">
                             <h1 class="text-3xl font-bold">
                             Unbelievable Times Call <br> for Believable Data 
@@ -40,7 +39,7 @@ const {selectedCategory} = storeToRefs(main)
                     <img src="~/assets/img/globe.svg" alt="">
                 </div>
 
-                <div class="flex flex-col w-1/3 mx-auto bg-white p-8 rounded-md gap-6">
+                <div class="flex flex-col mx-auto bg-white p-8 rounded-md gap-6">
                     <div class="flex flex-row content-center gap-2 items-center">
                         <div class="w-3 h-3 rounded-full bg-green-400"></div>
                         <h3 class="font-semibold">Latest News</h3>
@@ -84,15 +83,13 @@ const {selectedCategory} = storeToRefs(main)
             <DataChart :locationOptions="options"  />
             <div class="flex flex-col container mx-auto mt-5 gap-3">
                 <h1 class="text-xl font-semibold">Categories</h1>
-                <ul class="flex flex-row justify-between text-gray-600">
+                <ul class="grid grid-cols-2 mx-5 lg:grid-cols-5 gap-8 w-full justify-center text-gray-600">
                     <li><button @click="main.updateCategory(CategoryType.FoodAndBev)" class="category-selected">Food & Beverage</button></li>
                     <li ><button @click="main.updateCategory(CategoryType.Housing)">Housing</button></li>
                     <li><button>Transportation</button></li>
                     <li><button>Utilities</button></li>
                     <li><button>Health</button></li>
                     <li><button>Household Daily Items</button></li>
-                </ul>
-                <ul class="flex flex-row justify-between text-gray-600">
                     <li><button>Alcohol & Tobacco</button></li>
                     <li><button>Clothing & Footwear</button></li>
                     <li><button>Communications</button></li>
@@ -104,18 +101,18 @@ const {selectedCategory} = storeToRefs(main)
             <Category  :category="selectedCategory" />
             <SubDrivers :category="categoryData"/>
            <DataPartners/>
-            <div class="container mx-auto flex flex-row gap-10 mt-20">
-                <div class="flex flex-row w-1/2 mx-auto text-white bg-gradient-to-br from-blue-800 to-white rounded-md">
+            <div class="container mx-auto flex flex-row flex-wrap gap-10 mt-20">
+                <div class="flex flex-row mx-auto text-white bg-gradient-to-br from-blue-800 to-white rounded-md">
                         <div class="flex flex-col gap-3 p-8">
                             <h1 class="text-3xl font-bold">Personal Inflation Calculator</h1>
                             <p>Calculate how strong your hedge is
                             <br> against inflation.
                             </p>
-                            <button class="btn">Calculate</button>
+                            <p class="px-3 py-2 text-gray-800 rounded-full text-sm bg-yellow-00 w-fit">COMING SOON</p>
                         </div>
                     <img class=" w-1/5 ml-auto" src="~/assets/img/layout.svg" alt="">
                 </div>
-                <div class="flex flex-row w-1/2 mx-auto bg-[#F0F4FA] rounded-md">
+                <div class="flex flex-row mx-auto bg-[#F0F4FA] rounded-md">
                         <div class="flex flex-col gap-4 p-8">
                             <h1 class="text-3xl font-bold">Send us a Message</h1>
                             <p>Contact us if you have Queries</p>
@@ -126,7 +123,6 @@ const {selectedCategory} = storeToRefs(main)
             </div>
         <NewsLetter />
         <FooterComp />
-    </body>
     </div>
 </template>
 

@@ -26,7 +26,7 @@
                                 <h1 class=" text-5xl">Widget Features</h1>
                                 <p class=" font-light text-center">TBelow is an outline of how we approach the collection and indexing of the world's financial and economic data, using our first index Truflation US for illustrative purposes.</p>
                                 <div class="mt-10">
-                                    <ul class="flex flex-row gap-4">
+                                    <ul class="flex flex-row flex-wrap gap-4">
                                         <li class="flex flex-col items-center text-center gap-2">
                                             <img class="mr-2 mb-4" src="../../assets/img/Data-source-icon.svg" alt=""/>
                                             <p class=" font-semibold text-blue-600">Government CPI comparison</p>

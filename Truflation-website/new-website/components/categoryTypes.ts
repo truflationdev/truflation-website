@@ -64,6 +64,7 @@ export interface CategoryData{
 }
 
 export interface CategoryList {
-    selectedCategory: CategoryType
+    selectedCategory: CategoryType,
+    selectedSubCategory: string
     list: CategoryData[]
 }

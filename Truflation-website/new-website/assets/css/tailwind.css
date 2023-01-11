@@ -25,7 +25,7 @@
 
 
     .about-hero {
-        @apply bg-[url('assets/img/about-background.svg')]
+        @apply bg-[url('assets/img/about-background.svg')] bg-cover
     }
 
     .widget-hero {

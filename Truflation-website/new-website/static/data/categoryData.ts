@@ -2,6 +2,7 @@ import { CategoryList, CategoryType } from "~~/components/categoryTypes";
 
 export const categoryData: CategoryList = {
     selectedCategory: CategoryType.Housing,
+    selectedSubCategory: "unknown",
     list: [
         {
             categoryType: CategoryType.Housing,

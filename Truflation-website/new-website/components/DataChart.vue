@@ -1,10 +1,5 @@
 
 <script setup>
-const { locationOptions } = defineProps(['locationOptions'])
-
-</script>
-
-<script>
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,7 +11,9 @@ import {
   Legend
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
-import * as chartConfig from '../assets/chartConfig.ts'
+import {data, options} from '../assets/chartConfig.ts'
+const { locationOptions } = defineProps(['locationOptions'])
+const name = "lineChart"
 
 ChartJS.register(
   CategoryScale,
@@ -28,20 +25,12 @@ ChartJS.register(
   Legend
 )
 
-export default {
-  name: 'LineChart',
-  components: { Line },
-  data() {
-    return chartConfig
-  }
-}
-
 </script>
 
 <template>
-    <div class="flex flex-row container mx-auto mt-5">
-        <div class="flex flex-col w-1/3 bg-gradient-to-r justify-center  from-[#3573E7] to-[#2463DB] p-8 content-center rounded-lg items-center gap-8">
-            <div class="flex flex-row w-full justify-evenly items-center">
+    <div class="flex lg:w-2/3 flex-row flex-wrap lg:flex-nowrap container items-center justify-center mx-auto mt-5">
+        <div class="flex flex-col bg-gradient-to-r justify-center w-4/5  from-[#3573E7] to-[#2463DB] p-8 content-center rounded-lg items-center gap-8">
+            <div class="flex flex-row justify-evenly items-center gap-8">
                <div class="flex items-center rounded-lg px-3 py-3 w-fit h-fit bg-[#FFFFFF14]">
                 🇺🇸
                </div> 
@@ -66,7 +55,7 @@ export default {
               </div>
             </div>
         </div>
-        <div class="flex flex-col w-3/5 ml-3 bg-slate-100 p-5 gap-4 rounded-sm">
+        <div class="flex w-full flex-col ml-3 bg-slate-100 p-5 gap-4 rounded-sm">
           <div class="flex flex-row items-center">
             <h2 class=" font-semibold">Today's Truflation Rate TimeFrame</h2>
             <ul class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center">
@@ -77,7 +66,7 @@ export default {
               <li class="p-0.5"><button>1Y</button></li>
             </ul>
           </div>
-          <Line id="my-chart-id" :options="chartOptions " :data="data"/>
+          <Line id="my-chart-id" :options="options " :data="data"/>
         </div>
     </div>
 

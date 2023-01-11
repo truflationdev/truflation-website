@@ -37,13 +37,12 @@ export default {
     return chartData
   }
 }
-console.log(options)
 </script>
 
 
 <template>
-   <div class="flex flex-row container mx-auto mt-5">
-        <div class="flex flex-col bg-gray-100 p-4 rounded-lg items-center gap-5">
+   <div class="flex flex-row justify-center flex-wrap lg:flex-nowrap gap-8 container mx-auto mt-5">
+        <div class="flex flex-col w-full bg-gray-100 p-4 rounded-lg items-center gap-5">
             <div class="flex flex-row gap-3 items-center">
                <p class=" text-lg font-semibold">{{ main.list[0].categoryType }} Drivers</p>
             </div>
@@ -53,7 +52,7 @@ console.log(options)
               </div>
             </div>
         </div>
-        <div class="flex flex-col w-3/5 ml-3 bg-slate-100 p-5 gap-4 h-fit rounded">
+        <div class="flex w-full mx-8 lg:w-3/5 lg:h-full flex-col ml-3 bg-slate-100 p-5 gap-4 h-fit rounded">
           <div class="flex flex-row items-center">
             <h2 class=" font-semibold">{{  main.list[0].categoryDrivers[0].title }}</h2>
             <ul class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center">
@@ -66,7 +65,7 @@ console.log(options)
           </div>
           <Line id="category-chart-id" :options="options" :data="chartData"/>
         </div>
-        <div class="flex flex-col bg-gray-100 p-4 rounded-lg gap-2 w-1/5 ml-3">
+        <div class="flex flex-col w-full bg-gray-100 p-4 rounded-lg gap-2 ml-3">
             <div class="flex flex-col gap-1 items-center">
                <p class=" font-semibold">Basic Information</p>
                <p class="text-sm font-light">{{  main.list[0].categoryDrivers[0].title }}</p>

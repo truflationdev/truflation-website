@@ -7,7 +7,7 @@ import {resourcePoints, blogData} from "../static/data/staffData"
 <template>
            <div class=" bg-[url('assets/img/methodology-hero.svg')] items-center bg-cover w-full">
                     <Banner :isLight="true"/>
-                    <div class=" sm:items-center sm:mx-auto lg:items-start flex flex-col lg:px-40 xl:py-32 ">
+                    <div class=" items-center sm:mx-auto lg:items-start flex flex-col lg:px-40 xl:py-32 ">
                         <div class="flex flex-row flex-wrap mt-4 ">
                             <div class="flex flex-col gap-4 h-full my-4  ">
                                 <h1 class=" text-6xl text-white">Methodology Matters</h1>

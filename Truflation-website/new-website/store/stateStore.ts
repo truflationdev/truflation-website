@@ -6,6 +6,7 @@ export const useDataStore = defineStore({
   state: () => {
     return {
         selectedCategory: CategoryType.Housing,
+        selectedSubCategory: "unknown",
       list: [
         {
             categoryType: CategoryType.Housing,
@@ -23,6 +24,32 @@ export const useDataStore = defineStore({
                             borderColor: '#0D58C6',
                             backgroundColor: "#0D58C6",
                             data: [40, 39, 10, 40, 39, 80, 40]
+                        } ]
+                    }
+                },
+                {
+                    title: "Rented Dwellings",
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [
+                        {
+                            label: 'Owned Dwellings',
+                            borderColor: '#0D58C6',
+                            backgroundColor: "#0D58C6",
+                            data: [35, 22, 15, 10, 33, 80, 40]
+                        } ]
+                    }
+                },
+                {
+                    title: "No Dwellings",
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [
+                        {
+                            label: 'Owned Dwellings',
+                            borderColor: '#0D58C6',
+                            backgroundColor: "#0D58C6",
+                            data: [10, 20, 15, 50, 33, 80, 40]
                         } ]
                     }
                 }
@@ -63,7 +90,7 @@ export const useDataStore = defineStore({
             {title: "Vs Month", value: -0.39}],
             subCategories: [
                 {
-                    title: "Owned Dwellings",
+                    title: "Beer",
                     data: {
                         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                         datasets: [
@@ -72,6 +99,32 @@ export const useDataStore = defineStore({
                             borderColor: '#0D58C6',
                             backgroundColor: "#0D58C6",
                             data: [30, 29, 15, 30, 33, 80, 40]
+                        } ]
+                    }
+                },
+                {
+                    title: "Spirits",
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [
+                        {
+                            label: 'Owned Dwellings',
+                            borderColor: '#0D58C6',
+                            backgroundColor: "#0D58C6",
+                            data: [35, 22, 15, 10, 33, 80, 40]
+                        } ]
+                    }
+                },
+                {
+                    title: "wine",
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [
+                        {
+                            label: 'wine',
+                            borderColor: '#0D58C6',
+                            backgroundColor: "#0D58C6",
+                            data: [10, 20, 15, 50, 33, 80, 40]
                         } ]
                     }
                 }
@@ -113,12 +166,23 @@ export const useDataStore = defineStore({
         if(categoryType !== null) {
             this.selectedCategory = categoryType
         }
+    },
+
+    updateSubCategory(subCategories: string) {
+            this.selectedSubCategory = subCategories
     }
   },
   getters: {
     getByCategoryType: (state) => (categoryType: CategoryType) => {
         return state.list.find(item => item.categoryType === categoryType);
     },
+    getSubCategoryType: (state) => (categoryType: CategoryType, SubCategory: string) => {
+       const initialState = state.list.find(item => item.categoryType === categoryType);
+       return initialState?.subCategories.find(item => item.title === SubCategory)
+    },
+    getSubCategory: (state) => () => {
+        return state.selectedSubCategory
+    }
   },
 })
 

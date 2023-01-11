@@ -5,7 +5,7 @@
 <template>
    <div class="mx-auto flex gap-4 justify-center items-center flex-col container mt-12">
                 <h1 class="text-3xl text-slate-700">{{ title }}</h1>
-                <div class="flex flex-row gap-7 flex-wrap" >
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 " >
                     <div v-for="blog in data.list"  class="flex flex-col text-center max-w-xs rounded">
                         <img src="../assets/img/video-background.svg" alt="">
                         <p class=" text-lg font-semibold">{{ blog.name }}</p>

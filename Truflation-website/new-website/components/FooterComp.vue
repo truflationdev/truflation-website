@@ -4,12 +4,12 @@
 
 <template>
        <div class="flex flex-col bg-[#181818] py-8 px-16 mt-10 gap-5 text-light items-center">
-            <div class="flex flex-row py-8 px-10 gap-12 w-full">
+            <div class="grid  grid-cols-1 sm:grid-cols-4 py-8 px-10 gap-5 w-full">
                 <div class="flex flex-col">
                     <a href="/"><img src="~/assets/img/logo.svg" alt=""></a>
                     <p>Independent, economic & financial <br> data in real time on-chain.</p>
                 </div>
-                <div class="flex flex-col ml-auto">
+                <div class="flex flex-col lg:ml-auto">
                     <p class="text-white font-bold mb-3">Use Truflation</p>
                     <ul class="flex flex-col gap-2">
                         <li><a href="">Truflation Dapp</a></li>
@@ -18,7 +18,7 @@
                         <li><a href="">TRU Token</a></li>
                     </ul>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col  lg:ml-auto">
                     <p class="text-white font-bold mb-3">Developers</p>
                     <ul class="flex flex-col gap-2">
                         <li><a href="">Get Started</a></li>
@@ -28,7 +28,7 @@
                         <li><a href="">Forum</a></li>
                     </ul>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col lg:ml-auto">
                     <p class="text-white font-bold mb-3">Resources</p>
                     <ul class="flex flex-col gap-2">
                         <li><a href=""></a></li>
