@@ -1,26 +1,58 @@
 
 export enum CategoryType {
-    FoodAndBev = "Food & Beverage",
-    Housing = "Housing",
-    Transportation = "Transportation",
-    Utilities = "Utilities",
+    FoodAndBev = 'Food & Non-alcoholic Beverages',
+    Housing = 'Housing',
+    Transportation = 'Transport',
+    Utilities = 'Utilities',
     Health = 'Health',
-    HouseDailyItems = "House Daily Items",
-    AlchTobac = "Alcohol & Tobacco",
-    Clothing = "Clothing & Footwear",
-    Communications = "Communications",
-    Education = "Education",
-    Recreation = "Recreation",
-    Others = "Others"
+    HouseDailyItems = 'Household Durables & Daily Use Items',
+    AlchTobac = 'Alcohol & Tobacco',
+    Clothing = 'Clothing & Footwear',
+    Communications = 'Communications',
+    Education = 'Education',
+    Recreation = 'Recreation & Culture',
+    Others = 'Other'
+}
+
+export enum TimePeriod {
+    OneWeek = "1W",
+    OneMonth = "1M",
+    SixMonths = "6M",
+    YTD = "YTD",
+    OneYear = '1Y'
+
+}
+
+export interface ChartLabels {
+    generalChart: ChartConfig,
+    categoryChart: string[],
+    driverChart: ChartConfig,
+    totalLabels: string[],
+}
+
+export interface ChartConfig {
+        scales: {
+         x: {
+           min: string,
+           max: string,
+         }
+        },
+         responsive: boolean,
+         maintainAspectRatio: boolean,
+         elements: {
+           point:{
+               radius: number
+           }
+       }
 }
 
 export interface GraphData {
-    labels: string[]
     datasets: DataSet[]
 }
 
 export interface DataSet {
     label: string
+    borderWidth: number,
     borderColor: string,
     backgroundColor: string,
     data: number[]
@@ -49,6 +81,13 @@ export interface AboutData {
     newRelease: string
 }
 
+export interface CategoryChanges {
+    // Yoy: number,
+    yesterday: number
+    weekAgo: number,
+    monthAgo: number
+}
+
 export interface IndicatorData {
     title: string
     value: number
@@ -58,13 +97,34 @@ export interface CategoryData{
     categoryType: CategoryType,
     about: string,
     indicatorData: IndicatorData[],
-    subCategories: SubCategory[]
+    subCategories: GraphData[]
     categoryDrivers: CategoryDriver[]
-    relativeImportance: number
+    relative_importance: number
 }
+
+export interface StateData {
+    categoryType: CategoryType,
+    categoryDrivers: string[],
+    relativeImportance: number,
+    categoryRate: CategoryChanges
+    data: GraphData
+}
+
+export interface InflationData {
+    selectedPeriod: TimePeriod
+    periodData: {
+        title: TimePeriod,
+        currentRate: number,
+        high: number,
+        low: number,
+        change: number,
+        data: number
+    }
+} 
 
 export interface CategoryList {
     selectedCategory: CategoryType,
     selectedSubCategory: string
+    selectedCountry: string
     list: CategoryData[]
 }

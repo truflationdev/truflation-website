@@ -8,6 +8,10 @@ import { storeToRefs } from 'pinia'
 const main = useDataStore();
 const {selectedCategory} = storeToRefs(main)
 
+ const  dataFetch = await import('../static/data/dataFetch.json')
+ await main.hydrateState(dataFetch)
+ console.log(main.list)
+
     interface Options {
         country: string
         rate: number
@@ -25,7 +29,7 @@ const {selectedCategory} = storeToRefs(main)
 <template>
     <div class="main-background ">
             <Banner />
-            <div class="container mx-auto flex flex-row flex-wrap-reverse lg:flex-nowrap gap-10">
+            <div class="container mx-auto flex flex-row flex-wrap-reverse lg:flex-nowrap my-10 lg:my-20 gap-10">
                 <div class="flex flex-row mx-auto bg-white rounded-md">
                         <div class="flex flex-col gap-4 p-8">
                             <h1 class="text-3xl font-bold">
@@ -83,19 +87,8 @@ const {selectedCategory} = storeToRefs(main)
             <DataChart :locationOptions="options"  />
             <div class="flex flex-col container mx-auto mt-5 gap-3">
                 <h1 class="text-xl font-semibold">Categories</h1>
-                <ul class="grid grid-cols-2 mx-5 lg:grid-cols-5 gap-8 w-full justify-center text-gray-600">
-                    <li><button @click="main.updateCategory(CategoryType.FoodAndBev)" class="category-selected">Food & Beverage</button></li>
-                    <li ><button @click="main.updateCategory(CategoryType.Housing)">Housing</button></li>
-                    <li><button>Transportation</button></li>
-                    <li><button>Utilities</button></li>
-                    <li><button>Health</button></li>
-                    <li><button>Household Daily Items</button></li>
-                    <li><button>Alcohol & Tobacco</button></li>
-                    <li><button>Clothing & Footwear</button></li>
-                    <li><button>Communications</button></li>
-                    <li><button>Education</button></li>
-                    <li><button>Recreation & Culture</button></li>
-                    <li><button>Others</button></li>
+                <ul class="grid grid-cols-2 mx-5 lg:grid-cols-5 gap-y-8 w-full justify-center text-gray-600">
+                    <li class=" border-b-2 border-gray-100"  v-for="cat in CategoryType" ><button :id='cat' @click="main.updateCategory(cat)" :class="{'category-selected': selectedCategory === cat}">{{ cat }}</button></li>
                 </ul>
             </div>
             <Category  :category="selectedCategory" />

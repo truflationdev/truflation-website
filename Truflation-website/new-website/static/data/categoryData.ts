@@ -3,6 +3,7 @@ import { CategoryList, CategoryType } from "~~/components/categoryTypes";
 export const categoryData: CategoryList = {
     selectedCategory: CategoryType.Housing,
     selectedSubCategory: "unknown",
+    selectedCountry: "USA",
     list: [
         {
             categoryType: CategoryType.Housing,
@@ -11,8 +12,6 @@ export const categoryData: CategoryList = {
             {title: "Vs Month", value: -0.59}],
             subCategories: [
                 {
-                    title: "Owned Dwellings",
-                    data: {
                         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                         datasets: [
                         {
@@ -21,7 +20,6 @@ export const categoryData: CategoryList = {
                             backgroundColor: "#0D58C6",
                             data: [40, 39, 10, 40, 39, 80, 40]
                         } ]
-                    }
                 }
             ],
             categoryDrivers: [

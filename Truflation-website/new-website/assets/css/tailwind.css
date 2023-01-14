@@ -37,4 +37,12 @@
         @apply border-b-2 border-[#0D58C6] text-[#0D58C6] font-semibold px-2
     }
 
+    .active-period {
+        @apply bg-white p-1 rounded
+    }
+
+    .driver-selected {
+        @apply font-semibold bg-blue-200/60 p-3
+    }
+
 }

@@ -17,7 +17,28 @@ export const data = {
   }
   
   export const options = {
+    plugins: {
+      legend: {
+      display: true
+      },
+      tooltip: {
+      mode: 'index',
+      intersect: false,
+      titleFontColor: '#000',
+      bodyFontColor: 'rgba(0, 0, 0, 0)',
+      displayColors: true
+      }
+  },
+  hover: {
+  mode: 'nearest',
+  intersect: false
+    },
     responsive: true,
-    maintainAspectRatio: true
+    maintainAspectRatio: true,
+    elements: {
+      point:{
+          radius: 0
+      }
+  },
   }
   
