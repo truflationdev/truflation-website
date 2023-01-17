@@ -5,7 +5,7 @@
 
 <template>
 <header class="navbar" :class="{'header-light': isLight, 'header-dark': !isLight}">
-  <div class="navbar-start text-gray-800">
+  <div class="navbar-start text-gray-800 lg:mx-20">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -29,7 +29,7 @@
             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
           </a>
           <ul class=" text-left text-gray-800 bg-white">
-          <li ><a href="/developers">Developers</a></li>
+          <li class=" font-semibold" ><a href="/developers">Developers</a></li>
           <li><a>Get Started Guide</a></li>
           <li ><a href="/methodology">Methodology</a></li>
           <li ><a>Join Community</a></li>
@@ -119,7 +119,7 @@
           <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul class="p-4 text-left text-gray-800 bg-white">
-          <li class=" font-light text" ><a href="/developers">Developers</a></li>
+          <li class=" font-semibold text" ><a href="/developers">Developers</a></li>
           <li class=" font-light text" ><a>Get Started Guide</a></li>
           <li class=" font-light" ><a href="/methodology">Methodology</a></li>
           <li class=" font-light" ><a>Join Community</a></li>
@@ -131,7 +131,7 @@
           <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul class="p-4 text-left text-gray-800 bg-white">
-            <h1 class="font-semibold">Resources</h1>
+          <li class=" font-semibold text" ><a href="/resources">Resources</a></li>
           <li class=" font-light text" ><a href="/about">About Us</a></li>
           <li class=" font-light" ><a >Whitepapers</a></li>
           <li class=" font-light" ><a>News Coverage</a></li>
@@ -141,7 +141,7 @@
       </li>
     </ul>
   </div>
-  <div class="navbar-end">
+  <div class="navbar-end mr-10 xl:mr-20">
     <a href="/dashboard">
     <button class="btn">Dashboard <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M6.73441 1.13275C7.04683 0.820333 7.55336 0.820333 7.86578 1.13275L12.6658 5.93275C12.9782 6.24517 12.9782 6.7517 12.6658 7.06412L7.86578 11.8641C7.55336 12.1765 7.04683 12.1765 6.73441 11.8641C6.42199 11.5517 6.42199 11.0452 6.73441 10.7328L10.1687 7.29844L0.900098 7.29844C0.458271 7.29844 0.100098 6.94026 0.100098 6.49844C0.100098 6.05661 0.458271 5.69844 0.900098 5.69844H10.1687L6.73441 2.26412C6.42199 1.9517 6.42199 1.44517 6.73441 1.13275Z" fill="white"/>

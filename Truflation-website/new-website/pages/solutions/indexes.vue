@@ -4,7 +4,7 @@
 <template>
           <div class="bg-gradient-to-l from-blue-100 to-blue-800 w-full">
                     <Banner :isLight="true"/>
-                    <div class=" flex container mx-auto items-center xl:py-20 xl:mx-20 xl:justify-start">
+                    <div class=" flex container mx-auto items-center py-10 xl:py-20 xl:mx-30 xl:justify-start">
                         <div class="flex flex-row  flex-wrap mt-4 ">
                             <div class="flex flex-col gap-4 h-full my-4  ">
                                 <div class=" w-fit px-2 text-white">TRUFLATION MARKETPLACE</div>

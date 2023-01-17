@@ -17,16 +17,16 @@
             </div>
             <div class=" flex flex-col gap-4 container mx-auto mt-10">
              <h1 class=" text-xl font-semibold">Verifiable Truth is in Short Supply</h1>
-             <div class="flex flex-row flex-wrap mx-6 justify-between gap-6">
-                <p>Verifiable truth sets are in short supply at a time governance and transparency are in high demand. As the world rebalances, trustworthy navigation beacons for confident decision-making will be at a premium.
+             <div class="flex flex-row flex-wrap md:flex-nowrap gap-6">
+                <p class="max-w-xl" >Verifiable truth sets are in short supply at a time governance and transparency are in high demand. As the world rebalances, trustworthy navigation beacons for confident decision-making will be at a premium.
                     <br>  However, traditional inflation and financial tracking measures are a barrier to the process. They rely on methodologies established decades ago, using data sets no longer representative of lived realities. They tend to be narrow in scope and only update monthly.</p>
-                <p>
+                <p class="max-w-xl">
                     Sustainable growth can only come from a common and verifiable understanding of the facts used as a basis for business decisions. To meet this need, we built a first-of-its-kind infrastructure to provide unbiased and verifiable financial data on a secure blockchain to enable faster, more intelligent <br> decision-making.
                     Truflation delivers a new inflation truth-set: built on +10 million data points, updating indices daily, not monthly.
                 </p>
              </div>
             </div> 
-            <div class="container mx-auto flex flex-row flex-wrap mt-8 gap-4">
+            <div class="container mx-auto flex flex-row flex-wrap md:flex-nowrap mt-8 gap-4">
                 <div class="flex flex-col p-8 gap-4 bg-slate-100">
                     <h1 class=" text-xl">Why Now?</h1>
                     <p class="text-base font-light">We conducted a detailed examination of the challenges arising from imperfect inflation metrics and came up with a new perspective.</p>
@@ -90,7 +90,7 @@
             </div>
             <div class="mx-auto flex gap-4 justify-center items-center flex-col container mt-8">
                 <h1 class="text-3xl">Our Customers</h1>
-                <div class=" grid grid-cols-2  lg:grid-cols-3 w-full gap-5" >
+                <div class=" grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 w-full gap-5" >
                     <div v-for="customer in CustomerData.list" class="flex bg-[#002152] flex-col text-center max-w-xs rounded">
                         <div class="flex p-4 bg-white/10 flex-row text-white text-xl gap-2 items-center justify-center"><div class="h-4 w-4 rounded-full bg-slate-50"></div>{{ customer.name }}</div>
                         <p class=" text-white p-4 font-light">{{ customer.description }}</p>

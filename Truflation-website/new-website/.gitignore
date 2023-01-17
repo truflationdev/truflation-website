@@ -6,6 +6,4 @@ node_modules
 .output
 .env
 dist
-.png
-.jpeg
 .DS_Store

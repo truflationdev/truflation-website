@@ -12,27 +12,27 @@ const {selectedCategory} = storeToRefs(main)
 
 <template>
     <div class="flex flex-col container mx-auto h-max mt-8 gap-5">
-        <div class="flex flex-row gap-3 mt-5 flex-wrap md:flex-nowrap justify-between mx-20">
-            <div class=" font-light">
+        <div class="flex flex-row gap-8 mt-5 flex-wrap lg:flex-nowrap justify-between mx-20">
+            <div class=" gap-3 flex flex-col">
                 <h2 class=" font-semibold text-3xl">About {{ selectedCategory }}</h2>
-                <!-- {{main?.getByCategoryType(selectedCategory)?.about }} -->
+              <p class=" max-w-2xl">{{main?.getByCategoryType(selectedCategory)?.about }}</p>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div class="flex flex-row">
-                    <img class="mr-2" src="../assets/img/Data-source-icon.svg" alt="">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 ml-auto">
+                <div class="flex flex-row items-center">
+                    <img class="mr-2 max-h-16" src="../assets/img/Data-source-icon.svg" alt="">
                     <p class=" text-sm"><span class="text-base text-[#0D58C6]">{{ selectedCategory}} Data Sources</span><br>View the transparent data sources</p>
                 </div>
-                <div class="flex flex-row">
-                    <img class="mr-2" src="../assets/img/factsheet-icon.svg" alt="">
-                    <p class=" text-sm"><span class="text-base text-[#0D58C6]">{{ selectedCategory}} Data Sources</span><br>View the transparent data sources</p>
+                <div class="flex flex-row items-center">
+                    <img class="mr-2 max-h-16" src="../assets/img/factsheet-icon.svg" alt="">
+                    <p class=" text-sm"><span class="text-base text-[#0D58C6]">Fact Sheet</span><br>Download key points of this category</p>
                 </div>
-                <div class="flex flex-row">
-                    <img class="mr-2" src="../assets/img/export-data-icon.svg" alt="">
-                    <p class=" text-sm"><span class="text-base text-[#0D58C6]">{{ selectedCategory}} Data Sources</span><br>View the transparent data sources</p>
+                <div class="flex flex-row items-center">
+                    <img class="mr-2 max-h-16" src="../assets/img/export-data-icon.svg" alt="">
+                    <p class=" text-sm"><span class="text-base text-[#0D58C6]">Export Data</span><br>Download data feed to spreadsheets</p>
                 </div>
-                <div class="flex flex-row">
-                    <img class="mr-2" src="../assets/img/methadology-icon.svg" alt="">
-                    <p class=" text-sm"><span class="text-base text-[#0D58C6]">{{ selectedCategory}} Data Sources</span><br>View the transparent data sources</p>
+                <div class="flex flex-row items-center">
+                    <img class="mr-2 max-h-16" src="../assets/img/methadology-icon.svg" alt="">
+                    <p class=" text-sm"><span class="text-base text-[#0D58C6]">Methodology</span><br>Understand our advanced methods</p>
                 </div>
             </div>
         </div>

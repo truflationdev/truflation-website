@@ -47,9 +47,9 @@
                             </div>
                         </div>
             </div>
-            <div class=" flex container mx-auto items-center justify-center pt-10">
+            <div class=" flex container mx-auto items-center justify-center">
                         <div class="flex flex-row flex-wrap w-full xl:flex-nowrap mt-4 justify-center items-center">
-                            <div class="flex flex-col gap-4 max-w-xl items-center  my-4 xl:items-start  ">
+                            <div class="flex flex-col gap-4 max-w-xl items-center xl:items-start  ">
                                 <h1 class=" text-center xl:text-left text-5xl">Easy setup with one <br> line of code</h1>
                                 <p class=" font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sem, semper sit amet magna nec, gravida convallis ex. </p>
                                 <button class="btn">Get Truflation Widget <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">

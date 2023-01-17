@@ -1,15 +1,15 @@
 <script setup lang="ts">
-    const {data, title} = defineProps(['data', 'title'])
+    const { videos, data, title} = defineProps(['data', 'title', 'videos'])
 </script>
 
 <template>
    <div class="mx-auto flex gap-4 justify-center items-center flex-col container mt-12">
                 <h1 class="text-3xl text-slate-700">{{ title }}</h1>
-                <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 " >
-                    <div v-for="blog in data.list"  class="flex flex-col text-center max-w-xs rounded">
-                        <img src="../assets/img/video-background.svg" alt="">
-                        <p class=" text-lg font-semibold">{{ blog.name }}</p>
-                        <p class=" text-sm ">Read Story •{{ blog.date }}</p>
+                <div class="grid grid-cols-1 gap-3 xl:grid-cols-3 w-full" >
+                    <div v-for="video in videos"  class="flex flex-col text-center">
+                        <div class=" aspect-w-15 aspect-h-9">
+                            <iframe :src="video.link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                        </div>
+                        <p class=" text-lg font-semibold">{{ video.title }}</p>
                     </div>
                 </div>
                 <button class="btn">View all  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,4 +21,3 @@
 <style scoped>
 
 </style>
-    

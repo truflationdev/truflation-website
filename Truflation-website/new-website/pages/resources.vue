@@ -1,5 +1,21 @@
 <script setup lang="ts">
+import { VideoLinks } from "~~/components/categoryTypes";
 import {resourcePoints, blogData} from "../static/data/staffData"
+
+const videos: VideoLinks[] = [
+    {
+        title: "truflation + Discourse",
+        link: "https://www.youtube.com/embed/p07UF8aRmfQ"
+    },
+    {
+        title: "Cracking the inflation code",
+        link: "https://www.youtube.com/embed/QRTIV10Iw-I"
+    },
+    {
+        title: "Truflation Highlighted on Crypto Banter",
+        link: "https://www.youtube.com/embed/kvWBwVzKSac"
+    }
+]
 </script>
 
 <template>
@@ -28,8 +44,8 @@ import {resourcePoints, blogData} from "../static/data/staffData"
                     </div>
                     <img src="../assets/img/globe.png" alt="">
                 </div>
-                <BlogLinks :title="`Get Started Guides`" :data="blogData" />
-                <BlogLinks :title="`News & media`" :data="blogData" />
+                <!-- <BlogLinks :title="`Get Started Guides`" :data="blogData" /> -->
+                <BlogLinks :title="`News & media`" :data="blogData" :videos="videos"/>
                 <NewsLetter />
                 <FooterComp />  
             </body>

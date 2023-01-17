@@ -11,14 +11,19 @@ import {
   Legend
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
-import {data, options} from '../assets/chartConfig.ts'
+import { options} from '../assets/chartConfig.ts'
 import {useDataStore} from "~~/store/stateStore"
 import { storeToRefs } from 'pinia'
+import { TimePeriod } from './categoryTypes'
+
+
 const { locationOptions } = defineProps(['locationOptions'])
 const name = "lineChart"
 
 const main = useDataStore();
-const {selectedCategory, selectedSubCategory} = storeToRefs(main)
+const { MainData, chartLables} = storeToRefs(main)
+
+console.log(MainData)
 
 ChartJS.register(
   CategoryScale,
@@ -46,17 +51,22 @@ ChartJS.register(
                 </select>
             </div>
             <div class="flex flex-row gap-3 items-center">
-               <p class=" text-white text-5xl font-semibold">{{locationOptions.rate}}%</p>
-                <p class=" p-2 rounded-lg bg-[#E6F4EE] text-[#005E46]">{{locationOptions.change}}%</p>
+               <p class=" text-white text-5xl font-semibold">{{main?.getHighAndLow().Inflation}}%</p>
+                <p class=" p-2 rounded-lg bg-[#E6F4EE] text-[#005E46]">{{main.getHighAndLow().change}}%</p>
             </div>
             <div class="text-white w-full text-sm px-2 py-1 text-center font-semibold bg-[#F59E0B] rounded-lg">US govt reported rate: 8.6%</div> 
             <div class="flex flex-col w-full">
               <div class=" bg-slate-100 w-full bg-opacity-50 rounded-full relative h-3" >
-                <div class="rounded bg-white w-2/3 h-full absolute"> </div>
+                <div class="h-full absolute bottom-2" :style="{ 'width': main.getMarkerWidth() + '%' }" :class="`width-[50%]`"> 
+                  <svg class="ml-auto" width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.19091 4.29093C4.47208 4.57211 4.92796 4.57211 5.20914 4.29093L8.27091 1.22917C8.72448 0.775591 8.40324 4.86374e-05 7.76179 4.86374e-05H1.63826C0.996806 4.86374e-05 0.675567 0.77559 1.12914 1.22917L4.19091 4.29093Z" fill="white"/>
+                  </svg>
+                </div>
+                <div class="rounded bg-white h-full absolute" :style="{ 'width': main.getMarkerWidth() + '%' }" :class="`width-[50%]`"> </div>
               </div>
               <div class="flex flex-row justify-between opacity-70 mt-3 text-center">
-                <p class="text-white text-base text-center">5% <br>Low</p>
-                <p class="text-white text-base">15% <br>High</p>
+                <p class="text-white text-base text-center"> {{ main.getHighAndLow().low }}% <br>Low</p>
+                <p class="text-white text-base">{{ main.getHighAndLow().high }}% <br>High</p>
               </div>
             </div>
         </div>
@@ -64,14 +74,14 @@ ChartJS.register(
           <div class="flex flex-row items-center">
             <h2 class=" font-semibold">Today's Truflation Rate TimeFrame</h2>
             <ul class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center">
-              <li class="p-0.5"><button class="bg-white p-1 rounded">1W</button></li>
-              <li class="p-0.5"><button>1M</button></li>
-              <li class="p-0.5"><button>6M</button></li>
-              <li class="p-0.5"><button>YTD</button></li>
-              <li class="p-0.5"><button>1Y</button></li>
+              <li class="p-0.5"><button :class="{'active-period': chartLables.mainSelection === TimePeriod.OneWeek}" @click="main?.updateMainLabel(7, TimePeriod.OneWeek)">1W</button></li>
+              <li class="p-0.5"><button :class="{'active-period': chartLables.mainSelection === TimePeriod.OneMonth}" @click="main?.updateMainLabel(30, TimePeriod.OneMonth)">1M</button></li>
+              <li class="p-0.5"><button :class="{'active-period': chartLables.mainSelection === TimePeriod.SixMonths}" @click="main?.updateMainLabel(150, TimePeriod.SixMonths)">6M</button></li>
+              <li class="p-0.5"><button :class="{'active-period': chartLables.mainSelection === TimePeriod.YTD}" @click="main?.updateMainLabelYTD(TimePeriod.YTD)">YTD</button></li>
+              <li class="p-0.5"><button :class="{'active-period': chartLables.mainSelection === TimePeriod.OneYear}" @click="main?.updateMainLabel(365, TimePeriod.OneYear)">1Y</button></li>
             </ul>
           </div>
-          <Line id="my-chart-id" :options="options " :data="data"/>
+          <Line id="my-chart-id" :options="options " :data="main?.getMainChart(main?.MainData)"/>
         </div>
     </div>
 

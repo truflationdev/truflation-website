@@ -1,6 +1,22 @@
 import { defineStore } from 'pinia'
 import { CategoryType, DataSet, StateData, CategoryChanges, ChartLabels, GraphData, TimePeriod } from '~~/components/categoryTypes'
 
+
+export const categoryData: string[] = [
+    "This covers food and non-alcoholic beverages consumed at home which is generally purchased at Supermarkets, Kiosks etc (includes cereals & bakery products, meat, poultry, fish, eggs,  dairy products, fruits & vegetables, other food at home, water, carbonated soft drinks, non carbonated soft drinks and other non alcoholic beverages) as well as food purchased away from home in quick service restaurants, restaurants, Hotels, bars etc.",
+    "Housing data is broken down into three sub categories; Owned dwellings (includes mortgages, property taxes, maintenance repairs, insurance and other household expenses), Rented dwellings and other lodging.",
+    "Transportation includes the intentional movement from one location to another and is broken down into 4 main areas: Purchased vehicles be it new or used vehicles, Gasoline / Petrol and motor oils, Other vehicle expenses (includes finance charges, maintenance and repairs, vehicle leases, rentals, insurance and other charges) and finally public transportation.",
+    "These are services that are used by the public that include natural gas, electricity, fuel oil and other fuels and finally water and other public services.",
+    "The heath sector consists of business that provide medical services, provide medical insurance, manufacturers medical supplies or drugs to facilitate the provision of health care to patients.",
+    "These are items purchased for the household that include both durables as well as daily use items.  Categories included in this are household furnishings and equipment (textiles, furniture, floor coverings, appliances etc), General housekeeping supplies (laundry / cleaning supplies, postage, stationery, and other household products) and finally household operations (personal services and household expenses)",
+    "This includes all alcoholic beverages (beer, wine and spirits) and all tobacco products and smoking supplies no matter where the products are purchased.",
+    "Apparel not only covers clothes but also footwear as well as other apparel products and services for men women children and babies.",
+    "The communication sector includes entities that provide residential communication services such as phone, VOIP and phone cards as well as cellular / mobile phone services.",
+    "The educational category comprises of establishments that provide instruction and training in a wide variety of subjects as well as content to facilitate the expansion of knowledge of individuals.",
+    "The arts, entertainment and recreation sector include a wide range of establishments that operate facilitates or provide services to meet varied cultural, entertainment and recreational interest of their patrons.  This sector includes the following sub categories: fees and admissions, audio and visual equipment and services, pets / toys / hobbies and playground equipment and finally any other entertainment supplies and services.",
+    "The others category captures all the remaining household expenditure items that have not been listed about but include things such as personal care products and services as well as miscellaneous expenses (financial institutions fees, funeral services etc)."
+];
+
 export const useDataStore = defineStore({
   id: 'Data-store',
   state: () => {
@@ -8,19 +24,27 @@ export const useDataStore = defineStore({
         selectedCategory: CategoryType.Housing,
         selectedCategoryDriver: 'unknown',
         chartLables: {
-            generalChart: {},
-            categoryChart: [],
+            generalChart: [] as string[],
+            categoryChart: [] as string[],
             categorySelection: TimePeriod.OneYear,
+            mainSelection: TimePeriod.OneYear,
             driverChart: {},
             totalLabels: []
         },
-        newData: {
+        keyMetrics: {
+            high: 0 as number,
+            low: 0 as number,
+            Inflation: 0 as number,
+            change: 0 as number
+        },
+
+        MainData: {
             datasets: [
             {
-                label: 'Owned Dwellings',
+                label: 'Inflation',
                 borderColor: '#0D58C6',
                 backgroundColor: "#0D58C6",
-                data: [10.39, 10.32, 10.38, 10.4, 10.4, 10.41, 10.39, 10.56, 10.53, 10.55]
+                data: [] as number[]
             }]
         },
       list: [
@@ -206,16 +230,37 @@ export const useDataStore = defineStore({
     },
 
     hydrateState(state: any) {
+        const MainRateData: number[] = []
+        const mainRateLabels: string[] =[]
+
+
+       this.keyMetrics.low = state.w.ytdMin[1].toFixed(1)
+       this.keyMetrics.high = state.w.ytdMax[1].toFixed(1)
+       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(1)
+       this.keyMetrics.change = (state.w.yoyCur[1] - Object.values(state.n)[0][0]).toFixed(1)
+
+        Object.entries(state.n).forEach(entry => {
+            const [key, value] = entry;
+            mainRateLabels.push(key)
+            MainRateData.push(value[0])
+        });
+
+        this.chartLables.generalChart = mainRateLabels
+        this.MainData.datasets[0].data = MainRateData
 
        state.c.map((item: any, index: any) => {
             const newLabels: string[] =[]
             const values: number[] = []
-            const rates: CategoryChanges = {}
 
             Object.entries(state.n).forEach(entry => {
                 const [key, value] = entry;
+
+                if(index + 1 > value.length) {
+                    return
+                }
+
                 newLabels.push(key)
-                values.push(value[index])
+                values.push(value[index + 1])
             });
 
             
@@ -251,14 +296,17 @@ export const useDataStore = defineStore({
            }
 
             const labels: ChartLabels = {
-                generalChart: options,
+                generalChart: this.chartLables.generalChart,
                 categoryChart: newLabels,
                 driverChart: options,
                 totalLabels: newLabels
             }
 
+            console.log(categoryData)
+
            const stateObject: StateData = {
             categoryType: item.name,
+            about: categoryData[index],
             categoryDrivers: item.names,
             relativeImportance: item.relative_importance,
             categoryRate: rateData,
@@ -279,6 +327,21 @@ export const useDataStore = defineStore({
         const newArray = currentLabels.slice(currentLabels.length - period, currentLabels.length)
         this.chartLables.categoryChart = newArray
         this.chartLables.categorySelection = timePeriod
+    },
+
+    updateMainLabel(period: number, timePeriod: TimePeriod) {
+        const currentLabels = this.chartLables.totalLabels
+        const newArray = currentLabels.slice(currentLabels.length - period, currentLabels.length)
+        this.chartLables.generalChart = newArray
+        this.chartLables.mainSelection = timePeriod
+    },
+
+    updateMainLabelYTD(timePeriod: TimePeriod) {
+        const currentLabels = this.chartLables.totalLabels
+        const index = currentLabels.indexOf("2023-01-01")
+        const newArray = currentLabels.slice(index, currentLabels.length)
+        this.chartLables.generalChart = newArray
+        this.chartLables.mainSelection = timePeriod
     },
 
     updateCatLabelYTD(timePeriod: TimePeriod) {
@@ -311,6 +374,33 @@ export const useDataStore = defineStore({
             datasets: data.datasets
         }
         return object
+    },
+
+    getMainChart: (state) => (data: GraphData) => {
+        const object = {
+            labels: state.chartLables.generalChart,
+            datasets: data.datasets
+        }
+        return object
+    },
+
+    getInflationDayChange: (state) => () => {
+        const dataSets = state.MainData.datasets[0].data
+        return dataSets[dataSets.length-1] - dataSets[dataSets.length - 2]
+
+    },
+
+    getMarkerWidth: (state) => () => {
+        const low  = state.keyMetrics.low
+        const high = state.keyMetrics.high
+        const spread = high - low
+        const number = (high - state.keyMetrics.Inflation ) / spread
+        return number * 100
+    },
+
+
+    getHighAndLow: (state) => () => {
+        return state.keyMetrics
     },
 
     getCatRange: (state) => (data: GraphData) => {

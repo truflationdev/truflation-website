@@ -9,7 +9,7 @@ const {value, fill} = defineProps(['value', 'fill'])
 
 <template>
      <div class="flex items-center justify-center">
-        <circle-progress :percent="value" :size="80" :show-percent="true" :border-bg-width="8" :fill-color="fill" :border-width="8"	 />
+        <circle-progress :percent="value" :size="80" :border-bg-width="8" :show-percent="true" :fill-color="fill" :border-width="8"	 />
         <!-- <p class="absolute flex">{{  value }}</p> -->
     </div>      
 </template>

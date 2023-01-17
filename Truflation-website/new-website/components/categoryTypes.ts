@@ -24,7 +24,7 @@ export enum TimePeriod {
 }
 
 export interface ChartLabels {
-    generalChart: ChartConfig,
+    generalChart: string[],
     categoryChart: string[],
     driverChart: ChartConfig,
     totalLabels: string[],
@@ -104,6 +104,7 @@ export interface CategoryData{
 
 export interface StateData {
     categoryType: CategoryType,
+    about: string,
     categoryDrivers: string[],
     relativeImportance: number,
     categoryRate: CategoryChanges
@@ -127,4 +128,9 @@ export interface CategoryList {
     selectedSubCategory: string
     selectedCountry: string
     list: CategoryData[]
+}
+
+export interface VideoLinks {
+    title: string,
+    link: string
 }
