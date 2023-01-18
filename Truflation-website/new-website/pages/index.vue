@@ -102,7 +102,7 @@ import { blogData} from "../static/data/staffData"
                             </div>
                             <div class="flex gap-4 flex-col px-6 py-4 max-w-2xl border rounded-lg">
                                 <div class="w-full flex items-center justify-center">
-                                    <img src="~/assets/img/widget-blur.svg" alt="">
+                                    <img src="~/assets/img/widget-with-blur.svg" alt="">
                                 </div>
                                 <div class="flex flex-col">
                                     <h1 class=" text-xl font-semibold">Widget</h1>
