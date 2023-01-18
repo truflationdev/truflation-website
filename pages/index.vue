@@ -1,5 +1,22 @@
 <script setup lang="ts">
+import { VideoLinks } from "~~/components/categoryTypes";
 import { blogData} from "../static/data/staffData"
+
+
+const videos: VideoLinks[] = [
+    {
+        title: "truflation + Discourse",
+        link: "https://www.youtube.com/embed/p07UF8aRmfQ"
+    },
+    {
+        title: "Cracking the inflation code",
+        link: "https://www.youtube.com/embed/QRTIV10Iw-I"
+    },
+    {
+        title: "Truflation Highlighted on Crypto Banter",
+        link: "https://www.youtube.com/embed/kvWBwVzKSac"
+    }
+]
 </script>
 
 <template>
@@ -115,7 +132,7 @@ import { blogData} from "../static/data/staffData"
                         </div>
                     </div>
                     <div>
-                <BlogLinks :title="`Whats New at Truflation`" :data="blogData" />
+                <BlogLinks :title="`News & media`" :data="blogData" :videos="videos"/>
                 <Investors/>
                 <NewsLetter />
                 <FooterComp />

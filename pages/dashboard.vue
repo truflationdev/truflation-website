@@ -44,7 +44,7 @@ const {selectedCategory} = storeToRefs(main)
                         <p>Truflation offers independent and censorship-resistant inflation 
                         <br> calculations based on census level price information.
                         </p>
-                        <button class="btn"> Visit Marketplace</button>
+                        <button class="btn"><a href="https://marketplace.truflation.com/">Visit Marketplace</a></button>
                     </div>
                     <img src="~/assets/img/globe.svg" alt="">
                 </div>
@@ -71,7 +71,7 @@ const {selectedCategory} = storeToRefs(main)
                     </ul>
                 </div>
             </div>
-            <div class="container mx-auto flex flex-col gap-5">
+            <div class="container mx-auto flex flex-col gap-5 my-20">
                 <div class="flex flex-row items-center content-center mt-10 gap-3">
                     <h2 class="text-2xl font-semibold">
                     Today's CPI Data by
@@ -82,11 +82,11 @@ const {selectedCategory} = storeToRefs(main)
                         <option value="USA"> USA</option>
                         <option value="GBR">GBR</option>
                     </select>
-                    <p class="ml-auto font-medium">Highlights</p>
+                    <!-- <p class="ml-auto font-medium">Highlights</p>
                     <label class="inline-flex relative items-center cursor-pointer">
                     <input type="checkbox" value="" class="sr-only peer">
                     <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                    </label>
+                    </label> -->
                 </div>
                 <P class=" text-lg" >The US Inflation Rate by Truflation is {{ main.keyMetrics.Inflation }}%, <span class="text-green-600">{{main.getInflationDayChange()}}%</span> increase over the last day. </P>
             </div>
@@ -107,7 +107,7 @@ const {selectedCategory} = storeToRefs(main)
                             <p>Calculate how strong your hedge is
                             <br> against inflation.
                             </p>
-                            <p class="px-3 py-2 text-gray-800 rounded-full text-sm bg-yellow-00 w-fit">COMING SOON</p>
+                            <p class="px-3 py-2 text-black rounded-full text-sm bg-yellow-300/70 w-fit">COMING SOON</p>
                         </div>
                     <img class=" w-1/5 ml-auto" src="~/assets/img/layout.svg" alt="">
                 </div>
@@ -115,7 +115,7 @@ const {selectedCategory} = storeToRefs(main)
                         <div class="flex flex-col gap-4 p-8">
                             <h1 class="text-3xl font-bold">Send us a Message</h1>
                             <p>Contact us if you have Queries</p>
-                            <button class="btn">Contact Us</button>
+                            <button class="btn"><a href="/contact"> Contact Us</a></button>
                         </div>
                         <img class=" w-2/5 ml-auto" src="~/assets/img/mail.svg" alt="">
                 </div>

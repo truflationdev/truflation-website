@@ -1,6 +1,22 @@
 <script setup lang="ts">
+import { VideoLinks } from "~~/components/categoryTypes";
 import {methodologyTitle, methodologyRadials} from "../static/data/methadologyData"
 import {resourcePoints, blogData} from "../static/data/staffData"
+
+const videos: VideoLinks[] = [
+    {
+        title: "truflation + Discourse",
+        link: "https://www.youtube.com/embed/p07UF8aRmfQ"
+    },
+    {
+        title: "Cracking the inflation code",
+        link: "https://www.youtube.com/embed/QRTIV10Iw-I"
+    },
+    {
+        title: "Truflation Highlighted on Crypto Banter",
+        link: "https://www.youtube.com/embed/kvWBwVzKSac"
+    }
+]
 
 </script>
 
@@ -48,7 +64,7 @@ import {resourcePoints, blogData} from "../static/data/staffData"
                                 </svg></button>
                             </div>
             <DataPartners />
-             <BlogLinks :title="`Whats New at Truflation`" :data="blogData" />
+            <BlogLinks :title="`News & media`" :data="blogData" :videos="videos"/>
             <Investors />
             <NewsLetter />
             <FooterComp />
