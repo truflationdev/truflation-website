@@ -84,7 +84,7 @@
                     <div>
                     <p class=" font-semibold">Marketplace </p>
                     <p class=" text-gray-700 font-light">Explore Community Powered Data </p>
-                    <p class="bg-green-300 p-2 rounded-full text-xs w-fit font-thin">Comming soon!</p>  
+                    <!-- <p class="bg-green-300 p-2 rounded-full text-xs w-fit font-thin">Comming soon!</p>   -->
                   </div>
                 </div>
             </a>
@@ -96,7 +96,7 @@
                     <div>
                     <p class=" font-semibold">Indexes</p>
                     <p class=" text-gray-700 text-md font-light">Premium Independent Data </p>
-                    <p class="bg-green-300 p-2 rounded-full text-xs w-fit font-thin">Comming soon!</p>  
+                    <!-- <p class="bg-green-300 p-2 rounded-full text-xs w-fit font-thin">Comming soon!</p>   -->
                   </div>
                 </div>
             </a>
@@ -108,7 +108,7 @@
                     <div>
                     <p class=" font-semibold">Widget</p>
                     <p class=" text-gray-700 text-md font-light">Host Real-time Metrics</p>
-                    <p class="bg-green-300 p-2 rounded-full text-xs w-fit font-thin">Comming soon!</p>  
+                    <!-- <p class="bg-green-300 p-2 rounded-full text-xs w-fit font-thin">Comming soon!</p>   -->
                   </div>
                 </div>
             </a>
