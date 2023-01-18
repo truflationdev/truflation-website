@@ -1,34 +1,32 @@
 <script setup lang="ts">
 import { CategoryList, CategoryType } from "~~/components/categoryTypes";
 import {categoryData} from "../static/data/categoryData"
-import { useDataStore } from "~~/store/stateStore";
+import { SelectedCountry, useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from 'pinia'
 
 
 const main = useDataStore();
-const {selectedCategory} = storeToRefs(main)
+const {selectedCategory, selectedCountry} = storeToRefs(main)
 
 
- await useAsyncData("geocode", () =>
-  $fetch(`https://api.truflation.io/dashboard-data`)
-).then((res) => {
+async function fetchState () {
+    if (selectedCountry.value === SelectedCountry.GBR) {
+    await useAsyncData("geocode", () =>
+     $fetch(`https://api.truflation.io/dashboard-data-uk`)
+     ).then((res) => {
     main.hydrateState(res.data.value)
-})
-
-
- console.log(main.list)
-
-    interface Options {
-        country: string
-        rate: number
-        change: number
+    })
+    return
     }
 
-    const options: Options = reactive({
-        country: "USA",
-        rate: 19.5,
-        change: 0.9
-    });
+    await useAsyncData("geocode", () =>
+    $fetch(`https://api.truflation.io/dashboard-data`)
+    ).then((res) => {
+    main.hydrateState(res.data.value)
+    })
+
+}
+fetchState()
 
 </script>
 
@@ -78,19 +76,19 @@ const {selectedCategory} = storeToRefs(main)
                     </h2>
                     <img src="~/assets/img/logo.svg" alt="">
                     <img src="~/assets/img/usa-flag.svg" alt="">
-                    <select :value="options.country" :placeholder="options.country" class="p-2" >
-                        <option value="USA"> USA</option>
-                        <option value="GBR">GBR</option>
+                    <select v-on:change="fetchState()" v-model="selectedCountry" class="p-2" >
+                        <option  :value="SelectedCountry.USA"> USA</option>
+                        <option  :value="SelectedCountry.GBR">GBR</option>
                     </select>
                     <!-- <p class="ml-auto font-medium">Highlights</p>
                     <label class="inline-flex relative items-center cursor-pointer">
                     <input type="checkbox" value="" class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
                 </div>
                 <P class=" text-lg" >The US Inflation Rate by Truflation is {{ main.keyMetrics.Inflation }}%, <span class="text-green-600">{{main.getInflationDayChange()}}%</span> increase over the last day. </P>
             </div>
-            <DataChart :locationOptions="options"  />
+            <DataChart :locationOptions="selectedCategory"  />
             <div class="flex flex-col container mx-auto mt-5 gap-3">
                 <h1 class="text-xl font-semibold">Categories</h1>
                 <ul class="grid grid-cols-2 mx-5 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600">

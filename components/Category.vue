@@ -31,8 +31,10 @@ const {selectedCategory} = storeToRefs(main)
                     <p class=" text-sm"><span class="text-base text-[#0D58C6]">Export Data</span><br>Download data feed to spreadsheets</p>
                 </div>
                 <div class="flex flex-row items-center">
+                    <a class="flex" href="/methodology">
                     <img class="mr-2 max-h-16" src="../assets/img/methadology-icon.svg" alt="">
                     <p class=" text-sm"><span class="text-base text-[#0D58C6]">Methodology</span><br>Understand our advanced methods</p>
+                    </a>
                 </div>
             </div>
         </div>

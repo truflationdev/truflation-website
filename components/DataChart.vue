@@ -51,8 +51,13 @@ ChartJS.register(
             </div>
             <div class="flex flex-row gap-3 items-center">
                <p class=" text-white text-5xl font-semibold">{{main?.getHighAndLow().Inflation}}%</p>
-                <p class=" p-2 rounded-lg bg-[#E6F4EE] text-[#005E46]">{{main.getHighAndLow().change}}%</p>
-            </div>
+                <div class="flex flex-row p-2 rounded-lg items-center gap-1" :class="{'bg-red-100 text-red-700': main.getHighAndLow().change > 0, 'bg-[#E6F4EE] text-[#005E46]': main.getHighAndLow().change < 0}">
+                  <svg :class="{'rotate-180 text-red-700': main.getHighAndLow().change > 0}" width="11" height="7" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.734315 0.43451C1.04673 0.12209 1.55327 0.12209 1.86569 0.43451L4.5 3.06882L7.13431 0.43451C7.44673 0.12209 7.95327 0.12209 8.26569 0.43451C8.57811 0.746929 8.57811 1.25346 8.26569 1.56588L5.06569 4.76588C4.75327 5.0783 4.24673 5.0783 3.93431 4.76588L0.734315 1.56588C0.421895 1.25346 0.421895 0.746929 0.734315 0.43451Z" fill="#005E46"/>
+                  </svg>
+                <p> {{ Math.abs(main.getHighAndLow().change)}}%</p>
+                </div>
+              </div>
             <div class="text-white w-full text-sm px-2 py-1 text-center font-semibold bg-[#F59E0B] rounded-lg">US govt reported rate: 6.5%</div> 
             <div class="flex flex-col w-full">
               <div class=" bg-slate-100 w-full bg-opacity-50 rounded-full relative h-3" >

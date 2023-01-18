@@ -17,10 +17,16 @@ export const categoryData: string[] = [
     "The others category captures all the remaining household expenditure items that have not been listed about but include things such as personal care products and services as well as miscellaneous expenses (financial institutions fees, funeral services etc)."
 ];
 
+export enum SelectedCountry {
+        USA = "USA",
+        GBR = "GBR"
+}
+
 export const useDataStore = defineStore({
   id: 'Data-store',
   state: () => {
     return {
+        selectedCountry: SelectedCountry.USA,
         selectedCategory: CategoryType.Housing,
         selectedCategoryDriver: 'unknown',
         chartLables: {
@@ -229,15 +235,21 @@ export const useDataStore = defineStore({
         }
     },
 
+    updateSelectedCountry(country: SelectedCountry) {
+       this.selectedCountry = country
+       console.log(this.selectedCountry)
+    },
+
+
     hydrateState(state: any) {
         const MainRateData: number[] = []
         const mainRateLabels: string[] =[]
 
        this.keyMetrics.low = state.w.ytdMin[1].toFixed(2)
        this.keyMetrics.high = state.w.ytdMax[1].toFixed(2)
-       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(3)
+       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(2)
         const equation = ((state.w.yoyCur[1] - Object.values(state.n)[0][0]) / state.w.yoyCur[1]) * 100
-        this.keyMetrics.change = equation.toFixed(2)
+        this.keyMetrics.change = equation.toFixed(1)
 
         Object.entries(state.n).forEach(entry => {
             const [key, value] = entry;
