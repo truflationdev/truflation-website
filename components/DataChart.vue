@@ -23,7 +23,6 @@ const name = "lineChart"
 const main = useDataStore();
 const { MainData, chartLables} = storeToRefs(main)
 
-console.log(MainData)
 
 ChartJS.register(
   CategoryScale,
@@ -45,7 +44,7 @@ ChartJS.register(
                 🇺🇸
                </div> 
                <p class=" text-white text-xl font-semibold">{{locationOptions.country}} Truflation <br>
-                <span class=" text-sm font-light">15 nov 2022</span></p>
+                <span class=" text-sm font-light">{{ main?.getDateToday() }}</span></p>
                 <select class=" bg-[#FFFFFF14] text-white px-3 py-3 rounded-lg w-fit h-fit" name="" id="">
                     <option value="1y">1Y</option>
                 </select>
@@ -54,7 +53,7 @@ ChartJS.register(
                <p class=" text-white text-5xl font-semibold">{{main?.getHighAndLow().Inflation}}%</p>
                 <p class=" p-2 rounded-lg bg-[#E6F4EE] text-[#005E46]">{{main.getHighAndLow().change}}%</p>
             </div>
-            <div class="text-white w-full text-sm px-2 py-1 text-center font-semibold bg-[#F59E0B] rounded-lg">US govt reported rate: 8.6%</div> 
+            <div class="text-white w-full text-sm px-2 py-1 text-center font-semibold bg-[#F59E0B] rounded-lg">US govt reported rate: 6.5%</div> 
             <div class="flex flex-col w-full">
               <div class=" bg-slate-100 w-full bg-opacity-50 rounded-full relative h-3" >
                 <div class="h-full absolute bottom-2" :style="{ 'width': main.getMarkerWidth() + '%' }" :class="`width-[50%]`"> 

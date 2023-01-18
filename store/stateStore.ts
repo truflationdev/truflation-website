@@ -233,11 +233,11 @@ export const useDataStore = defineStore({
         const MainRateData: number[] = []
         const mainRateLabels: string[] =[]
 
-
        this.keyMetrics.low = state.w.ytdMin[1].toFixed(2)
        this.keyMetrics.high = state.w.ytdMax[1].toFixed(2)
-       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(2)
-       this.keyMetrics.change = (state.w.yoyCur[1] - Object.values(state.n)[0][0]).toFixed(1)
+       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(3)
+        const equation = ((state.w.yoyCur[1] - Object.values(state.n)[0][0]) / state.w.yoyCur[1]) * 100
+        this.keyMetrics.change = equation.toFixed(2)
 
         Object.entries(state.n).forEach(entry => {
             const [key, value] = entry;
@@ -302,7 +302,6 @@ export const useDataStore = defineStore({
                 totalLabels: newLabels
             }
 
-            console.log(categoryData)
 
            const stateObject: StateData = {
             categoryType: item.name,
@@ -406,7 +405,8 @@ export const useDataStore = defineStore({
 
     getInflationDayChange: (state) => () => {
         const dataSets = state.MainData.datasets[0].data
-        return dataSets[dataSets.length-1] - dataSets[dataSets.length - 2]
+        const equation = dataSets[dataSets.length-1] - dataSets[dataSets.length - 2]
+        return equation.toFixed(2)
 
     },
 
@@ -425,6 +425,17 @@ export const useDataStore = defineStore({
 
     getCatRange: (state) => (data: GraphData) => {
         return state.chartLables.categoryChart
+    },
+
+    getDateToday: (state) => () => {
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        const yyyy = today.getFullYear();
+
+
+        return mm + ' / ' + dd + ' / ' + yyyy;
+
     },
 
 
