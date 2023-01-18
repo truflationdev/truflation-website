@@ -53,10 +53,10 @@ const videos: VideoLinks[] = [
             <div class="flex flex-col gap-8 h-full justify-center items-center my-20  mx-auto">
                                 <h1 class=" text-5xl">Our Methodology</h1>
                                 <p class=" font-light text-center max-2xl">Below is an outline of how we approach the collection and indexing of the world's financial and economic data, using our first index Truflation US for illustrative purposes.</p>
-                                    <ul class="grid gap-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 ">
-                                       <li class="flex flex-row gap-4 items-center" v-for="radial in methodologyRadials">
+                                    <ul class="grid gap-x-20 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 ">
+                                       <li class="flex flex-row w-3xl gap-4 items-center justify-self-center" v-for="radial in methodologyRadials">
                                         <RadialProgress :percent="false" :value="radial.amount" :fill="radial.fill" />
-                                        <p class="">{{ radial.title }}</p>
+                                        <p class="w-32">{{ radial.title }}</p>
                                        </li>
                                     </ul>
                                 <button class="btn mt-8">Download Complete Methodology <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
