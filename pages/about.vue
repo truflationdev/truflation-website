@@ -1,5 +1,22 @@
 <script setup lang="ts">
-    import {staffData, CustomerData, blogData} from "../static/data/staffData"
+    import { VideoLinks } from "~~/components/categoryTypes";
+import {staffData, CustomerData, blogData} from "../static/data/staffData"
+
+    const videos: VideoLinks[] = [
+    {
+        title: "truflation + Discourse",
+        link: "https://www.youtube.com/embed/p07UF8aRmfQ"
+    },
+    {
+        title: "Cracking the inflation code",
+        link: "https://www.youtube.com/embed/QRTIV10Iw-I"
+    },
+    {
+        title: "Truflation Highlighted on Crypto Banter",
+        link: "https://www.youtube.com/embed/kvWBwVzKSac"
+    }
+]
+
 </script>
 
 <template>
@@ -88,7 +105,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="mx-auto flex gap-4 justify-center items-center flex-col container mt-8">
+            <div class="mx-auto flex gap-4 justify-center items-center flex-col container my-20">
                 <h1 class="text-3xl">Our Customers</h1>
                 <div class=" grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 w-full gap-5" >
                     <div v-for="customer in CustomerData.list" class="flex bg-[#002152] flex-col text-center max-w-xs rounded">
@@ -97,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <BlogLinks :title="`Whats New at Truflation`" :data="blogData" />
+            <BlogLinks :title="`Whats New at Truflation`" :data="blogData" :videos="videos"/>
             <Investors />
             <NewsLetter />
             <FooterComp />        

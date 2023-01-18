@@ -55,7 +55,7 @@ const videos: VideoLinks[] = [
                                 <p class=" font-light text-center max-2xl">Below is an outline of how we approach the collection and indexing of the world's financial and economic data, using our first index Truflation US for illustrative purposes.</p>
                                     <ul class="grid gap-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 ">
                                        <li class="flex flex-row gap-4 items-center" v-for="radial in methodologyRadials">
-                                        <RadialProgress :value="radial.amount" :fill="radial.fill" />
+                                        <RadialProgress :percent="false" :value="radial.amount" :fill="radial.fill" />
                                         <p class="">{{ radial.title }}</p>
                                        </li>
                                     </ul>

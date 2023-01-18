@@ -127,6 +127,19 @@
       </li>
       <li tabindex="0">
         <a>
+          Explore
+          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-4 text-left text-gray-800 bg-white">
+          <li class=" font-semibold text" ><a href="/blog">Blog</a></li>
+          <li class=" font-light text" ><a href="/about">Documentation</a></li>
+          <li class=" font-light" ><a href="https://github.com/truflation" >Github</a></li>
+          <li class=" font-light" ><a href="/about">About Us</a></li>
+          <li class=" font-light" ><a href="/contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li tabindex="0">
+        <a>
           Resources
           <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
@@ -134,8 +147,8 @@
           <li class=" font-semibold text" ><a href="/resources">Resources</a></li>
           <li class=" font-light text" ><a href="/about">About Us</a></li>
           <li class=" font-light" ><a >Whitepapers</a></li>
-          <li class=" font-light" ><a>News Coverage</a></li>
-          <li class=" font-light" ><a>Youtube</a></li>
+          <li class=" font-light" ><a href="/resources">News Coverage</a></li>
+          <li class=" font-light" ><a href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A">Youtube</a></li>
           <li class=" font-light" ><a href="/blog">Blog</a></li>
         </ul>
       </li>

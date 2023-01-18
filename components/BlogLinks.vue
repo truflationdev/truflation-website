@@ -3,7 +3,7 @@
 </script>
 
 <template>
-   <div class="mx-auto flex gap-4 justify-center items-center flex-col container mt-12">
+   <div class="mx-auto flex gap-10 justify-center items-center flex-col container mt-12">
                 <h1 class="text-3xl text-slate-700">{{ title }}</h1>
                 <div class="grid grid-cols-1 gap-3 xl:grid-cols-3 w-full" >
                     <div v-for="video in videos"  class="flex flex-col text-center">

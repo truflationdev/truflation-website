@@ -54,7 +54,7 @@ const {selectedCategory} = storeToRefs(main)
             <div class="flex flex-row bg-gray-100 rounded p-4">
                 <div class="lg:flex-row flex-col gap-2 flex">
                     <div class="flex items-center justify-center">
-                        <RadialProgress :value=" main?.getByCategoryType(selectedCategory)?.relativeImportance" />
+                        <RadialProgress :percent="true" :value=" main?.getByCategoryType(selectedCategory)?.relativeImportance" />
                     </div>
                     <div class="flex flex-col">
                     <p class=" font-semibold"> Relative Importance</p>
