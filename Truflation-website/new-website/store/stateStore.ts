@@ -234,9 +234,9 @@ export const useDataStore = defineStore({
         const mainRateLabels: string[] =[]
 
 
-       this.keyMetrics.low = state.w.ytdMin[1].toFixed(1)
-       this.keyMetrics.high = state.w.ytdMax[1].toFixed(1)
-       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(1)
+       this.keyMetrics.low = state.w.ytdMin[1].toFixed(2)
+       this.keyMetrics.high = state.w.ytdMax[1].toFixed(2)
+       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(2)
        this.keyMetrics.change = (state.w.yoyCur[1] - Object.values(state.n)[0][0]).toFixed(1)
 
         Object.entries(state.n).forEach(entry => {
@@ -369,17 +369,37 @@ export const useDataStore = defineStore({
     },
 
     getCatChart: (state) => (data: GraphData) => {
+        const newArray = data.datasets[0].data.slice(  data.datasets[0].data.length - state.chartLables.categoryChart.length , data.datasets[0].data.length)
+
+        const dataset: DataSet = {
+            label: data.datasets[0].label,
+                borderWidth: 5,
+                borderColor: '#0D58C6',
+                backgroundColor: "#0D58C6",
+                data: newArray
+           }
+
         const object = {
             labels: state.chartLables.categoryChart,
-            datasets: data.datasets
+            datasets: [dataset]
         }
         return object
     },
 
     getMainChart: (state) => (data: GraphData) => {
+        const newArray = data.datasets[0].data.slice(  data.datasets[0].data.length - state.chartLables.generalChart.length , data.datasets[0].data.length)
+
+        const dataset: DataSet = {
+            label: data.datasets[0].label,
+                borderWidth: 5,
+                borderColor: '#0D58C6',
+                backgroundColor: "#0D58C6",
+                data: newArray
+           }
+
         const object = {
             labels: state.chartLables.generalChart,
-            datasets: data.datasets
+            datasets: [dataset]
         }
         return object
     },

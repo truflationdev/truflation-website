@@ -93,7 +93,7 @@ const {selectedCategory} = storeToRefs(main)
             <DataChart :locationOptions="options"  />
             <div class="flex flex-col container mx-auto mt-5 gap-3">
                 <h1 class="text-xl font-semibold">Categories</h1>
-                <ul class="grid grid-cols-2 mx-5 lg:grid-cols-5 gap-y-8 w-full justify-center text-gray-600">
+                <ul class="grid grid-cols-2 mx-5 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600">
                     <li class=" border-b-2 border-gray-100"  v-for="cat in CategoryType" ><button :id='cat' @click="main.updateCategory(cat)" :class="{'category-selected': selectedCategory === cat}">{{ cat }}</button></li>
                 </ul>
             </div>

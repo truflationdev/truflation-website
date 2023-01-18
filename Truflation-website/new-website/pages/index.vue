@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { blogData} from "../../static/data/staffData"
+import { blogData} from "../static/data/staffData"
 </script>
 
 <template>
@@ -14,10 +14,10 @@ import { blogData} from "../../static/data/staffData"
                                 <p class=" font-light text-white">Solving the measurement problems of the past, so you can grow the future</p>
                                 <div class="flex flex-row mt-10 items-center gap-2">
                                     <p class=" text-white/70">Featured on:</p>
-                                    <img src="../assets/img/featured-in.png" alt="">
+                                    <img src="~/assets/img/featured-in.png" alt="">
                                 </div>
                             </div>
-                                <img src="../../assets/img/widget.svg" alt="">
+                                <img src="~/assets/img/widget.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ import { blogData} from "../../static/data/staffData"
                     <div class="flex flex-col gap-8 mt-8 mx-auto container">
                         <h1 class="text-4xl">Tools</h1>
                         <div class="flex flex-wrap p-10 flex-row w-full items-center gap-8">
-                            <img src="../assets/img/calculator." alt="">
+                            <img src="~/assets/img/calculator-blurred.svg" alt="">
                             <div class="flex flex-col   max-w-md gap-4">
                             <p class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300/70 w-fit">COMING SOON</p>
                             <h1 class="text-2xl font-semibold">Personal Calculator</h1>
@@ -69,7 +69,7 @@ import { blogData} from "../../static/data/staffData"
                             </div>
                         </div>
                         <div class="flex flex-wrap p-8 flex-row w-full items-center gap-20">
-                            <img src="../../assets/img/Frame.svg" alt="">
+                            <img src="~/assets/img/Frame.svg" alt="">
                             <div class="flex flex-col max-w-md gap-4">
                             <p class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300/70 w-fit">COMING SOON</p>
                             <h1 class="text-2xl font-semibold">Forecasting</h1>
@@ -78,7 +78,7 @@ import { blogData} from "../../static/data/staffData"
                         </div>
                         <h1 class="text-4xl">Services</h1>
                         <div class="flex flex-wrap p-8 flex-row w-full items-center gap-20">
-                            <img src="../../assets/img/ide.svg" alt="">
+                            <img src="~/assets/img/ide.svg" alt="">
                             <div class="flex flex-col max-w-md gap-4">
                             <p class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300/70 w-fit">COMING SOON</p>
                             <h1 class="text-2xl font-semibold">TFI Marketplace</h1>
@@ -90,7 +90,7 @@ import { blogData} from "../../static/data/staffData"
                         <div class="flex flex-row flex-wrap lg:flex-nowrap gap-8 items-center justify-center px-8">
                             <div class="flex gap-4 flex-col px-6 max-w-2xl py-4 border rounded-lg">
                                 <div class="flex justify-center w-full">
-                                    <img src="../../assets/img/truflation marketplace.svg" alt="">
+                                    <img src="~/assets/img/truflation-marketplace.svg" alt="">
                                 </div>
                                 <div class="flex flex-col">
                                     <h1 class=" text-xl font-semibold">Dashboard</h1>
@@ -102,7 +102,7 @@ import { blogData} from "../../static/data/staffData"
                             </div>
                             <div class="flex gap-4 flex-col px-6 py-4 max-w-2xl border rounded-lg">
                                 <div class="w-full flex items-center justify-center">
-                                    <img src="../../assets/img/widget-blur.svg" alt="">
+                                    <img src="~/assets/img/widget-blur.svg" alt="">
                                 </div>
                                 <div class="flex flex-col">
                                     <h1 class=" text-xl font-semibold">Widget</h1>

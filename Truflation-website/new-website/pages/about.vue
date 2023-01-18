@@ -11,7 +11,7 @@
                                 <h1 class=" text-7xl text-white">About Truflation</h1>
                                 <p class=" max-w-md  font-light text-white">Solving the measurement problems of the past, so you can grow the future</p>
                             </div>
-                                <img src="../../assets/img/widget.svg" alt="">
+                                <img src="~/assets/img/widget.svg" alt="">
                         </div>
                     </div>
             </div>
