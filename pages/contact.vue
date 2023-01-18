@@ -24,7 +24,7 @@ const videos: VideoLinks[] = [
                     <Banner :isLight="true"/>
                     <div class=" flex flex-col container mx-auto p-8  gap-5 rounded shadow-md bg-white max-w-xl my-20">
                         <h1 class=" text-3xl">Contact Us</h1>
-                        <form class="flex flex-col gap-4" name="Main Contact" method="POST" data-netlify="true" netlify-honeypot="bot-filter">
+                        <form class="flex flex-col gap-4" name="Contact main" method="post" data-netlify="true" netlify-honeypot="bot-filter">
                         <!-- <div class="contact-success"><strong>Success!</strong> We got your message and will reply shortly.</div> -->
                         <div class="contact-block half">
                             <input required class="p-3 border rounded-xl w-full bg-gray-50" type="text" placeholder="First name" name="first-name">

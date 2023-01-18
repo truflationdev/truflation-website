@@ -39,7 +39,7 @@ ChartJS.register(
 
 <template>
    <div class="flex flex-row flex-wrap xl:flex-nowrap gap-8 container lg:mx-auto mt-5">
-        <div class="flex flex-col bg-gray-100 w-full p-8 content-center xl:w-1/3 rounded-lg gap-5">
+        <div class="flex flex-col h-fit bg-gray-100 w-full p-8 content-center xl:w-1/3 rounded-lg gap-5">
             <div class="flex flex-row gap-3 items-center">
                <p class=" text-lg font-semibold">{{ main?.getByCategoryType(selectedCategory)?.categoryType }} sub-categories</p>
             </div>
@@ -48,9 +48,6 @@ ChartJS.register(
                 <p>{{ subCategory }}</p>
               </div>
             </div>
-            <div class="flex flex-row gap-3 items-center">
-               <p class=" text-lg font-semibold">Data Sources</p>
-            </div>        
         </div>
         <div class="flex flex-col w-full ml-3 mx-8 bg-slate-100 p-5 gap-4 rounded">
           <div class="flex flex-row items-center">

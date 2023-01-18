@@ -11,6 +11,7 @@
                                 <h1 class=" text-6xl text-white">Indexes for World
                                     <br>Leading Economies</h1>
                                 <p class=" max-w-lg font-light text-white">The Truflation widget is available to incorporate into your website, data dashboards, and Web3 applications. It can even be customised.</p>
+                                <div class=" rounded-full font-light w-fit px-4 py-3 bg-green-300">Coming Soon!</div>
                             </div>
                         </div>
                     </div>
@@ -28,7 +29,6 @@
                             </div>
                         </div>
             </div>
-            <FinancialIdexes/>
             <Investors />
             <NewsLetter />
             <FooterComp />
