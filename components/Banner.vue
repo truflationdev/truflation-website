@@ -125,7 +125,7 @@
           <li class=" font-semibold text" ><a href="/developers">Developers</a></li>
           <li class=" font-light text" ><a>Get Started Guide</a></li>
           <li class=" font-light" ><a href="/methodology">Methodology</a></li>
-          <li class=" font-light" ><a>Join Community</a></li>
+          <li class=" font-light" ><a href="https://t.me/truflation">Join Community</a></li>
         </ul>
       </li>
       <li tabindex="0">

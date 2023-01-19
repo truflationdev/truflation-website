@@ -29,6 +29,7 @@
                             </div>
                         </div>
             </div>
+            <FinancialIdexes />
             <Investors />
             <NewsLetter />
             <FooterComp />
