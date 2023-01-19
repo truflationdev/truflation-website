@@ -3,9 +3,9 @@
 </script>
 
 <template>
-   <div class="flex flex-col container mx-auto items-center gap-2 mt-20">
-                <h1 class="text-3xl font-semibold">Data Partners</h1>
-                <div class="flex flex-wrap gap-4 justify-center">
+   <div class="flex flex-col container mx-auto items-center">
+                <h1 class="text-3xl font-semibold mb-6">Data Partners</h1>
+                <div class="flex flex-wrap gap-3 justify-center">
                 <img src="~/assets/img/AAA.png" alt="">
                 <img src="~/assets/img/carcurus.png" alt="">
                 <img src="~/assets/img/eia.png" alt="">

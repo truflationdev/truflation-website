@@ -31,6 +31,11 @@ fetchState()
 </script>
 
 <template>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    </head>
     <div class="main-background ">
             <Banner />
             <div class="container mx-auto flex flex-row flex-wrap-reverse lg:flex-nowrap my-10 lg:my-20 gap-10">

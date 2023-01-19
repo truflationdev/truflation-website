@@ -4,7 +4,7 @@ const {data} = defineProps(['data'])
 </script>
 
 <template>
-        <div class="flex flex-row gap-3 mt-5">
+        <div class="flex flex-row gap-3">
             <div class="flex flex-row max-w-2xl gap-5 flex-wrap">
                 <div class="flex flex-row">
                     <img class="mr-2" src="../assets/img/Data-source-icon.svg" alt="">

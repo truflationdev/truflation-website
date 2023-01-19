@@ -3,7 +3,7 @@
 
 <template>
       <div class="flex flex-col container mt-8 mx-auto gap-8">
-                        <h1 class="text-4xl">Finanical Indexes</h1>
+                        <h1 class=" font-semibold text-4xl">Finanical Indexes</h1>
                         <div class="flex flex-row gap-8 flex-wrap items-center">
                             <div class="flex items-baseline justify-end flex-col border w-2/5 gap-2">
                                 <div class="bg-gradient-to-tr from-white to-blue-500 h-40 w-full " ></div>

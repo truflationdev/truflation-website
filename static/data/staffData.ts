@@ -62,7 +62,7 @@ export const staffData: staffDataSet = {
 export const CustomerData: CustomerData = {
     list: [
         {
-            name: "miner",
+            name: "Miner",
             description: "A utility token that tokenizes the service of gold mining. Truflation is backing their minertoken."
         },
         {

@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+    body {
+        font-family: 'Work Sans', sans-serif;
+    }
+}
+
+
 @layer components {
     .btn {
-        @apply flex flex-row items-center gap-4 text-white px-5 py-3 rounded-2xl text-sm bg-[#002152] w-fit h-fit
+        @apply relative z-30 lowercase font-semibold flex flex-row items-center gap-3 text-white px-5 py-2 rounded-full text-base bg-[#002152] w-fit h-fit
     }
 
     .text-light {
