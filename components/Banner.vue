@@ -1,10 +1,9 @@
 <script setup lang="ts">
-    const {isLight} = defineProps(['isLight'])
-
+    const {isLight} = defineProps(['isLight'])       
 </script>
 
 <template>
-<header class="navbar" :class="{'header-light': isLight, 'header-dark': !isLight}">
+<header class="navbar dark" :class="{'header-light': isLight, 'header-dark': !isLight}">
   <div class="navbar-start text-gray-800 lg:mx-20">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
