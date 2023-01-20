@@ -112,8 +112,8 @@ fetchState()
             <div class="flex flex-col mt-12">
                 <NewsLetter />
             </div>
-        </div>
         <FooterComp />
+    </div>
 </template>
 
 <style scoped>
