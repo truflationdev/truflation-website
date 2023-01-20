@@ -37,7 +37,7 @@ fetchState()
     <div class="main-background ">
             <Banner />
             <div class=" flex container mx-auto">
-                        <div class="flex flex-col w-full relative bg-truflation-100 items-center mt-20 py-20 pl-10 lg:flex-row">
+                        <div class="flex flex-col w-full relative bg-truflation-100 items-center mt-20 pt-20 pb-10 pl-10 lg:flex-row">
                             <div class="flex flex-col gap-5 h-full">
                                 <div class="flex flex-col">
                             <h1 class="text-[40px] font-semibold">

@@ -122,7 +122,7 @@
         </a>
         <ul class="p-4 text-left text-gray-800 bg-white">
           <li class=" font-semibold text" ><a href="/developers">Developers</a></li>
-          <li class=" font-light text" ><a>Get Started Guide</a></li>
+          <li class=" font-light text" ><a href="https://whitepaper.truflation.com/">Get Started Guide</a></li>
           <li class=" font-light" ><a href="/methodology">Methodology</a></li>
           <li class=" font-light" ><a href="https://t.me/truflation">Join Community</a></li>
         </ul>
@@ -148,7 +148,7 @@
         <ul class="p-4 text-left text-gray-800 bg-white">
           <li class=" font-semibold text" ><a href="/resources">Resources</a></li>
           <li class=" font-light text" ><a href="/about">About Us</a></li>
-          <li class=" font-light" ><a >Whitepapers</a></li>
+          <li class=" font-light" ><a href="https://whitepaper.truflation.com/" >Whitepapers</a></li>
           <li class=" font-light" ><a href="/resources">News Coverage</a></li>
           <li class=" font-light" ><a href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A">Youtube</a></li>
           <!-- <li class=" font-light" ><a href="/blog">Blog</a></li> -->

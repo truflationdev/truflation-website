@@ -57,18 +57,18 @@
                     <ul class="flex text-white/60 flex-col gap-3">
                         <li><a href="/dashboard">Truflation Dapp</a></li>
                         <li><a href="/solutions/marketplace">Marketplace</a></li>
-                        <li><a href="/solutions">Ecosystem</a></li>
-                        <!-- <li><a href="">TRU Token</a></li> -->
+                        <li><a href="/solutions/widget">Widget</a></li>
+                        <li><a href="/">Dashboard</a></li>
                     </ul>
                 </div>
                 <div class="flex flex-col  lg:ml-auto">
                     <p class="text-white font-semibold mb-4">Developers</p>
                     <ul class="flex text-white/60 flex-col gap-3">
-                        <li><a href="">Get Started</a></li>
+                        <li><a href="https://whitepaper.truflation.com/">Get Started</a></li>
                         <li><a href="/developers">Developer Guide</a></li>
                         <li><a href="https://github.com/truflation">Github</a></li>
-                        <li><a href="/resources">Whitepaper</a></li>
-                        <li><a href="">Forum</a></li>
+                        <li><a href="https://whitepaper.truflation.com/">Whitepaper</a></li>
+                        <!-- <li><a href="">Forum</a></li> -->
                     </ul>
                 </div>
                 <div class="flex flex-col lg:ml-auto">
@@ -78,7 +78,7 @@
                         <li><a href="/about">About Us</a></li>
                         <!-- <li><a href="">Media Kit</a></li> -->
                         <!-- <li><a href="">Careers</a></li> -->
-                        <li><a href="">Terms of Use</a></li>
+                        <!-- <li><a href="">Terms of Use</a></li> -->
                         <li><a href="/contact">Contact us</a></li>
                     </ul>
                 </div>
