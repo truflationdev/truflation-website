@@ -21,6 +21,7 @@ const videos: VideoLinks[] = [
 
 <template>
     <head>
+        <title>Contact Us</title>
         <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
     </head>
                 <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">
