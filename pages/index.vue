@@ -32,7 +32,6 @@ fetchState()
 
 <template>
     <head>
-        <title>Dashboard</title>
         <link href="https://api.fontshare.com/v2/css?f[]=work-sans@500,400&display=swap" rel="stylesheet">
     </head>
     <div class="main-background ">
@@ -113,8 +112,8 @@ fetchState()
             <div class="flex flex-col mt-12">
                 <NewsLetter />
             </div>
+        </div>
         <FooterComp />
-    </div>
 </template>
 
 <style scoped>
