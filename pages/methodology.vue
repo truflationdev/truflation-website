@@ -23,7 +23,6 @@ const videos: VideoLinks[] = [
 <template>
      <head>
         <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
-        
         </head>
            <div class=" bg-[url('assets/img/methodology-hero.svg')] items-center bg-cover w-full">
                     <Banner :isLight="true"/>
