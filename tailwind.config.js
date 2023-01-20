@@ -3,7 +3,11 @@ module.exports = {
 
     daisyui: {
       styled: true,
-      themes: true,
+      themes: [
+        {
+          'bg-primary': "#0B4299"
+        }
+      ],
       base: true,
       utils: true,
       logs: true,

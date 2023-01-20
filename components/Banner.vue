@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<header class="navbar z-10 relative dark" :class="{'header-light': isLight, 'header-dark': !isLight}">
+<header  class="navbar  z-10 relative dark" :class="{'header-light': isLight, 'header-dark': !isLight}">
   <div class="navbar-start text-gray-800 lg:mx-20">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -44,7 +44,7 @@
           <li><a >Whitepapers</a></li>
           <li><a>News Coverage</a></li>
           <li><a>Youtube</a></li>
-          <li><a>Blog</a></li>
+          <!-- <li><a>Blog</a></li> -->
         </ul>
         </li>
         <li><a href="/methodology">Methodology</a></li>
@@ -133,7 +133,7 @@
           <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul class="p-4 text-left text-gray-800 bg-white">
-          <li class=" font-semibold text" ><a href="/blog">Blog</a></li>
+          <!-- <li class=" font-semibold text" ><a href="/blog">Blog</a></li> -->
           <li class=" font-light text" ><a href="/about">Documentation</a></li>
           <li class=" font-light" ><a href="https://github.com/truflation" >Github</a></li>
           <li class=" font-light" ><a href="/about">About Us</a></li>
@@ -151,7 +151,7 @@
           <li class=" font-light" ><a >Whitepapers</a></li>
           <li class=" font-light" ><a href="/resources">News Coverage</a></li>
           <li class=" font-light" ><a href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A">Youtube</a></li>
-          <li class=" font-light" ><a href="/blog">Blog</a></li>
+          <!-- <li class=" font-light" ><a href="/blog">Blog</a></li> -->
         </ul>
       </li>
     </ul>
