@@ -21,7 +21,6 @@ import {staffData, CustomerData, blogData} from "../static/data/staffData"
 
 <template>
     <head>
-        <title>About</title>
         <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
     </head>
             <div class="about-hero">

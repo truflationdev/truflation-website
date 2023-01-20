@@ -19,6 +19,7 @@
     "chart.js": "^4.1.1",
     "daisyui": "^2.46.1",
     "lite-youtube-embed": "^0.2.0",
+    "moment": "^2.29.4",
     "nuxt3": "^3.0.1-rc.0-27863365.da6fa9a",
     "pinia": "^2.0.28",
     "vue-chartjs": "^5.0.1",

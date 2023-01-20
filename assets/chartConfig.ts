@@ -17,6 +17,19 @@ export const data = {
   }
   
   export const options = {
+    scales: {
+      xAxes: [{
+        type: 'time',
+        time: {
+          parser: 'YYYY-MM-DD',
+          unit: 'month',
+          displayFormats: {
+             month: 'MM/YY'
+          },
+          tooltipFormat: 'DD/MM/YY'
+        }
+      }]
+    },
     plugins: {
       legend: {
       display: true
@@ -27,7 +40,7 @@ export const data = {
       titleFontColor: '#000',
       bodyFontColor: 'rgba(0, 0, 0, 0)',
       displayColors: true
-      }
+      },
   },
   hover: {
   mode: 'nearest',
@@ -39,6 +52,5 @@ export const data = {
       point:{
           radius: 0
       }
-  },
   }
-  
+}
