@@ -20,6 +20,9 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
+    <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
+    </head>
                 <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">
                     <Banner :isLight="true"/>
                     <div class=" flex container mx-auto items-center justify-center">

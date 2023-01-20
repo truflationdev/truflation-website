@@ -21,13 +21,16 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
+    <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
+    </head>
            <div class=" bg-[url('assets/img/methodology-hero.svg')] items-center bg-cover w-full">
                     <Banner :isLight="true"/>
                     <div class=" items-center sm:mx-auto lg:items-start flex flex-col lg:px-40 xl:py-32 ">
                         <div class="flex flex-row flex-wrap mt-4 ">
                             <div class="flex flex-col gap-4 h-full my-4  ">
-                                <h1 class=" text-5xl text-white capitalize">METHODOLOGY MATTERS</h1>
-                                <p class=" max-w-2xl text-lg font-light text-white">Historically, government inflation metrics have produced biased outputs, built on outdated methodologies. They lacked modern measurement techniques, provided limited levels of transparency, and only updated monthly.
+                                <h1 class=" text-5xl text-white capitalize">Methodology Matters</h1>
+                                <p class=" max-w-3sxl text-lg text-white">Historically, government inflation metrics have produced biased outputs, built on outdated methodologies. They lacked modern measurement techniques, provided limited levels of transparency, and only updated monthly.
                                 Truflation delivers a new inflation truth-set — built on +10 million data points, updating indices daily, not monthly. The methodology is transparent and dynamically adjusts to global market conditions</p>
                             </div>
                         </div>

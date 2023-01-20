@@ -19,6 +19,9 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
+    <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
+    </head>
         <div class="main-background">
             <Banner/>
             <body>

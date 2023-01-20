@@ -2,6 +2,9 @@
 </script>
 
 <template>
+    <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
+    </head>
     <div class=" flex flex-col w-full items-center">
           <div class="bg-gradient-to-l from-truflation-300 to-truflation-500 w-full">
                     <Banner :isLight="true"/>

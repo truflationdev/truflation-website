@@ -18,6 +18,9 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
+    <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap" rel="stylesheet">
+    </head>
                     
                 <div class=" bg-gradient-to-t from-white to-[#4168F133]/20 ">
                 <Banner/>
