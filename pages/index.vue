@@ -3,6 +3,7 @@ import { CategoryList, CategoryType } from "~~/components/categoryTypes";
 import {categoryData} from "../static/data/categoryData"
 import { SelectedCountry, useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from 'pinia'
+import 'chartjs-adapter-date-fns';
 
 
 const main = useDataStore();

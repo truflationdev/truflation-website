@@ -18,30 +18,41 @@ export const data = {
   
   export const options = {
     scales: {
-      xAxes: [{
+      x: {
         type: 'time',
         time: {
-          parser: 'YYYY-MM-DD',
           unit: 'month',
-          displayFormats: {
-             month: 'MM/YY'
-          },
-          tooltipFormat: 'DD/MM/YY'
         }
-      }]
+      },
+      y: {
+      }
     },
     plugins: {
       legend: {
       display: true
       },
       tooltip: {
-      mode: 'index',
-      intersect: false,
-      titleFontColor: '#000',
-      bodyFontColor: 'rgba(0, 0, 0, 0)',
-      displayColors: true
-      },
-  },
+        mode: 'index',
+        intersect: false,
+        titleColor: '#00000066',
+        backgroundColor: '#fff',
+        bodyColor: 'rgba(0, 0, 0, 0.88)',
+        bodySpacing: 2,
+        padding: 20,
+        boxPadding: 6,
+        displayColors: true,
+        bodyFont: {
+          size: 16,
+          weight: 500,
+          lineHeight: 2
+        },
+        callbacks: {
+          label(tooltipItems: any) {
+            return ` ${tooltipItems.formattedValue}% ${tooltipItems.dataset.label}`
+        },
+        },
+      }
+   },
   hover: {
   mode: 'nearest',
   intersect: false
