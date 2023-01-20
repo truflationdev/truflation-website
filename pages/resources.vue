@@ -25,6 +25,7 @@ const videos: VideoLinks[] = [
         <div class="main-background">
             <Banner/>
             <body>
+                <WhitePapaerModal />
                 <div class="container items-center justify-center mx-auto mt-24 pb-16 flex flex-row gap-32 flex-wrap">
                     <div class="flex flex-col gap-4 flex-wrap max-w-2xl">
                         <h1 class="text-5xl font-semibold">Resources</h1>
