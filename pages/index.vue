@@ -37,18 +37,18 @@ fetchState()
     <div class="main-background ">
             <Banner />
             <div class="container mx-auto flex flex-row flex-wrap-reverse gap-8 lg:flex-nowrap mt-20">
-                <div class="flex relative items-center flex-row mx-auto bg-truflation-100 pl-10 pb-9 pt-10 rounded-md">
+                <div class="flex relative min-w-fit items-center flex-row mx-auto bg-truflation-100 pl-10 pb-9 pt-10 rounded-md">
                         <div class="flex flex-col">
-                            <h1 class="text-[40px] font-semibold">
+                            <h1 class="text-[40px] max-w-3xl font-semibold">
                             Unbelievable Times Call for Believable Data 
                             </h1>
-                        <p class="mt-4 max-w-md">Truflation offers independent and censorship-resistant inflation calculations based on census level price information.
-                        </p>
-                        <button class=" mt-4 btn"><a class="flex flex-row items-center gap-2" href="/solutions/marketplace">Visit Marketplace <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.23441 0.634217C7.54683 0.321797 8.05336 0.321797 8.36578 0.634217L13.1658 5.43422C13.4782 5.74664 13.4782 6.25317 13.1658 6.56559L8.36578 11.3656C8.05336 11.678 7.54683 11.678 7.23441 11.3656C6.92199 11.0532 6.92199 10.5466 7.23441 10.2342L10.6687 6.7999L1.4001 6.7999C0.958271 6.7999 0.600098 6.44173 0.600098 5.9999C0.600098 5.55807 0.958271 5.1999 1.4001 5.1999H10.6687L7.23441 1.76559C6.92199 1.45317 6.92199 0.946636 7.23441 0.634217Z" fill="white"/>
-                        </svg>
-                        </a></button>
-                    </div>
+                            <p class="mt-4 max-w-md">Truflation offers independent and censorship-resistant inflation calculations based on census level price information.
+                            </p>
+                            <button class=" mt-4 btn"><a class="flex flex-row items-center gap-2" href="/solutions/marketplace">Visit Marketplace <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.23441 0.634217C7.54683 0.321797 8.05336 0.321797 8.36578 0.634217L13.1658 5.43422C13.4782 5.74664 13.4782 6.25317 13.1658 6.56559L8.36578 11.3656C8.05336 11.678 7.54683 11.678 7.23441 11.3656C6.92199 11.0532 6.92199 10.5466 7.23441 10.2342L10.6687 6.7999L1.4001 6.7999C0.958271 6.7999 0.600098 6.44173 0.600098 5.9999C0.600098 5.55807 0.958271 5.1999 1.4001 5.1999H10.6687L7.23441 1.76559C6.92199 1.45317 6.92199 0.946636 7.23441 0.634217Z" fill="white"/>
+                            </svg>
+                            </a></button>
+                        </div>
                     <img class="absolute z-0 bottom-0 right-0" src="~/assets/img/globe.svg" alt="">
                 </div>
 
