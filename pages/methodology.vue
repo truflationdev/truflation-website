@@ -26,7 +26,7 @@ const videos: VideoLinks[] = [
         </head>
            <div class=" bg-[url('assets/img/methodology-hero.svg')] items-center bg-cover w-full">
                     <Banner :isLight="true"/>
-                    <div class=" items-center sm:mx-auto lg:items-start flex flex-col lg:px-40 xl:py-32 ">
+                    <div class=" items-center mx-10  py-20  md:mx-auto lg:items-start flex flex-col lg:px-40 xl:py-32 ">
                         <div class="flex flex-row flex-wrap mt-4 ">
                             <div class="flex flex-col gap-4 h-full my-4  ">
                                 <h1 class=" text-5xl text-white capitalize">Methodology Matters</h1>
@@ -38,7 +38,7 @@ const videos: VideoLinks[] = [
             </div>
             <div class=" flex container justify-center mx-auto">
                         <div class="flex flex-col flex-wrap mt-16 justify-center items-center">
-                            <div class="flex flex-col gap-4 h-full my-4 ">
+                            <div class="flex text-center md:text-left flex-col gap-4 h-full my-4 ">
                                 <h1 class=" text-xl text-truflation-500">OVERVIEW</h1>
                                 <div class="flex mt-4 flex-row flex-wrap gap-8">
                                     <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-16 w-full items-center justify-center">
@@ -53,9 +53,9 @@ const videos: VideoLinks[] = [
                             </div>
                         </div>
             </div>
-            <div class="flex flex-col h-full justify-center items-center my-12  mx-auto">
+            <div class="flex flex-col h-full justify-center text-center md:text-left items-center my-12  mx-auto">
                                 <h1 class=" text-5xl mb-4">Our Methodology</h1>
-                                <p class=" font-light text-base text-center max-w-2xl">Below is an outline of how we approach the collection and indexing of the world's financial and economic data, using our first index Truflation US for illustrative purposes.</p>
+                                <p class=" font-light text-base text-center mx-10 md:mx-auto max-w-2xl">Below is an outline of how we approach the collection and indexing of the world's financial and economic data, using our first index Truflation US for illustrative purposes.</p>
                                     <ul class="grid gap-x-20 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
                                        <li class="flex flex-row w-3xl gap-4 items-center justify-self-center" v-for="radial in methodologyRadials">
                                         <RadialProgress :percent="false" :value="radial.amount" :fill="radial.fill" />

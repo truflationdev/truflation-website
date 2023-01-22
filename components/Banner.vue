@@ -3,19 +3,19 @@
 </script>
 
 <template>
-<header  class="navbar  z-10 relative dark" :class="{'header-light': isLight, 'header-dark': !isLight}">
+<header  class="navbar  z-20 relative" :class="{'header-light': isLight, 'header-dark': !isLight}">
   <div class="navbar-start text-gray-800 lg:mx-20">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-36">
+      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white rounded-box w-36">
         <li tabindex="0">
           <a class="justify-between">
             Solutions
             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
           </a>
-          <ul class=" bg-white">
+          <ul class=" z-20 bg-white">
             <li><a href="/dashboard">Truflation Dashboard</a></li>
             <li><a href="/solutions/marketplace">Marketplace</a></li>
             <li><a href="/solutions/indexes">Indexes</a></li>
