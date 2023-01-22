@@ -86,7 +86,7 @@ ChartJS.register(
               </div>
             </div>
         </div>
-        <div class="flex flex-col w-2/3 ml-3 bg-slate-100 p-5 gap-4 rounded-sm">
+        <div class="flex flex-col w-full md:w-2/3 ml-3 bg-slate-100 p-5 gap-4 rounded-sm">
           <div class="flex flex-row items-center">
             <h2 class=" font-semibold">Today's Truflation Rate TimeFrame</h2>
             <ul class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center">

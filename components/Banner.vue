@@ -16,7 +16,7 @@
             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
           </a>
           <ul class=" z-20 bg-white">
-            <li><a href="/dashboard">Truflation Dashboard</a></li>
+            <li><a href="/">Truflation Dashboard</a></li>
             <li><a href="/solutions/marketplace">Marketplace</a></li>
             <li><a href="/solutions/indexes">Indexes</a></li>
             <li><a href="solutions/widget">Widget</a></li>
@@ -31,7 +31,7 @@
           <li class=" font-semibold" ><a href="/developers">Developers</a></li>
           <li><a>Get Started Guide</a></li>
           <li ><a href="/methodology">Methodology</a></li>
-          <li ><a>Join Community</a></li>
+          <li ><a href="/developers">Join Community</a></li>
         </ul>
         </li>
         <li tabindex="0">
@@ -41,10 +41,9 @@
           </a>
           <ul class=" text-left text-gray-800 bg-white">
           <li ><a href="/about">About Us</a></li>
-          <li><a >Whitepapers</a></li>
-          <li><a>News Coverage</a></li>
-          <li><a>Youtube</a></li>
-          <!-- <li><a>Blog</a></li> -->
+          <li><a  href="https://whitepaper.truflation.com/">Whitepapers</a></li>
+          <li><a href="/resources">News Coverage</a></li>
+          <li><a  href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A">Youtube</a></li>
         </ul>
         </li>
         <li><a href="/methodology">Methodology</a></li>
@@ -53,7 +52,8 @@
     </div>
     <a class="ml-10" href="/">
                 <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="">
-                <img v-if="!isLight" src="~/assets/img/logo.svg" alt=""></a>
+                <img v-if="!isLight" src="~/assets/img/logo.svg" alt="">
+    </a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">

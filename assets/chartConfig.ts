@@ -61,6 +61,7 @@ export const data = {
     maintainAspectRatio: true,
     elements: {
       point:{
+        borderWidth: 1,
           radius: 0
       }
   }

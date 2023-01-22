@@ -55,8 +55,8 @@ fetchState()
                             <img class="absolute z-0 bottom-0 -right-0 invisible md:visible" src="~/assets/img/globe.svg" alt="">
                         </div>
                     </div>
-            <div class="container mx-auto flex flex-col gap-5 mt-12">
-                <div class="flex flex-row items-center mt-10 gap-3">
+            <div class="container mx-auto text-center md:text-base flex flex-col gap-5 mt-12">
+                <div class="flex flex-row items-center flex-wrap mx-2 md:mx-auto mt-10 gap-3">
                     <h2 class="text-4xl font-semibold">
                     Today's CPI Data by
                     </h2>
@@ -77,9 +77,9 @@ fetchState()
             <div class="flex flex-col mt-7">
             <DataChart :locationOptions="selectedCategory"  />
             </div>
-            <div class="flex flex-col container mx-auto mt-12 gap-3">
+            <div class="flex flex-col text-center md:text-start container md:mx-auto mt-12 gap-3">
                 <h1 class="text-2xl font-semibold">Categories</h1>
-                <ul class="grid grid-cols-2 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600">
+                <ul class="grid grid-cols-1 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600">
                     <li class=" border-b-2 border-gray-100"  v-for="cat in CategoryType" ><button :id='cat' @click="main.updateCategory(cat)" :class="{'category-selected': selectedCategory === cat}">{{ cat }}</button></li>
                 </ul>
             </div>
@@ -90,24 +90,24 @@ fetchState()
             <div class="flex flex-col mt-12">
            <DataPartners/>
              </div>
-            <div class="container mx-auto flex flex-row flex-wrap gap-10 mt-20">
+            <div class="container  md:mx-auto flex flex-row flex-wrap gap-10 mt-20">
                 <div class="flex flex-row mx-auto text-white bg-gradient-to-br from-truflation-600 to-truflation-300 rounded-md">
-                        <div class="flex flex-col gap-3 p-8">
+                        <div class="flex flex-col w-full gap-3 p-8">
                             <h1 class="text-3xl font-bold">Personal Inflation Calculator</h1>
                             <p>Calculate how strong your hedge is
                             <br> against inflation.
                             </p>
                             <p class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300 w-fit">COMING SOON</p>
                         </div>
-                    <img class=" w-1/5 ml-auto" src="~/assets/img/layout.svg" alt="">
+                    <img class="hidden md:flex md:w-1/5 ml-auto" src="~/assets/img/layout.svg" alt="">
                 </div>
-                <div class="flex flex-row mx-auto bg-[#F0F4FA] rounded-md">
+                <div class="flex flex-row w-full md:w-auto md:mx-auto bg-[#F0F4FA] rounded-md">
                         <div class="flex flex-col gap-4 p-8">
                             <h1 class="text-3xl font-bold">Send us a Message</h1>
                             <p>Contact us if you have Queries</p>
                             <button class="btn"><a href="/contact"> Contact Us</a></button>
                         </div>
-                        <img class=" w-2/5 ml-auto" src="~/assets/img/mail.svg" alt="">
+                        <img class="hidden md:flex md:w-2/5 ml-auto" src="~/assets/img/mail.svg" alt="">
                 </div>
             </div>
             <div class="flex flex-col mt-12">

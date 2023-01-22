@@ -279,7 +279,6 @@ export const useDataStore = defineStore({
 
           const Dataset: DataSet = {
             label: item.name,
-                borderWidth: 5,
                 borderColor: '#0D58C6',
                 backgroundColor: "#0D58C6",
                 data: values

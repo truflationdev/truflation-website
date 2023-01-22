@@ -52,7 +52,7 @@ export interface GraphData {
 
 export interface DataSet {
     label: string
-    borderWidth: number,
+    // borderWidth: number,
     borderColor: string,
     backgroundColor: string,
     data: number[]
