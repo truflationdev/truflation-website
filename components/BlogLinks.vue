@@ -3,13 +3,13 @@
 </script>
 
 <template>
-   <div class="mx-auto flex gap-10 justify-center items-center flex-col container">
+   <div class="mx-auto flex gap-10 justify-center text-center items-center flex-col container">
                 <h1 class="text-4xl font-medium text-slate-700">{{ title }}</h1>
                 <div class="grid grid-cols-1 gap-3 xl:grid-cols-3 w-full" >
                     <div v-for="video in videos"  class="flex flex-col text-center">
                         <div class=" aspect-w-15 aspect-h-9">
                             <iframe :src="video.link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                        </div>
-                        <p class=" text-lg font-semibold">{{ video.title }}</p>
+                        <p class=" text-lg mt-1 font-semibold">{{ video.title }}</p>
                     </div>
                 </div>
                 <!-- <button class="btn">View all  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">

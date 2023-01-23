@@ -26,17 +26,17 @@ import {staffData, CustomerData, blogData} from "../static/data/staffData"
             <div class="about-hero">
                 <Banner :isLight="true" />
                 <div class=" flex container mx-auto">
-                        <div class="flex flex-col items-center py-28 lg:flex-row mt-4">
-                            <div class="flex flex-col gap-5 h-full">
+                        <div class="flex flex-col items-center text-center md:text-left py-28 lg:flex-row mt-4">
+                            <div class="flex flex-col mx-5 md:mx-auto gap-5 h-full">
                                 <h1 class=" text-5xl font-semibold text-white">About Truflation</h1>
                                 <p class=" max-w-[420px] text-lg text-white">Solving the measurement problems of the past, so you can grow the future</p>
                             </div>
                         </div>
                     </div>
             </div>
-            <div class=" flex flex-col gap-8 container mx-auto mt-16">
+            <div class=" flex flex-col gap-8 container text-center md:text-left md:mx-auto mt-16">
              <h1 class=" text-3xl font-semibold">Verifiable Truth is in Short Supply</h1>
-             <div class="flex flex-row flex-wrap md:flex-nowrap gap-16">
+             <div class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16">
                 <p class="max-w-xl text-lg" >Verifiable truth sets are in short supply at a time governance and transparency are in high demand. As the world rebalances, trustworthy navigation beacons for confident decision-making will be at a premium.
                 However, traditional inflation and financial tracking measures are a barrier to the process. They rely on methodologies established decades ago, using data sets no longer representative of lived realities. They tend to be narrow in scope and only update monthly.</p>
                 <p class="max-w-xl text-lg">
@@ -70,7 +70,7 @@ import {staffData, CustomerData, blogData} from "../static/data/staffData"
                     </div>
                 </div>
             </div> 
-            <div class="mx-auto flex justify-center items-center flex-col container mt-32">
+            <div class="mx-auto flex text-center justify-center items-center flex-col container mt-32">
                 <h1 class=" text-5xl">Meet the team behind Truflation</h1>
                 <p class=" text-lg mt-3 mb-16" >Decades of experience in blockchain, measurement, and finance</p>
                 <div class="">
@@ -110,7 +110,7 @@ import {staffData, CustomerData, blogData} from "../static/data/staffData"
             </div>
             <div class="mx-auto flex gap-4 justify-center items-center flex-col container my-32">
                 <h1 class="text-5xl font-medium">Our Customers</h1>
-                <div class="grid grid-cols-2 mt-12  lg:grid-cols-3 w-full gap-5" >
+                <div class="grid grid-cols-1  mt-12 px-5  md:grid-cols-3 w-full gap-5" >
                     <div v-for="customer in CustomerData.list" class="flex max-w-sm items-center  bg-[#002152] flex-col text-center rounded-lg">
                         <div class="flex py-11 bg-white/10 w-full flex-row text-white text-xl gap-2 items-center justify-center">
                             <div class=" h-5 w-5 text-2xl rounded-full bg-[#D9D9D9]"></div>{{ customer.name }}</div>
