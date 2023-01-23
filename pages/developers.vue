@@ -24,21 +24,21 @@ const videos: VideoLinks[] = [
                     
                 <div class=" bg-gradient-to-t from-white to-[#4168F133]/20 ">
                 <Banner/>
-                <div class="container items-center justify-center my-36 mx-auto gap-24 flex flex-row flex-wrap">
+                <div class="container items-center text-center justify-center my-20 md:my-36 mx-auto gap-24 flex flex-row flex-wrap">
                     <div class="flex flex-col flex-wrap max-w-3xl">
                         <h1 class="text-4xl font-semibold">Welcome to the Truflation community</h1>
-                        <ul class="flex flex-col gap-3 mt-10">
-                            <li class="flex flex-row gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ul class="flex flex-col mx-5 md:mx-0 items-center flex-wrap md:items-start md:max-w-max gap-3 mt-10">
+                            <li class="flex flex-row flex-wrap justify-center gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9.9999 19.6004C15.3018 19.6004 19.5999 15.3023 19.5999 10.0004C19.5999 4.69846 15.3018 0.400391 9.9999 0.400391C4.69797 0.400391 0.399902 4.69846 0.399902 10.0004C0.399902 15.3023 4.69797 19.6004 9.9999 19.6004ZM14.4484 8.44892C14.9171 7.98029 14.9171 7.22049 14.4484 6.75186C13.9798 6.28323 13.22 6.28323 12.7514 6.75186L8.7999 10.7033L7.24843 9.15186C6.7798 8.68323 6.02 8.68323 5.55137 9.15186C5.08275 9.62049 5.08275 10.3803 5.55137 10.8489L7.95137 13.2489C8.42 13.7175 9.1798 13.7175 9.64843 13.2489L14.4484 8.44892Z" fill="#0D58C6"/>
                             </svg>
                             Verifiable on-chain data sets built for easy integrations</li>
-                            <li class="flex flex-row gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <li class="flex flex-row flex-wrap justify-center gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9.9999 19.6004C15.3018 19.6004 19.5999 15.3023 19.5999 10.0004C19.5999 4.69846 15.3018 0.400391 9.9999 0.400391C4.69797 0.400391 0.399902 4.69846 0.399902 10.0004C0.399902 15.3023 4.69797 19.6004 9.9999 19.6004ZM14.4484 8.44892C14.9171 7.98029 14.9171 7.22049 14.4484 6.75186C13.9798 6.28323 13.22 6.28323 12.7514 6.75186L8.7999 10.7033L7.24843 9.15186C6.7798 8.68323 6.02 8.68323 5.55137 9.15186C5.08275 9.62049 5.08275 10.3803 5.55137 10.8489L7.95137 13.2489C8.42 13.7175 9.1798 13.7175 9.64843 13.2489L14.4484 8.44892Z" fill="#0D58C6"/>
                             </svg>Use it the way you need it – standalone, full integrated, on-chain, APIs</li>
-                            <li class="flex flex-row gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <li class="flex flex-row flex-wrap justify-center gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9.9999 19.6004C15.3018 19.6004 19.5999 15.3023 19.5999 10.0004C19.5999 4.69846 15.3018 0.400391 9.9999 0.400391C4.69797 0.400391 0.399902 4.69846 0.399902 10.0004C0.399902 15.3023 4.69797 19.6004 9.9999 19.6004ZM14.4484 8.44892C14.9171 7.98029 14.9171 7.22049 14.4484 6.75186C13.9798 6.28323 13.22 6.28323 12.7514 6.75186L8.7999 10.7033L7.24843 9.15186C6.7798 8.68323 6.02 8.68323 5.55137 9.15186C5.08275 9.62049 5.08275 10.3803 5.55137 10.8489L7.95137 13.2489C8.42 13.7175 9.1798 13.7175 9.64843 13.2489L14.4484 8.44892Z" fill="#0D58C6"/>
                             </svg>Smart contracts for secure engagement model</li>
-                            <li class="flex flex-row gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <li class="flex flex-col md:flex-row flex-wrap justify-center gap-3 items-center text-lg"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9.9999 19.6004C15.3018 19.6004 19.5999 15.3023 19.5999 10.0004C19.5999 4.69846 15.3018 0.400391 9.9999 0.400391C4.69797 0.400391 0.399902 4.69846 0.399902 10.0004C0.399902 15.3023 4.69797 19.6004 9.9999 19.6004ZM14.4484 8.44892C14.9171 7.98029 14.9171 7.22049 14.4484 6.75186C13.9798 6.28323 13.22 6.28323 12.7514 6.75186L8.7999 10.7033L7.24843 9.15186C6.7798 8.68323 6.02 8.68323 5.55137 9.15186C5.08275 9.62049 5.08275 10.3803 5.55137 10.8489L7.95137 13.2489C8.42 13.7175 9.1798 13.7175 9.64843 13.2489L14.4484 8.44892Z" fill="#0D58C6"/>
                             </svg>Low cost</li>
                         </ul>
@@ -82,8 +82,8 @@ const videos: VideoLinks[] = [
                     </ul>
                 </div>
             </div>
-                <div class="container mx-auto gap-64 items-center justify-center gap-8 flex-wrap flex flex-row mt-20">
-                    <div class="flex flex-col gap-6">
+                <div class="container mx-auto gap-10 md:gap-64 items-center justify-center gap-8 flex-wrap flex flex-row mt-20">
+                    <div class="flex flex-col gap-6 md:text-left  text-center mx-5 md:mx-0">
                         <h1 class=" font-semibold text-3xl">Want to dive straight into coding?</h1>
                         <p class=" max-w-md">Your two essential resources are our Discord, for getting live support, and also our Github quickstart for all the info you will need to get coding.</p>
                     </div>
@@ -115,8 +115,8 @@ const videos: VideoLinks[] = [
                 <div class="flex flex-col mt-28 gap-24 mb-20">
                 <BlogLinks :title="`Need Some More Information First`" :videos="videos"/>
                 <Investors/>
-                </div>
                 <NewsLetter />
+                </div>
                 <FooterComp />  
         
 </template>
