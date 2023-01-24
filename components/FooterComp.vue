@@ -3,7 +3,7 @@
 </script>
 
 <template>
-       <div class="flex flex-col bg-[#181818] py-8 px-16 mt-10 gap-5 text-light items-center">
+       <div class="flex flex-col bg-[#181818] py-8 px-16 gap-5 text-light items-center">
             <div class="grid  grid-cols-1 sm:grid-cols-4 py-8 px-10 gap-5 w-full">
                 <div class="flex flex-col">
                     <a href="/"><img src="~/assets/img/logo-light.svg" alt=""></a>

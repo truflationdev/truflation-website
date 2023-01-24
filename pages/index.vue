@@ -38,15 +38,15 @@ fetchState()
     <div class="main-background ">
             <Banner />
             <div class=" flex container mx-auto">
-                        <div class="flex flex-col w-full relative bg-truflation-100 items-center mt-10 py-20 pl-10 lg:flex-row">
+                        <div class="flex text-center md:text-left flex-col w-full relative bg-truflation-100 items-center mt-10 py-20 md:pl-10 lg:flex-row">
                             <div class="flex flex-col gap-5 h-full">
-                                <div class="flex flex-col">
+                                <div class="flex flex-col items-center md:items-start">
                             <h1 class="text-[40px] font-semibold">
                             Unbelievable Times Call for Believable Data 
                             </h1>
                             <p class="mt-4 max-w-md">Truflation offers independent and censorship-resistant inflation calculations based on census level price information.
                             </p>
-                            <button class=" mt-4 btn"><a class="flex flex-row items-center gap-2" href="/solutions/marketplace">Visit Marketplace <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button class=" mt-4 btn"><a class="flex flex-row items-center gap-2" href="https://marketplace.truflation.com/">Visit Marketplace <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.23441 0.634217C7.54683 0.321797 8.05336 0.321797 8.36578 0.634217L13.1658 5.43422C13.4782 5.74664 13.4782 6.25317 13.1658 6.56559L8.36578 11.3656C8.05336 11.678 7.54683 11.678 7.23441 11.3656C6.92199 11.0532 6.92199 10.5466 7.23441 10.2342L10.6687 6.7999L1.4001 6.7999C0.958271 6.7999 0.600098 6.44173 0.600098 5.9999C0.600098 5.55807 0.958271 5.1999 1.4001 5.1999H10.6687L7.23441 1.76559C6.92199 1.45317 6.92199 0.946636 7.23441 0.634217Z" fill="white"/>
                             </svg>
                             </a></button>
@@ -55,33 +55,39 @@ fetchState()
                             <img class="absolute z-0 bottom-0 -right-0 invisible md:visible" src="~/assets/img/globe.svg" alt="">
                         </div>
                     </div>
-            <div class="container mx-auto text-center md:text-base flex flex-col gap-5 mt-12">
-                <div class="flex flex-row items-center flex-wrap mx-2 md:mx-auto mt-10 gap-3">
+            <div class="container mx-auto text-left md:text-center md:text-base flex flex-col gap-5 md:mt-12">
+                <div class="flex flex-col md:flex-row items-center mx-2 md:mx-auto mt-3 gap-3">
                     <h2 class="text-4xl font-semibold">
                     Today's CPI Data by
                     </h2>
                     <img src="~/assets/img/logo.svg" alt="">
-                    <img src="~/assets/img/usa-flag.svg" alt="">
+                    <div class="flex flex-row">
+                    <img v-if="selectedCountry === SelectedCountry.USA" src="~/assets/img/usa-flag.svg" alt="">
+                    <img v-if="selectedCountry === SelectedCountry.GBR" src="~/assets/img/UK-icon.svg" alt="">
                     <select v-on:change="fetchState()" v-model="selectedCountry" class="p-2" >
                         <option  :value="SelectedCountry.USA"> USA</option>
                         <option  :value="SelectedCountry.GBR">GBR</option>
                     </select>
+                    </div>
                     <!-- <p class="ml-auto font-medium">Highlights</p>
                     <label class="inline-flex relative items-center cursor-pointer">
                     <input type="checkbox" value="" class="sr-only peer">
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
                 </div>
-                <P class=" text-lg" >The US Inflation Rate by Truflation is <span class=" font-semibold">{{ main.keyMetrics.Inflation }}%</span>, <span class="text-green-600 font-semibold">{{main.getInflationDayChange()}}%</span> change over the last day. <a class=" underline text-black/60" href="/methodology">Read Methodology</a> </P>
+                <P class="mx-5 text-center text-lg" >The {{ selectedCountry }} Inflation Rate by Truflation is <span class=" text-2xl font-semibold">{{ main.keyMetrics.Inflation }}%</span>, <span class="text-green-600 font-semibold">{{main.getInflationDayChange()}}%</span> change over the last day. <a class=" underline text-black/60" href="/methodology">Read Methodology</a> </P>
             </div>
             <div class="flex flex-col mt-7">
             <DataChart :locationOptions="selectedCategory"  />
             </div>
             <div class="flex flex-col text-center md:text-start container md:mx-auto mt-12 gap-3">
                 <h1 class="text-2xl font-semibold">Categories</h1>
-                <ul class="grid grid-cols-1 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600">
+                <ul class="hidden md:grid grid-cols-1 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600">
                     <li class=" border-b-2 border-gray-100"  v-for="cat in CategoryType" ><button :id='cat' @click="main.updateCategory(cat)" :class="{'category-selected': selectedCategory === cat}">{{ cat }}</button></li>
                 </ul>
+                <select v-on:change="main.updateCategory(selectedCategory)"  v-model="selectedCategory" class="md:hidden p-4 rounded text-truflation-500 font-semibold text-center mx-5 shadow-xl" >
+                        <option  v-for="cat in CategoryType" :value="cat">{{cat}}</option>
+                    </select>
             </div>
             <div class="flex flex-col mt-8">
             <Category  :category="selectedCategory" />

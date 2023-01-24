@@ -19,7 +19,7 @@
             <li><a href="/">Truflation Dashboard</a></li>
             <li><a href="https://marketplace.truflation.com/">Marketplace</a></li>
             <li><a href="/solutions/indexes">Indexes</a></li>
-            <li><a href="solutions/widget">Widget</a></li>
+            <li><a href="/solutions/widget">Widget</a></li>
           </ul>
         </li>
         <li tabindex="0">
