@@ -87,11 +87,11 @@ const { selectedCategory } = storeToRefs(main);
           class="text-[24px] px-4 p-2 rounded font-semibold"
           :class="{
             'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo >
-              0,
+              main?.getByCategoryType(selectedCategory)?.categoryRate
+                .monthAgo >= 0,
             'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo <
-              0,
+              main?.getByCategoryType(selectedCategory)?.categoryRate
+                .monthAgo <= 0,
           }"
         >
           {{
@@ -108,10 +108,10 @@ const { selectedCategory } = storeToRefs(main);
           :class="{
             'bg-red-100 text-red-700':
               main?.getByCategoryType(selectedCategory)?.categoryRate
-                .yesterday > 0,
+                .yesterday >= 0,
             'bg-[#E6F4EE] text-[#005E46]':
               main?.getByCategoryType(selectedCategory)?.categoryRate
-                .yesterday < 0,
+                .yesterday <= 0,
           }"
         >
           {{
@@ -127,10 +127,10 @@ const { selectedCategory } = storeToRefs(main);
           class="text-[24px] p-2 px-4 rounded font-semibold"
           :class="{
             'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >
+              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >=
               0,
             'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <
+              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
               0,
           }"
         >
