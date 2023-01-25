@@ -9,7 +9,7 @@ const { selectedCategory } = storeToRefs(main);
 </script>
 
 <template>
-  <div class="absolute">
+  <div class="absolute font">
     <p class="">
       {{ main?.getByCategoryType(selectedCategory)?.relativeImportance }}%
     </p>
