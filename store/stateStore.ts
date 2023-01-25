@@ -309,8 +309,9 @@ export const useDataStore = defineStore({
       this.keyMetrics.Inflation = state.w.yoyCur[1].toFixed(2);
       const equation =
         ((state.w.yoyCur[1] - Object.values(state.n)[0][0]) /
-          state.w.yoyCur[1]) *
+          Object.values(state.n)[0][0]) *
         100;
+      console.log(equation);
       this.keyMetrics.change = equation.toFixed(1);
 
       Object.entries(state.n).forEach((entry) => {
@@ -495,7 +496,7 @@ export const useDataStore = defineStore({
       const low = state.keyMetrics.low;
       const high = state.keyMetrics.high;
       const spread = high - low;
-      const number = (high - state.keyMetrics.Inflation) / spread;
+      const number = (high - state.keyMetrics.Inflation) / high;
       return number * 100;
     },
 

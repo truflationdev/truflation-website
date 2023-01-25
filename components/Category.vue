@@ -76,10 +76,10 @@ const { selectedCategory } = storeToRefs(main);
       </div>
     </div>
     <div
-      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:gap-20 lg:flex-nowrap mx-auto w-full"
+      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:justify-between lg:flex-nowrap mx-auto w-full"
     >
       <div
-        class="flex gap-1 mx-auto flex-col py-4 md:px-8 align-middle items-center rounded"
+        class="flex gap-1 flex-col py-4 md:px-8 align-middle items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Month</div>
         <h2
@@ -101,6 +101,24 @@ const { selectedCategory } = storeToRefs(main);
       <div
         class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
       >
+        <div class="text-sm md:text-md text-black/60">Vs Week Ago</div>
+        <h2
+          class="text-[24px] p-2 px-4 rounded font-semibold"
+          :class="{
+            'bg-red-100 text-red-700':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >=
+              0,
+            'bg-[#E6F4EE] text-[#005E46]':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
+              0,
+          }"
+        >
+          {{ main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo }}%
+        </h2>
+      </div>
+      <div
+        class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
+      >
         <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
         <h2
           class="text-[24px] px-4 p-2 rounded font-semibold"
@@ -116,24 +134,6 @@ const { selectedCategory } = storeToRefs(main);
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday
           }}%
-        </h2>
-      </div>
-      <div
-        class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
-      >
-        <div class="text-sm md:text-md text-black/60">Vs Week Ago</div>
-        <h2
-          class="text-[24px] p-2 px-4 rounded font-semibold"
-          :class="{
-            'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >=
-              0,
-            'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
-              0,
-          }"
-        >
-          {{ main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo }}%
         </h2>
       </div>
 
