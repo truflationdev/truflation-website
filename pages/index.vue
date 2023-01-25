@@ -101,10 +101,10 @@ fetchState();
           <select
             v-on:change="fetchState()"
             v-model="selectedCountry"
-            class="p-2"
+            class="p-3 text-center shadow-lg ml-4"
           >
             <option :value="SelectedCountry.USA">USA</option>
-            <option :value="SelectedCountry.GBR">GBR</option>
+            <option :value="SelectedCountry.GBR">UK</option>
           </select>
         </div>
         <!-- <p class="ml-auto font-medium">Highlights</p>

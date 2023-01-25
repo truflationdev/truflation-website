@@ -26,7 +26,7 @@ export const categoryData: string[] = [
 
 export enum SelectedCountry {
   USA = "USA",
-  GBR = "GBR",
+  GBR = "UK",
 }
 
 export const useDataStore = defineStore({

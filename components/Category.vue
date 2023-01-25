@@ -83,7 +83,17 @@ const { selectedCategory } = storeToRefs(main);
         class="flex gap-1 mx-auto flex-col py-4 md:px-8 align-middle items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Month</div>
-        <h2 class="text-[24px] font-semibold text-gray-600">
+        <h2
+          class="text-[24px] px-4 p-2 rounded font-semibold"
+          :class="{
+            'bg-red-100 text-red-700':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo >
+              0,
+            'bg-[#E6F4EE] text-[#005E46]':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo <
+              0,
+          }"
+        >
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo
           }}%
@@ -93,7 +103,17 @@ const { selectedCategory } = storeToRefs(main);
         class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
-        <h2 class="text-[24px] font-semibold text-gray-600">
+        <h2
+          class="text-[24px] px-4 p-2 rounded bg-gray-100 font-semibold"
+          :class="{
+            'bg-red-100 text-red-700':
+              main?.getByCategoryType(selectedCategory)?.categoryRate
+                .yesterday > 0,
+            'bg-[#E6F4EE] text-[#005E46]':
+              main?.getByCategoryType(selectedCategory)?.categoryRate
+                .yesterday < 0,
+          }"
+        >
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday
           }}%
@@ -103,7 +123,17 @@ const { selectedCategory } = storeToRefs(main);
         class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Week Ago</div>
-        <h2 class="text-[24px] font-semibold text-gray-600">
+        <h2
+          class="text-[24px] p-2 px-4 rounded font-semibold"
+          :class="{
+            'bg-red-100 text-red-700':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >
+              0,
+            'bg-[#E6F4EE] text-[#005E46]':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <
+              0,
+          }"
+        >
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo }}%
         </h2>
       </div>
