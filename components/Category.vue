@@ -12,9 +12,9 @@ const { selectedCategory } = storeToRefs(main);
     <div
       class="flex text-center mx-auto md:text-left flex-row mt-5 gap-10 md:gap-[152px] flex-wrap lg:flex-nowrap items-center"
     >
-      <div class="gap-3 justify-center flex flex-col">
+      <div class="gap-3 flex flex-col">
         <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
-        <p class="mx-5 max-w-md">
+        <p class="max-w-md mx-5 sm:mx-0">
           {{ main?.getByCategoryType(selectedCategory)?.about }}
         </p>
       </div>
@@ -29,8 +29,7 @@ const { selectedCategory } = storeToRefs(main);
               alt=""
             />
             <p class="text-sm">
-              <span class="text-base text-truflation-500"
-                >{{ selectedCategory }} Data Sources</span
+              <span class="text-base text-truflation-500"> Data Sources</span
               ><br />View the transparent data sources
             </p>
           </a>

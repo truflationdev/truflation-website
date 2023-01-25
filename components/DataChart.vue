@@ -8,6 +8,7 @@ import {
   LineElement,
   Title,
   Tooltip,
+  Filler,
   Legend,
 } from "chart.js";
 import { Line } from "vue-chartjs";
@@ -28,6 +29,7 @@ ChartJS.register(
   PointElement,
   LineElement,
   Title,
+  Filler,
   Tooltip,
   TimeScale,
   Legend
@@ -147,7 +149,7 @@ ChartJS.register(
       class="hidden sm:flex flex-col w-full md:w-2/3 ml-3 bg-slate-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
-        <h2 class="font-semibold">Today's Truflation Rate TimeFrame</h2>
+        <h2 class="font-semibold">Today's Truflation Rate</h2>
         <ul
           class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center"
         >
