@@ -80,7 +80,7 @@ export interface AboutData {
 }
 
 export interface CategoryChanges {
-  // Yoy: number,
+  quarter: number;
   yesterday: number;
   weekAgo: number;
   monthAgo: number;

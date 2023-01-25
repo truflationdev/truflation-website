@@ -76,8 +76,26 @@ const { selectedCategory } = storeToRefs(main);
       </div>
     </div>
     <div
-      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:gap-10 lg:flex-nowrap mx-auto"
+      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:gap-10 lg:flex-nowrap mx-auto w-full"
     >
+      <div
+        class="flex gap-1 flex-col py-4 md:px-8 align-middle items-center rounded"
+      >
+        <div class="text-sm md:text-md text-black/60">vs Last Quarter</div>
+        <h2
+          class="text-[24px] px-4 p-2 rounded font-semibold"
+          :class="{
+            'bg-red-100 text-red-700':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.quarter >=
+              0,
+            'bg-[#E6F4EE] text-[#005E46]':
+              main?.getByCategoryType(selectedCategory)?.categoryRate.quarter <=
+              0,
+          }"
+        >
+          {{ main?.getByCategoryType(selectedCategory)?.categoryRate.quarter }}%
+        </h2>
+      </div>
       <div
         class="flex gap-1 flex-col py-4 md:px-8 align-middle items-center rounded"
       >

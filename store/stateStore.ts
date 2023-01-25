@@ -347,6 +347,7 @@ export const useDataStore = defineStore({
         };
 
         const rateData: CategoryChanges = {
+          quarter: state.d.lastQuarter[index],
           weekAgo: state.d.lastWeek[index],
           monthAgo: state.d.lastMonth[index],
           yesterday: state.d.yesterday[index],
