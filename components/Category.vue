@@ -104,7 +104,7 @@ const { selectedCategory } = storeToRefs(main);
       >
         <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
         <h2
-          class="text-[24px] px-4 p-2 rounded bg-gray-100 font-semibold"
+          class="text-[24px] px-4 p-2 rounded font-semibold"
           :class="{
             'bg-red-100 text-red-700':
               main?.getByCategoryType(selectedCategory)?.categoryRate
