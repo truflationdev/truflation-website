@@ -76,7 +76,7 @@ const { selectedCategory } = storeToRefs(main);
       </div>
     </div>
     <div
-      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:justify-between lg:flex-nowrap mx-auto w-full"
+      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:gap-10 lg:flex-nowrap mx-auto"
     >
       <div
         class="flex gap-1 flex-col py-4 md:px-8 align-middle items-center rounded"
