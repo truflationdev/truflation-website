@@ -54,7 +54,7 @@ export const useDataStore = defineStore({
       MainData: {
         datasets: [
           {
-            label: "Inflation",
+            label: "Truflation Rate",
             borderColor: "#A36FE4",
             fill: true,
             backgroundColor: "#f87979",
