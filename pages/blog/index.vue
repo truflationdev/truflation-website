@@ -1,38 +1,10 @@
 <script setup lang="ts">
-import { devData } from "../static/data/staffData";
+import { devData } from "../../static/data/staffData";
+import { getPosts } from "../../server/api/ghostPosts";
 
-const blogPost = [
-  {
-    title:
-      "Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing scelerisque nulla.",
-    date: "Non 14 2022",
-  },
-  {
-    title:
-      "Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing scelerisque nulla.",
-    date: "Non 14 2022",
-  },
-  {
-    title:
-      "Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing scelerisque nulla.",
-    date: "Non 14 2022",
-  },
-  {
-    title:
-      "Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing scelerisque nulla.",
-    date: "Non 14 2022",
-  },
-  {
-    title:
-      "Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing scelerisque nulla.",
-    date: "Non 14 2022",
-  },
-  {
-    title:
-      "Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing scelerisque nulla.",
-    date: "Non 14 2022",
-  },
-];
+const posts = await getPosts();
+const latestPosts = posts.slice(1, 7);
+console.log(posts);
 </script>
 
 <template>
@@ -48,32 +20,22 @@ const blogPost = [
     <div
       class="container mx-auto flex-wrap flex flex-row justify-evenly gap-8 items-center my-10 lg:my-20"
     >
-      <img src="../assets/img/blog-hero.svg" alt="" />
+      <img class="max-w-[600px]" :src="posts[0].feature_image" alt="" />
       <div class="flex flex-col max-w-xl">
         <h1 class="text-3xl">
-          Lorem ipsum dolor sit amet consectetur. Ac donec adipiscing
-          scelerisque nulla.
+          {{ posts[0].title }}
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Arcu gravida molestie
-          curabitur purus id blandit sapien.
+          {{ posts[0].excerpt }}
         </p>
       </div>
     </div>
     <div
       class="container mx-auto flex-wrap flex flex-row justify-evenly gap-8 lg:my-20"
     >
-      <div class="flex flex-col md:w-fit px-10 h-fit py-5 bg-gray-100 gap-5">
-        <h1 class="text-2xl font-semibold">Categories</h1>
-        <ul class="flex flex-col gap-3">
-          <li>All news</li>
-          <li>Inflation</li>
-          <li>Policy</li>
-          <li>Housing</li>
-          <li>Indexes</li>
-        </ul>
-        <div class="flex flex-col gap-4">
-          <div
+      <!-- <div class="flex flex-col md:w-fit px-10 h-fit py-5 gap-5"> -->
+      <!-- <div class="flex flex-col gap-4"> -->
+      <!-- <div
             class="flex flex-row w-full rounded pl-6 bg-slate-50 justify-center items-center gap-4"
           >
             <svg
@@ -91,7 +53,7 @@ const blogPost = [
               />
             </svg>
             <h1 class="text-2xl mr-6 hover:text-blue-700">
-              <a href="https://github.com/truflation">Github</a>
+              <a target="_blank" href="https://github.com/truflation">Github</a>
             </h1>
             <div class="opacity-20">
               <svg
@@ -109,8 +71,8 @@ const blogPost = [
                 />
               </svg>
             </div>
-          </div>
-          <div
+          </div> -->
+      <!-- <div
             class="flex flex-row w-full rounded pl-6 bg-slate-50 justify-center items-center gap-4"
           >
             <svg
@@ -125,8 +87,10 @@ const blogPost = [
                 fill="#5865F2"
               />
             </svg>
-            <h1 class="text-2xl mr-6">
-              <a href="https://discord.com/invite/5AMCBYxfW4">Discord</a>
+            <h1 class="text-2xl mr-6 hover:text-blue-700">
+              <a target="_blank" href="https://discord.com/invite/5AMCBYxfW4"
+                >Discord</a
+              >
             </h1>
             <div class="opacity-20">
               <svg
@@ -142,20 +106,24 @@ const blogPost = [
                 />
               </svg>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col w-2/3 gap-5">
+          </div> -->
+      <!-- </div> -->
+      <!-- </div> -->
+      <div class="flex flex-col gap-5">
         <ul class="grid w-full grid-cols-1 md: grid-cols-2 gap-8">
-          <li v-for="items in blogPost">
-            <div
-              class="w-full h-32 bg-gradient-to-tr from-white to-[#0037ffad]"
-            ></div>
-            <p class="text-lg font-semibold">{{ items.title }}</p>
-            <p class="text-sm">Read Story •{{ items.date }}</p>
+          <li v-for="items in latestPosts">
+            <a :href="`/blog/${items.slug}`">
+              <div class="flex w-full">
+                <img class="w-full h-full" :src="items.feature_image" alt="" />
+              </div>
+              <p class="text-xl font-semibold">{{ items.title }}</p>
+              <p class="text-sm">
+                Read Story • {{ items.created_at.slice(0, 10) }}
+              </p>
+            </a>
           </li>
         </ul>
-        <button class="btn">
+        <!-- <button class="btn">
           View more articles
           <svg
             width="13"
@@ -171,11 +139,14 @@ const blogPost = [
               fill="white"
             />
           </svg>
-        </button>
+        </button> -->
       </div>
     </div>
+    <div class="flex">
+      <NewsLetter />
+    </div>
   </div>
-  <NewsLetter />
+
   <FooterComp />
 </template>
 

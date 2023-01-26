@@ -77,7 +77,12 @@ const videos: VideoLinks[] = [
         We conducted a detailed examination of the challenges arising from
         imperfect inflation metrics and came up with a new perspective.
       </p>
-      <a href="" class="text-truflation-500">Whitepaper</a>
+      <a
+        href="https://whitepaper.truflation.com/"
+        target="_blank"
+        class="text-truflation-500"
+        >Whitepaper</a
+      >
     </div>
     <div class="flex flex-col p-10 bg-truflation-100">
       <h1 class="text-2xl">Why Truflation?</h1>
@@ -85,10 +90,10 @@ const videos: VideoLinks[] = [
         Our daily indexes highlight how decision-making is undermined by
         inflation measures of the past. Daily data beats monthly.
       </p>
-      <a href="" class="text-truflation-500">Go to Dashboard</a>
+      <a href="/" class="text-truflation-500">Go to Dashboard</a>
     </div>
   </div>
-  <div
+  <!-- <div
     class="container mx-auto flex flex-col mt-12 p-10 gap-4 bg-truflation-100"
   >
     <h1 class="text-2xl">Try risk free</h1>
@@ -106,7 +111,7 @@ const videos: VideoLinks[] = [
           class="text-xl text-truflation-500 flex flex-row gap-2 items-center"
         >
           <div class="h-5 w-5 rounded-full bg-truflation-200"></div>
-          Sign up for the free dashboard</a
+          Checkout our dashboard</a
         >
       </div>
       <div class="flex flex-col gap-4 bg-truflation-100">
@@ -126,7 +131,7 @@ const videos: VideoLinks[] = [
         >
       </div>
     </div>
-  </div>
+  </div> -->
   <div
     class="mx-auto flex text-center justify-center items-center flex-col container mt-32"
   >
@@ -161,11 +166,21 @@ const videos: VideoLinks[] = [
           <p class="mt-4 text-xl font-semibold">Joseph Wang</p>
           <p class="mt-1">Architecture Lead</p>
         </li>
-        <li class="flex flex-col items-center gap-1">
+        <li class="flex flex-col items-center h-72 gap-1">
           <img src="../assets/img/staff/Ivan-Jelic.png" alt="" />
           <p class="mt-4 text-xl font-semibold">Ivan Jelic</p>
           <p class="mt-1">Head of Data</p>
         </li>
+        <li class="flex flex-col items-center gap-1">
+          <img src="../assets/img/staff/jarryd.png" alt="" />
+          <p class="mt-4 text-xl font-semibold">Jarryd Pretorius</p>
+          <p class="mt-1">Frontend Developer</p>
+        </li>
+        <!-- <li class="flex flex-col items-center gap-1">
+          <img src="../assets/img/staff/Ivan-Jelic.png" alt="" />
+          <p class="mt-4 text-xl font-semibold">David Ring</p>
+          <p class="mt-1">Head of Data</p>
+        </li> -->
       </ul>
     </div>
   </div>

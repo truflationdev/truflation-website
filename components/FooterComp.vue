@@ -113,31 +113,110 @@
       <div class="flex flex-col lg:ml-auto">
         <p class="text-white font-semibold mb-4">Use Truflation</p>
         <ul class="flex text-white/60 flex-col gap-3">
-          <li><a href="/dashboard">Truflation Dapp</a></li>
-          <li><a href="/solutions/marketplace">Marketplace</a></li>
-          <li><a href="/solutions/widget">Widget</a></li>
           <li><a href="/">Dashboard</a></li>
+          <li>
+            <a
+              class="flex flex-row items-center gap-1"
+              href="https://whitepaper.truflation.com/"
+              target="_blank"
+              >Marketplace
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                  stroke="rgb(255 255 255 / 0.6)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </li>
+          <li><a href="/solutions/widget">Widget</a></li>
         </ul>
       </div>
       <div class="flex flex-col lg:ml-auto">
         <p class="text-white font-semibold mb-4">Developers</p>
         <ul class="flex text-white/60 flex-col gap-3">
-          <li><a href="https://whitepaper.truflation.com/">Get Started</a></li>
-          <li><a href="/developers">Developer Guide</a></li>
-          <li><a href="https://github.com/truflation">Github</a></li>
-          <li><a href="https://whitepaper.truflation.com/">Whitepaper</a></li>
-          <!-- <li><a href="">Forum</a></li> -->
+          <li><a href="/developers">Developers Center</a></li>
+          <li>
+            <a
+              href="https://whitepaper.truflation.com/dev-guides/quick-start"
+              class="flex flex-row items-center gap-1"
+              target="_blank"
+              >Get Started
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                  stroke="rgb(255 255 255 / 0.6)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://github.com/truflation"
+              class="flex flex-row items-center gap-1"
+              >Github<svg
+                width="13"
+                height="13"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                  stroke="rgb(255 255 255 / 0.6)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://whitepaper.truflation.com/"
+              target="_blank"
+              class="flex flex-row items-center gap-1"
+              >Whitepaper<svg
+                width="13"
+                height="13"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                  stroke="rgb(255 255 255 / 0.6)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="flex flex-col lg:ml-auto">
-        <p class="text-white font-semibold mb-4">Resources</p>
+        <p class="text-white font-semibold mb-4">Company</p>
         <ul class="flex text-white/60 flex-col gap-3">
-          <li><a href=""></a></li>
+          <li><a href="/methodology">Methodology</a></li>
+          <li><a href="/resources">Resources</a></li>
           <li><a href="/about">About Us</a></li>
-          <!-- <li><a href="">Media Kit</a></li> -->
-          <!-- <li><a href="">Careers</a></li> -->
-          <!-- <li><a href="">Terms of Use</a></li> -->
           <li><a href="/contact">Contact us</a></li>
+          <li><a href="/blog">Blog</a></li>
         </ul>
       </div>
     </div>

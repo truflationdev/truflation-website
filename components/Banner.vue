@@ -49,7 +49,6 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
               <li>
                 <a href="https://marketplace.truflation.com/">Marketplace</a>
               </li>
-              <li><a href="/solutions/indexes">Indexes</a></li>
               <li><a href="/solutions/widget">Widget</a></li>
             </ul>
           </li>
@@ -72,7 +71,12 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
               <li class="font-semibold">
                 <a href="/developers">Developers</a>
               </li>
-              <li><a>Get Started Guide</a></li>
+              <li>
+                <a
+                  href="https://whitepaper.truflation.com/dev-guides/quick-start"
+                  >Get Started Guide</a
+                >
+              </li>
               <li><a href="/methodology">Methodology</a></li>
               <li><a href="/developers">Join Community</a></li>
             </ul>
@@ -95,7 +99,9 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             <ul class="text-left text-gray-800 bg-white">
               <li><a href="/about">About Us</a></li>
               <li>
-                <a href="https://whitepaper.truflation.com/">Whitepapers</a>
+                <a href="https://whitepaper.truflation.com/" target="_blank"
+                  >Whitepapers</a
+                >
               </li>
               <li><a href="/resources">News Coverage</a></li>
               <li>
@@ -172,14 +178,30 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
                     />
                   </svg>
                   <div>
-                    <p class="font-semibold">Marketplace</p>
+                    <p class="font-semibold flex flex-row items-center gap-1">
+                      Marketplace
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                          stroke="#0A3170"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </p>
                     <p class="text-gray-700 font-light">
                       Explore Community Powered Data
                     </p>
                   </div>
                 </div>
               </a>
-              <div class="flex flex-row items-center gap-2">
+              <!-- <div class="flex flex-row items-center gap-2">
                 <svg
                   width="26"
                   height="16"
@@ -205,7 +227,7 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
                     Coming Soon!
                   </p>
                 </div>
-              </div>
+              </div> -->
               <a href="/solutions/widget">
                 <div class="flex flex-row items-center gap-2">
                   <svg
@@ -251,18 +273,47 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
           </a>
           <ul class="p-4 text-left text-gray-800 bg-white">
             <li class="font-semibold text">
-              <a href="/developers">Developers</a>
+              <a href="/developers">Developers Center</a>
             </li>
             <li class="font-light text">
-              <a target="”_blank”" href="https://whitepaper.truflation.com/"
-                >Get Started Guide</a
-              >
+              <a
+                target="”_blank”"
+                href="https://whitepaper.truflation.com/dev-guides/quick-start"
+                >Get Started Guide
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                    stroke="#0A3170"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
             </li>
-            <li class="font-light"><a href="/methodology">Methodology</a></li>
             <li class="font-light">
-              <a target="”_blank”" href="https://t.me/truflation"
-                >Join Community</a
-              >
+              <a target="”_blank”" href="https://github.com/truflation"
+                >Github
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                    stroke="#0A3170"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
             </li>
           </ul>
         </li>
@@ -282,53 +333,31 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             </svg>
           </a>
           <ul class="p-4 text-left text-gray-800 bg-white">
-            <!-- <li class=" font-semibold text" ><a href="/blog">Blog</a></li> -->
-            <li class="font-light text"><a href="/about">Documentation</a></li>
+            <li class="font-semibold text"><a href="/blog">Blog</a></li>
             <li class="font-light">
-              <a target="”_blank”" href="https://github.com/truflation"
-                >Github</a
-              >
+              <a href="https://whitepaper.truflation.com/" target="_blank"
+                >whitepaper
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                    stroke="#0A3170"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
             </li>
             <li class="font-light"><a href="/about">About Us</a></li>
             <li class="font-light"><a href="/contact">Contact Us</a></li>
           </ul>
         </li>
-        <li tabindex="0">
-          <a>
-            Resources
-            <svg
-              class="fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-              />
-            </svg>
-          </a>
-          <ul class="p-4 text-left text-gray-800 bg-white">
-            <li class="font-semibold text">
-              <a href="/resources">Resources</a>
-            </li>
-            <li class="font-light text"><a href="/about">About Us</a></li>
-            <li class="font-light">
-              <a target="”_blank”" href="https://whitepaper.truflation.com/"
-                >Whitepapers</a
-              >
-            </li>
-            <li class="font-light"><a href="/resources">News Coverage</a></li>
-            <li class="font-light">
-              <a
-                target="”_blank”"
-                href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A"
-                >Youtube</a
-              >
-            </li>
-            <!-- <li class=" font-light" ><a href="/blog">Blog</a></li> -->
-          </ul>
-        </li>
+        <li><a href="/resources">Resources</a></li>
       </ul>
     </div>
   </header>

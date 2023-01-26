@@ -38,7 +38,7 @@ const videos: VideoLinks[] = [
             Explore the leadership, whitepapers and news fuelling the evolution
             of Truflation.
           </p>
-          <a href="https://www.youtube.com/watch?v=jo4ssuL78V0"
+          <a href="#my-modal"
             ><p class="flex text-[18px] flex-row items-center mt-1 gap-3">
               Watch Explainer Video
               <img src="../assets/img/icons/Play-button.svg" alt="" /></p
@@ -48,7 +48,7 @@ const videos: VideoLinks[] = [
           class="flex bg-[url('assets/img/presentation.png')] items-center justify-center w-full h-96 max-w-2xl bg-cover"
         >
           <a
-            href="https://www.youtube.com/watch?v=jo4ssuL78V0"
+            href="#my-modal"
             class="flex items-center justify-center flex-col w-20 h-20 rounded-full bg-slate-200"
             ><svg
               width="32"
@@ -76,14 +76,15 @@ const videos: VideoLinks[] = [
             need to get coding.
           </p>
           <PointsWithIcon :data="resourcePoints.list" />
-          <p class="mt-8 text-gray-600">View All</p>
         </div>
         <img src="../assets/img/globe.png" alt="" />
       </div>
       <div class="my-36">
         <BlogLinks :title="`News & media`" :data="blogData" :videos="videos" />
       </div>
-      <NewsLetter />
+      <div class="flex">
+        <NewsLetter />
+      </div>
       <FooterComp />
     </body>
   </div>
