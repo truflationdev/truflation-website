@@ -2,55 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer html {
-    body {
-        font-family: 'Work Sans', sans-serif;
-    }
+  body {
+    font-family: "Work Sans", sans-serif;
+  }
 }
 
-
 @layer components {
-    .btn {
-        @apply relative z-30 lowercase hover:bg-truflation-700 font-semibold flex flex-row items-center gap-3 text-white px-5 py-2 rounded-full text-base bg-[#002152] w-fit h-fit
-    }
+  .btn {
+    @apply relative z-30 normal-case hover:bg-truflation-700 font-semibold flex flex-row items-center gap-3 text-white px-5 py-2 rounded-full text-base bg-[#002152] w-fit h-fit;
+  }
 
-    .text-light {
-        @apply text-[#FFFFFFA3]
-    }
+  .text-light {
+    @apply text-[#FFFFFFA3];
+  }
 
-    .header-light {
-        @apply text-white
-    }
+  .header-light {
+    @apply text-white;
+  }
 
-    .header-dark {
-        @apply text-gray-600
-    }
+  .header-dark {
+    @apply text-gray-600;
+  }
 
-    .main-background {
-        @apply bg-[url('assets/img/hero-background.svg')] h-screen
-    }
+  .main-background {
+    @apply bg-[url('assets/img/hero-background.svg')] h-screen;
+  }
 
+  .about-hero {
+    @apply bg-[url('assets/img/about-background.svg')] bg-cover;
+  }
 
-    .about-hero {
-        @apply bg-[url('assets/img/about-background.svg')] bg-cover
-    }
+  .widget-hero {
+    @apply bg-[url('assets/img/widget-background.svg')];
+  }
 
-    .widget-hero {
-        @apply bg-[url('assets/img/widget-background.svg')]
+  .category-selected {
+    @apply border-b-2 border-[#0D58C6] text-[#0D58C6] font-semibold px-2;
+  }
 
-    }
+  .active-period {
+    @apply bg-white p-1 rounded;
+  }
 
-    .category-selected {
-        @apply border-b-2 border-[#0D58C6] text-[#0D58C6] font-semibold px-2
-    }
-
-    .active-period {
-        @apply bg-white p-1 rounded
-    }
-
-    .driver-selected {
-        @apply font-semibold bg-blue-200/60 p-3
-    }
-
+  .driver-selected {
+    @apply font-semibold bg-blue-200/60 p-3;
+  }
 }

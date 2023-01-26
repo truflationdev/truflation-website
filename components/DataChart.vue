@@ -41,7 +41,7 @@ ChartJS.register(
     class="flex flex-row flex-wrap lg:flex-nowrap container items-center justify-center mx-auto"
   >
     <div
-      class="flex flex-col bg-gradient-to-r justify-center from-[#3573E7] to-[#2463DB] p-8 content-center rounded-lg items-center"
+      class="flex flex-col bg-gradient-to-r justify-center from-[#3573E7] to-[#2463DB] p-8 content-center items-center"
     >
       <div class="flex flex-row justify-evenly items-center gap-8">
         <div class="flex items-center p-4 rounded-lg bg-[#FFFFFF14]">
@@ -146,12 +146,12 @@ ChartJS.register(
       </div>
     </div>
     <div
-      class="hidden sm:flex flex-col w-full md:w-2/3 ml-3 bg-slate-100 p-5 gap-4 rounded-sm"
+      class="hidden sm:flex flex-col w-full md:w-2/3 ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
         <h2 class="font-semibold">Today's Truflation Rate</h2>
         <ul
-          class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-gray-200 align-middle items-center"
+          class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
         >
           <li class="p-0.5">
             <button
