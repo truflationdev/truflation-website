@@ -50,6 +50,6 @@
   }
 
   .blog {
-    @apply flex flex-col gap-8 [&>p]:text-xl [&>p]:text-black/80 [&>p>a]:text-truflation-500  [&>h2]:text-3xl [&>h2]:font-semibold [&>h2]:mt-6 [&>figure>iframe]:w-[100%] [&>figure>iframe]:h-[500px];
+    @apply flex flex-col gap-8 [&>p]:text-xl [&>blockquote]:italic [&>p]:text-black/80 [&>p>a]:text-truflation-500 [&>ul>li>a]:text-truflation-500  [&>h2]:text-3xl [&>h2]:font-semibold [&>h2]:mt-6 [&>figure>iframe]:w-[100%] [&>figure>iframe]:h-[500px];
   }
 }

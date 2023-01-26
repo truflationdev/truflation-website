@@ -3,7 +3,6 @@ import { devData } from "../../static/data/staffData";
 import { getPosts } from "../../server/api/ghostPosts";
 
 const posts = await getPosts();
-const latestPosts = posts.slice(1, 7);
 console.log(posts);
 </script>
 
@@ -22,11 +21,14 @@ console.log(posts);
     >
       <img class="max-w-[600px]" :src="posts[0].feature_image" alt="" />
       <div class="flex flex-col max-w-xl">
-        <h1 class="text-3xl">
+        <h1 class="text-3xl font-bold">
           {{ posts[0].title }}
         </h1>
         <p>
           {{ posts[0].excerpt }}
+        </p>
+        <p class="text-sm">
+          Read Story • {{ posts[0].published_at.slice(0, 10) }}
         </p>
       </div>
     </div>
@@ -110,13 +112,13 @@ console.log(posts);
       <!-- </div> -->
       <!-- </div> -->
       <div class="flex flex-col gap-5">
-        <ul class="grid w-full grid-cols-1 md: grid-cols-2 gap-8">
-          <li v-for="items in latestPosts">
+        <ul class="grid w-full grid-cols-1 md:grid-cols-3 gap-8">
+          <li v-for="items in posts">
             <a :href="`/blog/${items.slug}`">
               <div class="flex w-full">
                 <img class="w-full h-full" :src="items.feature_image" alt="" />
               </div>
-              <p class="text-xl font-semibold">{{ items.title }}</p>
+              <p class="text-xl font-semibold mt-2">{{ items.title }}</p>
               <p class="text-sm">
                 Read Story • {{ items.created_at.slice(0, 10) }}
               </p>
