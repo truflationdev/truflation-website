@@ -155,7 +155,7 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
                   </div>
                 </div>
               </a>
-              <a href="https://marketplace.truflation.com/">
+              <a target="”_blank”" href="https://marketplace.truflation.com/">
                 <div class="flex flex-row items-center gap-2">
                   <svg
                     width="28"
@@ -254,11 +254,15 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
               <a href="/developers">Developers</a>
             </li>
             <li class="font-light text">
-              <a href="https://whitepaper.truflation.com/">Get Started Guide</a>
+              <a target="”_blank”" href="https://whitepaper.truflation.com/"
+                >Get Started Guide</a
+              >
             </li>
             <li class="font-light"><a href="/methodology">Methodology</a></li>
             <li class="font-light">
-              <a href="https://t.me/truflation">Join Community</a>
+              <a target="”_blank”" href="https://t.me/truflation"
+                >Join Community</a
+              >
             </li>
           </ul>
         </li>
@@ -281,7 +285,9 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             <!-- <li class=" font-semibold text" ><a href="/blog">Blog</a></li> -->
             <li class="font-light text"><a href="/about">Documentation</a></li>
             <li class="font-light">
-              <a href="https://github.com/truflation">Github</a>
+              <a target="”_blank”" href="https://github.com/truflation"
+                >Github</a
+              >
             </li>
             <li class="font-light"><a href="/about">About Us</a></li>
             <li class="font-light"><a href="/contact">Contact Us</a></li>
@@ -308,11 +314,15 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             </li>
             <li class="font-light text"><a href="/about">About Us</a></li>
             <li class="font-light">
-              <a href="https://whitepaper.truflation.com/">Whitepapers</a>
+              <a target="”_blank”" href="https://whitepaper.truflation.com/"
+                >Whitepapers</a
+              >
             </li>
             <li class="font-light"><a href="/resources">News Coverage</a></li>
             <li class="font-light">
-              <a href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A"
+              <a
+                target="”_blank”"
+                href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A"
                 >Youtube</a
               >
             </li>
