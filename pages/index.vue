@@ -38,9 +38,11 @@ fetchState();
     <div
       class="container mx-auto text-left flex w-full flex-col gap-2 md:mt-12"
     >
-      <div class="flex flex-col w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3">
-        <h2 class="text-4xl font-semibold">Today's CPI Data by Truflation</h2>
-        <div class="flex flex-row">
+      <div class="flex md:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3">
+        <h2 class="text-4xl font-semibold text-center md:text-left">
+          Today's CPI Data by Truflation
+        </h2>
+        <div class="flex items-center justify-center md:flex-row">
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -68,7 +70,7 @@ fetchState();
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
       </div>
-      <P class="text-lg"
+      <P class="text-lg text-center md:text-left"
         >The {{ selectedCountry }} Inflation Rate by Truflation is
         <span class="font-semibold">{{ main.keyMetrics.Inflation }}%</span>,
         <span class="text-green-600 font-semibold"

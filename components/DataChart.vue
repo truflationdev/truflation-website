@@ -75,16 +75,14 @@ ChartJS.register(
           {{ main?.getHighAndLow().Inflation }}%
         </p>
         <div
-          class="flex flex-row p-2 rounded-lg items-center gap-1"
+          class="flex flex-row p-2 rotate-180 rounded-lg items-center gap-1"
           :class="{
             'bg-red-100 text-red-700': main.getHighAndLow().change > 0,
             'bg-[#E6F4EE] text-[#005E46]': main.getHighAndLow().change < 0,
           }"
         >
           <svg
-            :class="{
-              'rotate-180 text-red-700': main.getHighAndLow().change > 0,
-            }"
+            v-if="main.getHighAndLow().change < 0"
             width="11"
             height="7"
             viewBox="0 0 9 5"
@@ -96,6 +94,21 @@ ChartJS.register(
               clip-rule="evenodd"
               d="M0.734315 0.43451C1.04673 0.12209 1.55327 0.12209 1.86569 0.43451L4.5 3.06882L7.13431 0.43451C7.44673 0.12209 7.95327 0.12209 8.26569 0.43451C8.57811 0.746929 8.57811 1.25346 8.26569 1.56588L5.06569 4.76588C4.75327 5.0783 4.24673 5.0783 3.93431 4.76588L0.734315 1.56588C0.421895 1.25346 0.421895 0.746929 0.734315 0.43451Z"
               fill="#005E46"
+            />
+          </svg>
+          <svg
+            v-if="main.getHighAndLow().change > 0"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.33329 10L7.99996 5.33333L12.6666 10"
+              stroke="rgb(190 31 31)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
           <p>{{ Math.abs(main.getHighAndLow().change) }}%</p>
