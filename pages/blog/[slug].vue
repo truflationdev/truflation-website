@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { getSinglePost } from "../../server/api/ghostPosts";
 const { slug } = useRoute().params;
 
-const post = await getSinglePost(slug);
+const post = await useFetch(`/api/${slug}`).data._value;
 </script>
 
 <template>
