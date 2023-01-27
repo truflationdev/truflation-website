@@ -101,7 +101,7 @@ fetchState();
             @click="main.updateCategory(cat)"
             :class="{ 'category-selected': selectedCategory === cat }"
           >
-            2<svg
+            <svg
               width="26"
               height="26"
               viewBox="0 0 26 26"
