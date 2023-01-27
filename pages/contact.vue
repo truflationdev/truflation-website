@@ -1,54 +1,93 @@
 <script setup lang="ts">
 import { VideoLinks } from "~~/components/categoryTypes";
-import { blogData} from "../static/data/staffData"
-
+import { blogData } from "../static/data/staffData";
 
 const videos: VideoLinks[] = [
-    {
-        title: "truflation + Discourse",
-        link: "https://www.youtube.com/embed/p07UF8aRmfQ"
-    },
-    {
-        title: "Cracking the inflation code",
-        link: "https://www.youtube.com/embed/QRTIV10Iw-I"
-    },
-    {
-        title: "Truflation Highlighted on Crypto Banter",
-        link: "https://www.youtube.com/embed/kvWBwVzKSac"
-    }
-]
+  {
+    title: "truflation + Discourse",
+    link: "https://www.youtube.com/embed/p07UF8aRmfQ",
+  },
+  {
+    title: "Cracking the inflation code",
+    link: "https://www.youtube.com/embed/QRTIV10Iw-I",
+  },
+  {
+    title: "Truflation Highlighted on Crypto Banter",
+    link: "https://www.youtube.com/embed/kvWBwVzKSac",
+  },
+];
 </script>
 
 <template>
-                <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">
-                    <Banner :isLight="true"/>
-                    <div class=" flex flex-col container mx-auto p-8  gap-5 rounded shadow-md bg-white max-w-xl my-20">
-                        <h1 class=" text-3xl">Contact Us</h1>
-                        <form class="flex flex-col gap-4" name="Main Contact" method="POST" data-netlify="true" netlify-honeypot="bot-filter">
-                        <!-- <div class="contact-success"><strong>Success!</strong> We got your message and will reply shortly.</div> -->
-                        <div class="contact-block half">
-                            <input required class="p-3 border rounded-xl w-full bg-gray-50" type="text" placeholder="First name" name="first-name">
-                        </div>
-                        <div class="contact-block half">
-                            <input required class="p-3 border rounded-xl w-full bg-gray-50" type="text" placeholder="Last name" name="last-name">
-                        </div>
-                        <div class="contact-block">
-                            <input required class="p-3 border rounded-xl w-full bg-gray-50" type="email" placeholder="Email" name="email">
-                        </div>
-                        <div class="contact-block">
-                            <input class="p-3 border rounded-xl w-full bg-gray-50" type="text" placeholder="Company or organization" name="company-name">
-                        </div>
-                        <div class="contact-block">
-                            <textarea required class="p-3 border rounded-xl w-full bg-gray-50" rows="7" placeholder="Message." name="message"></textarea>
-                        </div>
-                        <input class="btn" type="submit" value="Send">
-                        </form>
-                    </div>
-                    <FooterComp />
-
-            </div>  
+  <head>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">
+    <Banner :isLight="true" />
+    <div
+      class="flex flex-col container mx-auto p-8 gap-5 rounded shadow-md bg-white max-w-xl my-20"
+    >
+      <h1 class="text-3xl">Contact Us</h1>
+      <form
+        class="flex flex-col gap-4"
+        name="Contact main"
+        method="post"
+        data-netlify="true"
+        netlify-honeypot="bot-filter"
+      >
+        <!-- <div class="contact-success"><strong>Success!</strong> We got your message and will reply shortly.</div> -->
+        <div class="contact-block half">
+          <input
+            required
+            class="p-3 border rounded-xl w-full bg-gray-50"
+            type="text"
+            placeholder="First name"
+            name="first-name"
+          />
+        </div>
+        <div class="contact-block half">
+          <input
+            required
+            class="p-3 border rounded-xl w-full bg-gray-50"
+            type="text"
+            placeholder="Last name"
+            name="last-name"
+          />
+        </div>
+        <div class="contact-block">
+          <input
+            required
+            class="p-3 border rounded-xl w-full bg-gray-50"
+            type="email"
+            placeholder="Email"
+            name="email"
+          />
+        </div>
+        <div class="contact-block">
+          <input
+            class="p-3 border rounded-xl w-full bg-gray-50"
+            type="text"
+            placeholder="Company or organization"
+            name="company-name"
+          />
+        </div>
+        <div class="contact-block">
+          <textarea
+            required
+            class="p-3 border rounded-xl w-full bg-gray-50"
+            rows="7"
+            placeholder="Message."
+            name="message"
+          ></textarea>
+        </div>
+        <input class="btn" type="submit" value="Send" />
+      </form>
+    </div>
+    <FooterComp />
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
