@@ -1,12 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <head>
+  <Head>
+    <title>Widget - Truflation Solutions</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
     />
-  </head>
+  </Head>
   <div class="flex flex-col w-full items-center">
     <div class="bg-[url('assets/img/widget-background.svg')] bg-cover w-full">
       <Banner :isLight="true" />

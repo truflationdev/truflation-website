@@ -23,12 +23,13 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
-  <head>
+  <Head>
+    <title>Methodology - Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
     />
-  </head>
+  </Head>
   <div
     class="bg-[url('assets/img/methodology-hero.svg')] items-center bg-cover w-full"
   >
