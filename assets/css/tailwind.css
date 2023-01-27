@@ -38,7 +38,7 @@
   }
 
   .category-selected {
-    @apply border-b-2 border-[#0D58C6] text-[#0D58C6] font-semibold px-2;
+    @apply border-b-2 border-[#0D58C6] text-truflation-600 font-semibold px-2;
   }
 
   .active-period {

@@ -18,12 +18,13 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
-  <head>
+  <Head>
+    <title>Developers Center - Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
     />
-  </head>
+  </Head>
 
   <div class="bg-gradient-to-t from-white to-[#4168F133]/20">
     <Banner />

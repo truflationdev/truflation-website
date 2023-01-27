@@ -25,6 +25,8 @@ export interface ChartLabels {
   generalChart: string[];
   categoryChart: string[];
   driverChart: ChartConfig;
+  categorySelection: TimePeriod;
+  mainSelection: TimePeriod;
   totalLabels: string[];
 }
 

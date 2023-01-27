@@ -19,12 +19,13 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
-  <head>
+  <Head>
+    <title>Contact Us - Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
     />
-  </head>
+  </Head>
   <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">
     <Banner :isLight="true" />
     <div

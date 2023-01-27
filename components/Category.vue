@@ -10,7 +10,7 @@ const { selectedCategory } = storeToRefs(main);
 <template>
   <div class="flex flex-col container mx-auto">
     <div
-      class="flex text-center mx-auto md:text-left flex-row mt-5 gap-10 md:gap-[152px] flex-wrap lg:flex-nowrap items-center"
+      class="text-center mx-auto md:text-left grid grid-cols-1 md:grid-cols-2 mt-5 gap-10 flex-wrap lg:flex-nowrap items-center"
     >
       <div class="gap-3 flex flex-col">
         <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
@@ -19,7 +19,7 @@ const { selectedCategory } = storeToRefs(main);
         </p>
       </div>
       <div
-        class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center mx-auto md:ml-auto"
+        class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center md:ml-auto"
       >
         <div class="flex flex-col md:flex-row items-center">
           <a class="flex flex-col md:flex-row" href="/methodology">
@@ -76,79 +76,71 @@ const { selectedCategory } = storeToRefs(main);
       </div>
     </div>
     <div
-      class="grid grid-cols-1 md:flex flex-row text-center md:text-left flex-wrap mt-11 gap-1 md:gap-10 lg:flex-nowrap mx-auto w-full"
+      class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-7 text-center md:text-left items-center justify-center flex-wrap mt-11 gap-3 lg:flex-nowrap mx-auto w-full"
     >
       <div
-        class="flex gap-1 flex-col py-4 md:px-8 align-middle items-center rounded"
+        :class="{
+          'bg-red-100 text-red-700':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.quarter >=
+            0,
+          'bg-[#E6F4EE] text-[#005E46]':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.quarter <=
+            0,
+        }"
+        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Quarter</div>
-        <h2
-          class="text-[24px] px-4 p-2 rounded font-semibold"
-          :class="{
-            'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.quarter >=
-              0,
-            'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.quarter <=
-              0,
-          }"
-        >
+        <h2 class="text-[24px] p-2 rounded font-semibold">
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.quarter }}%
         </h2>
       </div>
       <div
-        class="flex gap-1 flex-col py-4 md:px-8 align-middle items-center rounded"
+        :class="{
+          'bg-red-100 text-red-700':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo >=
+            0,
+          'bg-[#E6F4EE] text-[#005E46]':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo <=
+            0,
+        }"
+        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Month</div>
-        <h2
-          class="text-[24px] px-4 p-2 rounded font-semibold"
-          :class="{
-            'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate
-                .monthAgo >= 0,
-            'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate
-                .monthAgo <= 0,
-          }"
-        >
+        <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo
           }}%
         </h2>
       </div>
       <div
-        class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
+        :class="{
+          'bg-red-100 text-red-700':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >=
+            0,
+          'bg-[#E6F4EE] text-[#005E46]':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
+            0,
+        }"
+        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Week Ago</div>
-        <h2
-          class="text-[24px] p-2 px-4 rounded font-semibold"
-          :class="{
-            'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >=
-              0,
-            'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
-              0,
-          }"
-        >
+        <h2 class="text-[24px] p-2 px-4 rounded font-semibold">
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo }}%
         </h2>
       </div>
       <div
-        class="flex gap-1 flex-col py-4 px-8 align-middle items-center rounded"
+        :class="{
+          'bg-red-100 text-red-700':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday >=
+            0,
+          'bg-[#E6F4EE] text-[#005E46]':
+            main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday <=
+            0,
+        }"
+        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
-        <h2
-          class="text-[24px] px-4 p-2 rounded font-semibold"
-          :class="{
-            'bg-red-100 text-red-700':
-              main?.getByCategoryType(selectedCategory)?.categoryRate
-                .yesterday >= 0,
-            'bg-[#E6F4EE] text-[#005E46]':
-              main?.getByCategoryType(selectedCategory)?.categoryRate
-                .yesterday <= 0,
-          }"
-        >
+        <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday
           }}%
@@ -156,9 +148,11 @@ const { selectedCategory } = storeToRefs(main);
       </div>
 
       <div
-        class="flex flex-row bg-truflation-100 items-center w-full md:w-fit ml-auto justify-center rounded p-4"
+        class="lg:col-span-3 col-span-1 sm:col-span-2 bg-truflation-100 items-center w-full ml-auto justify-center rounded p-4"
       >
-        <div class="lg:flex-row flex-col gap-2 flex">
+        <div
+          class="md:flex-row flex-col items-center justify-center text gap-2 flex"
+        >
           <div class="flex items-center justify-center">
             <RadialProgress
               :percent="true"

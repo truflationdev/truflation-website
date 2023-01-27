@@ -5,12 +5,13 @@ const { data } = await useFetch(`/api/${slug}`);
 </script>
 
 <template>
-  <head>
+  <Head>
+    <title>{{ `${data.title}- Truflation Blog` }}</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
     />
-  </head>
+  </Head>
 
   <Banner />
   <div class="mx-auto mb-10 flex flex-col max-w-6xl">

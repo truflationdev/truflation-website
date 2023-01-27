@@ -39,7 +39,7 @@ export const options = {
     intersect: false,
   },
   responsive: true,
-  maintainAspectRatio: true,
+  maintainAspectRatio: false,
   elements: {
     point: {
       borderWidth: 1,
