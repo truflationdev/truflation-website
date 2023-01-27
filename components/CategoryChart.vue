@@ -53,7 +53,7 @@ function ColourPicker(index: number) {
 
 <template>
   <div
-    class="flex flex-row flex-wrap xl:flex-nowrap gap-8 container justify-center"
+    class="grid-col-1 grid md:grid-cols-3 xl:flex-nowrap gap-8 container justify-center"
   >
     <div
       class="flex flex-col items-center md:items-start bg-truflation-100 p-4 content-center rounded-lg gap-5"
@@ -78,7 +78,7 @@ function ColourPicker(index: number) {
       </div>
     </div>
     <div
-      class="md:flex hidden max-h-[500px] flex-col w-[75%] ml-3 bg-truflation-100 p-5 gap-4 rounded"
+      class="max-h-[500px] md:col-span-2 flex-col ml-3 bg-truflation-100 p-5 gap-4 rounded"
     >
       <div class="flex flex-row items-center">
         <h2 class="font-semibold">Rate Trend</h2>

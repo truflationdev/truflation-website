@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="flex self-center flex-row gap-5 mx-32 flex-wrap container sm:justify-center items-center py-10 px-20 rounded bg-neutral-100"
+    class="flex self-center flex-row gap-5 mx-32 flex-wrap mb-10 container sm:justify-center items-center py-10 px-20 rounded bg-neutral-100"
   >
     <div class="flex flex-col">
       <p class="text-base font-semibold">Subscribe to our newsletter</p>
@@ -20,7 +20,7 @@
         netlify-honeypot="bot-filter"
       >
         <input
-          class="ml-auto w-auto md:w-80 px-4 py-3 border-gray-10 border"
+          class="ml-auto w-auto md:w-80 px-4 mr-3 py-3 border-gray-10 border"
           type="text"
           placeholder="John@gmail.com"
         />

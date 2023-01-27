@@ -328,6 +328,7 @@ export const useDataStore = defineStore({
 
       this.chartLables.generalChart = mainRateLabels;
       this.MainData.datasets[0].data = MainRateData;
+      this.chartLables.generalChart = mainRateLabels;
 
       state.c.map((item: any, index: any) => {
         const newLabels: string[] = [];
@@ -378,6 +379,8 @@ export const useDataStore = defineStore({
         const labels: ChartLabels = {
           generalChart: this.chartLables.generalChart,
           categoryChart: newLabels,
+          categorySelection: TimePeriod.OneYear,
+          mainSelection: TimePeriod.OneYear,
           driverChart: options,
           totalLabels: newLabels,
         };

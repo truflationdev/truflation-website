@@ -143,7 +143,7 @@ fetchState();
       <Category :category="selectedCategory" />
     </div>
     <!-- <SubDrivers :category="categoryData"/> -->
-    <div class="flex flex-col mt-12">
+    <div class="flex flex-col mt-20">
       <DataPartners />
     </div>
     <div
