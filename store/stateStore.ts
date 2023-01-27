@@ -8,6 +8,7 @@ import {
   GraphData,
   TimePeriod,
 } from "~~/components/categoryTypes";
+import { getPosts } from "~~/server/api/ghostPosts";
 
 export const categoryData: string[] = [
   "This covers food and non-alcoholic beverages consumed at home which is generally purchased at Supermarkets, Kiosks etc as well as food purchased away from home in quick service restaurants, restaurants, Hotels, bars etc.",
@@ -36,6 +37,7 @@ export const useDataStore = defineStore({
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.Housing,
       selectedCategoryDriver: "unknown",
+      blog: [],
       chartLables: {
         generalChart: [] as string[],
         categoryChart: [] as string[],
@@ -293,6 +295,10 @@ export const useDataStore = defineStore({
       if (categoryType !== null) {
         this.selectedCategoryDriver = categoryType;
       }
+    },
+
+    updateBlog(blogData: any) {
+      this.blog = blogData;
     },
 
     updateSelectedCountry(country: SelectedCountry) {

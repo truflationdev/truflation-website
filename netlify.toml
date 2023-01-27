@@ -1,0 +1,2 @@
+[context.deploy-preview]
+  environment = { GHOST_CONTENT_API_KEY=ae9030a1d6984578c377a2ce8a }

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { devData } from "../../static/data/staffData";
+import { storeToRefs } from "pinia";
+import { useDataStore } from "~~/store/stateStore";
 import { getPosts } from "../../server/api/ghostPosts";
 
 const posts = await getPosts();
-console.log(posts);
 </script>
 
 <template>

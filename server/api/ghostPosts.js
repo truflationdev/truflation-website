@@ -1,7 +1,10 @@
 import GhostContentAPI from "@tryghost/content-api";
+import { useDataStore } from "~~/store/stateStore";
 
 export async function getPosts() {
   const { contentKey } = useRuntimeConfig();
+  const main = useDataStore();
+
   const key = contentKey;
 
   const api = new GhostContentAPI({
@@ -9,6 +12,16 @@ export async function getPosts() {
     key: key,
     version: "v5.0",
   });
+
+  console.log(
+    await await api.posts
+      .browse({
+        limit: "all",
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  );
 
   return await api.posts
     .browse({
