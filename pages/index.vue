@@ -56,7 +56,7 @@ fetchState();
           <select
             v-on:change="fetchState()"
             v-model="selectedCountry"
-            class="p-3 text-center shadow-lg ml-4"
+            class="p-3 border-r-[10px] border-white text-center shadow-lg mx-4"
           >
             <option :value="SelectedCountry.USA">USA</option>
             <option :value="SelectedCountry.GBR">
