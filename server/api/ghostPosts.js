@@ -1,27 +1,13 @@
 import GhostContentAPI from "@tryghost/content-api";
-import { useDataStore } from "~~/store/stateStore";
 
-export async function getPosts() {
+export default defineEventHandler(async (event) => {
   const { contentKey } = useRuntimeConfig();
-  const main = useDataStore();
-
-  const key = contentKey;
 
   const api = new GhostContentAPI({
     url: "https://truflation.ghost.io",
-    key: key,
+    key: contentKey,
     version: "v5.0",
   });
-
-  console.log(
-    await await api.posts
-      .browse({
-        limit: "all",
-      })
-      .catch((err) => {
-        console.error(err);
-      })
-  );
 
   return await api.posts
     .browse({
@@ -30,22 +16,19 @@ export async function getPosts() {
     .catch((err) => {
       console.error(err);
     });
-}
+});
 
-export async function getSinglePost(postSlug) {
-  const { contentKey } = useRuntimeConfig();
-  const key = contentKey;
-
-  const api = new GhostContentAPI({
-    url: "https://truflation.ghost.io",
-    key: key,
-    version: "v5.0",
-  });
-  return await api.posts
-    .read({
-      slug: postSlug,
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}
+// export async function getSinglePost(postSlug) {
+//   const api = new GhostContentAPI({
+//     url: "https://truflation.ghost.io",
+//     key: contentKey,
+//     version: "v5.0",
+//   });
+//   return await api.posts
+//     .read({
+//       slug: postSlug,
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// }

@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useDataStore } from "~~/store/stateStore";
-import { getPosts } from "../../server/api/ghostPosts";
 
-const posts = await getPosts();
+const posts = await useFetch("/api/ghostPosts").data;
 </script>
 
 <template>
