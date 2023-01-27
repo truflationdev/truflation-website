@@ -1,11 +1,11 @@
 import GhostContentAPI from "@tryghost/content-api";
 
 export async function getPosts() {
-  const config = useRuntimeConfig();
+  const { contentKey } = useRuntimeConfig();
 
   const api = new GhostContentAPI({
     url: "https://truflation.ghost.io",
-    key: config.apiSecret,
+    key: contentKey,
     version: "v5.0",
   });
 
@@ -19,11 +19,11 @@ export async function getPosts() {
 }
 
 export async function getSinglePost(postSlug) {
-  const config = useRuntimeConfig();
+  const { contentKey } = useRuntimeConfig();
 
   const api = new GhostContentAPI({
     url: "https://truflation.ghost.io",
-    key: config.apiSecret,
+    key: contentKey,
     version: "v5.0",
   });
   return await api.posts
