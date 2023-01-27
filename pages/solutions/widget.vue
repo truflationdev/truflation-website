@@ -21,9 +21,10 @@
           <h1 class="font-semibold text-5xl text-white">
             Inflation Daily Anywhere
           </h1>
-          <p class="max-w-[420px] mt-4 text-white">
-            The Truflation widget is available to incorporate into your website,
-            data dashboards, and Web3 applications. It can even be customised.
+          <p class="max-w-[475px] mt-4 text-white">
+            Embeddable. Easily integrate the Truflation widget into any platform
+            with its customizable, and bring real-time inflation data to your
+            website, dashboard or application.
           </p>
           <div class="rounded-full font-light w-fit px-4 py-3 bg-green-300">
             Coming Soon!
@@ -68,9 +69,9 @@
                   Government CPI comparison
                 </p>
                 <p class="max-w-xs">
-                  Below is an outline of how we approach the collection and
-                  indexing of the world's financial and economic data, using our
-                  first.
+                  By comparing our inflation data to official government figures
+                  gives you the power to make informed decisions and stay ahead
+                  of economic trends.
                 </p>
               </li>
               <li class="flex flex-col items-center text-center gap-2">
@@ -83,9 +84,8 @@
                   Updated Daily
                 </p>
                 <p class="max-w-xs">
-                  Below is an outline of how we approach the collection and
-                  indexing of the world's financial and economic data, using our
-                  first.
+                  Updated Daily. Ensuring you have the most recent inflation
+                  data at your fingertips, every day.
                 </p>
               </li>
               <li class="flex flex-col items-center text-center gap-2">
@@ -98,9 +98,9 @@
                   Country Switcher
                 </p>
                 <p class="max-w-xs">
-                  Below is an outline of how we approach the collection and
-                  indexing of the world's financial and economic data, using our
-                  first.
+                  Country switcher. Switch between country-specific data,
+                  providing real-time inflation metrics for multiple countries
+                  with a simple click.
                 </p>
               </li>
             </ul>
