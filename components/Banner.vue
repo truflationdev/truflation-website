@@ -7,8 +7,12 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
     class="navbar z-20 relative"
     :class="{ 'header-light': isLight, 'header-dark': !isLight }"
   >
-    <div class="navbar-start text-gray-800 lg:mx-20">
-      <div class="dropdown">
+    <div class="navbar-start text-gray-800 w-full lg:mx-20">
+      <a class="ml-2 md:mx-0" href="/">
+        <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="" />
+        <img v-if="!isLight" src="~/assets/img/logo.svg" alt="" />
+      </a>
+      <div class="dropdown ml-auto">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +73,7 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             </a>
             <ul class="text-left text-gray-800 bg-white">
               <li class="font-semibold">
-                <a href="/developers">Developers</a>
+                <a href="/developers">Developers Center</a>
               </li>
               <li>
                 <a
@@ -78,7 +82,6 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
                 >
               </li>
               <li><a href="/methodology">Methodology</a></li>
-              <li><a href="/developers">Join Community</a></li>
             </ul>
           </li>
           <li tabindex="0">
@@ -103,7 +106,6 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
                   >Whitepapers</a
                 >
               </li>
-              <li><a href="/resources">News Coverage</a></li>
               <li>
                 <a
                   href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A"
@@ -112,13 +114,8 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
               </li>
             </ul>
           </li>
-          <li><a href="/methodology">Methodology</a></li>
         </ul>
       </div>
-      <a class="invisible sm:visible" href="/">
-        <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="" />
-        <img v-if="!isLight" src="~/assets/img/logo.svg" alt="" />
-      </a>
     </div>
     <div class="navbar-end mr-10 hidden lg:flex">
       <ul class="menu menu-horizontal px-1">

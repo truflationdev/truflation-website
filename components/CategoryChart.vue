@@ -78,7 +78,7 @@ function ColourPicker(index: number) {
       </div>
     </div>
     <div
-      class="md:flex hidden flex-col w-full ml-3 bg-truflation-100 p-5 gap-4 rounded"
+      class="md:flex hidden max-h-[500px] flex-col w-full ml-3 bg-truflation-100 p-5 gap-4 rounded"
     >
       <div class="flex flex-row items-center">
         <h2 class="font-semibold">Rate Trend</h2>

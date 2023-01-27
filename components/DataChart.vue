@@ -159,7 +159,7 @@ ChartJS.register(
       </div>
     </div>
     <div
-      class="hidden sm:flex flex-col w-full md:w-2/3 ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+      class="hidden sm:flex flex-col w-full md:w-[70%] md:h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
         <h2 class="font-semibold">Today's Truflation Rate</h2>

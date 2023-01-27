@@ -38,11 +38,13 @@ fetchState();
     <div
       class="container mx-auto text-left flex w-full flex-col gap-2 md:mt-12"
     >
-      <div class="flex md:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3">
+      <div
+        class="flex flex-col md:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
+      >
         <h2 class="text-4xl font-semibold text-center md:text-left">
           Today's CPI Data by Truflation
         </h2>
-        <div class="flex items-center justify-center md:flex-row">
+        <div class="flex items-center justify-center md:flex-row px-2">
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -56,7 +58,7 @@ fetchState();
           <select
             v-on:change="fetchState()"
             v-model="selectedCountry"
-            class="p-3 border-r-[10px] border-white text-center shadow-lg mx-4"
+            class="p-3 border-r-[10px] border-transparent bg-transparent text-center mx-2"
           >
             <option :value="SelectedCountry.USA">USA</option>
             <option :value="SelectedCountry.GBR">
@@ -94,10 +96,28 @@ fetchState();
       >
         <li class="border-b-2 border-gray-100" v-for="cat in CategoryType">
           <button
+            class="flex flex-row gap-2"
             :id="cat"
             @click="main.updateCategory(cat)"
             :class="{ 'category-selected': selectedCategory === cat }"
           >
+            2<svg
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="26" height="26" rx="13" fill="#E0F2FF" />
+              <path
+                d="M13.6319 9.84033H18.6875M18.6875 9.84033V14.8959M18.6875 9.84033L13.6319 14.8959L11.1042 12.3681L7.3125 16.1598"
+                stroke="#0B4299"
+                stroke-width="0.947917"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
             {{ cat }}
           </button>
         </li>
@@ -117,11 +137,15 @@ fetchState();
     <div class="flex flex-col mt-12">
       <DataPartners />
     </div>
-    <div class="container md:mx-auto flex flex-row flex-wrap gap-10 mt-20">
+    <div
+      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
+    >
       <div
-        class="flex flex-row mx-auto text-white bg-gradient-to-br from-truflation-600 to-truflation-300"
+        class="flex flex-row text-white w-full bg-gradient-to-br from-truflation-600 to-truflation-300"
       >
-        <div class="flex flex-col w-full gap-3 p-8">
+        <div
+          class="flex flex-col w-full gap-3 p-8 bg-no-repeat bg-right bg-[url('~/assets/img/layout.svg')]"
+        >
           <h1 class="text-3xl font-bold">Personal Inflation Calculator</h1>
           <p>
             Calculate how strong your hedge is <br />
@@ -133,23 +157,15 @@ fetchState();
             COMING SOON
           </p>
         </div>
-        <img
-          class="hidden md:flex md:w-1/5 ml-auto"
-          src="~/assets/img/layout.svg"
-          alt=""
-        />
       </div>
-      <div class="flex flex-row w-full md:w-auto md:mx-auto bg-[#F0F4FA]">
+      <div
+        class="flex flex-row w-full md:mx-auto bg-[#F0F4FA] bg-no-repeat bg-right bg-[url('~/assets/img/mail.svg')]"
+      >
         <div class="flex flex-col gap-4 p-8">
           <h1 class="text-3xl font-bold">Send us a Message</h1>
           <p>Contact us if you have Queries</p>
           <button class="btn"><a href="/contact"> Contact Us</a></button>
         </div>
-        <img
-          class="hidden md:flex md:w-2/5 ml-auto"
-          src="~/assets/img/mail.svg"
-          alt=""
-        />
       </div>
     </div>
     <div class="flex flex-col mt-12">
