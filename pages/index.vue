@@ -94,31 +94,40 @@ fetchState();
       <ul
         class="hidden md:grid grid-cols-1 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600"
       >
-        <li class="border-b-2 border-gray-100" v-for="cat in CategoryType">
-          <button
-            class="flex flex-row gap-2"
-            :id="cat"
-            @click="main.updateCategory(cat)"
-            :class="{ 'category-selected': selectedCategory === cat }"
+        <li
+          class="border-b-2 flex flex-row gap-2 pb-3 items-center"
+          :class="{ 'category-selected': selectedCategory === cat }"
+          v-for="cat in CategoryType"
+        >
+          <div
+            :class="{
+              'bg-truflation-600 stroke-white': selectedCategory === cat,
+              'bg-truflation-200 stroke-truflation-600':
+                selectedCategory !== cat,
+            }"
+            class="w-8 h-8 rounded-full flex flex-col items-center justify-center"
           >
             <svg
-              width="26"
-              height="26"
-              viewBox="0 0 26 26"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect width="26" height="26" rx="13" fill="#E0F2FF" />
               <path
-                d="M13.6319 9.84033H18.6875M18.6875 9.84033V14.8959M18.6875 9.84033L13.6319 14.8959L11.1042 12.3681L7.3125 16.1598"
-                stroke="#0B4299"
+                d="M8.63194 4.84033H13.6875M13.6875 4.84033V9.89589M13.6875 4.84033L8.63194 9.89589L6.10417 7.36811L2.3125 11.1598"
                 stroke-width="0.947917"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
             </svg>
-
-            {{ cat }}
+          </div>
+          <button
+            class="flex flex-row gap-2"
+            :id="cat"
+            @click="main.updateCategory(cat)"
+          >
+            {{ cat.slice(0, 30) }}
           </button>
         </li>
       </ul>
