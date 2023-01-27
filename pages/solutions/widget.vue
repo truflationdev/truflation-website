@@ -109,10 +109,10 @@
       </div>
     </div>
     <div
-      class="flex flex-row flex-wrap w-full xl:flex-nowrap mt-8 md:mt-4 justify-center items-center"
+      class="flex flex-row py-48 flex-wrap w-full max-w-10xl xl:flex-nowrap md:mt-4 relative items-center"
     >
       <div
-        class="flex flex-col mx-5 md:text-left md:ml-32 max-w-xl text-center items-center xl:items-start"
+        class="flex flex-col mx-5 md:ml-36 max-w-lg md:text-left text-center items-center lg:items-start"
       >
         <h1 class="text-5xl">Easy setup with one line of code</h1>
         <p class="mt-4 text-[18px] max-w-lg">
@@ -125,12 +125,12 @@
           Coming Soon!
         </div>
       </div>
-      <div class="flex-row hidden md:flex flex-nowrap ml-auto">
+      <div class="flex-row absolute right-0 hidden xl:flex flex-nowrap ml-auto">
         <img src="../../assets/img/widget-img.svg" alt="" />
         <img src="../../assets/img/wisp.svg" alt="" />
       </div>
     </div>
-    <div class="flex mt-8 mx-5 mb-10 md:mt-0">
+    <div class="flex mx-5 mb-10 md:mt-0">
       <Investors />
     </div>
     <NewsLetter />

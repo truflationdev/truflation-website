@@ -41,7 +41,7 @@ ChartJS.register(
     class="flex flex-row flex-wrap lg:flex-nowrap container justify-center mx-auto"
   >
     <div
-      class="flex flex-col bg-gradient-to-r w-full max-w-lg justify-center from-[#3573E7] to-[#2463DB] gap-3 p-8 content-center items-center"
+      class="flex flex-col bg-gradient-to-r w-full max-w-md justify-center from-[#3573E7] to-[#2463DB] gap-3 p-8 content-center items-center"
     >
       <div class="flex flex-row justify-evenly items-center gap-8">
         <div class="flex items-center p-4 rounded-lg bg-[#FFFFFF14]">
@@ -159,7 +159,7 @@ ChartJS.register(
       </div>
     </div>
     <div
-      class="hidden sm:flex flex-col w-full md:w-[65%] md:max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+      class="hidden sm:flex flex-col md:w-[75%] md:max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
         <h2 class="font-semibold">Today's Truflation Rate</h2>
