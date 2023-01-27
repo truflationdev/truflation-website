@@ -5,7 +5,7 @@ export async function getPosts() {
 
   const api = new GhostContentAPI({
     url: "https://truflation.ghost.io",
-    key: process.env.GHOST_CONTENT_API_KEY,
+    key: contentKey,
     version: "v5.0",
   });
 
@@ -23,7 +23,7 @@ export async function getSinglePost(postSlug) {
 
   const api = new GhostContentAPI({
     url: "https://truflation.ghost.io",
-    key: process.env.GHOST_CONTENT_API_KEY,
+    key: contentKey,
     version: "v5.0",
   });
   return await api.posts
