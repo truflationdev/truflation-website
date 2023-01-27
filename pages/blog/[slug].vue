@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { slug } = useRoute().params;
 
-const post = await useFetch(`/api/${slug}`).data._value;
+const { data } = await useFetch(`/api/${slug}`);
 </script>
 
 <template>
@@ -14,13 +14,13 @@ const post = await useFetch(`/api/${slug}`).data._value;
 
   <Banner />
   <div class="mx-auto mb-10 flex flex-col max-w-6xl">
-    <img class="mt-20" :src="post.feature_image" alt="" />
-    <h1 class="mt-10 font-bold text-4xl">{{ post.title }}</h1>
+    <img class="mt-20" :src="data.feature_image" alt="" />
+    <h1 class="mt-10 font-bold text-4xl">{{ data.title }}</h1>
     <p class="font-semibold text-lg mt-2 mb-10">
-      Reading Time: {{ post.reading_time }} mins
-      {{ post.published_at.slice(0, 10) }}
+      Reading Time: {{ data.reading_time }} mins
+      {{ data.published_at.slice(0, 10) }}
     </p>
-    <div class="blog" v-html="post.html"></div>
+    <div class="blog" v-html="data.html"></div>
   </div>
   <div class="flex">
     <NewsLetter />
