@@ -27,6 +27,7 @@
     "nuxt3": "^3.0.1-rc.0-27863365.da6fa9a",
     "pinia": "^2.0.28",
     "vue-chartjs": "^5.0.1",
+    "vue-gtag-next": "^1.14.0",
     "vue3-circle-progress": "^1.0.7"
   }
 }
