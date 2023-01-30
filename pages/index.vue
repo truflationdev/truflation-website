@@ -161,11 +161,9 @@ fetchState();
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <p
-            class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300 w-fit"
+          <a href="/solutions/calculator"
+            ><button class="btn">Use Now</button></a
           >
-            COMING SOON
-          </p>
         </div>
       </div>
       <div

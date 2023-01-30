@@ -20,7 +20,7 @@ const videos: VideoLinks[] = [
 
 <template>
   <Head>
-    <title>About Us - Truflation</title>
+    <title>About Us    - Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
