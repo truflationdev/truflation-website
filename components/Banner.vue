@@ -7,12 +7,8 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
     class="navbar z-20 relative"
     :class="{ 'header-light': isLight, 'header-dark': !isLight }"
   >
-    <div class="navbar-start text-gray-800 w-full lg:mx-20">
-      <a class="ml-2 md:mx-0" href="/">
-        <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="" />
-        <img v-if="!isLight" src="~/assets/img/logo.svg" alt="" />
-      </a>
-      <div class="dropdown ml-auto">
+    <div class="navbar-end text-gray-800 w-full lg:mx-20">
+      <div class="dropdown mr-auto">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -116,6 +112,10 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
           </li>
         </ul>
       </div>
+      <a class="md:mx-0 w-full flex flex-row ml-10" href="/">
+        <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="" />
+        <img v-if="!isLight" src="~/assets/img/logo.svg" alt="" />
+      </a>
     </div>
     <div class="navbar-end mr-10 hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
