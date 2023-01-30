@@ -9,77 +9,8 @@ const { selectedCategory } = storeToRefs(main);
 
 <template>
   <div class="flex flex-col container mx-auto">
-    <div class="flex flex-row items-center justify-center w-full">
-      <CategoryChart :title="`Rate Trend`" />
-    </div>
     <div
-      class="text-center mx-auto md:text-left grid grid-cols-1 mt-12 md:grid-cols-2 gap-10 flex-wrap lg:flex-nowrap items-center"
-    >
-      <div class="gap-3 flex flex-col">
-        <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
-        <p class="max-w-md mx-5 sm:mx-0">
-          {{ main?.getByCategoryType(selectedCategory)?.about }}
-        </p>
-      </div>
-      <div
-        class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center md:ml-auto"
-      >
-        <div class="flex flex-col md:flex-row items-center">
-          <a class="flex flex-col md:flex-row" href="/methodology">
-            <img
-              class="mr-2 max-h-16"
-              src="../assets/img/Data-source-icon.svg"
-              alt=""
-            />
-            <p class="text-sm">
-              <span class="text-base text-truflation-500"> Data Sources</span
-              ><br />View the transparent data sources
-            </p>
-          </a>
-        </div>
-        <div class="flex flex-col md:flex-row items-center">
-          <a class="flex flex-col md:flex-row" href="/methodology">
-            <img
-              class="mr-2 max-h-16"
-              src="../assets/img/factsheet-icon.svg"
-              alt=""
-            />
-            <p class="text-sm">
-              <span class="text-base text-truflation-500">Fact Sheet</span
-              ><br />Download key points of this category
-            </p>
-          </a>
-        </div>
-        <div class="flex flex-col md:flex-row items-center">
-          <a class="flex flex-col md:flex-row" href="/methodology">
-            <img
-              class="mr-2 max-h-16"
-              src="../assets/img/export-data-icon.svg"
-              alt=""
-            />
-            <p class="text-sm">
-              <span class="text-base text-truflation-500">Export Data</span
-              ><br />Download data feed to spreadsheets
-            </p>
-          </a>
-        </div>
-        <div class="flex flex-col md:flex-row items-center">
-          <a class="flex flex-col md:flex-row" href="/methodology">
-            <img
-              class="mr-2 max-h-16"
-              src="../assets/img/methadology-icon.svg"
-              alt=""
-            />
-            <p class="text-sm">
-              <span class="text-base text-truflation-500">Methodology</span
-              ><br />Understand our advanced methods
-            </p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-7 text-center md:text-left items-center justify-center flex-wrap mt-11 gap-3 lg:flex-nowrap mx-auto w-full"
+      class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-7 text-center md:text-left items-center justify-center flex-wrap mt-2 gap-3 lg:flex-nowrap mx-auto w-full"
     >
       <div
         :class="{
@@ -174,6 +105,75 @@ const { selectedCategory } = storeToRefs(main);
               >Learn More</a
             >
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row items-center justify-center mt-4 w-full">
+      <CategoryChart :title="`Rate Trend`" />
+    </div>
+    <div
+      class="text-center mx-auto md:text-left grid grid-cols-1 mt-12 md:grid-cols-2 gap-10 flex-wrap lg:flex-nowrap items-center"
+    >
+      <div class="gap-3 flex flex-col">
+        <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
+        <p class="max-w-md mx-5 sm:mx-0">
+          {{ main?.getByCategoryType(selectedCategory)?.about }}
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center md:ml-auto"
+      >
+        <div class="flex flex-col md:flex-row items-center">
+          <a class="flex flex-col md:flex-row" href="/methodology">
+            <img
+              class="mr-2 max-h-16"
+              src="../assets/img/Data-source-icon.svg"
+              alt=""
+            />
+            <p class="text-sm">
+              <span class="text-base text-truflation-500"> Data Sources</span
+              ><br />View the transparent data sources
+            </p>
+          </a>
+        </div>
+        <div class="flex flex-col md:flex-row items-center">
+          <a class="flex flex-col md:flex-row" href="/methodology">
+            <img
+              class="mr-2 max-h-16"
+              src="../assets/img/factsheet-icon.svg"
+              alt=""
+            />
+            <p class="text-sm">
+              <span class="text-base text-truflation-500">Fact Sheet</span
+              ><br />Download key points of this category
+            </p>
+          </a>
+        </div>
+        <div class="flex flex-col md:flex-row items-center">
+          <a class="flex flex-col md:flex-row" href="/methodology">
+            <img
+              class="mr-2 max-h-16"
+              src="../assets/img/export-data-icon.svg"
+              alt=""
+            />
+            <p class="text-sm">
+              <span class="text-base text-truflation-500">Export Data</span
+              ><br />Download data feed to spreadsheets
+            </p>
+          </a>
+        </div>
+        <div class="flex flex-col md:flex-row items-center">
+          <a class="flex flex-col md:flex-row" href="/methodology">
+            <img
+              class="mr-2 max-h-16"
+              src="../assets/img/methadology-icon.svg"
+              alt=""
+            />
+            <p class="text-sm">
+              <span class="text-base text-truflation-500">Methodology</span
+              ><br />Understand our advanced methods
+            </p>
+          </a>
         </div>
       </div>
     </div>
