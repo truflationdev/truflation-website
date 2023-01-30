@@ -175,13 +175,13 @@ const videos: VideoLinks[] = [
         <li class="flex flex-col items-center gap-1">
           <img src="../assets/img/staff/jarryd.png" alt="" />
           <p class="mt-4 text-xl font-semibold">Jarryd Pretorius</p>
-          <p class="mt-1">Frontend Developer</p>
+          <p class="mt-1">Front-end Developer</p>
         </li>
-        <!-- <li class="flex flex-col items-center gap-1">
-          <img src="../assets/img/staff/Ivan-Jelic.png" alt="" />
+        <li class="flex flex-col items-center gap-1">
+          <img src="../assets/img/staff/david.png" alt="" />
           <p class="mt-4 text-xl font-semibold">David Ring</p>
-          <p class="mt-1">Head of Data</p>
-        </li> -->
+          <p class="mt-1">Back-end Developer</p>
+        </li>
       </ul>
     </div>
   </div>
