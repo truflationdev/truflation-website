@@ -5,12 +5,16 @@ import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
 
 const main = useDataStore();
+const route = useRoute();
 const { selectedCategory, selectedCountry } = storeToRefs(main);
 
 async function fetchState() {
+  const tag = route.query.tag ?? ''
+  const host = route.query.host ?? 'https://api.truflation.io'
+  console.log(`${host}/dashboard-data-uk${tag}`)
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
-      $fetch(`https://api.truflation.io/dashboard-data-uk`)
+      $fetch(`${host}/dashboard-data-uk${tag}`)
     ).then((res) => {
       main.hydrateState(res.data.value);
     });
@@ -18,7 +22,7 @@ async function fetchState() {
   }
 
   await useAsyncData("geocode", () =>
-    $fetch(`https://api.truflation.io/dashboard-data`)
+    $fetch(`${host}/dashboard-data${tag}`)
   ).then((res) => {
     main.hydrateState(res.data.value);
   });
