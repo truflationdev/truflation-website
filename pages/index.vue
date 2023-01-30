@@ -140,7 +140,7 @@ fetchState();
         <option v-for="cat in CategoryType" :value="cat">{{ cat }}</option>
       </select>
     </div>
-    <div class="flex flex-col mt-8">
+    <div class="flex flex-col mt-4">
       <Category :category="selectedCategory" />
     </div>
     <!-- <SubDrivers :category="categoryData"/> -->

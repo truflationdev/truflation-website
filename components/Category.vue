@@ -9,8 +9,11 @@ const { selectedCategory } = storeToRefs(main);
 
 <template>
   <div class="flex flex-col container mx-auto">
+    <div class="flex flex-row items-center justify-center w-full">
+      <CategoryChart :title="`Rate Trend`" />
+    </div>
     <div
-      class="text-center mx-auto md:text-left grid grid-cols-1 md:grid-cols-2 mt-5 gap-10 flex-wrap lg:flex-nowrap items-center"
+      class="text-center mx-auto md:text-left grid grid-cols-1 mt-12 md:grid-cols-2 gap-10 flex-wrap lg:flex-nowrap items-center"
     >
       <div class="gap-3 flex flex-col">
         <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
@@ -87,7 +90,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.quarter <=
             0,
         }"
-        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Quarter</div>
         <h2 class="text-[24px] p-2 rounded font-semibold">
@@ -103,7 +106,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo <=
             0,
         }"
-        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Month</div>
         <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
@@ -121,7 +124,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
             0,
         }"
-        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Week Ago</div>
         <h2 class="text-[24px] p-2 px-4 rounded font-semibold">
@@ -137,7 +140,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday <=
             0,
         }"
-        class="flex flex-col py-4 md:px-8 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
         <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
@@ -173,9 +176,6 @@ const { selectedCategory } = storeToRefs(main);
           </div>
         </div>
       </div>
-    </div>
-    <div class="flex flex-row items-center justify-center w-full mt-8">
-      <CategoryChart :title="`Rate Trend`" />
     </div>
   </div>
 </template>
