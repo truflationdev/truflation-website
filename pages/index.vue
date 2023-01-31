@@ -30,7 +30,7 @@ fetchState();
   <Head>
     <title>Dashboard - Truflation</title>
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
     />
   </Head>
@@ -42,7 +42,9 @@ fetchState();
       <div
         class="flex flex-col md:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
       >
-        <h2 class="text-4xl font-semibold text-center md:text-left">
+        <h2
+          class="text-[32px] font-semibold text-[#181818] text-center md:text-left"
+        >
           Today's CPI Data by Truflation
         </h2>
         <div class="flex items-center justify-center md:flex-row px-2">
@@ -75,8 +77,10 @@ fetchState();
       </div>
       <P class="text-lg text-center md:text-left"
         >The {{ selectedCountry }} Inflation Rate by Truflation is
-        <span class="font-semibold">{{ main.keyMetrics.Inflation }}%</span>,
-        <span class="text-green-600 font-semibold"
+        <span class="font-extrabold text-lg"
+          >{{ main.keyMetrics.Inflation }}%</span
+        >,
+        <span class="text-green-600 font-bold"
           >{{ main.getInflationDayChange() }}%</span
         >
         change over the last day.

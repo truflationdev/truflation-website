@@ -4,7 +4,7 @@
   <Head>
     <title>Widget - Truflation Solutions</title>
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
     />
   </Head>
