@@ -37,10 +37,10 @@ fetchState();
   <div class="main-background">
     <Banner :dashboard="true" />
     <div
-      class="container mx-auto text-left flex w-full flex-col gap-2 md:mt-12"
+      class="container mx-auto text-left flex flex-col max-w-[90%] gap-2 md:mt-12"
     >
       <div
-        class="flex flex-col md:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
+        class="flex flex-col lg:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
       >
         <h2
           class="text-[32px] font-semibold text-[#181818] text-center md:text-left"
@@ -75,7 +75,7 @@ fetchState();
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
       </div>
-      <P class="text-lg text-center md:text-left"
+      <P class="text-lg text-center lg:text-left"
         >The {{ selectedCountry }} Inflation Rate by Truflation is
         <span class="font-extrabold text-lg"
           >{{ main.keyMetrics.Inflation }}%</span
@@ -89,7 +89,7 @@ fetchState();
         >
       </P>
     </div>
-    <div class="flex flex-col mt-7">
+    <div class="flex items-center flex-col mt-7">
       <DataChart :locationOptions="selectedCategory" />
     </div>
     <div

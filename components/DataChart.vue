@@ -38,13 +38,13 @@ ChartJS.register(
 
 <template>
   <div
-    class="grid grid-cols-1 lg:grid-cols-3 justify-center content-center items-center container mx-auto"
+    class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center container max-w-[90%] lg:mx-auto"
   >
     <div
-      class="flex flex-col rounded-lg bg-gradient-to-r max-w-md from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
+      class="flex flex-col rounded-lg bg-gradient-to-r w-[90%] sm:w-[400px] lg:w-full justify-self-center min-w-[340px] from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
     >
-      <div class="flex flex-row w-full items-center gap-8">
-        <div class="flex items-center p-4 rounded-lg bg-[#FFFFFF14]">
+      <div class="flex flex-row w-full items-center justify-center gap-8">
+        <div class="items-center flex p-4 rounded-lg bg-[#FFFFFF14]">
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -164,7 +164,7 @@ ChartJS.register(
       </div>
     </div>
     <div
-      class="md:col-span-2 max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+      class="md:col-span-2 max-h-[425px] lg:max-h-[525px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
         <h2 class="font-semibold">Today's Truflation Rate</h2>

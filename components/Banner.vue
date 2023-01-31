@@ -112,7 +112,7 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
           </li>
         </ul>
       </div>
-      <a class="md:mx-0 w-full flex flex-row ml-10" href="/">
+      <a class="lg:mx-0 w-full flex flex-row ml-10" href="/">
         <img v-if="isLight" src="~/assets/img/logo-light.svg" alt="" />
         <img v-if="!isLight" src="~/assets/img/logo.svg" alt="" />
       </a>
