@@ -10,7 +10,7 @@ const { selectedCategory } = storeToRefs(main);
 <template>
   <div class="flex flex-col container mx-auto">
     <div
-      class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-7 text-center md:text-left items-center justify-center flex-wrap mt-2 gap-3 lg:flex-nowrap mx-auto w-full"
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 text-center md:text-left px-4 sm:px-0 items-center justify-center flex-wrap mt-2 gap-3 lg:flex-nowrap mx-auto w-full"
     >
       <div
         :class="{
@@ -21,7 +21,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.quarter <=
             0,
         }"
-        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Quarter</div>
         <h2 class="text-[24px] p-2 rounded font-semibold">
@@ -37,7 +37,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo <=
             0,
         }"
-        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">vs Last Month</div>
         <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
@@ -71,7 +71,7 @@ const { selectedCategory } = storeToRefs(main);
             main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday <=
             0,
         }"
-        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
       >
         <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
         <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
@@ -82,7 +82,7 @@ const { selectedCategory } = storeToRefs(main);
       </div>
 
       <div
-        class="lg:col-span-3 col-span-1 sm:col-span-2 bg-truflation-100 items-center w-full ml-auto justify-center rounded p-4"
+        class="lg:col-span-3 col-span-full sm:col-span-2 bg-truflation-100 items-center w-full ml-auto justify-center rounded p-4"
       >
         <div
           class="md:flex-row flex-col items-center justify-center text gap-2 flex"

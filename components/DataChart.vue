@@ -155,10 +155,10 @@ ChartJS.register(
         </div>
         <div class="flex flex-row justify-between opacity-70 mt-3 text-center">
           <p class="text-white text-base text-center">
-            {{ main.getHighAndLow().low }}% <br />Low
+            {{ main.getHighAndLow().low }}% <br />YTD Low
           </p>
           <p class="text-white text-base">
-            {{ main.getHighAndLow().high }}% <br />High
+            {{ main.getHighAndLow().high }}% <br />YTDHigh
           </p>
         </div>
       </div>

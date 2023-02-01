@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CategoryList, CategoryType } from "~~/components/categoryTypes";
+import { CategoryType } from "~~/components/categoryTypes";
+import { categoryIcon } from "../static/data/categoryData";
 import { SelectedCountry, useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
@@ -92,58 +93,7 @@ fetchState();
     <div class="flex items-center flex-col mt-7">
       <DataChart :locationOptions="selectedCategory" />
     </div>
-    <div
-      class="flex flex-col text-center md:text-start container md:mx-auto mt-12 gap-3"
-    >
-      <h1 class="text-2xl font-semibold">Categories</h1>
-      <ul
-        class="hidden md:grid grid-cols-1 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600"
-      >
-        <li
-          class="border-b-2 flex flex-row gap-2 pb-3 items-center"
-          :class="{ 'category-selected': selectedCategory === cat }"
-          v-for="cat in CategoryType"
-        >
-          <div
-            :class="{
-              'bg-truflation-600 stroke-white': selectedCategory === cat,
-              'bg-truflation-200 stroke-truflation-600':
-                selectedCategory !== cat,
-            }"
-            class="w-8 h-8 rounded-full flex flex-col items-center justify-center"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.63194 4.84033H13.6875M13.6875 4.84033V9.89589M13.6875 4.84033L8.63194 9.89589L6.10417 7.36811L2.3125 11.1598"
-                stroke-width="0.947917"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-          <button
-            class="flex flex-row gap-2"
-            :id="cat"
-            @click="main.updateCategory(cat)"
-          >
-            {{ cat.slice(0, 30) }}
-          </button>
-        </li>
-      </ul>
-      <select
-        v-on:change="main.updateCategory(selectedCategory)"
-        v-model="selectedCategory"
-        class="md:hidden p-4 rounded text-truflation-500 font-semibold text-center mx-5 shadow-xl"
-      >
-        <option v-for="cat in CategoryType" :value="cat">{{ cat }}</option>
-      </select>
-    </div>
+    <CategoryList />
     <div class="flex flex-col mt-4">
       <Category :category="selectedCategory" />
     </div>
