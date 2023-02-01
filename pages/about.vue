@@ -49,18 +49,17 @@ const videos: VideoLinks[] = [
   <div
     class="flex flex-col gap-8 container text-center md:text-left md:mx-auto mt-16"
   >
-    <h1 class="text-3xl font-semibold">Verifiable Truth is in Short Supply</h1>
+    <h1 class="text-3xl font-semibold">Verifiable Truth Is in Short Supply</h1>
     <div
       class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
     >
       <p class="max-w-xl text-lg">
-        Verifiable truth sets are in short supply at a time governance and
-        transparency are in high demand. As the world rebalances, trustworthy
-        navigation beacons for confident decision-making will be at a premium.
-        However, traditional inflation and financial tracking measures are a
-        barrier to the process. They rely on methodologies established decades
-        ago, using data sets no longer representative of lived realities. They
-        tend to be narrow in scope and only update monthly.
+        Truflation offers a new inflation truth-set to provide reliable
+        financial data for better decision-making. It uses 10 million data
+        points and updates indices daily, offering more comprehensive and
+        up-to-date information compared to traditional indexes updating monthly.
+        Truflation's secure blockchain infrastructure provides unbiased,
+        verifiable data for the growth and sustainability of business decisions.
       </p>
       <p class="max-w-xl text-lg">
         Sustainable growth can only come from a common and verifiable

@@ -69,7 +69,7 @@
                   Government CPI Comparison
                 </p>
                 <p class="max-w-xs">
-                  By comparing our inflation data to official government figures
+                  Comparing our inflation data to official government figures
                   gives you the power to make informed decisions and stay ahead
                   of economic trends.
                 </p>
@@ -84,8 +84,8 @@
                   Updated Daily
                 </p>
                 <p class="max-w-xs">
-                  Updated Daily. Ensuring you have the most recent inflation
-                  data at your fingertips, every day.
+                  Daily updates ensure you have the most recent inflation data
+                  at your fingertips, every day.
                 </p>
               </li>
               <li class="flex flex-col items-center text-center gap-2">
@@ -98,9 +98,8 @@
                   Country Switcher
                 </p>
                 <p class="max-w-xs">
-                  Country switcher. Switch between country-specific data,
-                  providing real-time inflation metrics for multiple countries
-                  with a simple click.
+                  Switch between country-specific data, providing real-time
+                  inflation metrics for multiple countries with a simple click.
                 </p>
               </li>
             </ul>
