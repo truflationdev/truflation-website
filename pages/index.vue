@@ -5,12 +5,17 @@ import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
 
 const main = useDataStore();
+const route = useRoute();
 const { selectedCategory, selectedCountry } = storeToRefs(main);
+const defaultHost = 'https://api.truflation.io'
 
 async function fetchState() {
+  const tag = route.query.tag ?? ''
+  const host = route.query.host ?? defaultHost
+  console.log(`${host}/dashboard-data-uk${tag}`)
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
-      $fetch(`https://api.truflation.io/dashboard-data-uk`)
+      $fetch(`${host}/dashboard-data-uk${tag}`)
     ).then((res) => {
       main.hydrateState(res.data.value);
     });
@@ -18,12 +23,24 @@ async function fetchState() {
   }
 
   await useAsyncData("geocode", () =>
-    $fetch(`https://api.truflation.io/dashboard-data`)
+    $fetch(`${host}/dashboard-data${tag}`)
   ).then((res) => {
     main.hydrateState(res.data.value);
   });
 }
 fetchState();
+
+const testWarning = computed(() => {
+  const tag = route.query.tag ?? ''
+  const host = route.query.host ?? ''
+  if (tag !== '' || host !== '') {
+     const myhost = route.query.host ?? defaultHost
+     return `TEST MODE host=${myhost} tag=${tag} - `
+  } else {
+     return ''
+  }
+})
+
 </script>
 
 <template>
@@ -74,7 +91,7 @@ fetchState();
                     </label> -->
       </div>
       <P class="text-lg text-center md:text-left"
-        >The {{ selectedCountry }} Inflation Rate by Truflation is
+        > {{testWarning}}The {{ selectedCountry }} Inflation Rate by Truflation is
         <span class="font-semibold">{{ main.keyMetrics.Inflation }}%</span>,
         <span class="text-green-600 font-semibold"
           >{{ main.getInflationDayChange() }}%</span
