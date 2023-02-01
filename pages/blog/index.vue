@@ -13,6 +13,11 @@ console.log(posts);
       name="News & Insights | Truflation"
       content="We've researched inflation, partnered with scientists, scoured the databases, and replaced outdated surveys with real-time market information."
     />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"

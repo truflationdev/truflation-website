@@ -25,6 +25,11 @@ const videos: VideoLinks[] = [
       name="About Us | Truflation"
       content="Description: Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
     />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
