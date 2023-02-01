@@ -8,7 +8,36 @@ console.log(posts);
 
 <template>
   <Head>
-    <title>Blog - truflation</title>
+    <title>Blog | truflation</title>
+    <Meta
+      name="News & Insights | Truflation"
+      content="We've researched inflation, partnered with scientists, scoured the databases, and replaced outdated surveys with real-time market information."
+    />
+    <Meta
+      property="og:description"
+      content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
+    />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="truflation.com" />
+    <meta property="twitter:url" content="https://truflation.com/" />
+    <meta
+      name="twitter:title"
+      content="Independent, economic & financial data in real time on-chain"
+    />
+    <meta
+      name="twitter:description"
+      content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
+    />
+    <meta
+      name="twitter:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
