@@ -23,7 +23,7 @@ const { selectedCategory } = storeToRefs(main);
         }"
         class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
       >
-        <div class="text-sm md:text-md text-black/60">vs Last Quarter</div>
+        <div class="text-sm md:text-md text-black/60">vs Three Months</div>
         <h2 class="text-[24px] p-2 rounded font-semibold">
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.quarter }}%
         </h2>
@@ -98,8 +98,8 @@ const { selectedCategory } = storeToRefs(main);
           <div class="flex flex-col">
             <p class="text-black/80 font-semibold">Relative Importance</p>
             <p class="text-xs max-w-xs">
-              The Relative Importance is the percentage weight influence on the
-              overall inflation data. Learn more.
+              Relative Importance refers to the percentage of influence that a
+              specific factor has on the overall inflation data.
             </p>
             <a class="text-xs underline text-black/60" href="/methodology"
               >Learn More</a
@@ -111,7 +111,7 @@ const { selectedCategory } = storeToRefs(main);
     <div class="flex flex-row items-center justify-center mt-4 w-full">
       <CategoryChart :title="`Rate Trend`" />
     </div>
-    <div
+    <!-- <div
       class="text-center mx-auto md:text-left grid grid-cols-1 mt-12 md:grid-cols-2 gap-10 flex-wrap lg:flex-nowrap items-center"
     >
       <div class="gap-3 flex flex-col">
@@ -176,7 +176,7 @@ const { selectedCategory } = storeToRefs(main);
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

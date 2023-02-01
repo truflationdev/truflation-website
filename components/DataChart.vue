@@ -38,7 +38,7 @@ ChartJS.register(
 
 <template>
   <div
-    class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center container max-w-[90%] lg:mx-auto"
+    class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start container max-w-[90%] lg:mx-auto"
   >
     <div
       class="flex flex-col rounded-lg bg-gradient-to-r w-[90%] sm:w-[400px] lg:w-full justify-self-center min-w-[340px] from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
@@ -116,7 +116,7 @@ ChartJS.register(
               stroke-linejoin="round"
             />
           </svg>
-          <p>{{ Math.abs(main.getInflationDayChange()) }}%</p>
+          <p>{{ Math.abs(main.getInflationDayChange()).toFixed(2) }}%</p>
         </div>
       </div>
       <div
@@ -167,7 +167,7 @@ ChartJS.register(
       class="md:col-span-2 max-h-[425px] lg:max-h-[525px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
-        <h2 class="font-semibold">Today's Truflation Rate</h2>
+        <!-- <h2 class="font-semibold">Today's Truflation Rate</h2> -->
         <ul
           class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
         >

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { CategoryType } from "~~/components/categoryTypes";
-import { categoryIcon } from "../static/data/categoryData";
-import { SelectedCountry, useDataStore } from "~~/store/stateStore";
+import { useDataStore, SelectedCountry } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
 
@@ -29,7 +27,11 @@ fetchState();
 
 <template>
   <Head>
-    <title>Dashboard - Truflation</title>
+    <title>Independent, economic & financial data in real time on-chain</title>
+    <Meta
+      name="Independent, economic & financial data in real time on-chain"
+      content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -81,8 +83,13 @@ fetchState();
         <span class="font-extrabold text-lg"
           >{{ main.keyMetrics.Inflation }}%</span
         >,
-        <span class="text-green-600 font-bold"
-          >{{ main.getInflationDayChange() }}%</span
+        <span
+          class="font-bold"
+          :class="{
+            ' text-red-700': main.getInflationDayChange() > 0,
+            ' text-[#005E46]': main.getInflationDayChange() <= 0,
+          }"
+          >{{ main.getInflationDayChange().toFixed(2) }}%</span
         >
         change over the last day.
         <a class="underline text-black/60" href="/methodology"
@@ -98,7 +105,7 @@ fetchState();
       <Category :category="selectedCategory" />
     </div>
     <!-- <SubDrivers :category="categoryData"/> -->
-    <div class="flex flex-col mt-20">
+    <div class="flex flex-col mt-24">
       <DataPartners />
     </div>
     <div

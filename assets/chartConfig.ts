@@ -41,6 +41,9 @@ export const options = {
   responsive: true,
   maintainAspectRatio: false,
   elements: {
+    line: {
+      tension: 0.3,
+    },
     point: {
       borderWidth: 1,
       radius: 0,

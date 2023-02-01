@@ -19,7 +19,12 @@ const videos: VideoLinks[] = [
 
 <template>
   <Head>
-    <title>Developers Center - Truflation</title>
+    <title>Developer Center | Truflation</title>
+    <Meta
+      name="Developer Center | Truflation"
+      content="The Truflation team aspires to create a future that protects people from inflation with real-time and accurate information. Power your blockchain and De-Fi apps with Truflation data.
+"
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -39,7 +44,7 @@ const videos: VideoLinks[] = [
           class="flex flex-col mx-5 md:mx-0 items-center flex-wrap md:items-start md:max-w-max gap-3 mt-10"
         >
           <li
-            class="flex flex-row flex-wrap justify-center gap-3 items-center text-lg"
+            class="flex md:flex-row flex-col flex-wrap justify-center gap-3 items-center text-lg"
           >
             <svg
               width="20"
@@ -58,7 +63,7 @@ const videos: VideoLinks[] = [
             Verifiable on-chain data sets built for easy integrations
           </li>
           <li
-            class="flex flex-row flex-wrap justify-center gap-3 items-center text-lg"
+            class="flex md:flex-row flex-col flex-wrap justify-center gap-3 items-center text-lg"
           >
             <svg
               width="20"
@@ -74,11 +79,10 @@ const videos: VideoLinks[] = [
                 fill="#0D58C6"
               />
             </svg>
-            Use it the way you need it – standalone, full integrated, on-chain,
-            APIs
+            Use it the way you need it⁠—standalone, on-chain, or via API
           </li>
           <li
-            class="flex flex-row flex-wrap justify-center gap-3 items-center text-lg"
+            class="flex md:flex-row flex-col flex-wrap justify-center gap-3 items-center text-lg"
           >
             <svg
               width="20"
@@ -96,7 +100,7 @@ const videos: VideoLinks[] = [
             </svg>
             Smart contracts for secure engagement model
           </li>
-          <li
+          <!-- <li
             class="flex flex-col md:flex-row flex-wrap justify-center gap-3 items-center text-lg"
           >
             <svg
@@ -114,18 +118,24 @@ const videos: VideoLinks[] = [
               />
             </svg>
             Low cost
-          </li>
+          </li> -->
         </ul>
       </div>
-      <img src="../assets/img/developer-hero.svg" alt="" />
+      <img
+        class="hidden lg:flex"
+        src="../assets/img/developer-hero.svg"
+        alt=""
+      />
     </div>
     <div class="container mx-auto flex flex-row">
       <ul class="flex flex-row w-full justify-center gap-5 flex-wrap">
         <li class="flex gap-4 flex-col p-8 max-w-xl w-full bg-truflation-100">
           <p class="text-2xl font-semibold">Get Started</p>
-          <p>Learn about truflation</p>
+          <p>Learn how to start using Truflation on chain now</p>
           <div class="ml-auto">
-            <a href="https://whitepaper.truflation.com/"
+            <a
+              target="_blank"
+              href="https://whitepaper.truflation.com/dev-guides/quick-start"
               ><svg
                 width="19.2"
                 height="16.8"
@@ -145,7 +155,10 @@ const videos: VideoLinks[] = [
         </li>
         <li class="flex gap-4 flex-col p-8 max-w-xl w-full bg-truflation-100">
           <p class="text-2xl font-semibold">Methodology</p>
-          <p>Learn about truflation</p>
+          <p>
+            Learn what makes us different than traditional inflation
+            calculations
+          </p>
           <div class="ml-auto">
             <a href="/methodology"
               ><svg
@@ -167,9 +180,9 @@ const videos: VideoLinks[] = [
         </li>
         <li class="flex gap-4 flex-col p-8 max-w-xl w-full bg-truflation-100">
           <p class="text-2xl font-semibold">Community</p>
-          <p>Learn about truflation</p>
+          <p>Join our community on Telegram</p>
           <div class="ml-auto">
-            <a href="https://t.me/truflation"
+            <a target="_blank" href="https://t.me/truflation"
               ><svg
                 width="19.2"
                 height="16.8"
@@ -189,9 +202,9 @@ const videos: VideoLinks[] = [
         </li>
         <li class="flex gap-4 flex-col p-8 max-w-xl w-full bg-truflation-100">
           <p class="text-2xl font-semibold">TFI Marketplace</p>
-          <p>Learn about truflation</p>
+          <p>Access a much broader range of data than just inflation</p>
           <div class="ml-auto">
-            <a href="https://marketplace.truflation.com/"
+            <a target="_blank" href="https://marketplace.truflation.com/"
               ><svg
                 width="19.2"
                 height="16.8"
@@ -213,17 +226,17 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div
-    class="container mx-auto gap-10 md:gap-64 items-center justify-center gap-8 flex-wrap flex flex-row mt-20"
+    class="container mx-auto gap-10 xl:gap-64 items-center justify-center flex-wrap flex flex-row mt-20"
   >
     <div class="flex flex-col gap-6 md:text-left text-center mx-5 md:mx-0">
       <h1 class="font-semibold text-3xl">Want to dive straight into coding?</h1>
       <p class="max-w-md">
-        Your two essential resources are our Discord, for getting live support,
-        and also our Github quickstart for all the info you will need to get
-        coding.
+        Truflation provides two key resources for support and information:
+        Discord for live support, and a GitHub quickstart for comprehensive
+        coding information.
       </p>
     </div>
-    <div class="flex flex-col gap-4 my-10">
+    <div class="flex flex-col w-full items-center lg:w-auto gap-4 lg:my-10">
       <div
         class="flex flex-row w-96 pl-10 rounded h-28 bg-slate-50 justify-center items-center gap-3"
       >
@@ -242,7 +255,9 @@ const videos: VideoLinks[] = [
           />
         </svg>
         <h1 class="text-2xl hover:text-blue-700">
-          <a href="https://github.com/truflation">Github</a>
+          <a target="_blank" href="https://github.com/truflation/quickstart"
+            >Github</a
+          >
         </h1>
         <div class="opacity-10 ml-auto">
           <svg
@@ -297,10 +312,10 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div class="flex flex-col mt-28 gap-24 mb-20">
-    <BlogLinks :title="`Need Some More Information First`" :videos="videos" />
+    <BlogLinks :title="`News & Media`" :videos="videos" />
     <Investors />
-    <NewsLetter />
   </div>
+  <NewsLetter />
   <FooterComp />
 </template>
 

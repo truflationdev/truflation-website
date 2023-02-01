@@ -2,7 +2,11 @@
 
 <template>
   <Head>
-    <title>Widget - Truflation Solutions</title>
+    <title>Embed Daily Inflation Daily Anywhere | Truflation</title>
+    <Meta
+      name="Embed Daily Inflation Daily Anywhere | Truflation"
+      content=" Integrate the Truflation widget seamlessly into any platform with its customizability. Get real-time inflation data on your website, dashboard, or application."
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -19,13 +23,11 @@
             TRUFLATION WIDGET
           </div>
           <h1 class="font-semibold text-5xl text-white">Embed Daily</h1>
-          <h1 class="font-semibold text-5xl text-white">
-            Inflation Daily Anywhere
-          </h1>
+          <h1 class="font-semibold text-5xl text-white">Inflation Anywhere</h1>
           <p class="max-w-[475px] mt-4 text-white">
-            Embeddable. Easily integrate the Truflation widget into any platform
-            with its customizable, and bring real-time inflation data to your
-            website, dashboard or application.
+            Integrate the Truflation widget seamlessly into any platform with
+            its customizability. Get real-time inflation data on your website,
+            dashboard, or application.
           </p>
           <div class="rounded-full font-light w-fit px-4 py-3 bg-green-300">
             Coming Soon!
@@ -49,9 +51,6 @@
         <div
           class="flex mx-10 md:mx-auto text-center flex-col gap-4 h-full w-full items-center"
         >
-          <div class="text-sm text-truflation-700 font-semibold">
-            TRUFLATION WIDGET
-          </div>
           <h1 class="text-5xl font-medium">Widget Features</h1>
           <p class="font-light text-center max-w-3xl">
             Below is an outline of how we approach the collection and indexing
@@ -67,7 +66,7 @@
                   alt=""
                 />
                 <p class="text-lg font-semibold text-truflation-500">
-                  Government CPI comparison
+                  Government CPI Comparison
                 </p>
                 <p class="max-w-xs">
                   By comparing our inflation data to official government figures

@@ -21,6 +21,10 @@ const videos: VideoLinks[] = [
 <template>
   <Head>
     <title>About Us - Truflation</title>
+    <Meta
+      name="About Us | Truflation"
+      content="Description: Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -78,20 +82,20 @@ const videos: VideoLinks[] = [
         We conducted a detailed examination of the challenges arising from
         imperfect inflation metrics and came up with a new perspective.
       </p>
-      <a
+      <!-- <a
         href="https://whitepaper.truflation.com/"
         target="_blank"
         class="text-truflation-500"
         >Whitepaper</a
-      >
+      > -->
     </div>
     <div class="flex flex-col p-10 bg-truflation-100">
       <h1 class="text-2xl">Why Truflation?</h1>
       <p class="text-lg mt-6 mb-1 max-w-xl">
-        Our daily indexes highlight how decision-making is undermined by
-        inflation measures of the past. Daily data beats monthly.
+        Truflation's daily indexing outperforms monthly measures by providing
+        real-time insight into how inflation affects decision-making.
       </p>
-      <a href="/" class="text-truflation-500">Go to Dashboard</a>
+      <!-- <a href="/" class="text-truflation-500">Go to Dashboard</a> -->
     </div>
   </div>
   <!-- <div
@@ -136,7 +140,7 @@ const videos: VideoLinks[] = [
   <div
     class="mx-auto flex text-center justify-center items-center flex-col container mt-32"
   >
-    <h1 class="text-5xl">Meet the team behind Truflation</h1>
+    <h1 class="text-5xl">The Team Behind Truflation</h1>
     <p class="text-lg mt-3 mb-16">
       Decades of experience in blockchain, measurement, and finance
     </p>
@@ -207,11 +211,7 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div></div>
-  <BlogLinks
-    :title="`Whats New at Truflation`"
-    :data="blogData"
-    :videos="videos"
-  />
+  <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
   <div class="mt-24 mb-20">
     <Investors />
   </div>

@@ -7,8 +7,8 @@
         <div class="flex flex-row">
           <img class="mr-2" src="../assets/img/Data-source-icon.svg" alt="" />
           <p class="text-sm">
-            <span class="text-base text-[#0D58C6]">Truflation WhitePaper</span
-            ><br />View our transparent data sources
+            <span class="text-base text-[#0D58C6]">Truflation Whitepaper</span
+            ><br />Learn how we calculate inflation for the information age
           </p>
         </div>
       </a>
@@ -16,8 +16,8 @@
         <div class="flex flex-row">
           <img class="mr-2" src="../assets/img/factsheet-icon.svg" alt="" />
           <p class="text-sm">
-            <span class="text-base text-[#0D58C6]">Methodology</span
-            ><br />"Understand our advanced methods"
+            <span class="text-base text-[#0D58C6]">Methodology</span><br />Learn
+            about our modern data collection and calculation
           </p>
         </div>
       </a>

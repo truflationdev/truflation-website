@@ -6,7 +6,10 @@ const { data } = await useFetch(`/api/${slug}`);
 
 <template>
   <Head>
-    <title>{{ `${data.title}- Truflation Blog` }}</title>
+    <title>
+      {{ `${data.title} | Truflation` }}
+    </title>
+    <Meta :name="`${data.title} | Truflation`" :content="data.title" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"

@@ -82,7 +82,7 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
           </li>
           <li tabindex="0">
             <a class="justify-between">
-              Resources
+              Explore
               <svg
                 class="fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,6 +109,9 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
                 >
               </li>
             </ul>
+          </li>
+          <li tabindex="0">
+            <a href="/resources" class="justify-between"> Resources </a>
           </li>
         </ul>
       </div>
@@ -269,8 +272,8 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             </svg>
           </a>
           <ul class="p-4 text-left text-gray-800 bg-white">
-            <li class="font-semibold text">
-              <a href="/developers">Developers Center</a>
+            <li class="font-light text">
+              <a href="/developers">Developer Center</a>
             </li>
             <li class="font-light text">
               <a
@@ -294,8 +297,10 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
               </a>
             </li>
             <li class="font-light">
-              <a target="”_blank”" href="https://github.com/truflation"
-                >Github
+              <a
+                target="”_blank”"
+                href="https://github.com/truflation/quickstart"
+                >GitHub
                 <svg
                   width="16"
                   height="16"
@@ -330,10 +335,10 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             </svg>
           </a>
           <ul class="p-4 text-left text-gray-800 bg-white">
-            <li class="font-semibold text"><a href="/blog">Blog</a></li>
+            <li class="font-light text"><a href="/blog">Blog</a></li>
             <li class="font-light">
               <a href="https://whitepaper.truflation.com/" target="_blank"
-                >whitepaper
+                >Whitepaper
                 <svg
                   width="16"
                   height="16"
