@@ -214,7 +214,7 @@
         <ul class="flex text-white/60 flex-col gap-3">
           <li><a href="/methodology">Methodology</a></li>
           <li><a href="/resources">Resources</a></li>
-          <li><a href="/about">About Us</a></li>
+          <li><a href="/about">About us</a></li>
           <li><a href="/contact">Contact us</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul>
