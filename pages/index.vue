@@ -48,6 +48,11 @@ const testWarning = computed(() => {
       name="Independent, economic & financial data in real time on-chain"
       content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
     />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"

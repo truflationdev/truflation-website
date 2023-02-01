@@ -25,6 +25,11 @@ const videos: VideoLinks[] = [
       content="The Truflation team aspires to create a future that protects people from inflation with real-time and accurate information. Power your blockchain and De-Fi apps with Truflation data.
 "
     />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"

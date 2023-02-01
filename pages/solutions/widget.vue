@@ -11,6 +11,10 @@
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
     />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
   </Head>
   <div class="flex flex-col w-full items-center">
     <div class="bg-[url('assets/img/widget-background.svg')] bg-cover w-full">

@@ -19,6 +19,11 @@ const videos: VideoLinks[] = [
 </script>
 
 <template>
+  <Meta
+    property="og:image"
+    content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+  />
+
   <Head>
     <title>Privacy Policy - Truflation</title>
     <link

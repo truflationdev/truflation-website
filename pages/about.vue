@@ -25,6 +25,11 @@ const videos: VideoLinks[] = [
       name="About Us | Truflation"
       content="Description: Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
     />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -54,7 +59,7 @@ const videos: VideoLinks[] = [
         Verifiable Truth Is in Short Supply
       </h1>
       <div
-        class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
+        class="flex mx-4 justify-between md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
       >
         <p class="max-w-xl text-lg">
           Truflation offers a new inflation truth-set to provide reliable
@@ -65,7 +70,8 @@ const videos: VideoLinks[] = [
           unbiased, verifiable data for the growth and sustainability of
           business decisions.
         </p>
-        <p class="max-w-xl text-lg">
+        <img class="md:flex hidden" src="../assets/img/globe.png" alt="" />
+        <!-- <p class="max-w-xl text-lg">
           Sustainable growth can only come from a common and verifiable
           understanding of the facts used as a basis for business decisions. To
           meet this need, we built a first-of-its-kind infrastructure to provide
@@ -73,7 +79,7 @@ const videos: VideoLinks[] = [
           enable faster, more intelligent decision-making. Truflation delivers a
           new inflation truth-set: built on +10 million data points, updating
           indices daily, not monthly.
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
