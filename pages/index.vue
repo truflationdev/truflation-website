@@ -6,12 +6,12 @@ import "chartjs-adapter-date-fns";
 const main = useDataStore();
 const route = useRoute();
 const { selectedCategory, selectedCountry } = storeToRefs(main);
-const defaultHost = 'https://api.truflation.io'
+const defaultHost = "https://api.truflation.io";
 
 async function fetchState() {
-  const tag = route.query.tag ?? ''
-  const host = route.query.host ?? defaultHost
-  console.log(`${host}/dashboard-data-uk${tag}`)
+  const tag = route.query.tag ?? "";
+  const host = route.query.host ?? defaultHost;
+  console.log(`${host}/dashboard-data-uk${tag}`);
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
       $fetch(`${host}/dashboard-data-uk${tag}`)
@@ -30,16 +30,15 @@ async function fetchState() {
 fetchState();
 
 const testWarning = computed(() => {
-  const tag = route.query.tag ?? ''
-  const host = route.query.host ?? ''
-  if (tag !== '' || host !== '') {
-     const myhost = route.query.host ?? defaultHost
-     return `TEST MODE host=${myhost} tag=${tag} - `
+  const tag = route.query.tag ?? "";
+  const host = route.query.host ?? "";
+  if (tag !== "" || host !== "") {
+    const myhost = route.query.host ?? defaultHost;
+    return `TEST MODE host=${myhost} tag=${tag} - `;
   } else {
-     return ''
+    return "";
   }
-})
-
+});
 </script>
 
 <template>
@@ -96,7 +95,8 @@ const testWarning = computed(() => {
                     </label> -->
       </div>
       <P class="text-lg text-center lg:text-left"
-        >{{testWarning}} The {{ selectedCountry }} Inflation Rate by Truflation is
+        >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
+        Truflation is
         <span class="font-extrabold text-lg"
           >{{ main.keyMetrics.Inflation }}%</span
         >,
@@ -106,7 +106,8 @@ const testWarning = computed(() => {
             ' text-red-700': main.getInflationDayChange() > 0,
             ' text-[#005E46]': main.getInflationDayChange() <= 0,
           }"
-          >{{ main.getInflationDayChange().toFixed(2) }}%</span>
+          >{{ main.getInflationDayChange().toFixed(2) }}%</span
+        >
         change over the last day.
         <a class="underline text-black/60" href="/methodology"
           >Read Methodology</a

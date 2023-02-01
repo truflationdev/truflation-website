@@ -47,33 +47,38 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div
-    class="flex flex-col gap-8 container text-center md:text-left md:mx-auto mt-16"
+    class="flex flex-col gap-8 container justify-center items-center text-center md:text-left md:mx-auto mt-16"
   >
-    <h1 class="text-3xl font-semibold">Verifiable Truth Is in Short Supply</h1>
-    <div
-      class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
-    >
-      <p class="max-w-xl text-lg">
-        Truflation offers a new inflation truth-set to provide reliable
-        financial data for better decision-making. It uses 10 million data
-        points and updates indices daily, offering more comprehensive and
-        up-to-date information compared to traditional indexes updating monthly.
-        Truflation's secure blockchain infrastructure provides unbiased,
-        verifiable data for the growth and sustainability of business decisions.
-      </p>
-      <p class="max-w-xl text-lg">
-        Sustainable growth can only come from a common and verifiable
-        understanding of the facts used as a basis for business decisions. To
-        meet this need, we built a first-of-its-kind infrastructure to provide
-        unbiased and verifiable financial data on a secure blockchain to enable
-        faster, more intelligent decision-making. Truflation delivers a new
-        inflation truth-set: built on +10 million data points, updating indices
-        daily, not monthly.
-      </p>
+    <div class="gap-8 flex flex-col">
+      <h1 class="text-3xl font-semibold">
+        Verifiable Truth Is in Short Supply
+      </h1>
+      <div
+        class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
+      >
+        <p class="max-w-xl text-lg">
+          Truflation offers a new inflation truth-set to provide reliable
+          financial data for better decision-making. It uses 10 million data
+          points and updates indices daily, offering more comprehensive and
+          up-to-date information compared to traditional indexes updating
+          monthly. Truflation's secure blockchain infrastructure provides
+          unbiased, verifiable data for the growth and sustainability of
+          business decisions.
+        </p>
+        <p class="max-w-xl text-lg">
+          Sustainable growth can only come from a common and verifiable
+          understanding of the facts used as a basis for business decisions. To
+          meet this need, we built a first-of-its-kind infrastructure to provide
+          unbiased and verifiable financial data on a secure blockchain to
+          enable faster, more intelligent decision-making. Truflation delivers a
+          new inflation truth-set: built on +10 million data points, updating
+          indices daily, not monthly.
+        </p>
+      </div>
     </div>
   </div>
   <div
-    class="container mx-auto items-center flex flex-row flex-wrap md:flex-nowrap mt-28 gap-7"
+    class="container mx-auto items-center justify-center flex flex-row flex-wrap md:flex-nowrap mt-28 gap-7"
   >
     <div class="flex flex-col p-10 bg-truflation-100">
       <h1 class="text-2xl">Why Now?</h1>
