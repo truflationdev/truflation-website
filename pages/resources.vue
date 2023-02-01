@@ -4,11 +4,11 @@ import { resourcePoints, blogData } from "../static/data/staffData";
 
 const videos: VideoLinks[] = [
   {
-    title: "truflation + Discourse",
+    title: "Truflation + Discourse",
     link: "https://www.youtube.com/embed/p07UF8aRmfQ",
   },
   {
-    title: "Cracking the inflation code",
+    title: "Cracking the Inflation Code",
     link: "https://www.youtube.com/embed/QRTIV10Iw-I",
   },
   {
