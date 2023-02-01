@@ -4,11 +4,11 @@ import { staffData, CustomerData, blogData } from "../static/data/staffData";
 
 const videos: VideoLinks[] = [
   {
-    title: "truflation + Discourse",
+    title: "Truflation + Discourse",
     link: "https://www.youtube.com/embed/p07UF8aRmfQ",
   },
   {
-    title: "Cracking the inflation code",
+    title: "Cracking the Inflation Code",
     link: "https://www.youtube.com/embed/QRTIV10Iw-I",
   },
   {
@@ -21,8 +21,12 @@ const videos: VideoLinks[] = [
 <template>
   <Head>
     <title>About Us - Truflation</title>
+    <Meta
+      name="About Us | Truflation"
+      content="Description: Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
+    />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
     />
   </Head>
@@ -43,34 +47,38 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div
-    class="flex flex-col gap-8 container text-center md:text-left md:mx-auto mt-16"
+    class="flex flex-col gap-8 container justify-center items-center text-center md:text-left md:mx-auto mt-16"
   >
-    <h1 class="text-3xl font-semibold">Verifiable Truth is in Short Supply</h1>
-    <div
-      class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
-    >
-      <p class="max-w-xl text-lg">
-        Verifiable truth sets are in short supply at a time governance and
-        transparency are in high demand. As the world rebalances, trustworthy
-        navigation beacons for confident decision-making will be at a premium.
-        However, traditional inflation and financial tracking measures are a
-        barrier to the process. They rely on methodologies established decades
-        ago, using data sets no longer representative of lived realities. They
-        tend to be narrow in scope and only update monthly.
-      </p>
-      <p class="max-w-xl text-lg">
-        Sustainable growth can only come from a common and verifiable
-        understanding of the facts used as a basis for business decisions. To
-        meet this need, we built a first-of-its-kind infrastructure to provide
-        unbiased and verifiable financial data on a secure blockchain to enable
-        faster, more intelligent decision-making. Truflation delivers a new
-        inflation truth-set: built on +10 million data points, updating indices
-        daily, not monthly.
-      </p>
+    <div class="gap-8 flex flex-col">
+      <h1 class="text-3xl font-semibold">
+        Verifiable Truth Is in Short Supply
+      </h1>
+      <div
+        class="flex mx-4 md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
+      >
+        <p class="max-w-xl text-lg">
+          Truflation offers a new inflation truth-set to provide reliable
+          financial data for better decision-making. It uses 10 million data
+          points and updates indices daily, offering more comprehensive and
+          up-to-date information compared to traditional indexes updating
+          monthly. Truflation's secure blockchain infrastructure provides
+          unbiased, verifiable data for the growth and sustainability of
+          business decisions.
+        </p>
+        <p class="max-w-xl text-lg">
+          Sustainable growth can only come from a common and verifiable
+          understanding of the facts used as a basis for business decisions. To
+          meet this need, we built a first-of-its-kind infrastructure to provide
+          unbiased and verifiable financial data on a secure blockchain to
+          enable faster, more intelligent decision-making. Truflation delivers a
+          new inflation truth-set: built on +10 million data points, updating
+          indices daily, not monthly.
+        </p>
+      </div>
     </div>
   </div>
   <div
-    class="container mx-auto items-center flex flex-row flex-wrap md:flex-nowrap mt-28 gap-7"
+    class="container mx-auto items-center justify-center flex flex-row flex-wrap md:flex-nowrap mt-28 gap-7"
   >
     <div class="flex flex-col p-10 bg-truflation-100">
       <h1 class="text-2xl">Why Now?</h1>
@@ -78,20 +86,20 @@ const videos: VideoLinks[] = [
         We conducted a detailed examination of the challenges arising from
         imperfect inflation metrics and came up with a new perspective.
       </p>
-      <a
+      <!-- <a
         href="https://whitepaper.truflation.com/"
         target="_blank"
         class="text-truflation-500"
         >Whitepaper</a
-      >
+      > -->
     </div>
     <div class="flex flex-col p-10 bg-truflation-100">
       <h1 class="text-2xl">Why Truflation?</h1>
       <p class="text-lg mt-6 mb-1 max-w-xl">
-        Our daily indexes highlight how decision-making is undermined by
-        inflation measures of the past. Daily data beats monthly.
+        Truflation's daily indexing outperforms monthly measures by providing
+        real-time insight into how inflation affects decision-making.
       </p>
-      <a href="/" class="text-truflation-500">Go to Dashboard</a>
+      <!-- <a href="/" class="text-truflation-500">Go to Dashboard</a> -->
     </div>
   </div>
   <!-- <div
@@ -136,7 +144,7 @@ const videos: VideoLinks[] = [
   <div
     class="mx-auto flex text-center justify-center items-center flex-col container mt-32"
   >
-    <h1 class="text-5xl">Meet the team behind Truflation</h1>
+    <h1 class="text-5xl">The Team Behind Truflation</h1>
     <p class="text-lg mt-3 mb-16">
       Decades of experience in blockchain, measurement, and finance
     </p>
@@ -175,13 +183,13 @@ const videos: VideoLinks[] = [
         <li class="flex flex-col items-center gap-1">
           <img src="../assets/img/staff/jarryd.png" alt="" />
           <p class="mt-4 text-xl font-semibold">Jarryd Pretorius</p>
-          <p class="mt-1">Frontend Developer</p>
+          <p class="mt-1">Front-end Developer</p>
         </li>
-        <!-- <li class="flex flex-col items-center gap-1">
-          <img src="../assets/img/staff/Ivan-Jelic.png" alt="" />
+        <li class="flex flex-col items-center gap-1">
+          <img src="../assets/img/staff/david.png" alt="" />
           <p class="mt-4 text-xl font-semibold">David Ring</p>
-          <p class="mt-1">Head of Data</p>
-        </li> -->
+          <p class="mt-1">Back-end Developer</p>
+        </li>
       </ul>
     </div>
   </div>
@@ -207,11 +215,7 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div></div>
-  <BlogLinks
-    :title="`Whats New at Truflation`"
-    :data="blogData"
-    :videos="videos"
-  />
+  <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
   <div class="mt-24 mb-20">
     <Investors />
   </div>

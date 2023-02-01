@@ -4,11 +4,11 @@ import { resourcePoints, blogData } from "../static/data/staffData";
 
 const videos: VideoLinks[] = [
   {
-    title: "truflation + Discourse",
+    title: "Truflation + Discourse",
     link: "https://www.youtube.com/embed/p07UF8aRmfQ",
   },
   {
-    title: "Cracking the inflation code",
+    title: "Cracking the Inflation Code",
     link: "https://www.youtube.com/embed/QRTIV10Iw-I",
   },
   {
@@ -21,8 +21,12 @@ const videos: VideoLinks[] = [
 <template>
   <Head>
     <title>Resources - Truflation</title>
+    <Meta
+      name="Resources | Truflation"
+      content="Discover the vision, research, and updates behind the Truflation project."
+    />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
     />
   </Head>
@@ -31,13 +35,15 @@ const videos: VideoLinks[] = [
     <body>
       <WhitePapaerModal />
       <div
-        class="container items-center justify-center mx-auto mt-24 pb-16 flex flex-row gap-32 flex-wrap"
+        class="container items-center justify-center mx-auto mt-24 pb-16 flex flex-row gap-5 lg:gap-32 flex-wrap-reverse"
       >
-        <div class="flex flex-col gap-4 flex-wrap max-w-2xl">
+        <div
+          class="flex flex-row flex-wrap md:text-left text-center lg:items-baseline items-center lg:flex-col gap-4 justify-center md:max-w-2xl"
+        >
           <h1 class="text-5xl font-semibold">Resources</h1>
           <p class="text-[18px] max-w-[402px]">
-            Explore the leadership, whitepapers and news fuelling the evolution
-            of Truflation.
+            Discover the vision, research, and updates behind the Truflation
+            project.
           </p>
           <a href="#my-modal"
             ><p class="flex text-[18px] flex-row items-center mt-1 gap-3">
@@ -46,7 +52,7 @@ const videos: VideoLinks[] = [
           ></a>
         </div>
         <div
-          class="flex bg-[url('assets/img/presentation.png')] items-center justify-center w-full h-96 max-w-2xl bg-cover"
+          class="flex mx-5 bg-[url('assets/img/presentation.png')] rounded-lg items-center justify-center w-full min-h-[270px] lg:h-[400px] max-w-2xl bg-cover"
         >
           <a
             href="#my-modal"
@@ -72,16 +78,15 @@ const videos: VideoLinks[] = [
         <div class="flex flex-col flex-wrap">
           <h1 class="text-3xl font-semibold">Whitepaper & Research</h1>
           <p class="max-w-xl mt-6 mb-11">
-            Your two essential resources are our Discord, for getting live
-            support, and also our Github quickstart for all the info you will
-            need to get coding.
+            Get a complete understanding of Truflation's workings by reading our
+            whitepaper and methodology.
           </p>
           <PointsWithIcon :data="resourcePoints.list" />
         </div>
         <img src="../assets/img/globe.png" alt="" />
       </div>
       <div class="my-36">
-        <BlogLinks :title="`News & media`" :data="blogData" :videos="videos" />
+        <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
       </div>
       <div class="flex">
         <NewsLetter />
