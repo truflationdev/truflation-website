@@ -96,6 +96,12 @@ function Calculate() {
     .scrollIntoView({ behavior: "smooth" });
 }
 
+function scrollToText() {
+  document
+    .getElementById("calculator-text")
+    .scrollIntoView({ behavior: "smooth" });
+}
+
 function reset() {
   Object.assign(inputFields, initialState);
 }
@@ -129,6 +135,7 @@ function reset() {
         Individual Personalized Inflation Calculator
       </h1>
       <button
+        @click="scrollToText()"
         class="grid col-span-3 ml-auto w-fit px-4 py-3 font-semibold bg-black/[8%]"
       >
         Personal inflation Guide
@@ -358,7 +365,10 @@ function reset() {
         </div>
       </div>
 
-      <h1 class="grid col-span-4 mt-20 text-3xl font-semibold">
+      <h1
+        id="calculator-text"
+        class="grid col-span-4 mt-20 text-3xl font-semibold"
+      >
         Individual Personalized Inflation Calculator
       </h1>
       <p class="grid col-span-4 text-[18px]">
