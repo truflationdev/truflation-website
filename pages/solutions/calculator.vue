@@ -151,10 +151,10 @@ function reset() {
           <div class="flex col-span-1 gap-9 flex-row">
             <ul class="flex flex-col gap-4">
               <li
-                class="flex flex-row items-center"
+                class="flex bg-white flex-row items-center"
                 v-for="(field, index) in fields"
               >
-                <p class="h-full flex items-center px-3 bg-gray-100">$</p>
+                <p class="h-full flex bg-gray-50 items-center px-3">$</p>
                 <input
                   placeholder="0"
                   v-model.lazy="inputFields[field]"
