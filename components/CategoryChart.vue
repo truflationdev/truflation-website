@@ -64,7 +64,7 @@ function ColourPicker(index: number) {
           sub-categories
         </p>
       </div>
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col h-full gap-2">
         <div
           class="w-fit"
           v-for="(subCategory, index) in main?.getByCategoryType(
@@ -73,6 +73,12 @@ function ColourPicker(index: number) {
         >
           <p class="px-2 py-1 rounded-full" :class="ColourPicker(index)">
             {{ subCategory }}
+          </p>
+        </div>
+        <div class="gap-3 mt-auto mb-4 flex flex-col">
+          <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
+          <p class="max-w-md mx-5 sm:mx-0">
+            {{ main?.getByCategoryType(selectedCategory)?.about }}
           </p>
         </div>
       </div>

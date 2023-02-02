@@ -8,11 +8,11 @@ import { resourcePoints, blogData } from "../static/data/staffData";
 
 const videos: VideoLinks[] = [
   {
-    title: "truflation + Discourse",
+    title: "Truflation + Discourse",
     link: "https://www.youtube.com/embed/p07UF8aRmfQ",
   },
   {
-    title: "Cracking the inflation code",
+    title: "Cracking the Inflation Code",
     link: "https://www.youtube.com/embed/QRTIV10Iw-I",
   },
   {
@@ -24,10 +24,18 @@ const videos: VideoLinks[] = [
 
 <template>
   <Head>
-    <title>Methodology - Truflation</title>
+    <title>Methodology Matters | Truflation</title>
+    <Meta
+      name="Methodology Matters | Truflation"
+      content="Our methodology relies on multiple data sources and the prices of millions of items across the economy. The result is an aggregated data feed that portrays real-world inflation values."
+    />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
+    />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
     />
   </Head>
   <div
@@ -41,13 +49,11 @@ const videos: VideoLinks[] = [
         <div class="flex flex-col gap-4 h-full my-4">
           <h1 class="text-5xl text-white capitalize">Methodology Matters</h1>
           <p class="max-w-3xl text-lg text-white">
-            Historically, government inflation metrics have produced biased
-            outputs, built on outdated methodologies. They lacked modern
-            measurement techniques, provided limited levels of transparency, and
-            only updated monthly. Truflation delivers a new inflation truth-set
-            — built on +10 million data points, updating indices daily, not
-            monthly. The methodology is transparent and dynamically adjusts to
-            global market conditions
+            Truflation offers a more reliable view of inflation, contrasting
+            with government metrics that have outdated methodologies and limited
+            transparency. With 10 million data points, it updates daily and has
+            a dynamic and transparent methodology that responds to global market
+            conditions.
           </p>
         </div>
       </div>
@@ -79,9 +85,8 @@ const videos: VideoLinks[] = [
   >
     <h1 class="text-5xl mb-4">Our Methodology</h1>
     <p class="font-light text-base text-center mx-10 md:mx-auto max-w-2xl">
-      Below is an outline of how we approach the collection and indexing of the
-      world's financial and economic data, using our first index Truflation US
-      for illustrative purposes.
+      This outlines our process for collecting and indexing global financial and
+      economic data, using Truflation US as an example.
     </p>
     <ul class="grid gap-x-20 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
       <li
@@ -96,7 +101,7 @@ const videos: VideoLinks[] = [
         <p class="w-32 font-normal">{{ radial.title }}</p>
       </li>
     </ul>
-    <a href="https://whitepaper.truflation.com/dashboard">
+    <!-- <a href="https://whitepaper.truflation.com/dashboard">
       <button class="btn mt-12">
         Download Complete Methodology
         <svg
@@ -114,11 +119,11 @@ const videos: VideoLinks[] = [
           />
         </svg>
       </button>
-    </a>
+    </a> -->
   </div>
   <DataPartners />
   <div class="mt-24 flex flex-col gap-24">
-    <BlogLinks :title="`News & media`" :data="blogData" :videos="videos" />
+    <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
     <Investors />
     <NewsLetter />
   </div>

@@ -4,11 +4,11 @@ import { blogData } from "../static/data/staffData";
 
 const videos: VideoLinks[] = [
   {
-    title: "truflation + Discourse",
+    title: "Truflation + Discourse",
     link: "https://www.youtube.com/embed/p07UF8aRmfQ",
   },
   {
-    title: "Cracking the inflation code",
+    title: "Cracking the Inflation Code",
     link: "https://www.youtube.com/embed/QRTIV10Iw-I",
   },
   {
@@ -24,6 +24,10 @@ const videos: VideoLinks[] = [
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
+    />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
     />
   </Head>
   <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">

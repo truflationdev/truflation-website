@@ -38,13 +38,13 @@ ChartJS.register(
 
 <template>
   <div
-    class="grid grid-cols-1 lg:grid-cols-3 justify-center content-center items-center container mx-auto"
+    class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start container max-w-[90%] lg:mx-auto"
   >
     <div
-      class="flex flex-col bg-gradient-to-r max-w-md from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
+      class="flex flex-col rounded-lg bg-gradient-to-r w-[90%] sm:w-[400px] lg:w-full justify-self-center min-w-[340px] from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
     >
-      <div class="flex flex-row justify-evenly items-center gap-8">
-        <div class="flex items-center p-4 rounded-lg bg-[#FFFFFF14]">
+      <div class="flex flex-row w-full items-center justify-center gap-8">
+        <div class="items-center flex p-4 rounded-lg bg-[#FFFFFF14]">
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -62,13 +62,18 @@ ChartJS.register(
           </p>
           <p class="text-sm text-white/60">{{ main?.getDateToday() }}</p>
         </div>
-        <select
+        <!-- <select
           class="bg-[#FFFFFF14] text-white px-3 py-3 rounded-lg w-fit h-fit"
           name=""
           id=""
         >
-          <option value="1y">1Y</option>
-        </select>
+          <option value="1y">1D</option>
+        </select> -->
+        <div
+          class="bg-[#FFFFFF14] ml-auto text-white px-5 py-4 text-lg rounded-lg w-fit h-fit"
+        >
+          1D
+        </div>
       </div>
       <div class="flex flex-row mt-12 gap-3 items-center">
         <p class="text-white text-6xl font-semibold">
@@ -77,12 +82,12 @@ ChartJS.register(
         <div
           class="flex flex-row p-2 rotate-180 rounded-lg items-center gap-1"
           :class="{
-            'bg-red-100 text-red-700': main.getHighAndLow().change > 0,
-            'bg-[#E6F4EE] text-[#005E46]': main.getHighAndLow().change < 0,
+            'bg-red-100 text-red-700': main.getInflationDayChange() > 0,
+            'bg-[#E6F4EE] text-[#005E46]': main.getInflationDayChange() <= 0,
           }"
         >
           <svg
-            v-if="main.getHighAndLow().change < 0"
+            v-if="main.getInflationDayChange() <= 0"
             width="11"
             height="7"
             viewBox="0 0 9 5"
@@ -97,9 +102,9 @@ ChartJS.register(
             />
           </svg>
           <svg
-            v-if="main.getHighAndLow().change > 0"
-            width="16"
-            height="16"
+            v-if="main.getInflationDayChange() > 0"
+            width="20"
+            height="20"
             viewBox="0 0 16 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +116,7 @@ ChartJS.register(
               stroke-linejoin="round"
             />
           </svg>
-          <p>{{ Math.abs(main.getHighAndLow().change) }}%</p>
+          <p>{{ Math.abs(main.getInflationDayChange()).toFixed(2) }}%</p>
         </div>
       </div>
       <div
@@ -150,19 +155,19 @@ ChartJS.register(
         </div>
         <div class="flex flex-row justify-between opacity-70 mt-3 text-center">
           <p class="text-white text-base text-center">
-            {{ main.getHighAndLow().low }}% <br />Low
+            {{ main.getHighAndLow().low }}% <br />YTD Low
           </p>
           <p class="text-white text-base">
-            {{ main.getHighAndLow().high }}% <br />High
+            {{ main.getHighAndLow().high }}% <br />YTDHigh
           </p>
         </div>
       </div>
     </div>
     <div
-      class="md:col-span-2 max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+      class="md:col-span-2 max-h-[425px] lg:max-h-[525px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
-        <h2 class="font-semibold">Today's Truflation Rate</h2>
+        <!-- <h2 class="font-semibold">Today's Truflation Rate</h2> -->
         <ul
           class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
         >

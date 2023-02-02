@@ -12,7 +12,7 @@
           data in real time on-chain.
         </p>
         <div class="flex flex-row gap-6 mt-6">
-          <a href="https://twitter.com/truflation">
+          <a target="_blank" href="https://twitter.com/truflation">
             <svg
               width="20"
               height="18"
@@ -26,7 +26,7 @@
               />
             </svg>
           </a>
-          <a href="https://github.com/truflation">
+          <a target="_blank" href="https://github.com/truflation">
             <svg
               width="20"
               height="20"
@@ -42,7 +42,7 @@
               />
             </svg>
           </a>
-          <a href="https://t.me/truflation">
+          <a target="_blank" href="https://t.me/truflation">
             <svg
               width="20"
               height="20"
@@ -69,7 +69,10 @@
               </defs>
             </svg>
           </a>
-          <a href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A"
+          >
             <svg
               width="20"
               height="20"
@@ -94,7 +97,7 @@
               </defs>
             </svg>
           </a>
-          <a href="https://discord.com/invite/5AMCBYxfW4">
+          <a target="_blank" href="https://discord.com/invite/5AMCBYxfW4">
             <svg
               width="20"
               height="16"
@@ -142,13 +145,13 @@
       <div class="flex flex-col lg:ml-auto">
         <p class="text-white font-semibold mb-4">Developers</p>
         <ul class="flex text-white/60 flex-col gap-3">
-          <li><a href="/developers">Developers Center</a></li>
+          <li><a href="/developers">Developer Center</a></li>
           <li>
             <a
               href="https://whitepaper.truflation.com/dev-guides/quick-start"
               class="flex flex-row items-center gap-1"
               target="_blank"
-              >Get Started
+              >Get Started Guide
               <svg
                 width="13"
                 height="13"
@@ -170,7 +173,7 @@
               target="_blank"
               href="https://github.com/truflation"
               class="flex flex-row items-center gap-1"
-              >Github<svg
+              >GitHub<svg
                 width="13"
                 height="13"
                 viewBox="0 0 16 16"
@@ -215,14 +218,15 @@
           <li><a href="/methodology">Methodology</a></li>
           <li><a href="/resources">Resources</a></li>
           <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul>
       </div>
     </div>
     <div class="w-full border-t-[1px] border-white/20"></div>
     <p class="font-normal text-white/40">
-      <a href="">Privacy Policy</a> | © 2022. Truflation - All Rights Reserved.
+      <a href="/privacy">Privacy Policy</a> | © 2023. Truflation - All Rights
+      Reserved.
     </p>
   </div>
 </template>

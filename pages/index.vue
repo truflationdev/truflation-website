@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import { CategoryList, CategoryType } from "~~/components/categoryTypes";
-import { SelectedCountry, useDataStore } from "~~/store/stateStore";
+import { useDataStore, SelectedCountry } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
 
 const main = useDataStore();
+const route = useRoute();
 const { selectedCategory, selectedCountry } = storeToRefs(main);
+const defaultHost = "https://api.truflation.io";
 
 async function fetchState() {
+  const tag = route.query.tag ?? "";
+  const host = route.query.host ?? defaultHost;
+  console.log(`${host}/dashboard-data-uk${tag}`);
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
-      $fetch(`https://api.truflation.io/dashboard-data-uk`)
+      $fetch(`${host}/dashboard-data-uk${tag}`)
     ).then((res) => {
       main.hydrateState(res.data.value);
     });
@@ -18,31 +22,53 @@ async function fetchState() {
   }
 
   await useAsyncData("geocode", () =>
-    $fetch(`https://api.truflation.io/dashboard-data`)
+    $fetch(`${host}/dashboard-data${tag}`)
   ).then((res) => {
     main.hydrateState(res.data.value);
   });
 }
 fetchState();
+
+const testWarning = computed(() => {
+  const tag = route.query.tag ?? "";
+  const host = route.query.host ?? "";
+  if (tag !== "" || host !== "") {
+    const myhost = route.query.host ?? defaultHost;
+    return `TEST MODE host=${myhost} tag=${tag} - `;
+  } else {
+    return "";
+  }
+});
 </script>
 
 <template>
   <Head>
-    <title>Dashboard - Truflation</title>
+    <title>Independent, economic & financial data in real time on-chain</title>
+    <Meta
+      name="Independent, economic & financial data in real time on-chain"
+      content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
+    />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+    />
+
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
     />
   </Head>
   <div class="main-background">
     <Banner :dashboard="true" />
     <div
-      class="container mx-auto text-left flex w-full flex-col gap-2 md:mt-12"
+      class="container mx-auto text-left flex flex-col max-w-[90%] gap-2 md:mt-12"
     >
       <div
-        class="flex flex-col md:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
+        class="flex flex-col lg:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
       >
-        <h2 class="text-4xl font-semibold text-center md:text-left">
+        <h2
+          class="text-[32px] font-semibold text-[#181818] text-center md:text-left"
+        >
           Today's CPI Data by Truflation
         </h2>
         <div class="flex items-center justify-center md:flex-row px-2">
@@ -73,11 +99,19 @@ fetchState();
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
       </div>
-      <P class="text-lg text-center md:text-left"
-        >The {{ selectedCountry }} Inflation Rate by Truflation is
-        <span class="font-semibold">{{ main.keyMetrics.Inflation }}%</span>,
-        <span class="text-green-600 font-semibold"
-          >{{ main.getInflationDayChange() }}%</span
+      <P class="text-lg text-center lg:text-left"
+        >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
+        Truflation is
+        <span class="font-extrabold text-lg"
+          >{{ main.keyMetrics.Inflation }}%</span
+        >,
+        <span
+          class="font-bold"
+          :class="{
+            ' text-red-700': main.getInflationDayChange() > 0,
+            ' text-[#005E46]': main.getInflationDayChange() <= 0,
+          }"
+          >{{ main.getInflationDayChange().toFixed(2) }}%</span
         >
         change over the last day.
         <a class="underline text-black/60" href="/methodology"
@@ -85,66 +119,15 @@ fetchState();
         >
       </P>
     </div>
-    <div class="flex flex-col mt-7">
+    <div class="flex items-center flex-col mt-7">
       <DataChart :locationOptions="selectedCategory" />
     </div>
-    <div
-      class="flex flex-col text-center md:text-start container md:mx-auto mt-12 gap-3"
-    >
-      <h1 class="text-2xl font-semibold">Categories</h1>
-      <ul
-        class="hidden md:grid grid-cols-1 mt-6 lg:grid-cols-4 gap-y-8 w-full justify-center text-gray-600"
-      >
-        <li
-          class="border-b-2 flex flex-row gap-2 pb-3 items-center"
-          :class="{ 'category-selected': selectedCategory === cat }"
-          v-for="cat in CategoryType"
-        >
-          <div
-            :class="{
-              'bg-truflation-600 stroke-white': selectedCategory === cat,
-              'bg-truflation-200 stroke-truflation-600':
-                selectedCategory !== cat,
-            }"
-            class="w-8 h-8 rounded-full flex flex-col items-center justify-center"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.63194 4.84033H13.6875M13.6875 4.84033V9.89589M13.6875 4.84033L8.63194 9.89589L6.10417 7.36811L2.3125 11.1598"
-                stroke-width="0.947917"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-          <button
-            class="flex flex-row gap-2"
-            :id="cat"
-            @click="main.updateCategory(cat)"
-          >
-            {{ cat.slice(0, 30) }}
-          </button>
-        </li>
-      </ul>
-      <select
-        v-on:change="main.updateCategory(selectedCategory)"
-        v-model="selectedCategory"
-        class="md:hidden p-4 rounded text-truflation-500 font-semibold text-center mx-5 shadow-xl"
-      >
-        <option v-for="cat in CategoryType" :value="cat">{{ cat }}</option>
-      </select>
-    </div>
-    <div class="flex flex-col mt-8">
+    <CategoryList />
+    <div class="flex flex-col mt-4">
       <Category :category="selectedCategory" />
     </div>
     <!-- <SubDrivers :category="categoryData"/> -->
-    <div class="flex flex-col mt-20">
+    <div class="flex flex-col mt-24">
       <DataPartners />
     </div>
     <div

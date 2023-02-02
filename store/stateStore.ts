@@ -35,7 +35,7 @@ export const useDataStore = defineStore({
   state: () => {
     return {
       selectedCountry: SelectedCountry.USA,
-      selectedCategory: CategoryType.Housing,
+      selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
       blog: [],
       chartLables: {
@@ -495,11 +495,11 @@ export const useDataStore = defineStore({
       return object;
     },
 
-    getInflationDayChange: (state) => () => {
+    getInflationDayChange: (state) => (): number => {
       const dataSets = state.MainData.datasets[0].data;
       const equation =
         dataSets[dataSets.length - 1] - dataSets[dataSets.length - 2];
-      return equation.toFixed(2);
+      return equation;
     },
 
     getMarkerWidth: (state) => () => {
