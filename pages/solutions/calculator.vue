@@ -103,10 +103,18 @@ function reset() {
 
 <template>
   <Head>
-    <title>Personal inflation calculator - Truflation</title>
+    <title>Personal inflation calculator | Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
+    />
+    <Meta
+      name="Personal inflation calculator | Truflation"
+      content="Description: Personal inflation calculator."
+    />
+    <Meta
+      property="og:image"
+      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
     />
   </Head>
 
