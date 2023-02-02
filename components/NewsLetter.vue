@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="flex self-center flex-row gap-5 mx-32 flex-wrap mb-10 container sm:justify-center items-center py-10 px-20 rounded bg-neutral-100"
+    class="flex self-center flex-row gap-5 sm:mx-32 flex-wrap mb-10 container sm:justify-center items-center py-10 sm:px-20 rounded bg-neutral-100"
   >
     <div class="flex flex-col">
       <p class="text-base font-semibold">Subscribe to our newsletter</p>
