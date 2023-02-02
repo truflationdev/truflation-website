@@ -9,18 +9,21 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
   >
     <div class="navbar-end text-gray-800 w-full lg:mx-20">
       <div class="dropdown mr-auto">
-        <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <label
+          tabindex="0"
+          class="btn btn-ghost focus:text-white focus:bg-truflation-500 bg-white text-truflation-500 lg:hidden"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
-            fill="none"
+            fill="currentColor"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="3"
               d="M4 6h16M4 12h8m-8 6h16"
             />
           </svg>
