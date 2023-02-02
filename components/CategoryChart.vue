@@ -56,7 +56,7 @@ function ColourPicker(index: number) {
     class="grid-col-1 grid md:grid-cols-3 xl:flex-nowrap gap-8 container justify-center"
   >
     <div
-      class="flex flex-col items-center md:items-start bg-truflation-100 p-4 content-center rounded-lg gap-5"
+      class="flex flex-col items-center text-center md:text-left md:items-start bg-truflation-100 p-4 content-center rounded-lg gap-5"
     >
       <div class="flex flex-row gap-3 items-center">
         <p class="text-lg font-semibold">
