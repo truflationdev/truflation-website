@@ -47,11 +47,28 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             <ul class="z-20 bg-white">
               <li><a href="/">Truflation Dashboard</a></li>
               <li>
-                <a href="https://marketplace.truflation.com/">Marketplace</a>
+                <a href="https://marketplace.truflation.com/"
+                  >Marketplace
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                      stroke="#0A3170"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
               </li>
               <li><a href="/solutions/widget">Widget</a></li>
             </ul>
           </li>
+          <li><a href="/methodology">Methodology</a></li>
           <li tabindex="0">
             <a class="justify-between">
               Developers
@@ -68,16 +85,46 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
               </svg>
             </a>
             <ul class="text-left text-gray-800 bg-white">
-              <li class="font-semibold">
-                <a href="/developers">Developers Center</a>
+              <li class="">
+                <a href="/developers">Developer Center</a>
               </li>
               <li>
                 <a
                   href="https://whitepaper.truflation.com/dev-guides/quick-start"
-                  >Get Started Guide</a
-                >
+                  >Get Started Guide
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                      stroke="#0A3170"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
               </li>
-              <li><a href="/methodology">Methodology</a></li>
+              <li>
+                <a href="https://github.com/truflation/quickstart"
+                  >GitHub
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                      stroke="#0A3170"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </li>
             </ul>
           </li>
           <li tabindex="0">
@@ -97,16 +144,44 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
             </a>
             <ul class="text-left text-gray-800 bg-white">
               <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li>
                 <a href="https://whitepaper.truflation.com/" target="_blank"
-                  >Whitepapers</a
-                >
+                  >Whitepapers
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                      stroke="#0A3170"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
               </li>
               <li>
                 <a
                   href="https://www.youtube.com/channel/UCZJSvVppUtK7F22xjBcbV0A"
-                  >Youtube</a
-                >
+                  >Youtube
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.64297 3.75736L12.2426 3.75736M12.2426 3.75736L12.2426 10.357M12.2426 3.75736L3.75735 12.2426"
+                      stroke="#0A3170"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
               </li>
             </ul>
           </li>
@@ -120,7 +195,7 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
         <img v-if="!isLight" src="~/assets/img/logo.svg" alt="" />
       </a>
     </div>
-    <div class="navbar-end mr-10 hidden lg:flex">
+    <div class="navbar-end w-[70%] xl:mr-10 hidden lg:flex flex-row">
       <ul class="menu menu-horizontal px-1">
         <li tabindex="0">
           <a>

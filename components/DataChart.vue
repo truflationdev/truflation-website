@@ -158,7 +158,7 @@ ChartJS.register(
             {{ main.getHighAndLow().low }}% <br />YTD Low
           </p>
           <p class="text-white text-base">
-            {{ main.getHighAndLow().high }}% <br />YTDHigh
+            {{ main.getHighAndLow().high }}% <br />YTD High
           </p>
         </div>
       </div>

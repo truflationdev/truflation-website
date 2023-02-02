@@ -131,7 +131,7 @@ const testWarning = computed(() => {
       <DataPartners />
     </div>
     <div
-      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
+      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 gap-10 px-5 mt-20"
     >
       <div
         class="flex flex-row text-white w-full bg-gradient-to-br from-truflation-600 to-truflation-300"

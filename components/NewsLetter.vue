@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="flex self-center flex-row gap-5 sm:mx-32 flex-wrap mb-10 container sm:justify-center items-center py-10 sm:px-20 rounded bg-neutral-100"
+    class="flex self-center flex-col mx-auto lg:flex-row gap-5 flex-wrap mb-10 container sm:justify-center items-center py-10 px-10 rounded bg-neutral-100"
   >
     <div class="flex flex-col">
       <p class="text-base font-semibold">Subscribe to our newsletter</p>
@@ -11,10 +11,10 @@
         month, behind the scenes updates, and team picks.
       </p>
     </div>
-    <div class="flex flex-col md:flex-row ml-auto">
+    <div class="flex text-center sm:text-left flex-col md:flex-row lg:ml-auto">
       <form
         name="Subscribe Newsletter"
-        class="flex flex-row flex-wrap"
+        class="flex flex-col sm:flex-row flex-wrap gap-3"
         method="post"
         data-netlify="true"
         netlify-honeypot="bot-filter"
