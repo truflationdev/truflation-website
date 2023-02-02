@@ -2,6 +2,7 @@
 import { VideoLinks } from "~~/components/categoryTypes";
 import { blogData } from "../../static/data/staffData";
 import { TimePeriod } from "../../components/categoryTypes";
+import { CategoryType } from "../../components/categoryTypes";
 import { options } from "../../assets/chartConfig";
 import { useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
@@ -18,9 +19,10 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "vue-chartjs";
+import { ref, reactive } from "vue";
 
 const main = useDataStore();
-const { MainData, chartLables } = storeToRefs(main);
+const { calculator } = storeToRefs(main);
 
 const videos: VideoLinks[] = [
   {
@@ -67,9 +69,36 @@ const fields = [
   "Communication",
   "Recreation & Culture",
   "Education",
-  "Restaurants & Hotels",
   "Other expenditure items",
 ];
+
+const initialState = {
+  "Food & Non Alcoholic Beverages": 0,
+  "Alcoholic beverages & Tobacco": 0,
+  Apparel: 0,
+  Housing: 0,
+  Utilities: 0,
+  "Household Durables": 0,
+  Health: 0,
+  Transport: 0,
+  Communication: 0,
+  "Recreation & Culture": 0,
+  Education: 0,
+  "Other expenditure items": 0,
+};
+
+const inputFields = reactive({ ...initialState });
+
+function Calculate() {
+  main.updatePersonalInflation(inputFields);
+  document
+    .getElementById("monthlyValues")
+    .scrollIntoView({ behavior: "smooth" });
+}
+
+function reset() {
+  Object.assign(inputFields, initialState);
+}
 </script>
 
 <template>
@@ -86,8 +115,8 @@ const fields = [
   ></div>
   <Banner />
 
-  <div class="flex flex-col mx-auto container mt-[77px]">
-    <div class="grid z-20 grid-cols-7 gap-5">
+  <div class="flex relative flex-col z-0 mx-auto container mt-[77px]">
+    <div id="monthlyValues" class="grid z-20 grid-cols-7 gap-5">
       <h1 class="grid col-span-4 text-3xl font-semibold">
         Individual Personalized Inflation Calculator
       </h1>
@@ -121,26 +150,43 @@ const fields = [
           </ul>
           <div class="flex col-span-1 gap-9 flex-row">
             <ul class="flex flex-col gap-4">
-              <input
-                v-for="field in fields"
-                placeholder="623"
-                type="number"
-                class="p-2 font-semibold w-32"
-              />
+              <li
+                class="flex flex-row items-center"
+                v-for="(field, index) in fields"
+              >
+                <p class="h-full flex items-center px-3 bg-gray-100">$</p>
+                <input
+                  placeholder="0"
+                  v-model.lazy="inputFields[field]"
+                  @input="$emit('inputFields:[index]', $event.target.value)"
+                  type="number"
+                  class="p-2 font-semibold w-24"
+                />
+              </li>
             </ul>
             <ul class="flex flex-col gap-4">
-              <input
-                v-for="field in fields"
-                placeholder="623"
+              <!-- <input
+                v-for="(field, index) in fields"
+                placeholder="0"
+                v-model="inputFields[field]"
+                @input="$emit('inputFields:[index]', $event.target.value)"
                 type="number"
                 class="p-2 font-semibold w-32"
-              />
+              /> -->
+              <li
+                v-for="field in fields"
+                placeholder="0"
+                class="p-2 bg-gray-100 font-semibold w-32"
+              >
+                {{ inputFields[field] * 12 }}
+              </li>
             </ul>
           </div>
           <div class="flex-row col-span-2 gap-6 flex pr-4">
-            <button class="btn w-[75%]">Calculate</button>
+            <button @click="Calculate()" class="btn w-[75%]">Calculate</button>
             <button
-              class="grid col-span-3 ml-auto rounded-full px-11 py-3 font-semibold bg-black/[8%]"
+              @click="reset()"
+              class="grid col-span-3 ml-auto rounded-full h-fit px-11 py-3 font-semibold bg-black/[8%]"
             >
               Reset
             </button>
@@ -150,13 +196,17 @@ const fields = [
           <div
             class="grid col-span-1 h-fit text-center w-full gap-8 p-5 rounded-[4px] bg-truflation-500 text-white"
           >
-            <h1 class="font-semibold text-3xl">9.5%</h1>
+            <h1 class="font-semibold text-3xl">
+              {{ calculator.personalInflation.toFixed(2) }}%
+            </h1>
             <p>Personal inflation Rate for your Household</p>
           </div>
           <div
             class="grid col-span-1 h-fit text-center w-full gap-8 p-5 rounded-[4px] bg-truflation-500 text-white"
           >
-            <h1 class="font-semibold text-3xl">$225</h1>
+            <h1 class="font-semibold text-3xl">
+              ${{ calculator.monthlyEffect.toFixed(2) }}
+            </h1>
             <p>Estimated increase in your monthly spend</p>
           </div>
           <h1 class="col-span-2 text-lg font-semibold text-center">
@@ -174,7 +224,60 @@ const fields = [
             <h1 class="font-semibold text-3xl">$225</h1>
             <p>Average Wage inflation vs year ago</p>
           </div>
-          <div
+          <div class="grid col-span-2 h-fit gap-5">
+            <h1 class="grid font-semibold text-xl text-black">
+              What are the major factors
+            </h1>
+            <p class="grid max-w-xl font-semibold">
+              This calculator estimates a personal inflation rate based on your
+              household spending patterns and compares this to average
+              household. You will be asked how much your household spends on a
+              range of categories including:
+            </p>
+            <ul class="grid row-start-8 items-center gap-1">
+              <li>1. Groceries (Food & Non Alcoholic Beverages)</li>
+              <li>2. Out of home eating (Restaurants / Catering Services)</li>
+              <li>
+                3. Alcoholic beverages & Tobacco (Alcoholic Beverages & Tobacco)
+              </li>
+              <li>
+                4. Apparel (Clothing for Men’s, Clothing for Women's, Clothing
+                for Children & footwear)
+              </li>
+              <li>
+                5. Housing (Rent, Owned – Mortgage, Owned Property Tax & Owned
+                Maintenance)
+              </li>
+              <li>
+                6. Household Durables (Household durables, House keeping
+                supplies, Household Furnishings & Equipment’s)
+              </li>
+              <li>7. Utilities (Gas, Electricity, Fuel Oil & water)</li>
+              <li>
+                8. Health (Insurance, Medical Services, Drugs & Medical
+                Supplies)
+              </li>
+              <li>
+                9. Transport (Vehicle Purchases, Gasoline / Petrol, Other
+                vehicle expenses, Public Transport, Air Transport)
+              </li>
+              <li>
+                10. Communication (Postal services, Telecommunication equipment
+                & Telecommunication services)
+              </li>
+              <li>
+                11. Recreation & Culture (Fees & Admissions, Consumer
+                Electronics/IT, Pets toys, Hobbies, Holidays & other
+                recreational equipment)
+              </li>
+              <li>12. Education (Reading / Education)</li>
+              <li>
+                13. Other expenditure items (Personal care, Social protection,
+                Financial Charges, Other fees & services)
+              </li>
+            </ul>
+          </div>
+          <!-- <div
             class="md:col-span-2 max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
           >
             <div class="flex flex-row items-center">
@@ -243,7 +346,7 @@ const fields = [
               :options="options"
               :data="main?.getMainChart(main?.MainData)"
             />
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -276,7 +379,7 @@ const fields = [
         money on. This calculator estimates a personal inflation rate for your
         household.
       </p>
-      <h1 class="grid col-span-5 font-semibold text-xl text-black">
+      <!-- <h1 class="grid col-span-5 font-semibold text-xl text-black">
         What are the major factors
       </h1>
       <p class="grid col-span-4 max-w-xl">
@@ -324,11 +427,11 @@ const fields = [
           13. Other expenditure items (Personal care, Social protection,
           Financial Charges, Other fees & services)
         </li>
-      </ul>
+      </ul> -->
     </div>
 
-    <div class="grid col-span-7">
-      <BlogLinks :title="`News & media`" :data="blogData" :videos="videos" />
+    <div class="grid col-span-7 mt-20">
+      <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
     </div>
     <div class="grid col-span-full mt-24 mb-20">
       <Investors />

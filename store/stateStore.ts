@@ -52,7 +52,38 @@ export const useDataStore = defineStore({
         Inflation: 0 as number,
         change: 0 as number,
       },
-
+      calculator: {
+        personalInflation: 0 as number,
+        monthlyEffect: 0 as number,
+      },
+      currentIndexes: {
+        "Food & Non Alcoholic Beverages": 2735.427862,
+        "Alcoholic beverages & Tobacco": 603.2400129,
+        Apparel: 1380.231189,
+        Housing: 988.6610318,
+        Utilities: 1230.177566,
+        "Household Durables": 1963.324948,
+        Health: 756.3998851,
+        Transport: 2330.912375,
+        Communication: 138.2488479,
+        "Recreation & Culture": 1171.854363,
+        Education: 360.8052001,
+        "Other expenditure items": 909.8978087,
+      },
+      yearlyIndexes: {
+        "Food & Non Alcoholic Beverages": 2487.132388,
+        "Alcoholic beverages & Tobacco": 583.2964571,
+        Apparel: 1298.560561,
+        Housing: 893.8662333,
+        Utilities: 751.6302067,
+        "Household Durables": 1816.902684,
+        Health: 729.5626903,
+        Transport: 1986.653111,
+        Communication: 134.562212,
+        "Recreation & Culture": 1134.384658,
+        Education: 342.5409188,
+        "Other expenditure items": 878.8573291,
+      },
       MainData: {
         datasets: [
           {
@@ -301,6 +332,27 @@ export const useDataStore = defineStore({
       this.blog = blogData;
     },
 
+    updatePersonalInflation(financeObject: object) {
+      const yearWeights: number[] = [];
+      const CurrentWeights: number[] = [];
+      const sum = Object.values(financeObject).reduce((a, b) => a + b, 0);
+
+      Object.keys(financeObject).map((e) => {
+        CurrentWeights.push(this.currentIndexes[e] * (financeObject[e] / sum));
+        yearWeights.push(this.yearlyIndexes[e] * (financeObject[e] / sum));
+      });
+
+      const adjustedYearAmount = yearWeights.reduce((a, b) => a + b);
+      const adjustedCurrentAmount = CurrentWeights.reduce((a, b) => a + b);
+      const InflationRate =
+        (adjustedCurrentAmount / adjustedYearAmount - 1) * 100;
+      const estimatedIncrease =
+        sum * (adjustedCurrentAmount / adjustedYearAmount - 1);
+
+      this.calculator.personalInflation = InflationRate;
+      this.calculator.monthlyEffect = estimatedIncrease;
+    },
+
     updateSelectedCountry(country: SelectedCountry) {
       this.selectedCountry = country;
       console.log(this.selectedCountry);
@@ -413,6 +465,8 @@ export const useDataStore = defineStore({
 
     updateMainLabel(period: number, timePeriod: TimePeriod) {
       const currentLabels = this.chartLables.totalLabels;
+      this.chartLables.generalChart = [];
+
       const newArray = currentLabels.slice(
         currentLabels.length - period,
         currentLabels.length
@@ -423,6 +477,8 @@ export const useDataStore = defineStore({
 
     updateMainLabelYTD(timePeriod: TimePeriod) {
       const currentLabels = this.chartLables.totalLabels;
+      this.chartLables.generalChart = [];
+
       const index = currentLabels.indexOf("2023-01-01");
       const newArray = currentLabels.slice(index, currentLabels.length);
       this.chartLables.generalChart = newArray;
