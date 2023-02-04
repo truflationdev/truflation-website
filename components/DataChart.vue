@@ -57,10 +57,12 @@ ChartJS.register(
           />
         </div>
         <div class="flex flex-col">
-          <p class="text-white text-lg font-bold">
+          <p class="text-white text-sm md:text-lg font-bold">
             {{ selectedCountry }} Truflation
           </p>
-          <p class="text-sm text-white/60">{{ main?.getDateToday() }}</p>
+          <p class="text-xs md:text-sm text-white/60">
+            {{ main?.getDateToday() }}
+          </p>
         </div>
         <!-- <select
           class="bg-[#FFFFFF14] text-white px-3 py-3 rounded-lg w-fit h-fit"
@@ -70,7 +72,7 @@ ChartJS.register(
           <option value="1y">1D</option>
         </select> -->
         <div
-          class="bg-[#FFFFFF14] ml-auto text-white px-5 py-4 text-lg rounded-lg w-fit h-fit"
+          class="bg-[#FFFFFF14] ml-auto text-white px-4 py-3 md:px-5 md:py-4 text-sm md:text-lg rounded-lg w-fit h-fit"
         >
           1D
         </div>
@@ -158,7 +160,7 @@ ChartJS.register(
             {{ main.getHighAndLow().low }}% <br />YTD Low
           </p>
           <p class="text-white text-base">
-            {{ main.getHighAndLow().high }}% <br />YTDHigh
+            {{ main.getHighAndLow().high }}% <br />YTD High
           </p>
         </div>
       </div>

@@ -62,7 +62,9 @@
             Truflation US for illustrative purposes.
           </p>
           <div class="mt-11">
-            <ul class="flex flex-row flex-wrap lg:flex-nowrap gap-10 md:gap-20">
+            <ul
+              class="flex flex-col md:flex-row flex-wrap lg:flex-nowrap gap-10 md:gap-20"
+            >
               <li class="flex flex-col items-center text-center gap-2">
                 <img
                   class="mr-2 mb-4"

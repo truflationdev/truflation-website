@@ -11,7 +11,7 @@
           Independent, economic & financial <br />
           data in real time on-chain.
         </p>
-        <div class="flex flex-row gap-6 mt-6">
+        <div class="flex flex-row flex-wrap gap-6 mt-6">
           <a target="_blank" href="https://twitter.com/truflation">
             <svg
               width="20"
