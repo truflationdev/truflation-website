@@ -21,11 +21,16 @@ async function fetchState() {
     return;
   }
 
-  await useAsyncData("geocode", () =>
-    $fetch(`${host}/dashboard-data${tag}`)
-  ).then((res) => {
-    main.hydrateState(res.data.value);
-  });
+  // await useAsyncData("geocode", () =>
+  //   $fetch(`${host}/dashboard-data${tag}`)
+  // ).then((res) => {
+  //   main.hydrateState(res.data.value);
+  // });
+  await useAsyncData("geocode", () => $fetch(`${host}/dashboard-data`)).then(
+    (res) => {
+      main.hydrateState(res.data.value);
+    }
+  );
 }
 fetchState();
 
