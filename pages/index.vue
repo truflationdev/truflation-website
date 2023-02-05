@@ -10,6 +10,7 @@ const { selectedCategory, selectedCountry } = storeToRefs(main);
 const defaultHost = "https://api.truflation.io";
 
 async function fetchState() {
+  console.log("server called");
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
   console.log(`${host}/dashboard-data-uk${tag}`);
@@ -38,6 +39,9 @@ onServerPrefetch(() => fetchState());
 onBeforeMount(() => {
   console.log("called");
   fetchState();
+});
+onBeforeMount(() => {
+  console.log(10);
 });
 
 const testWarning = computed(() => {

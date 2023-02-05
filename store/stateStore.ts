@@ -519,12 +519,12 @@ export const useDataStore = defineStore({
     },
 
     getDateToday: (state) => () => {
-      const today = new Date();
-      const dd = String(today.getDate()).padStart(2, "0");
-      const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-      const yyyy = today.getFullYear();
+      const date =
+        state.chartLables.totalLabels[state.chartLables.totalLabels.length - 1];
 
-      return mm + " / " + dd + " / " + yyyy;
+      return (
+        date.slice(-2) + " / " + date.slice(5, 7) + " / " + date.slice(0, 4)
+      );
     },
 
     getCategoryDrivers:
