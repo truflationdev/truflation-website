@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDataStore, SelectedCountry } from "~~/store/stateStore";
+import { onBeforeMount, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
 
@@ -10,7 +11,6 @@ const defaultHost = "https://api.truflation.io";
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
-  console.log(tag);
   const host = route.query.host ?? defaultHost;
   console.log(`${host}/dashboard-data-uk${tag}`);
   if (selectedCountry.value === SelectedCountry.GBR) {
@@ -34,7 +34,11 @@ async function fetchState() {
   //   main.hydrateState(res.data.value);
   // });
 }
-fetchState();
+onServerPrefetch(() => fetchState());
+onBeforeMount(() => {
+  console.log("called");
+  fetchState();
+});
 
 const testWarning = computed(() => {
   const tag = route.query.tag ?? "";
@@ -65,7 +69,7 @@ const testWarning = computed(() => {
       rel="stylesheet"
     />
   </Head>
-  <div class="main-background">
+  <div @load="fetchState()" class="main-background">
     <Banner :dashboard="true" />
     <div
       class="container mx-auto text-left flex flex-col max-w-[90%] gap-2 md:mt-12"
@@ -90,6 +94,7 @@ const testWarning = computed(() => {
             alt=""
           />
           <select
+            v-on:load="fetchState()"
             v-on:change="fetchState()"
             v-model="selectedCountry"
             class="p-3 border-r-[10px] border-transparent bg-transparent text-center mx-2"
