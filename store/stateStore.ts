@@ -34,7 +34,7 @@ export const useDataStore = defineStore({
   id: "Data-store",
   state: () => {
     return {
-      selectedCountry: SelectedCountry.GBR,
+      selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
       blog: [],

@@ -10,6 +10,7 @@ const defaultHost = "https://api.truflation.io";
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
+  console.log(tag);
   const host = route.query.host ?? defaultHost;
   console.log(`${host}/dashboard-data-uk${tag}`);
   if (selectedCountry.value === SelectedCountry.GBR) {
