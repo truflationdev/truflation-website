@@ -23,6 +23,33 @@ const name = "lineChart";
 const main = useDataStore();
 const { MainData, chartLables, selectedCountry } = storeToRefs(main);
 
+async function fetchState() {
+  console.log("chart-Fetched");
+  console.log(`${host}/dashboard-data-uk${tag}`);
+  if (selectedCountry.value === SelectedCountry.GBR) {
+    await useAsyncData("geocode", () =>
+      $fetch(`${host}/dashboard-data-uk${tag}`)
+    ).then((res) => {
+      main.hydrateState(res.data.value);
+    });
+    return;
+  }
+
+  await useAsyncData("geocode", () => $fetch(`${host}/dashboard-data`)).then(
+    (res) => {
+      main.hydrateState(res.data.value);
+    }
+  );
+
+  // await useAsyncData("geocode", () =>
+  //   $fetch(`${host}/dashboard-data${tag}`)
+  // ).then((res) => {
+  //   main.hydrateState(res.data.value);
+  // });
+}
+
+fetchState();
+
 ChartJS.register(
   CategoryScale,
   LinearScale,

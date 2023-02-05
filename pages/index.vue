@@ -40,10 +40,6 @@ onBeforeMount(() => {
   console.log("called");
   fetchState();
 });
-onBeforeMount(() => {
-  console.log(10);
-});
-
 const testWarning = computed(() => {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? "";
