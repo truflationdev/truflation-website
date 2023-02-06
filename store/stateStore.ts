@@ -303,7 +303,6 @@ export const useDataStore = defineStore({
 
     updateSelectedCountry(country: SelectedCountry) {
       this.selectedCountry = country;
-      console.log(this.selectedCountry);
     },
 
     hydrateState(state: any) {
@@ -320,7 +319,6 @@ export const useDataStore = defineStore({
         ((state.w.yoyCur[1] - Object.values(state.n)[0][0]) /
           Object.values(state.n)[0][0]) *
         100;
-      console.log(equation);
       this.keyMetrics.change = equation.toFixed(1);
 
       Object.entries(state.n).forEach((entry) => {

@@ -6,13 +6,18 @@ import "chartjs-adapter-date-fns";
 
 const main = useDataStore();
 const route = useRoute();
-const { selectedCategory, selectedCountry } = storeToRefs(main);
 const defaultHost = "https://api.truflation.io";
+const { selectedCategory, selectedCountry } = storeToRefs(main);
+
+const { data: res } = await useFetch(
+  "https://api.truflation.io/dashboard-data"
+);
+console.log(res._value);
+main.hydrateState(res._value);
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
-  console.log(`${host}/dashboard-data-uk${tag}`);
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
       $fetch(`${host}/dashboard-data-uk${tag}`)
@@ -21,26 +26,12 @@ async function fetchState() {
     });
     return;
   }
-
-  await useAsyncData("geocode", () => $fetch(`${host}/dashboard-data`)).then(
-    (res) => {
-      main.hydrateState(res.data.value);
-    }
-  );
-
-  // await useAsyncData("geocode", () =>
-  //   $fetch(`${host}/dashboard-data${tag}`)
-  // ).then((res) => {
-  //   main.hydrateState(res.data.value);
-  // });
+  await useAsyncData("geocode", () =>
+    $fetch(`${host}/dashboard-data${tag}`)
+  ).then((res) => {
+    main.hydrateState(res.data.value);
+  });
 }
-
-fetchState();
-function refreshing() {
-  fetchState(); // <== Add parenthesis
-  console.log("refreshing");
-}
-setInterval(refreshing, 100000);
 
 const testWarning = computed(() => {
   const tag = route.query.tag ?? "";
@@ -71,7 +62,7 @@ const testWarning = computed(() => {
       rel="stylesheet"
     />
   </Head>
-  <div @load="fetchState()" class="main-background">
+  <div class="main-background">
     <Banner :dashboard="true" />
     <div
       class="container mx-auto text-left flex flex-col max-w-[90%] gap-2 md:mt-12"
@@ -96,7 +87,6 @@ const testWarning = computed(() => {
             alt=""
           />
           <select
-            v-on:load="fetchState()"
             v-on:change="fetchState()"
             v-model="selectedCountry"
             class="p-3 border-r-[10px] border-transparent bg-transparent text-center mx-2"

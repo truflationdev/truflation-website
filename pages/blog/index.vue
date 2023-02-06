@@ -3,7 +3,6 @@ import { storeToRefs } from "pinia";
 import { useDataStore } from "~~/store/stateStore";
 
 const posts = await useFetch("/api/ghostPosts").data;
-console.log(posts);
 </script>
 
 <template>
