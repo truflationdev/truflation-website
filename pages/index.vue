@@ -12,7 +12,6 @@ const { selectedCategory, selectedCountry } = storeToRefs(main);
 const { data: res } = await useFetch(
   "https://api.truflation.io/dashboard-data"
 );
-console.log(res._value);
 main.hydrateState(res._value);
 
 async function fetchState() {
