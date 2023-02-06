@@ -309,6 +309,9 @@ export const useDataStore = defineStore({
     hydrateState(state: any) {
       const MainRateData: number[] = [];
       const mainRateLabels: string[] = [];
+      this.chartLables.generalChart = [];
+      this.MainData.datasets[0].data = [];
+      this.chartLables.generalChart = [];
 
       this.keyMetrics.low = state.w.ytdMin[1].toFixed(2);
       this.keyMetrics.high = state.w.ytdMax[1].toFixed(2);

@@ -10,7 +10,6 @@ const { selectedCategory, selectedCountry } = storeToRefs(main);
 const defaultHost = "https://api.truflation.io";
 
 async function fetchState() {
-  console.log("server called");
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
   console.log(`${host}/dashboard-data-uk${tag}`);
@@ -35,11 +34,14 @@ async function fetchState() {
   //   main.hydrateState(res.data.value);
   // });
 }
-onServerPrefetch(() => fetchState());
-onBeforeMount(() => {
-  console.log("called");
-  fetchState();
-});
+
+fetchState();
+function refreshing() {
+  fetchState(); // <== Add parenthesis
+  console.log("refreshing");
+}
+setInterval(refreshing, 100000);
+
 const testWarning = computed(() => {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? "";
