@@ -8,11 +8,17 @@ const main = useDataStore();
 const route = useRoute();
 const defaultHost = "https://api.truflation.io";
 const { selectedCategory, selectedCountry } = storeToRefs(main);
+const key = "truflationData";
 
-const { data: res } = await useFetch(
-  "https://api.truflation.io/dashboard-data"
+await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
+  (res) => {
+    main.hydrateState(res.data.value);
+  }
 );
-main.hydrateState(res._value);
+onUnmounted(() => {
+  delete useNuxtApp().payload.data[key];
+  refreshNuxtData(key);
+});
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
