@@ -20,14 +20,14 @@ await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
 const { data: time } = await useAsyncData("time", () =>
   $fetch(`http://worldtimeapi.org/api/ip`)
 );
+main.updateCurrentTime(time._value.datetime);
 
-onBeforeMount(() => {
-  newRefresh();
-});
-
-function newRefresh() {
+async function newRefresh() {
   console.log("refreshed");
   refreshNuxtData("time");
+  const { data: time } = await useAsyncData("time", () =>
+    $fetch(`http://worldtimeapi.org/api/ip`)
+  );
   main.updateCurrentTime(time._value.datetime);
 }
 
