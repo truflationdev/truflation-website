@@ -147,9 +147,9 @@ function reset() {
             <select class="p-4 h-fit" placeholder="select" name="" id="">
               <option value="Select">Select</option>
             </select>
-            <button class="px-2 py-3 bg-black/5">
+            <!-- <button class="px-2 py-3 bg-black/5">
               Import your purchase history
-            </button>
+            </button> -->
           </div>
           <p class="text-[18px] text-black/60">Period of time.</p>
           <select class="p-4 h-fit" placeholder="select" name="" id="">
