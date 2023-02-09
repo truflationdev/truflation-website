@@ -8,4 +8,7 @@ export default defineNuxtConfig({
       gtagId: process.env.GTAG_ID,
     },
   },
+  routeRules: {
+    "/index": { ssr: false },
+  },
 });
