@@ -1,8 +1,6 @@
-<script setup lang="ts">
-import { VideoLinks } from "~~/components/categoryTypes";
+<script setup>
 import { blogData } from "../../static/data/staffData";
 import { TimePeriod } from "../../components/categoryTypes";
-import { CategoryType } from "../../components/categoryTypes";
 import { options } from "../../assets/chartConfig";
 import { useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
@@ -19,12 +17,13 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "vue-chartjs";
-import { ref, reactive } from "vue";
+import { reactive } from "vue";
 
 const main = useDataStore();
-const { calculator } = storeToRefs(main);
+const { calculator, chartLables, MainData } = storeToRefs(main);
+console.log(options);
 
-const videos: VideoLinks[] = [
+const videos = [
   {
     title: "truflation + Discourse",
     link: "https://www.youtube.com/embed/p07UF8aRmfQ",
@@ -239,65 +238,12 @@ function reset() {
             <h1 class="font-semibold text-3xl">$225</h1>
             <p>Average Wage inflation vs year ago</p>
           </div>
-          <div class="grid col-span-2 h-fit gap-5">
-            <h1 class="grid font-semibold text-xl text-black">
-              What are the major factors
-            </h1>
-            <p class="grid max-w-xl font-semibold">
-              This calculator estimates a personal inflation rate based on your
-              household spending patterns and compares this to average
-              household. You will be asked how much your household spends on a
-              range of categories including:
-            </p>
-            <ul class="grid row-start-8 items-center gap-1">
-              <li>1. Groceries (Food & Non Alcoholic Beverages)</li>
-              <li>2. Out of home eating (Restaurants / Catering Services)</li>
-              <li>
-                3. Alcoholic beverages & Tobacco (Alcoholic Beverages & Tobacco)
-              </li>
-              <li>
-                4. Apparel (Clothing for Men’s, Clothing for Women's, Clothing
-                for Children & footwear)
-              </li>
-              <li>
-                5. Housing (Rent, Owned – Mortgage, Owned Property Tax & Owned
-                Maintenance)
-              </li>
-              <li>
-                6. Household Durables (Household durables, House keeping
-                supplies, Household Furnishings & Equipment’s)
-              </li>
-              <li>7. Utilities (Gas, Electricity, Fuel Oil & water)</li>
-              <li>
-                8. Health (Insurance, Medical Services, Drugs & Medical
-                Supplies)
-              </li>
-              <li>
-                9. Transport (Vehicle Purchases, Gasoline / Petrol, Other
-                vehicle expenses, Public Transport, Air Transport)
-              </li>
-              <li>
-                10. Communication (Postal services, Telecommunication equipment
-                & Telecommunication services)
-              </li>
-              <li>
-                11. Recreation & Culture (Fees & Admissions, Consumer
-                Electronics/IT, Pets toys, Hobbies, Holidays & other
-                recreational equipment)
-              </li>
-              <li>12. Education (Reading / Education)</li>
-              <li>
-                13. Other expenditure items (Personal care, Social protection,
-                Financial Charges, Other fees & services)
-              </li>
-            </ul>
-          </div>
-          <!-- <div
+          <div
             class="md:col-span-2 max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
           >
             <div class="flex flex-row items-center">
               <ul
-                class="flex flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
+                class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
               >
                 <li class="p-0.5">
                   <button
@@ -357,11 +303,12 @@ function reset() {
               </ul>
             </div>
             <Line
-              id="my-chart-id"
+              v-if="MainData"
+              id="calculator-chart"
               :options="options"
               :data="main?.getMainChart(main?.MainData)"
             />
-          </div> -->
+          </div>
         </div>
       </div>
 
@@ -397,7 +344,7 @@ function reset() {
         money on. This calculator estimates a personal inflation rate for your
         household.
       </p>
-      <!-- <h1 class="grid col-span-5 font-semibold text-xl text-black">
+      <h1 class="grid col-span-5 font-semibold text-xl text-black">
         What are the major factors
       </h1>
       <p class="grid col-span-4 max-w-xl">
@@ -445,7 +392,7 @@ function reset() {
           13. Other expenditure items (Personal care, Social protection,
           Financial Charges, Other fees & services)
         </li>
-      </ul> -->
+      </ul>
     </div>
 
     <div class="grid col-span-7 mt-20">
