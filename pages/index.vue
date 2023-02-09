@@ -17,19 +17,17 @@ await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
   }
 );
 
-const { data: time } = await useAsyncData("time", () =>
-  $fetch(`http://worldtimeapi.org/api/ip`)
+const { data: time, refresh } = await useFetch(
+  () => `http://worldtimeapi.org/api/ip`
 );
-main.updateCurrentTime(time._value.datetime);
 
-async function newRefresh() {
+function newRefresh() {
+  refresh();
   console.log("refreshed");
-  refreshNuxtData("time");
-  const { data: time } = await useAsyncData("time", () =>
-    $fetch(`http://worldtimeapi.org/api/ip`)
-  );
   main.updateCurrentTime(time._value.datetime);
 }
+
+setInterval(() => newRefresh(), 1000);
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
