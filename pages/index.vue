@@ -7,11 +7,26 @@ import "chartjs-adapter-date-fns";
 const main = useDataStore();
 const route = useRoute();
 const defaultHost = "https://api.truflation.io";
-const { selectedCategory, selectedCountry } = storeToRefs(main);
+const { selectedCategory, selectedCountry, currentTime, keyMetrics } =
+  storeToRefs(main);
 const key = "truflationData";
 
-const { data: res } = await useFetch("https://api.truflation.io/dashboard-data",  { initialCache: false });
-main.hydrateState(res._value);
+await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
+  (res) => {
+    main.hydrateState(res.data.value);
+  }
+);
+
+await useAsyncData("time", () => $fetch(`http://worldtimeapi.org/api/ip`)).then(
+  (res) => {
+    console.log(res.data.value);
+    main.updateCurrentTime(res.data.value);
+  }
+);
+
+onUnmounted(() => {
+  refreshNuxtData("time");
+});
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
@@ -102,11 +117,9 @@ const testWarning = computed(() => {
                     </label> -->
       </div>
       <P class="text-lg text-center lg:text-left"
-        >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
-        Truflation is
-        <span class="font-extrabold text-lg"
-          >{{ main.keyMetrics.Inflation }}%</span
-        >,
+        >{{ testWarning }} The {{ currentTime.datetime }}
+        {{ selectedCountry }} Inflation Rate by Truflation is
+        <span class="font-extrabold text-lg">{{ keyMetrics.Inflation }}%</span>,
         <span
           class="font-bold"
           :class="{

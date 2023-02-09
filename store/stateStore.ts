@@ -34,6 +34,7 @@ export const useDataStore = defineStore({
   id: "Data-store",
   state: () => {
     return {
+      currentTime: "",
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
@@ -420,6 +421,10 @@ export const useDataStore = defineStore({
       );
       this.chartLables.generalChart = newArray;
       this.chartLables.mainSelection = timePeriod;
+    },
+
+    updateCurrentTime(time: any) {
+      this.currentTime = time;
     },
 
     updateMainLabelYTD(timePeriod: TimePeriod) {

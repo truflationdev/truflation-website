@@ -21,7 +21,8 @@ const { locationOptions } = defineProps(["locationOptions"]);
 const name = "lineChart";
 
 const main = useDataStore();
-const { MainData, chartLables, selectedCountry } = storeToRefs(main);
+const { MainData, chartLables, selectedCountry, currentTime } =
+  storeToRefs(main);
 
 ChartJS.register(
   CategoryScale,
@@ -58,7 +59,7 @@ ChartJS.register(
         </div>
         <div class="flex flex-col">
           <p class="text-white text-sm md:text-lg font-bold">
-            {{ selectedCountry }} Truflation
+            {{ selectedCountry }} Truflation {{ currentTime.datetime }}
           </p>
           <p class="text-xs md:text-sm text-white/60">
             {{ main?.getDateToday() }}
