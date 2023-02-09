@@ -7,15 +7,14 @@ import "chartjs-adapter-date-fns";
 const main = useDataStore();
 const route = useRoute();
 const defaultHost = "https://api.truflation.io";
-const { selectedCategory, selectedCountry, currentTime, keyMetrics } =
+const { selectedCategory, selectedCountry, currentTime, keyMetrics, MainData } =
   storeToRefs(main);
-const key = "truflationData";
 
-await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
-  (res) => {
-    main.hydrateState(res.data.value);
-  }
+const { data: inflation } = await useFetch(
+  () => `${defaultHost}/dashboard-data`
 );
+console.log(inflation);
+main.hydrateState(inflation._value);
 
 const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
 main.updateCurrentTime(time._value.datetime);
@@ -109,11 +108,14 @@ const testWarning = computed(() => {
                     </label> -->
       </div>
       <button v-if="currentTime">{{ currentTime }}</button>
-      <P class="text-lg text-center lg:text-left"
+      <P v-if="MainData" class="text-lg text-center lg:text-left"
         >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
         Truflation is
-        <span class="font-extrabold text-lg">{{ keyMetrics.Inflation }}%</span>,
+        <span v-if="MainData" class="font-extrabold text-lg"
+          >{{ keyMetrics.Inflation }}%</span
+        >,
         <span
+          v-if="MainData"
           class="font-bold"
           :class="{
             ' text-red-700': main.getInflationDayChange() > 0,
@@ -127,14 +129,14 @@ const testWarning = computed(() => {
         >
       </P>
     </div>
-    <div class="flex items-center flex-col mt-7">
+    <div v-if="MainData" class="flex items-center flex-col mt-7">
       <DataChart :locationOptions="selectedCategory" />
     </div>
-    <CategoryList />
+    <CategoryList v-if="MainData" />
     <div class="flex flex-col mt-4">
-      <Category :category="selectedCategory" />
+      <Category v-if="MainData" :category="selectedCategory" />
     </div>
-    <!-- <SubDrivers :category="categoryData"/> -->
+    <!-- <SubDrivers :category="categoryData" /> -->
     <div class="flex flex-col mt-24">
       <DataPartners />
     </div>

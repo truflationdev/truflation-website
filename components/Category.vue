@@ -8,7 +8,7 @@ const { selectedCategory } = storeToRefs(main);
 </script>
 
 <template>
-  <div class="flex flex-col container mx-auto">
+  <div class="flex flex-col container mx-auto mt-10">
     <div
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 text-center md:text-left px-4 sm:px-0 items-center justify-center flex-wrap mt-2 gap-3 lg:flex-nowrap mx-auto w-full"
     >
