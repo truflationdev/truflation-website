@@ -8,5 +8,4 @@ export default defineNuxtConfig({
       gtagId: process.env.GTAG_ID,
     },
   },
-  ssr: false,
 });
