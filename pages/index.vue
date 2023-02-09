@@ -17,15 +17,14 @@ await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
   }
 );
 
-const { data, refresh } = await useFetch(
-  () => `http://worldtimeapi.org/api/ip`
+await useAsyncData("time", () => $fetch(`http://worldtimeapi.org/api/ip`)).then(
+  (res) => {
+    main.updateCurrentTime(res.data.value.datetime);
+  }
 );
 
-console.log(data);
-
-onBeforeMount(() => {
-  refresh();
-  main.updateCurrentTime(data._value.datetime);
+onUnmounted(() => {
+  refreshNuxtData();
 });
 
 async function fetchState() {
