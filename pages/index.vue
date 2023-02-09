@@ -20,14 +20,16 @@ await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
 const { data: time, refresh } = await useFetch(
   () => `http://worldtimeapi.org/api/ip`
 );
+main.updateCurrentTime(time._value.datetime);
 
-function newRefresh() {
-  refresh();
+async function newRefresh() {
   console.log("refreshed");
+  const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
   main.updateCurrentTime(time._value.datetime);
 }
-
-setInterval(() => newRefresh(), 1000);
+onBeforeMount(() => {
+  newRefresh();
+});
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
