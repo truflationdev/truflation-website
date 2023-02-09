@@ -88,7 +88,9 @@ const videos: VideoLinks[] = [
       This outlines our process for collecting and indexing global financial and
       economic data, using Truflation US as an example.
     </p>
-    <ul class="grid gap-x-20 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+    <ul
+      class="grid gap-x-20 gap-y-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10"
+    >
       <li
         class="flex flex-row w-3xl gap-4 items-center justify-self-center"
         v-for="radial in methodologyRadials"

@@ -24,12 +24,16 @@ console.log(posts);
     />
   </Head>
 
-  <div class="bg-gradient-to-t from-white to-[#4168F133]/20 pb-10">
+  <div class="px-5 lg:px-0 bg-gradient-to-t from-white to-[#4168F133]/20 pb-10">
     <Banner />
     <div
-      class="container mx-auto flex-wrap flex flex-row justify-evenly gap-8 items-center my-10 lg:my-20"
+      class="container flex-wrap mx-auto flex flex-row justify-evenly gap-8 items-center my-10 lg:my-20"
     >
-      <img class="max-w-[600px]" :src="posts[0].feature_image" alt="" />
+      <img
+        class="max-w-[250px] sm:max-w-[400px] md:max-w-[500px]"
+        :src="posts[0].feature_image"
+        alt=""
+      />
       <a :href="`/blog/${posts[0].slug}`">
         <div class="flex flex-col max-w-xl">
           <h1 class="text-3xl font-bold">
@@ -157,7 +161,7 @@ console.log(posts);
         </button> -->
       </div>
     </div>
-    <div class="flex">
+    <div class="flex flex-wrap">
       <NewsLetter />
     </div>
   </div>

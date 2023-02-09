@@ -1,5 +1,6 @@
 <script setup>
 import { blogData } from "../../static/data/staffData";
+import "chartjs-adapter-date-fns";
 import { TimePeriod } from "../../components/categoryTypes";
 import { options } from "../../assets/chartConfig";
 import { useDataStore } from "~~/store/stateStore";

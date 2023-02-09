@@ -181,7 +181,7 @@ const videos: VideoLinks[] = [
           <p class="mt-4 text-xl font-semibold">Joseph Wang</p>
           <p class="mt-1">Architecture Lead</p>
         </li>
-        <li class="flex flex-col items-center h-72 gap-1">
+        <li class="flex flex-col items-center gap-1">
           <img src="../assets/img/staff/Ivan-Jelic.png" alt="" />
           <p class="mt-4 text-xl font-semibold">Ivan Jelic</p>
           <p class="mt-1">Head of Data</p>

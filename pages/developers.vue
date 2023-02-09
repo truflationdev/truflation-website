@@ -320,7 +320,9 @@ const videos: VideoLinks[] = [
     <BlogLinks :title="`News & Media`" :videos="videos" />
     <Investors />
   </div>
-  <NewsLetter />
+  <div class="flex">
+    <NewsLetter />
+  </div>
   <FooterComp />
 </template>
 
