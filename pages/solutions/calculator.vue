@@ -240,7 +240,7 @@ function reset() {
             <p>Average Wage inflation vs year ago</p>
           </div>
           <div
-            class="md:col-span-2 max-h-[425px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+            class="md:col-span-2 max-h-[500px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
           >
             <div class="flex flex-row items-center">
               <ul
