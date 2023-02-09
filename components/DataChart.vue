@@ -59,7 +59,7 @@ ChartJS.register(
         </div>
         <div class="flex flex-col">
           <p class="text-white text-sm md:text-lg font-bold">
-            {{ selectedCountry }} Truflation {{ currentTime }}
+            {{ selectedCountry }} Truflation
           </p>
           <p class="text-xs md:text-sm text-white/60">
             {{ main?.getDateToday() }}
