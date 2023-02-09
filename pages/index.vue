@@ -17,15 +17,19 @@ await useAsyncData(key, () => $fetch(`${defaultHost}/dashboard-data`)).then(
   }
 );
 
-await useAsyncData("time", () => $fetch(`http://worldtimeapi.org/api/ip`)).then(
-  (res) => {
-    main.updateCurrentTime(res.data.value.datetime);
-  }
+const { data: time } = await useAsyncData("time", () =>
+  $fetch(`http://worldtimeapi.org/api/ip`)
 );
 
-onUnmounted(() => {
-  refreshNuxtData();
+onBeforeMount(() => {
+  newRefresh();
 });
+
+function newRefresh() {
+  console.log("refreshed");
+  refreshNuxtData("time");
+  main.updateCurrentTime(time._value.datetime);
+}
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
@@ -115,7 +119,7 @@ const testWarning = computed(() => {
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
       </div>
-      <h1>{{ currentTime }}</h1>
+      <button @click="newRefresh()">{{ currentTime }}</button>
       <P class="text-lg text-center lg:text-left"
         >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
         Truflation is
