@@ -1,9 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { left } = defineProps(["left"]);
+</script>
 
 <template>
-  <div class="flex flex-col container mx-auto items-center">
+  <div
+    :class="{ 'items-center': !left }"
+    class="flex flex-col container mx-auto"
+  >
     <h1 class="text-3xl font-semibold mb-6">Data Partners</h1>
-    <div class="flex flex-wrap gap-3 justify-center">
+    <div :class="{ 'justify-center': !left }" class="flex flex-wrap gap-3">
       <img src="~/assets/img/AAA.png" alt="" />
       <img src="~/assets/img/carcurus.png" alt="" />
       <img src="~/assets/img/eia.png" alt="" />
