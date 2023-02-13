@@ -205,10 +205,12 @@ const videos: VideoLinks[] = [
     class="mx-auto flex gap-4 justify-center items-center flex-col container my-32"
   >
     <h1 class="text-5xl font-medium">Our Customers</h1>
-    <div class="grid grid-cols-1 mt-12 px-5 md:grid-cols-3 w-full gap-5">
+    <div
+      class="grid items-center grid-cols-1 mt-12 px-5 sm:grid-cols-2 lg:grid-cols-3 w-auto md:w-full gap-5"
+    >
       <div
         v-for="customer in CustomerData.list"
-        class="flex max-w-sm items-center bg-[#002152] flex-col text-center rounded-lg"
+        class="flex max-w-sm items-center h-full bg-[#002152] flex-col text-center rounded-lg"
       >
         <div
           class="flex py-11 bg-white/10 w-full flex-row text-white text-xl gap-2 items-center justify-center"
