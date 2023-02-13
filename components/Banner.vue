@@ -1,12 +1,18 @@
 <script setup lang="ts">
+import { useDataStore } from "~~/store/stateStore";
+import { storeToRefs } from "pinia";
 const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
+
+const main = useDataStore();
+const { showBanner } = storeToRefs(main);
 </script>
 
 <template>
   <div
+    v-if="showBanner"
     class="w-full text-[13px] flex gap-3 justify-center flex-row items-center text-white p-2 top-0 bg-truflation-500"
   >
-    <p class="max-w-[200px] md:max-w-none">
+    <p class="max-w-[200px] ml-auto md:max-w-none">
       Data forecasts and BLS CPI at 9AM EST on
       <a
         class="font-medium"
@@ -16,7 +22,11 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
         Twitter Spaces</a
       >
     </p>
-    <a target="_blank" href="https://twitter.com/i/spaces/1DXxyvVnodNKM">
+    <a
+      target="_blank"
+      class="mr-auto"
+      href="https://twitter.com/i/spaces/1DXxyvVnodNKM"
+    >
       <svg
         width="18"
         height="18"
@@ -33,6 +43,23 @@ const { isLight, dashboard } = defineProps(["isLight", "dashboard"]);
         />
       </svg>
     </a>
+    <button class="flex mr-5" @click="main.setShowBanner(false)">
+      <svg
+        width="10"
+        height="10"
+        viewBox="0 0 14 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 13L13 1M1 1L13 13"
+          stroke="white"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </div>
   <header
     class="navbar z-20 relative"

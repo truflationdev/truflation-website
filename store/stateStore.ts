@@ -36,6 +36,7 @@ export const useDataStore = defineStore({
     return {
       currentTime: "",
       loading: false as boolean,
+      showBanner: true as boolean,
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
@@ -417,6 +418,10 @@ export const useDataStore = defineStore({
 
     setLoading(loadingState: boolean) {
       this.loading = loadingState;
+    },
+
+    setShowBanner(bannerState: boolean) {
+      this.showBanner = bannerState;
     },
 
     updateMainLabel(period: number, timePeriod: TimePeriod) {
