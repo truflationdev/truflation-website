@@ -21,8 +21,9 @@
       >
         <input
           class="ml-auto w-auto md:w-80 px-4 mr-3 py-3 border-gray-10 border"
-          type="text"
+          type="email"
           placeholder="John@gmail.com"
+          name="email"
         />
         <button class="btn">
           Subscribe
