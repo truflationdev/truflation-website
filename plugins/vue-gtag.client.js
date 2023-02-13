@@ -15,13 +15,9 @@ import VueGtag from "vue-gtag";
 export default defineNuxtPlugin((nuxtApp) => {
   const { gtagId } = useRuntimeConfig();
 
-  nuxtApp.vueApp.use(
-    VueGtag,
-    {
-      config: {
-        id: gtagId,
-      },
+  nuxtApp.vueApp.use(VueGtag, {
+    config: {
+      id: gtagId,
     },
-    nuxtApp.$router
-  );
+  });
 });
