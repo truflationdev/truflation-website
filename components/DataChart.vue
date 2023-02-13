@@ -84,13 +84,13 @@ ChartJS.register(
         </p>
         <div
           role="status"
-          class="min-w-[160px] flex flex-row justify-center"
+          class="w-full flex flex-row justify-center items-center"
           v-if="loading"
         >
           <svg
             v-if="loading"
             aria-hidden="true"
-            class="w-14 h-14 mr-2 text-blue-400 animate-spin fill-white"
+            class="h-16 w-16 text-blue-400 animate-spin fill-white"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +106,7 @@ ChartJS.register(
           </svg>
         </div>
         <div
+          v-if="!loading"
           class="flex flex-row p-2 rounded-lg items-center gap-1"
           :class="{
             'bg-gray-100': loading,
