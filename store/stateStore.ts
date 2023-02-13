@@ -35,6 +35,7 @@ export const useDataStore = defineStore({
   state: () => {
     return {
       currentTime: "",
+      loading: false as boolean,
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
@@ -400,6 +401,7 @@ export const useDataStore = defineStore({
 
         this.chartLables = labels;
         this.list[index] = stateObject;
+        this.loading = false;
       });
     },
 
@@ -411,6 +413,10 @@ export const useDataStore = defineStore({
       );
       this.chartLables.categoryChart = newArray;
       this.chartLables.categorySelection = timePeriod;
+    },
+
+    setLoading(loadingState: boolean) {
+      this.loading = loadingState;
     },
 
     updateMainLabel(period: number, timePeriod: TimePeriod) {
