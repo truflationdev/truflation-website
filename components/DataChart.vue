@@ -83,7 +83,7 @@ ChartJS.register(
           {{ main?.getHighAndLow().Inflation }}%
         </p>
         <div
-          class="flex flex-row p-2 rotate-180 rounded-lg items-center gap-1"
+          class="flex flex-row p-2 rounded-lg items-center gap-1"
           :class="{
             'bg-red-100 text-red-700': main.getInflationDayChange() > 0,
             'bg-[#E6F4EE] text-[#005E46]': main.getInflationDayChange() <= 0,

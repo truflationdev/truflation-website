@@ -55,9 +55,9 @@ const videos: VideoLinks[] = [
           <p class="md:max-w-xl max-w-xs text-lg text-white">
             Truflation offers a more reliable view of inflation, contrasting
             with government metrics that have outdated methodologies and limited
-            transparency. With 10 million data points, it updates daily and has
-            a dynamic and transparent methodology that responds to global market
-            conditions.
+            transparency. With over 10 million data points, it updates daily and
+            has a dynamic and transparent methodology that responds to global
+            market conditions.
           </p>
           <a href="https://whitepaper.truflation.com/" target="_blank">
             <button class="btn">
