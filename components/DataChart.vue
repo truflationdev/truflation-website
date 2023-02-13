@@ -123,9 +123,16 @@ ChartJS.register(
         </div>
       </div>
       <div
+        v-if="selectedCountry === SelectedCountry.GBR"
         class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
       >
-        US govt reported rate: 6.5%
+        UK govt reported rate: 10.52%
+      </div>
+      <div
+        v-if="selectedCountry === SelectedCountry.USA"
+        class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
+      >
+        US govt reported rate: 6.45%
       </div>
       <div class="flex flex-col w-full">
         <div
