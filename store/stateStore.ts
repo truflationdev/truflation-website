@@ -34,6 +34,7 @@ export const useDataStore = defineStore({
   id: "Data-store",
   state: () => {
     return {
+      currentTime: "",
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
@@ -303,12 +304,14 @@ export const useDataStore = defineStore({
 
     updateSelectedCountry(country: SelectedCountry) {
       this.selectedCountry = country;
-      console.log(this.selectedCountry);
     },
 
     hydrateState(state: any) {
       const MainRateData: number[] = [];
       const mainRateLabels: string[] = [];
+      this.chartLables.generalChart = [];
+      this.MainData.datasets[0].data = [];
+      this.chartLables.generalChart = [];
 
       this.keyMetrics.low = state.w.ytdMin[1].toFixed(2);
       this.keyMetrics.high = state.w.ytdMax[1].toFixed(2);
@@ -317,7 +320,6 @@ export const useDataStore = defineStore({
         ((state.w.yoyCur[1] - Object.values(state.n)[0][0]) /
           Object.values(state.n)[0][0]) *
         100;
-      console.log(equation);
       this.keyMetrics.change = equation.toFixed(1);
 
       Object.entries(state.n).forEach((entry) => {
@@ -421,6 +423,10 @@ export const useDataStore = defineStore({
       this.chartLables.mainSelection = timePeriod;
     },
 
+    updateCurrentTime(time: any) {
+      this.currentTime = time;
+    },
+
     updateMainLabelYTD(timePeriod: TimePeriod) {
       const currentLabels = this.chartLables.totalLabels;
       const index = currentLabels.indexOf("2023-01-01");
@@ -519,12 +525,12 @@ export const useDataStore = defineStore({
     },
 
     getDateToday: (state) => () => {
-      const today = new Date();
-      const dd = String(today.getDate()).padStart(2, "0");
-      const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-      const yyyy = today.getFullYear();
+      const date =
+        state.chartLables.totalLabels[state.chartLables.totalLabels.length - 1];
 
-      return mm + " / " + dd + " / " + yyyy;
+      return (
+        date.slice(-2) + " / " + date.slice(5, 7) + " / " + date.slice(0, 4)
+      );
     },
 
     getCategoryDrivers:

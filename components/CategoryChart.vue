@@ -58,11 +58,14 @@ function ColourPicker(index: number) {
     <div
       class="flex flex-col items-center text-center md:text-left md:items-start bg-truflation-100 p-4 content-center rounded-lg gap-5"
     >
-      <div class="flex flex-row gap-3 items-center">
-        <p class="text-lg font-semibold">
-          {{ main?.getByCategoryType(selectedCategory)?.categoryType }}
-          sub-categories
+      <div class="gap-3 mt-auto mb-4 flex flex-col">
+        <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
+        <p class="max-w-md sm:mx-0">
+          {{ main?.getByCategoryType(selectedCategory)?.about }}
         </p>
+      </div>
+      <div class="flex flex-row gap-3 items-center">
+        <p class="text-lg font-semibold">sub-categories</p>
       </div>
       <div
         class="flex flex-col text-center items-center md:items-start md:text-left h-full gap-5"
@@ -75,12 +78,6 @@ function ColourPicker(index: number) {
         >
           <p class="px-2 py-1 rounded-full" :class="ColourPicker(index)">
             {{ subCategory }}
-          </p>
-        </div>
-        <div class="gap-3 mt-auto mb-4 flex flex-col">
-          <h2 class="font-semibold text-lg">About {{ selectedCategory }}</h2>
-          <p class="max-w-md sm:mx-0">
-            {{ main?.getByCategoryType(selectedCategory)?.about }}
           </p>
         </div>
       </div>

@@ -21,7 +21,8 @@ const { locationOptions } = defineProps(["locationOptions"]);
 const name = "lineChart";
 
 const main = useDataStore();
-const { MainData, chartLables, selectedCountry } = storeToRefs(main);
+const { MainData, chartLables, selectedCountry, currentTime } =
+  storeToRefs(main);
 
 ChartJS.register(
   CategoryScale,
@@ -41,7 +42,7 @@ ChartJS.register(
     class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start container max-w-[90%] lg:mx-auto"
   >
     <div
-      class="flex flex-col rounded-lg bg-gradient-to-r w-[90%] sm:w-[400px] lg:w-full justify-self-center min-w-[340px] from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
+      class="flex flex-col rounded-lg justify-evenly bg-gradient-to-r w-[90%] sm:w-[400px] h-full lg:w-full justify-self-center min-w-[340px] from-[#3573E7] to-[#2463DB] gap-3 p-8 items-center"
     >
       <div class="flex flex-row w-full items-center justify-center gap-8">
         <div class="items-center flex p-4 rounded-lg bg-[#FFFFFF14]">
@@ -82,7 +83,7 @@ ChartJS.register(
           {{ main?.getHighAndLow().Inflation }}%
         </p>
         <div
-          class="flex flex-row p-2 rotate-180 rounded-lg items-center gap-1"
+          class="flex flex-row p-2 rounded-lg items-center gap-1"
           :class="{
             'bg-red-100 text-red-700': main.getInflationDayChange() > 0,
             'bg-[#E6F4EE] text-[#005E46]': main.getInflationDayChange() <= 0,
@@ -122,9 +123,16 @@ ChartJS.register(
         </div>
       </div>
       <div
+        v-if="selectedCountry === SelectedCountry.GBR"
         class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
       >
-        US govt reported rate: 6.5%
+        UK govt reported rate: 10.52%
+      </div>
+      <div
+        v-if="selectedCountry === SelectedCountry.USA"
+        class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
+      >
+        US govt reported rate: 6.45%
       </div>
       <div class="flex flex-col w-full">
         <div
@@ -166,7 +174,7 @@ ChartJS.register(
       </div>
     </div>
     <div
-      class="md:col-span-2 max-h-[425px] lg:max-h-[525px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+      class="md:col-span-2 max-h-[425px] lg:max-h-[500px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex flex-row items-center">
         <!-- <h2 class="font-semibold">Today's Truflation Rate</h2> -->
