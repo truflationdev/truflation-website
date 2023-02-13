@@ -43,14 +43,16 @@ const videos: VideoLinks[] = [
   >
     <Banner :isLight="true" />
     <div
-      class="items-center mx-10 lg:mx-auto container py-20 md:mx-auto lg:items-start flex flex-col xl:py-32"
+      class="items-center container py-20 mx-auto lg:items-start flex flex-col xl:py-32"
     >
-      <div class="flex flex-row flex-wrap">
-        <div class="flex flex-col relative gap-5 h-full">
-          <h1 class="text-6xl font-semibold text-white capitalize">
+      <div class="flex flex-row text-center md:text-left flex-wrap">
+        <div
+          class="flex flex-col items-center md:items-start gap-5 md:mx-0 h-full"
+        >
+          <h1 class="text-5xl md:text-6xl font-semibold text-white capitalize">
             Methodology Matters
           </h1>
-          <p class="max-w-xl text-lg text-white">
+          <p class="md:max-w-xl max-w-xs text-lg text-white">
             Truflation offers a more reliable view of inflation, contrasting
             with government metrics that have outdated methodologies and limited
             transparency. With 10 million data points, it updates daily and has
@@ -78,19 +80,19 @@ const videos: VideoLinks[] = [
           </a>
         </div>
         <img
-          class="flex right-0 absolute top-[100px]"
+          class="xl:flex hidden right-0 absolute top-[100px]"
           src="../assets/img/coin-globe.svg"
           alt=""
         />
       </div>
     </div>
   </div>
-  <div class="flex container mx-auto">
+  <div class="flex container flex-col md:mx-auto">
     <div class="flex flex-col flex-wrap">
       <div class="flex text-center md:text-left flex-col gap-4 h-full my-4">
-        <div class="flex mt-4 flex-row flex-wrap gap-8">
+        <div class="flex mt-4 jus flex-row flex-wrap gap-8">
           <ul
-            class="grid sm:grid-cols-2 lg:grid-cols-4 gap-[105px] w-full justify-center"
+            class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[105px] w-full justify-center"
           >
             <li
               class="flex flex-col gap-2 max-w-[200px]"
@@ -106,12 +108,12 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div
-    class="flex relative flex-col container gap-8 justify-center md:text-left mt-40 mx-auto"
+    class="flex relative flex-col items-center md:items-start text-center px-5 md:px-0 container gap-8 justify-center md:text-left mt-40 mx-auto"
   >
     <h1 class="text-5xl font-semibold mb-4">
       Verifiable Truth is in Short Supply
     </h1>
-    <div class="flex flex-col md:flex-row max-w-4xl">
+    <div class="flex flex-col gap-4 md:flex-row max-w-4xl">
       <p class="font-light text-lg text-center md:text-left">
         Historically, government inflation metrics have produced biased outputs,
         built on outdated methodologies. They lacked modern measurement
@@ -145,10 +147,10 @@ const videos: VideoLinks[] = [
     </a>
   </div>
   <div
-    class="flex relative flex-col container h-full justify-center md:text-left mb-20 mt-20 mx-auto"
+    class="flex relative flex-col container items-center md:items-start h-full justify-center md:text-left mb-20 mt-20 mx-auto"
   >
     <svg
-      class="absolute -top-[800px] -right-[80px]"
+      class="absolute -top-[800px] hidden lg:box -right-[80px]"
       width="614"
       height="1376"
       viewBox="0 0 614 1376"
