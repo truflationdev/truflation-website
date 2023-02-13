@@ -7,8 +7,15 @@ import "chartjs-adapter-date-fns";
 const main = useDataStore();
 const route = useRoute();
 const defaultHost = "https://api.truflation.io";
-const { selectedCategory, selectedCountry, currentTime, keyMetrics, MainData } =
-  storeToRefs(main);
+const {
+  selectedCategory,
+  selectedCountry,
+  currentTime,
+  keyMetrics,
+  MainData,
+  loading,
+} = storeToRefs(main);
+main.setLoading(true);
 
 const { data: inflation } = await useFetch(
   () => `${defaultHost}/dashboard-data`
@@ -21,6 +28,7 @@ main.hydrateState(inflation._value);
 async function fetchState() {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
+  main.setLoading(true);
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
       $fetch(`${host}/dashboard-data-uk${tag}`)
