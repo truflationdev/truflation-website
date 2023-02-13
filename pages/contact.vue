@@ -38,7 +38,7 @@ const videos: VideoLinks[] = [
       <h1 class="text-3xl">Contact Us</h1>
       <form
         class="flex flex-col gap-4"
-        name="Contact main"
+        name="Main Contact"
         method="post"
         data-netlify="true"
         netlify-honeypot="bot-filter"
