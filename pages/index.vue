@@ -63,7 +63,7 @@ const testWarning = computed(() => {
       name="Independent, economic & financial data in real time on-chain"
       content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
     />
-    <Meta property="og:image" content="~/assets/img/openGraph.jpg" />
+    <Meta property="og:image" :content="'/assets/img/openGraph.jpg'" />
 
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
