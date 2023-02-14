@@ -20,10 +20,18 @@ const videos: VideoLinks[] = [
 
 <template>
   <Head>
-    <title>Contact Us - Truflation</title>
+    <title>Contact Us | Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
+    />
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:site" content="@truflation" />
+    <Meta name="twitter:title" content="Contact Us | truflation" />
+
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
     <Meta
       property="og:image"
