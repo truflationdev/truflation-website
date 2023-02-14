@@ -16,6 +16,10 @@ const posts = await useFetch("/api/ghostPosts").data;
       property="og:image"
       content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
 
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
