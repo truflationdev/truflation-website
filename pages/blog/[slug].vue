@@ -10,7 +10,10 @@ const { data } = await useFetch(`/api/${slug}`);
       {{ `${data.title} | Truflation` }}
     </title>
     <Meta :name="`${data.title} | Truflation`" :content="data.title" />
-    <Meta property="og:image" :content="data.feature_image" />
+    <Meta
+      property="og:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
 
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
