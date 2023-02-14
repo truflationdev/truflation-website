@@ -65,7 +65,7 @@ const testWarning = computed(() => {
     />
     <Meta
       property="og:image"
-      content="<%= require('/assets/img/openGraph.jpg') %>"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
 
     <link
