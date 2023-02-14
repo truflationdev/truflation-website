@@ -23,13 +23,23 @@ const videos: VideoLinks[] = [
     <title>About Us - Truflation</title>
     <Meta
       name="About Us | Truflation"
-      content="Description: Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
+      content=" Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
     />
     <Meta
       property="og:image"
       content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
-
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:site" content="@truflation" />
+    <Meta name="twitter:title" content="About Us  | truflation" />
+    <Meta
+      name="twitter:description"
+      content=" Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
+    />
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"

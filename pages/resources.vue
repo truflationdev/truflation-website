@@ -33,6 +33,17 @@ const videos: VideoLinks[] = [
       property="og:image"
       content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:site" content="@truflation" />
+    <Meta name="twitter:title" content="Resources | truflation" />
+    <Meta
+      name="twitter:description"
+      content="Discover the vision, research, and updates behind the Truflation project."
+    />
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
   </Head>
   <div class="main-background">
     <Banner />
