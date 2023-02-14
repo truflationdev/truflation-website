@@ -22,14 +22,14 @@ const { data } = await useFetch(`/api/${slug}`);
   </Head>
 
   <Banner />
-  <div class="mx-auto mb-10 flex flex-col container">
+  <div class="lg:mx-auto mb-10 flex flex-col container">
     <img class="mt-10" :src="data.feature_image" alt="" />
-    <h1 class="mt-10 font-bold text-4xl">{{ data.title }}</h1>
-    <p class="font-semibold text-xl mt-2 mb-10">
+    <h1 class="mt-10 font-bold px-10 text-4xl">{{ data.title }}</h1>
+    <p class="font-semibold px-10 text-xl mt-2 mb-10">
       <!-- Reading Time: {{ data.reading_time }} mins -->
       {{ data.published_at.slice(0, 10) }}
     </p>
-    <div class="blog mb-10" v-html="data.html"></div>
+    <div class="blog container px-10 mb-10" v-html="data.html"></div>
   </div>
   <div class="flex">
     <NewsLetter />
