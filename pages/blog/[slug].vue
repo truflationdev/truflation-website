@@ -20,7 +20,10 @@ const { data } = await useFetch(`/api/${slug}`);
     <Meta name="twitter:site" content="@truflation" />
     <Meta name="twitter:title" :content="data.title" />
     <Meta name="twitter:description" :content="data.excerpt" />
-    <Meta name="twitter:image" :content="data.feature_image" />
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
   </Head>
 
   <Banner />
