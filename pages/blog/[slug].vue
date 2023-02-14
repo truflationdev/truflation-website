@@ -19,7 +19,7 @@ const { data } = await useFetch(`/api/${slug}`);
     <Meta name="twitter:card" content="summary_large_image" />
     <Meta name="twitter:site" content="@truflation" />
     <Meta name="twitter:title" :content="data.title" />
-
+    <Meta name="twitter:description" :content="data.excerpt" />
     <Meta name="twitter:image" :content="data.feature_image" />
   </Head>
 
