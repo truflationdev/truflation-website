@@ -13,7 +13,7 @@
     />
     <Meta
       property="og:image"
-      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
   </Head>
   <div class="flex flex-col w-full items-center">
