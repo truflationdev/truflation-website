@@ -180,7 +180,7 @@ ChartJS.register(
         v-if="selectedCountry === SelectedCountry.GBR"
         class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
       >
-        UK govt reported rate: 10.52%
+        UK govt reported rate: 10.1%
       </div>
       <div
         v-if="selectedCountry === SelectedCountry.USA"
