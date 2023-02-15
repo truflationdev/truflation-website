@@ -36,7 +36,7 @@ export const useDataStore = defineStore({
     return {
       currentTime: "",
       loading: false as boolean,
-      showBanner: true as boolean,
+      showBanner: false as boolean,
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
