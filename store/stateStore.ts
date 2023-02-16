@@ -8,7 +8,46 @@ import {
   GraphData,
   TimePeriod,
 } from "~~/components/categoryTypes";
-import { getPosts } from "~~/server/api/ghostPosts";
+
+export const govData = {
+  label: "Government Data",
+  borderColor: "#F59E0B",
+  backgroundColor: "#F59E0B",
+  data: [
+    { x: "2022-02-14", y: 7.9 },
+    { x: "2022-03-14", y: 8.5 },
+    { x: "2022-04-14", y: 8.3 },
+    { x: "2022-05-14", y: 8.6 },
+    { x: "2022-06-14", y: 9.1 },
+    { x: "2022-07-14", y: 8.5 },
+    { x: "2022-08-14", y: 8.3 },
+    { x: "2022-09-14", y: 8.2 },
+    { x: "2022-10-14", y: 7.7 },
+    { x: "2022-11-14", y: 7.1 },
+    { x: "2022-12-14", y: 6.5 },
+    { x: "2023-01-14", y: 6.4 },
+  ],
+};
+
+export const ukGovData = {
+  label: "Government Data",
+  borderColor: "#F59E0B",
+  backgroundColor: "#F59E0B",
+  data: [
+    { x: "2022-02-14", y: 6.2 },
+    { x: "2022-03-14", y: 7 },
+    { x: "2022-04-14", y: 9 },
+    { x: "2022-05-14", y: 9.1 },
+    { x: "2022-06-14", y: 9.4 },
+    { x: "2022-07-14", y: 10.1 },
+    { x: "2022-08-14", y: 9.9 },
+    { x: "2022-09-14", y: 10.1 },
+    { x: "2022-10-14", y: 11.1 },
+    { x: "2022-11-14", y: 10.7 },
+    { x: "2022-12-14", y: 10.5 },
+    { x: "2023-01-14", y: 10.1 },
+  ],
+};
 
 export const categoryData: string[] = [
   "This covers food and non-alcoholic beverages consumed at home which is generally purchased at Supermarkets, Kiosks etc as well as food purchased away from home in quick service restaurants, restaurants, Hotels, bars etc.",
@@ -40,6 +79,46 @@ export const useDataStore = defineStore({
       selectedCountry: SelectedCountry.USA,
       selectedCategory: CategoryType.FoodAndBev,
       selectedCategoryDriver: "unknown",
+      govData: {
+        UK: {
+          label: "Government Data",
+          borderColor: "#F59E0B",
+          backgroundColor: "#F59E0B",
+          data: [
+            { x: "2022-02-14", y: 6.2 },
+            { x: "2022-03-14", y: 7 },
+            { x: "2022-04-14", y: 9 },
+            { x: "2022-05-14", y: 9.1 },
+            { x: "2022-06-14", y: 9.4 },
+            { x: "2022-07-14", y: 10.1 },
+            { x: "2022-08-14", y: 9.9 },
+            { x: "2022-09-14", y: 10.1 },
+            { x: "2022-10-14", y: 11.1 },
+            { x: "2022-11-14", y: 10.7 },
+            { x: "2022-12-14", y: 10.5 },
+            { x: "2023-01-14", y: 10.1 },
+          ],
+        },
+        US: {
+          label: "Government Data",
+          borderColor: "#F59E0B",
+          backgroundColor: "#F59E0B",
+          data: [
+            { x: "2022-02-14", y: 7.9 },
+            { x: "2022-03-14", y: 8.5 },
+            { x: "2022-04-14", y: 8.3 },
+            { x: "2022-05-14", y: 8.6 },
+            { x: "2022-06-14", y: 9.1 },
+            { x: "2022-07-14", y: 8.5 },
+            { x: "2022-08-14", y: 8.3 },
+            { x: "2022-09-14", y: 8.2 },
+            { x: "2022-10-14", y: 7.7 },
+            { x: "2022-11-14", y: 7.1 },
+            { x: "2022-12-14", y: 6.5 },
+            { x: "2023-01-14", y: 6.4 },
+          ],
+        },
+      },
       blog: [],
       chartLables: {
         generalChart: [] as string[],
@@ -430,8 +509,28 @@ export const useDataStore = defineStore({
         currentLabels.length - period,
         currentLabels.length
       );
+
       this.chartLables.generalChart = newArray;
       this.chartLables.mainSelection = timePeriod;
+
+      if (this.selectedCountry === SelectedCountry.USA) {
+        if (period < 60) {
+          this.govData.US.data = [];
+          return;
+        }
+        const newGovArray = govData.data.slice(
+          govData.data.length - period / 30,
+          govData.data.length
+        );
+        this.govData.US.data = newGovArray;
+      }
+      if (this.selectedCountry === SelectedCountry.GBR) {
+        const newGovArray = ukGovData.data.slice(
+          ukGovData.data.length - period / 12,
+          govData.data.length
+        );
+        this.govData.UK.data = newGovArray;
+      }
     },
 
     updateCurrentTime(time: any) {
@@ -442,6 +541,17 @@ export const useDataStore = defineStore({
       const currentLabels = this.chartLables.totalLabels;
       const index = currentLabels.indexOf("2023-01-01");
       const newArray = currentLabels.slice(index, currentLabels.length);
+
+      if (this.selectedCountry === SelectedCountry.USA) {
+        const index = govData.data.indexOf("2023-01-14");
+        const newGovArray = govData.data.slice(index, govData.data.length);
+        this.govData.US.data = newGovArray;
+      }
+      if (this.selectedCountry === SelectedCountry.GBR) {
+        const newGovArray = ukGovData.data.slice(-1);
+        this.govData.UK.data = newGovArray;
+      }
+
       this.chartLables.generalChart = newArray;
       this.chartLables.mainSelection = timePeriod;
     },
@@ -504,10 +614,18 @@ export const useDataStore = defineStore({
         backgroundColor: "#0D58C6",
         data: newArray,
       };
+      const dataArray = [dataset];
+
+      if (state.selectedCountry === SelectedCountry.USA) {
+        dataArray.push(state.govData.US);
+      }
+      if (state.selectedCountry === SelectedCountry.GBR) {
+        dataArray.push(state.govData.UK);
+      }
 
       const object = {
         labels: state.chartLables.generalChart,
-        datasets: [dataset],
+        datasets: dataArray,
       };
       return object;
     },
