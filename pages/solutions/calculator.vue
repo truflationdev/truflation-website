@@ -22,7 +22,6 @@ import { reactive } from "vue";
 
 const main = useDataStore();
 const { calculator, chartLables, MainData } = storeToRefs(main);
-console.log(options);
 
 const videos = [
   {
@@ -58,39 +57,44 @@ ChartJS.register(
 );
 
 const fields = [
-  "Food & Non Alcoholic Beverages",
-  "Alcoholic beverages & Tobacco",
-  "Apparel",
+  "Food & Non-alcoholic Beverages",
+  "Alcohol & Tobacco",
+  "Clothing & Footwear",
   "Housing",
   "Utilities",
-  "Household Durables",
+  "Household Durables & Daily Use Items",
   "Health",
   "Transport",
-  "Communication",
+  "Communications",
   "Recreation & Culture",
   "Education",
-  "Other expenditure items",
+  "Other",
 ];
 
 const initialState = {
-  "Food & Non Alcoholic Beverages": 0,
-  "Alcoholic beverages & Tobacco": 0,
-  Apparel: 0,
+  "Food & Non-alcoholic Beverages": 0,
+  "Alcohol & Tobacco": 0,
+  "Clothing & Footwear": 0,
   Housing: 0,
   Utilities: 0,
-  "Household Durables": 0,
+  "Household Durables & Daily Use Items": 0,
   Health: 0,
   Transport: 0,
-  Communication: 0,
+  Communications: 0,
   "Recreation & Culture": 0,
   Education: 0,
-  "Other expenditure items": 0,
+  Other: 0,
 };
 
 const inputFields = reactive({ ...initialState });
 
-function Calculate() {
-  main.updatePersonalInflation(inputFields);
+async function Calculate() {
+  await useAsyncData("geocode", () =>
+    $fetch(`https://api.truflation.io/category-data`)
+  ).then((res) => {
+    main.updatePersonalInflation(inputFields, res.data.value);
+  });
+
   document
     .getElementById("monthlyValues")
     .scrollIntoView({ behavior: "smooth" });

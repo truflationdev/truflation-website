@@ -55,6 +55,7 @@ export const useDataStore = defineStore({
         change: 0 as number,
       },
       calculator: {
+        personalInflationArray: [] as number[],
         personalInflation: 0 as number,
         monthlyEffect: 0 as number,
       },
@@ -334,25 +335,42 @@ export const useDataStore = defineStore({
       this.blog = blogData;
     },
 
-    updatePersonalInflation(financeObject: object) {
-      const yearWeights: number[] = [];
-      const CurrentWeights: number[] = [];
+    updatePersonalInflation(financeObject: object, fetchedWeights: any) {
+      const personalInflationArray: number[] = [];
+      console.log(fetchedWeights);
       const sum = Object.values(financeObject).reduce((a, b) => a + b, 0);
 
-      Object.keys(financeObject).map((e) => {
-        CurrentWeights.push(this.currentIndexes[e] * (financeObject[e] / sum));
-        yearWeights.push(this.yearlyIndexes[e] * (financeObject[e] / sum));
-      });
+      // Object.keys(financeObject).map((e) => {
+      //   const category = fetchedWeights.find(
+      //     (weight) => weight.categoryName === e
+      //   );
 
-      const adjustedYearAmount = yearWeights.reduce((a, b) => a + b);
-      const adjustedCurrentAmount = CurrentWeights.reduce((a, b) => a + b);
-      const InflationRate =
-        (adjustedCurrentAmount / adjustedYearAmount - 1) * 100;
-      const estimatedIncrease =
-        sum * (adjustedCurrentAmount / adjustedYearAmount - 1);
+      //   category.data.array.forEach((element: any) => {
+      //     const yearWeights: number[] = [];
+      //     const CurrentWeights: number[] = [];
 
-      this.calculator.personalInflation = InflationRate;
-      this.calculator.monthlyEffect = estimatedIncrease;
+      //   });
+      //   console.log(value);
+      // });
+
+      // const yearWeights: number[] = [];
+      // const CurrentWeights: number[] = [];
+      // const sum = Object.values(financeObject).reduce((a, b) => a + b, 0);
+
+      // Object.keys(financeObject).map((e) => {
+      //   CurrentWeights.push(this.currentIndexes[e] * (financeObject[e] / sum));
+      //   yearWeights.push(this.yearlyIndexes[e] * (financeObject[e] / sum));
+      // });
+
+      // const adjustedYearAmount = yearWeights.reduce((a, b) => a + b);
+      // const adjustedCurrentAmount = CurrentWeights.reduce((a, b) => a + b);
+      // const InflationRate =
+      //   (adjustedCurrentAmount / adjustedYearAmount - 1) * 100;
+      // const estimatedIncrease =
+      //   sum * (adjustedCurrentAmount / adjustedYearAmount - 1);
+
+      // this.calculator.personalInflation = InflationRate;
+      // this.calculator.monthlyEffect = estimatedIncrease;
     },
 
     updateSelectedCountry(country: SelectedCountry) {
@@ -610,3 +628,5 @@ export const useDataStore = defineStore({
       },
   },
 });
+
+const data = [{ "2022-01-11": {} }];

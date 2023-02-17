@@ -37,25 +37,11 @@ async function fetchState() {
     });
     return;
   }
-<<<<<<< HEAD
-
-  // await useAsyncData("geocode", () =>
-  //   $fetch(`${host}/dashboard-data${tag}`)
-  // ).then((res) => {
-  //   main.hydrateState(res.data.value);
-  // });
-  await useAsyncData("geocode", () => $fetch(`${host}/dashboard-data`)).then(
-    (res) => {
-      main.hydrateState(res.data.value);
-    }
-  );
-=======
   await useAsyncData("geocode", () =>
     $fetch(`${host}/dashboard-data${tag}`)
   ).then((res) => {
     main.hydrateState(res.data.value);
   });
->>>>>>> main
 }
 
 const testWarning = computed(() => {
