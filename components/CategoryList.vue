@@ -10,11 +10,11 @@ const { selectedCategory } = storeToRefs(main);
 
 <template>
   <div
-    class="flex flex-col text-center sm:text-start container md:mx-auto mt-12 gap-3"
+    class="flex flex-col text-center sm:text-start container max-w-[90%] md:mx-auto mt-12 gap-3"
   >
     <h1 class="text-2xl font-semibold">Categories</h1>
     <ul
-      class="hidden lg:grid grid-cols-1 mt-6 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 w-full justify-center text-gray-600"
+      class="hidden md:grid grid-cols-1 mt-6 md:grid-cols-3 2xl:grid-cols-4 gap-y-8 justify-center text-gray-600"
     >
       <li
         class="border-b-2 flex flex-row gap-2 pb-3 items-center"
