@@ -1,17 +1,34 @@
 <script setup lang="ts">
 import { useDataStore, SelectedCountry } from "~~/store/stateStore";
+import { onBeforeMount, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import "chartjs-adapter-date-fns";
 
 const main = useDataStore();
 const route = useRoute();
-const { selectedCategory, selectedCountry } = storeToRefs(main);
 const defaultHost = "https://api.truflation.io";
+const {
+  selectedCategory,
+  selectedCountry,
+  currentTime,
+  keyMetrics,
+  MainData,
+  loading,
+} = storeToRefs(main);
+main.setLoading(true);
+
+const { data: inflation } = await useFetch(
+  () => `${defaultHost}/dashboard-data`
+);
+main.hydrateState(inflation._value);
+
+// const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
+// main.updateCurrentTime(time._value.datetime);
 
 async function fetchState() {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
-  console.log(`${host}/dashboard-data-uk${tag}`);
+  main.setLoading(true);
   if (selectedCountry.value === SelectedCountry.GBR) {
     await useAsyncData("geocode", () =>
       $fetch(`${host}/dashboard-data-uk${tag}`)
@@ -20,6 +37,7 @@ async function fetchState() {
     });
     return;
   }
+<<<<<<< HEAD
 
   // await useAsyncData("geocode", () =>
   //   $fetch(`${host}/dashboard-data${tag}`)
@@ -31,8 +49,14 @@ async function fetchState() {
       main.hydrateState(res.data.value);
     }
   );
+=======
+  await useAsyncData("geocode", () =>
+    $fetch(`${host}/dashboard-data${tag}`)
+  ).then((res) => {
+    main.hydrateState(res.data.value);
+  });
+>>>>>>> main
 }
-fetchState();
 
 const testWarning = computed(() => {
   const tag = route.query.tag ?? "";
@@ -55,9 +79,22 @@ const testWarning = computed(() => {
     />
     <Meta
       property="og:image"
-      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
-
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:site" content="@truflation" />
+    <Meta
+      name="twitter:title"
+      content="Independent, economic & financial data in real time on-chain"
+    />
+    <Meta
+      name="twitter:description"
+      content="We've researched, deconstructed, and remastered the official CPI to create a metric that reflects the true price change in the market."
+    />
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -104,13 +141,15 @@ const testWarning = computed(() => {
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
       </div>
-      <P class="text-lg text-center lg:text-left"
+      <button v-if="currentTime">{{ currentTime }}</button>
+      <P v-if="MainData" class="text-lg text-center lg:text-left"
         >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
         Truflation is
-        <span class="font-extrabold text-lg"
-          >{{ main.keyMetrics.Inflation }}%</span
+        <span v-if="MainData" class="font-extrabold text-lg"
+          >{{ keyMetrics.Inflation }}%</span
         >,
         <span
+          v-if="MainData"
           class="font-bold"
           :class="{
             ' text-red-700': main.getInflationDayChange() > 0,
@@ -124,14 +163,14 @@ const testWarning = computed(() => {
         >
       </P>
     </div>
-    <div class="flex items-center flex-col mt-7">
+    <div v-if="MainData" class="flex items-center flex-col mt-7">
       <DataChart :locationOptions="selectedCategory" />
     </div>
-    <CategoryList />
+    <CategoryList v-if="MainData" />
     <div class="flex flex-col mt-4">
-      <Category :category="selectedCategory" />
+      <Category v-if="MainData" :category="selectedCategory" />
     </div>
-    <!-- <SubDrivers :category="categoryData"/> -->
+    <!-- <SubDrivers :category="categoryData" /> -->
     <div class="flex flex-col mt-24">
       <DataPartners />
     </div>

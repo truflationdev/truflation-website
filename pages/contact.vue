@@ -20,14 +20,22 @@ const videos: VideoLinks[] = [
 
 <template>
   <Head>
-    <title>Contact Us - Truflation</title>
+    <title>Contact Us | Truflation</title>
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@400&display=swap"
       rel="stylesheet"
     />
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:site" content="@truflation" />
+    <Meta name="twitter:title" content="Contact Us | truflation" />
+
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
     <Meta
       property="og:image"
-      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
   </Head>
   <div class="bg-[url('assets/img/solutions-background.svg')] bg-cover w-full">
@@ -38,7 +46,7 @@ const videos: VideoLinks[] = [
       <h1 class="text-3xl">Contact Us</h1>
       <form
         class="flex flex-col gap-4"
-        name="Contact main"
+        name="Main Contact"
         method="post"
         data-netlify="true"
         netlify-honeypot="bot-filter"

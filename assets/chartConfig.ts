@@ -28,6 +28,9 @@ export const options = {
         lineHeight: 2,
       },
       callbacks: {
+        title: function (context) {
+          return `UTC+0 ${context[0].label} `;
+        },
         label(tooltipItems: any) {
           return ` ${tooltipItems.formattedValue}% ${tooltipItems.dataset.label}`;
         },

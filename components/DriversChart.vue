@@ -25,7 +25,6 @@ const { selectedCategory, selectedCategoryDriver } = storeToRefs(main);
 const select = () => {
   const targetId = event.currentTarget.id;
   main.updateSelectedCategoryDriver(targetId);
-  console.log(targetId);
 };
 
 ChartJS.register(

@@ -23,13 +23,23 @@ const videos: VideoLinks[] = [
     <title>About Us - Truflation</title>
     <Meta
       name="About Us | Truflation"
-      content="Description: Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
+      content=" Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
     />
     <Meta
       property="og:image"
-      content="https://truflation.com/assets/_1200x630_crop_center-center_82_none/truflation-social.jpg?mtime=1655193444"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
-
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta name="twitter:site" content="@truflation" />
+    <Meta name="twitter:title" content="About Us  | truflation" />
+    <Meta
+      name="twitter:description"
+      content=" Our goal is to produce an equitable data feed that mirrors the real-life inflation values, creating an unbiased information source of true price changes in the market."
+    />
+    <Meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
+    />
     <link
       href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
       rel="stylesheet"
@@ -39,9 +49,9 @@ const videos: VideoLinks[] = [
     <Banner :isLight="true" />
     <div class="flex container mx-auto">
       <div
-        class="flex flex-col items-center text-center md:text-left py-28 lg:flex-row mt-4"
+        class="flex flex-col items-center text-center md:text-left py-28 lg:flex-row justify-center mt-4"
       >
-        <div class="flex flex-col mx-5 md:mx-auto gap-5 h-full">
+        <div class="flex flex-col mx-5 md:mx-auto gap-5">
           <h1 class="text-5xl font-semibold text-white">About Truflation</h1>
           <p class="max-w-[420px] text-lg text-white">
             Solving the measurement problems of the past, so you can grow the
@@ -52,24 +62,26 @@ const videos: VideoLinks[] = [
     </div>
   </div>
   <div
-    class="flex flex-col gap-8 container justify-center items-center text-center md:text-left md:mx-auto mt-16"
+    class="flex flex-col container text-center md:text-left md:mx-auto mt-16"
   >
     <div class="gap-8 flex flex-col">
-      <h1 class="text-3xl font-semibold">
-        Verifiable Truth Is in Short Supply
-      </h1>
       <div
-        class="flex mx-4 justify-between md:mx-0 flex-row flex-wrap md:flex-nowrap gap-5 md:gap-16"
+        class="flex mx-4 items-center justify-between md:mx-0 flex-row flex-wrap md:flex-nowrap gap-16"
       >
-        <p class="max-w-xl text-lg">
-          Truflation offers a new inflation truth-set to provide reliable
-          financial data for better decision-making. It uses 10 million data
-          points and updates indices daily, offering more comprehensive and
-          up-to-date information compared to traditional indexes updating
-          monthly. Truflation's secure blockchain infrastructure provides
-          unbiased, verifiable data for the growth and sustainability of
-          business decisions.
-        </p>
+        <div class="flex flex-col gap-6">
+          <h1 class="text-3xl font-semibold">
+            Verifiable Truth Is in Short Supply
+          </h1>
+          <p class="max-w-2xl text-lg">
+            Truflation offers a new inflation truth-set to provide reliable
+            financial data for better decision-making. It uses 10 million data
+            points and updates indices daily, offering more comprehensive and
+            up-to-date information compared to traditional indexes updating
+            monthly. Truflation's secure blockchain infrastructure provides
+            unbiased, verifiable data for the growth and sustainability of
+            business decisions.
+          </p>
+        </div>
         <img class="md:flex hidden" src="../assets/img/globe.png" alt="" />
         <!-- <p class="max-w-xl text-lg">
           Sustainable growth can only come from a common and verifiable
@@ -203,10 +215,12 @@ const videos: VideoLinks[] = [
     class="mx-auto flex gap-4 justify-center items-center flex-col container my-32"
   >
     <h1 class="text-5xl font-medium">Our Customers</h1>
-    <div class="grid grid-cols-1 mt-12 px-5 md:grid-cols-3 w-full gap-5">
+    <div
+      class="grid items-center grid-cols-1 mt-12 px-5 sm:grid-cols-2 lg:grid-cols-3 w-auto md:w-full gap-5"
+    >
       <div
         v-for="customer in CustomerData.list"
-        class="flex max-w-sm items-center bg-[#002152] flex-col text-center rounded-lg"
+        class="flex max-w-sm items-center h-full bg-[#002152] flex-col text-center rounded-lg"
       >
         <div
           class="flex py-11 bg-white/10 w-full flex-row text-white text-xl gap-2 items-center justify-center"
