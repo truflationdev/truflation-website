@@ -337,40 +337,38 @@ export const useDataStore = defineStore({
 
     updatePersonalInflation(financeObject: object, fetchedWeights: any) {
       const personalInflationArray: number[] = [];
-      console.log(fetchedWeights);
+      const EstimateArray: number[] = [];
       const sum = Object.values(financeObject).reduce((a, b) => a + b, 0);
 
-      // Object.keys(financeObject).map((e) => {
-      //   const category = fetchedWeights.find(
-      //     (weight) => weight.categoryName === e
-      //   );
+      fetchedWeights.forEach((element: any) => {
+        const yearWeights: number[] = [];
+        const CurrentWeights: number[] = [];
 
-      //   category.data.array.forEach((element: any) => {
-      //     const yearWeights: number[] = [];
-      //     const CurrentWeights: number[] = [];
+        Object.keys(financeObject).map((e: any) => {
+          const result = Object.values(element);
+          CurrentWeights.push(
+            result[0][e].currentIndex * (financeObject[e] / sum)
+          );
+          yearWeights.push(
+            result[0][e].oneYearIndex * (financeObject[e] / sum)
+          );
+        });
 
-      //   });
-      //   console.log(value);
-      // });
+        const adjustedYearAmount = yearWeights.reduce((a, b) => a + b);
+        const adjustedCurrentAmount = CurrentWeights.reduce((a, b) => a + b);
 
-      // const yearWeights: number[] = [];
-      // const CurrentWeights: number[] = [];
-      // const sum = Object.values(financeObject).reduce((a, b) => a + b, 0);
+        const InflationRate =
+          (adjustedCurrentAmount / adjustedYearAmount - 1) * 100;
+        personalInflationArray.push(InflationRate);
+        const estimatedIncrease =
+          sum * (adjustedCurrentAmount / adjustedYearAmount - 1);
+        EstimateArray.push(estimatedIncrease);
+      });
 
-      // Object.keys(financeObject).map((e) => {
-      //   CurrentWeights.push(this.currentIndexes[e] * (financeObject[e] / sum));
-      //   yearWeights.push(this.yearlyIndexes[e] * (financeObject[e] / sum));
-      // });
-
-      // const adjustedYearAmount = yearWeights.reduce((a, b) => a + b);
-      // const adjustedCurrentAmount = CurrentWeights.reduce((a, b) => a + b);
-      // const InflationRate =
-      //   (adjustedCurrentAmount / adjustedYearAmount - 1) * 100;
-      // const estimatedIncrease =
-      //   sum * (adjustedCurrentAmount / adjustedYearAmount - 1);
-
-      // this.calculator.personalInflation = InflationRate;
-      // this.calculator.monthlyEffect = estimatedIncrease;
+      this.calculator.personalInflationArray = personalInflationArray;
+      this.calculator.personalInflation =
+        personalInflationArray[personalInflationArray.length - 1];
+      this.calculator.monthlyEffect = EstimateArray[EstimateArray.length - 1];
     },
 
     updateSelectedCountry(country: SelectedCountry) {
@@ -526,6 +524,12 @@ export const useDataStore = defineStore({
       this.chartLables.categoryChart = newArray;
       this.chartLables.categorySelection = timePeriod;
     },
+
+    resetCalculator() {
+      this.calculator.personalInflation = 0;
+      this.calculator.personalInflationArray = [];
+      this.calculator.monthlyEffect = 0;
+    },
   },
   getters: {
     getByCategoryType: (state) => (categoryType: CategoryType) => {
@@ -585,6 +589,40 @@ export const useDataStore = defineStore({
       return object;
     },
 
+    getCalculatorChart: (state) => (data: GraphData) => {
+      const newArray = data.datasets[0].data.slice(
+        data.datasets[0].data.length - state.chartLables.generalChart.length,
+        data.datasets[0].data.length
+      );
+
+      const dataset: DataSet = {
+        label: data.datasets[0].label,
+        borderWidth: 5,
+        borderColor: "#0D58C6",
+        backgroundColor: "#0D58C6",
+        data: newArray,
+      };
+
+      const array = [dataset];
+
+      if (state.calculator.personalInflationArray.length > 1) {
+        const personalDataset: DataSet = {
+          label: "Personal Inflation",
+          borderWidth: 5,
+          borderColor: "#F59E0B",
+          backgroundColor: "#F59E0B",
+          data: state.calculator.personalInflationArray,
+        };
+        array.push(personalDataset);
+      }
+
+      const object = {
+        labels: state.chartLables.generalChart,
+        datasets: array,
+      };
+      return object;
+    },
+
     getInflationDayChange: (state) => (): number => {
       const dataSets = state.MainData.datasets[0].data;
       const equation =
@@ -628,5 +666,3 @@ export const useDataStore = defineStore({
       },
   },
 });
-
-const data = [{ "2022-01-11": {} }];

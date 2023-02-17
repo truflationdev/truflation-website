@@ -57,36 +57,41 @@ ChartJS.register(
 );
 
 const fields = [
-  "Food & Non-alcoholic Beverages",
   "Alcohol & Tobacco",
   "Clothing & Footwear",
-  "Housing",
-  "Utilities",
-  "Household Durables & Daily Use Items",
-  "Health",
-  "Transport",
   "Communications",
-  "Recreation & Culture",
   "Education",
+  "Food & Non-alcoholic Beverages",
+  "Health",
+  "Household Durables & Daily Use Items",
+  "Housing",
   "Other",
+  "Recreation & Culture",
+  "Transport",
+  "Utilities",
 ];
 
 const initialState = {
-  "Food & Non-alcoholic Beverages": 0,
   "Alcohol & Tobacco": 0,
   "Clothing & Footwear": 0,
-  Housing: 0,
-  Utilities: 0,
-  "Household Durables & Daily Use Items": 0,
-  Health: 0,
-  Transport: 0,
   Communications: 0,
-  "Recreation & Culture": 0,
   Education: 0,
+  "Food & Non-alcoholic Beverages": 0,
+  Health: 0,
+  "Household Durables & Daily Use Items": 0,
+  Housing: 0,
   Other: 0,
+  "Recreation & Culture": 0,
+  Transport: 0,
+  Utilities: 0,
+};
+
+const wageInitialState = {
+  netIncome: 0,
 };
 
 const inputFields = reactive({ ...initialState });
+const wageFields = reactive({ ...wageInitialState });
 
 async function Calculate() {
   await useAsyncData("geocode", () =>
@@ -98,6 +103,7 @@ async function Calculate() {
   document
     .getElementById("monthlyValues")
     .scrollIntoView({ behavior: "smooth" });
+  console.log(wageFields);
 }
 
 function scrollToText() {
@@ -108,6 +114,10 @@ function scrollToText() {
 
 function reset() {
   Object.assign(inputFields, initialState);
+  main.resetCalculator();
+  document
+    .getElementById("monthlyValues")
+    .scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
@@ -147,18 +157,32 @@ function reset() {
       <div class="grid col-span-7 mt-6 grid-cols-4 gap-8">
         <div class="grid grid-cols-2 col-span-2 gap-10">
           <p class="text-[18px] text-black/60">HouseHold net income.</p>
-          <div class="flex flex-col gap-4">
-            <select class="p-4 h-fit" placeholder="select" name="" id="">
+          <div class="flex flex-row">
+            <!-- <select class="p-4 h-fit" placeholder="select" name="" id="">
+              <option value="Select"></option>
               <option value="Select">Select</option>
-            </select>
+              <option value="Select">Select</option>
+              <option value="Select">Select</option>
+              <option value="Select">Select</option>
+            </select> -->
+            <p class="h-full flex bg-gray-50 items-center px-3">$</p>
+            <input
+              v-model.lazy="wageFields.netIncome"
+              @input="$emit('wageFields:[index]', $event.target.value)"
+              placeholder="0"
+              type="number"
+              min="0"
+              max="1000000"
+              class="p-2 font-semibold w-full"
+            />
             <!-- <button class="px-2 py-3 bg-black/5">
               Import your purchase history
             </button> -->
           </div>
-          <p class="text-[18px] text-black/60">Period of time.</p>
+          <!-- <p class="text-[18px] text-black/60">Period of time.</p>
           <select class="p-4 h-fit" placeholder="select" name="" id="">
             <option value="Select">Select</option>
-          </select>
+          </select> -->
           <p class="font-semibold">Household expenses.</p>
           <div class="justify-between flex flex-row">
             <p><strong>Monthly</strong> (USD)</p>
@@ -311,7 +335,7 @@ function reset() {
               v-if="MainData"
               id="calculator-chart"
               :options="options"
-              :data="main?.getMainChart(main?.MainData)"
+              :data="main?.getCalculatorChart(main?.MainData)"
             />
           </div>
         </div>
