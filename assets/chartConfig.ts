@@ -45,7 +45,7 @@ export const options = {
   maintainAspectRatio: false,
   elements: {
     line: {
-      tension: 0.3,
+      tension: 0.1,
     },
     point: {
       borderWidth: 1,
