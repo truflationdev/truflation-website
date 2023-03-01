@@ -330,6 +330,12 @@ export const useDataStore = defineStore({
         MainRateData.push(value[0]);
       });
 
+      mainRateLabels.sort(function compare(a: any, b: any) {
+        var dateA = new Date(a);
+        var dateB = new Date(b);
+        return dateA - dateB;
+      });
+
       this.chartLables.generalChart = mainRateLabels;
       this.MainData.datasets[0].data = MainRateData;
       this.chartLables.generalChart = mainRateLabels;
@@ -347,6 +353,12 @@ export const useDataStore = defineStore({
 
           newLabels.push(key);
           values.push(value[index + 1]);
+        });
+
+        newLabels.sort(function compare(a: any, b: any) {
+          var dateA = new Date(a);
+          var dateB = new Date(b);
+          return dateA - dateB;
         });
 
         const Dataset: DataSet = {
