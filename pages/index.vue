@@ -121,11 +121,6 @@ const testWarning = computed(() => {
             </option>
           </select>
         </div>
-        <!-- <p class="ml-auto font-medium">Highlights</p>
-                    <label class="inline-flex relative items-center cursor-pointer">
-                    <input type="checkbox" value="" class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                    </label> -->
       </div>
       <button v-if="currentTime">{{ currentTime }}</button>
       <P v-if="MainData" class="text-lg text-center lg:text-left"
@@ -156,12 +151,11 @@ const testWarning = computed(() => {
     <div class="flex flex-col mt-4">
       <Category v-if="MainData" :category="selectedCategory" />
     </div>
-    <!-- <SubDrivers :category="categoryData" /> -->
     <div class="flex flex-col mt-24">
       <DataPartners />
     </div>
     <div
-      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 gap-10 px-5 mt-20"
+      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
     >
       <div
         class="flex flex-row text-white w-full bg-gradient-to-br from-truflation-600 to-truflation-300"
@@ -174,11 +168,9 @@ const testWarning = computed(() => {
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <p
-            class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300 w-fit"
+          <a href="/solutions/calculator"
+            ><button class="btn">Use Now</button></a
           >
-            COMING SOON
-          </p>
         </div>
       </div>
       <div
