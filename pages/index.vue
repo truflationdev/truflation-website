@@ -94,12 +94,23 @@ const testWarning = computed(() => {
       <div
         class="flex flex-col lg:w-full md:flex-row mx-2 md:mx-auto mt-3 gap-3"
       >
-        <h2
+        <div class="flex flex-col items-center w-full justify-center h-[60vh]">
+          <h1 class="text-[75px] font-medium">Dashboard under maintenance</h1>
+          <p class="text-[18px] mt-8">
+            Feel free to explore the rest of our website we will be back
+            shortly.
+            <!-- <a class="text-truflation-500" href="/"> Go back home</a> or -->
+            <a class="text-truflation-500" href="/contact"> contact us</a>
+            to report an issue.
+          </p>
+        </div>
+
+        <!-- <h2
           class="text-[32px] font-semibold text-[#181818] text-center md:text-left"
         >
           Today's CPI Data by Truflation
-        </h2>
-        <div class="flex items-center justify-center md:flex-row px-2">
+        </h2> -->
+        <!-- <div class="flex items-center justify-center md:flex-row px-2">
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -120,14 +131,14 @@ const testWarning = computed(() => {
               <img src="~/assets/img/UK-icon.svg" alt="" />UK
             </option>
           </select>
-        </div>
+        </div> -->
         <!-- <p class="ml-auto font-medium">Highlights</p>
                     <label class="inline-flex relative items-center cursor-pointer">
                     <input type="checkbox" value="" class="sr-only peer">
                     <div class="w-11 h-6 bg-gray-200 peer-foc2us:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label> -->
       </div>
-      <button v-if="currentTime">{{ currentTime }}</button>
+      <!-- <button v-if="currentTime">{{ currentTime }}</button>
       <P v-if="MainData" class="text-lg text-center lg:text-left"
         >{{ testWarning }} The {{ selectedCountry }} Inflation Rate by
         Truflation is
@@ -147,21 +158,21 @@ const testWarning = computed(() => {
         <a class="underline text-black/60" href="/methodology"
           >Read Methodology</a
         >
-      </P>
+      </P> -->
     </div>
-    <div v-if="MainData" class="flex items-center flex-col mt-7">
+    <!-- <div v-if="MainData" class="flex items-center flex-col mt-7">
       <DataChart :locationOptions="selectedCategory" />
     </div>
     <CategoryList v-if="MainData" />
     <div class="flex flex-col mt-4">
       <Category v-if="MainData" :category="selectedCategory" />
-    </div>
+    </div> -->
     <!-- <SubDrivers :category="categoryData" /> -->
-    <div class="flex flex-col mt-24">
+    <!-- <div class="flex flex-col mt-24">
       <DataPartners />
-    </div>
-    <div
-      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 gap-10 px-5 mt-20"
+    </div> -->
+    <!-- <div
+      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
     >
       <div
         class="flex flex-row text-white w-full bg-gradient-to-br from-truflation-600 to-truflation-300"
@@ -174,11 +185,9 @@ const testWarning = computed(() => {
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <p
-            class="px-3 py-2 text-yellow-600 rounded-full text-sm bg-yellow-300 w-fit"
+          <a href="/solutions/calculator"
+            ><button class="btn">Use Now</button></a
           >
-            COMING SOON
-          </p>
         </div>
       </div>
       <div
@@ -190,7 +199,7 @@ const testWarning = computed(() => {
           <button class="btn"><a href="/contact"> Contact Us</a></button>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="flex flex-col mt-12">
       <NewsLetter />
     </div>
