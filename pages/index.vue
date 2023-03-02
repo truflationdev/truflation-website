@@ -18,7 +18,12 @@ const {
 main.setLoading(true);
 
 const { data: inflation } = await useFetch(
-  () => `${defaultHost}/dashboard-data`
+  () => {
+    const tag = route.query.tag ?? "";
+    const host = route.query.host ?? defaultHost;
+    console.log(`${host}/dashboard-data${tag}`)
+    return `${host}/dashboard-data${tag}`
+  }
 );
 main.hydrateState(inflation._value);
 
