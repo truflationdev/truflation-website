@@ -49,9 +49,9 @@ const posts = await useFetch("/api/ghostPosts").data;
           <h1 class="text-3xl font-bold">
             {{ posts[0].title }}
           </h1>
-          <p>
+          <!-- <p>
             {{ posts[0].excerpt }}
-          </p>
+          </p> -->
           <p class="text-sm">
             Read Story • {{ posts[0].published_at.slice(0, 10) }}
           </p>
