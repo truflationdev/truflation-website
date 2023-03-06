@@ -17,14 +17,12 @@ const {
 } = storeToRefs(main);
 main.setLoading(true);
 
-const { data: inflation } = await useFetch(
-  () => {
-    const tag = route.query.tag ?? "";
-    const host = route.query.host ?? defaultHost;
-    console.log(`${host}/dashboard-data${tag}`)
-    return `${host}/dashboard-data${tag}`
-  }
-);
+const { data: inflation } = await useFetch(() => {
+  const tag = route.query.tag ?? "";
+  const host = route.query.host ?? defaultHost;
+  console.log(`${host}/dashboard-data${tag}`);
+  return `${host}/dashboard-data${tag}`;
+});
 main.hydrateState(inflation._value);
 
 // const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
@@ -104,7 +102,9 @@ const testWarning = computed(() => {
         >
           Today's CPI Data by Truflation
         </h2>
-        <div class="flex items-center justify-center md:flex-row px-2">
+        <div
+          class="flex items-center justify-center bg-truflation-200 md:flex-row px-2"
+        >
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -118,7 +118,7 @@ const testWarning = computed(() => {
           <select
             v-on:change="fetchState()"
             v-model="selectedCountry"
-            class="p-3 border-r-[10px] border-transparent bg-transparent text-center mx-2"
+            class="p-1 border-r-[10px] border-transparent bg-truflation-200 outline-none text-center"
           >
             <option :value="SelectedCountry.USA">USA</option>
             <option :value="SelectedCountry.GBR">
