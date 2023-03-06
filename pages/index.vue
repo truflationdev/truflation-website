@@ -17,14 +17,12 @@ const {
 } = storeToRefs(main);
 main.setLoading(true);
 
-const { data: inflation } = await useFetch(
-  () => {
-    const tag = route.query.tag ?? "";
-    const host = route.query.host ?? defaultHost;
-    console.log(`${host}/dashboard-data${tag}`)
-    return `${host}/dashboard-data${tag}`
-  }
-);
+const { data: inflation } = await useFetch(() => {
+  const tag = route.query.tag ?? "";
+  const host = route.query.host ?? defaultHost;
+  console.log(`${host}/dashboard-data${tag}`);
+  return `${host}/dashboard-data${tag}`;
+});
 main.hydrateState(inflation._value);
 
 // const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
@@ -173,9 +171,7 @@ const testWarning = computed(() => {
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <a href="/solutions/calculator"
-            ><button class="btn">Use Now</button></a
-          >
+          <button class="btn">Coming Soon</button>
         </div>
       </div>
       <div
