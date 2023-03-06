@@ -51,6 +51,7 @@ const videos: VideoLinks[] = [
         data-netlify="true"
         netlify-honeypot="bot-filter"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <!-- <div class="contact-success"><strong>Success!</strong> We got your message and will reply shortly.</div> -->
         <div class="contact-block half">
           <input
