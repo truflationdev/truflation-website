@@ -79,7 +79,7 @@ ChartJS.register(
         </div>
       </div>
       <div class="flex flex-row mt-12 gap-3 items-center">
-        <p v-if="!loading" class="text-white text-6xl font-semibold">
+        <p v-if="!loading" class="text-white text-[64px] font-semibold">
           {{ main?.getHighAndLow().Inflation }}%
         </p>
         <div
@@ -107,12 +107,12 @@ ChartJS.register(
         </div>
         <div
           v-if="!loading"
-          class="flex flex-row p-2 rounded-lg items-center gap-1"
+          class="flex flex-row p-2 rounded-lg items-center font-semibold gap-1"
           :class="{
             'bg-gray-100': loading,
             'bg-red-100 text-red-700':
               main.getInflationDayChange() > 0 && !loading,
-            'bg-[#E6F4EE] text-[#005E46]':
+            'bg-green-300 text-green-700':
               main.getInflationDayChange() <= 0 && !loading,
           }"
         >
@@ -184,7 +184,7 @@ ChartJS.register(
       </div>
       <div
         v-if="selectedCountry === SelectedCountry.USA"
-        class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
+        class="text-white w-full px-2 py-1 mt-2 text-center bg-truflation-600 rounded-lg"
       >
         US govt reported rate: 6.4%
       </div>
@@ -233,7 +233,7 @@ ChartJS.register(
       <div class="flex flex-row items-center">
         <!-- <h2 class="font-semibold">Today's Truflation Rate</h2> -->
         <ul
-          class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
+          class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-truflation-200 align-middle items-center"
         >
           <li class="p-0.5">
             <button

@@ -13,70 +13,44 @@ const { selectedCategory } = storeToRefs(main);
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 text-center md:text-left px-4 sm:px-0 items-center justify-center flex-wrap mt-2 gap-3 lg:flex-nowrap mx-auto w-full"
     >
       <div
-        :class="{
-          'bg-red-100 text-red-700':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday >=
-            0,
-          'bg-[#E6F4EE] text-[#005E46]':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday <=
-            0,
-        }"
-        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center bg-truflation-200 items-center rounded"
       >
-        <div class="text-sm md:text-md text-black/60">Vs Yesterday</div>
-        <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
+        <div class="text-sm md:text-md">Vs Yesterday</div>
+        <h2
+          class="text-[24px] text-truflation-700 px-4 p-2 rounded font-semibold"
+        >
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.yesterday
           }}%
         </h2>
       </div>
       <div
-        :class="{
-          'bg-red-100 text-red-700':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo >=
-            0,
-          'bg-[#E6F4EE] text-[#005E46]':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo <=
-            0,
-        }"
-        class="flex flex-col py-3 md:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col bg-truflation-200 py-3 md:px-6 align-middle justify-center items-center rounded"
       >
-        <div class="text-sm md:text-md text-black/60">Vs Week Ago</div>
-        <h2 class="text-[24px] p-2 px-4 rounded font-semibold">
+        <div class="text-sm md:text-md text-black">Vs Week Ago</div>
+        <h2
+          class="text-[24px] p-2 px-4 text-truflation-700 rounded font-semibold"
+        >
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.weekAgo }}%
         </h2>
       </div>
       <div
-        :class="{
-          'bg-red-100 text-red-700':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo >=
-            0,
-          'bg-[#E6F4EE] text-[#005E46]':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo <=
-            0,
-        }"
-        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col bg-truflation-200 py-3 md:px-6 align-middle justify-center items-center rounded"
       >
-        <div class="text-sm md:text-md text-black/60">vs Last Month</div>
-        <h2 class="text-[24px] px-4 p-2 rounded font-semibold">
+        <div class="text-sm md:text-md text-black">vs Last Month</div>
+        <h2
+          class="text-[24px] text-truflation-700 px-4 p-2 rounded font-semibold"
+        >
           {{
             main?.getByCategoryType(selectedCategory)?.categoryRate.monthAgo
           }}%
         </h2>
       </div>
       <div
-        :class="{
-          'bg-red-100 text-red-700':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.quarter >=
-            0,
-          'bg-[#E6F4EE] text-[#005E46]':
-            main?.getByCategoryType(selectedCategory)?.categoryRate.quarter <=
-            0,
-        }"
-        class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
+        class="flex flex-col bg-truflation-200 py-3 md:px-6 align-middle justify-center items-center rounded"
       >
-        <div class="text-sm md:text-md text-black/60">vs Last Year</div>
-        <h2 class="text-[24px] p-2 rounded font-semibold">
+        <div class="text-sm md:text-md text-black">vs Last Year</div>
+        <h2 class="text-[24px] p-2 text-truflation-700 rounded font-semibold">
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.quarter }}%
         </h2>
       </div>
