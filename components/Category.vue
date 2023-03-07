@@ -75,7 +75,7 @@ const { selectedCategory } = storeToRefs(main);
         }"
         class="flex flex-col py-3 md:px-3 xl:px-6 align-middle justify-center items-center rounded"
       >
-        <div class="text-sm md:text-md text-black/60">vs Last Year</div>
+        <div class="text-sm md:text-md text-black/60">vs Last Quarter</div>
         <h2 class="text-[24px] p-2 rounded font-semibold">
           {{ main?.getByCategoryType(selectedCategory)?.categoryRate.quarter }}%
         </h2>
