@@ -49,7 +49,6 @@ const videos: VideoLinks[] = [
         name="Main Contact"
         method="post"
         data-netlify="true"
-        s
         netlify-honeypot="bot-filter"
       >
         <!-- <div class="contact-success"><strong>Success!</strong> We got your message and will reply shortly.</div> -->
