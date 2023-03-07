@@ -1,4 +1,11 @@
 export const options = {
+  animation: {
+    duration: 200,
+  },
+  interaction: {
+    intersect: false,
+    mode: "index",
+  },
   scales: {
     x: {
       type: "time",
@@ -13,8 +20,6 @@ export const options = {
       display: true,
     },
     tooltip: {
-      mode: "index",
-      intersect: false,
       titleColor: "#00000066",
       backgroundColor: "#fff",
       bodyColor: "rgba(0, 0, 0, 0.88)",
@@ -36,10 +41,6 @@ export const options = {
         },
       },
     },
-  },
-  hover: {
-    mode: "nearest",
-    intersect: false,
   },
   responsive: true,
   maintainAspectRatio: false,
