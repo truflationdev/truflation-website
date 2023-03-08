@@ -11,6 +11,21 @@ function convertMonth(month: number) {
     month: "short",
   });
 }
+
+useHead({
+  script: [
+    {
+      src: "https://www.googletagmanager.com/gtag/js?id=G-9RC5KEMBYY",
+      async: true,
+    },
+    {
+      innerHTML: ` window.dataLayer = window.dataLayer || []; function
+    gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
+    'G-9RC5KEMBYY', {page_path: window.location.pathname});`,
+      type: "text/javascript",
+    },
+  ],
+});
 </script>
 
 <template>
