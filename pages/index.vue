@@ -67,7 +67,7 @@ useHead({
     {
       innerHTML: ` window.dataLayer = window.dataLayer || []; function
     gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
-    'G-9RC5KEMBYY'); `,
+    'G-9RC5KEMBYY', {page_path: window.location.pathname});`,
       type: "text/javascript",
     },
   ],
