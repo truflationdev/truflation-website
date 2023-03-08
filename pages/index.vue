@@ -60,6 +60,13 @@ const testWarning = computed(() => {
 </script>
 
 <template>
+  <Script>
+    useHead({ script: [ { src:
+    'https://www.googletagmanager.com/gtag/js?id=G-9RC5KEMBYY', async: true, },
+    { innerHTML: ` window.dataLayer = window.dataLayer || []; function
+    gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
+    'G-9RC5KEMBYY'); `, type: 'text/javascript', }, ], });
+  </Script>
   <Head>
     <title>Independent, economic & financial data in real time on-chain</title>
     <Meta
