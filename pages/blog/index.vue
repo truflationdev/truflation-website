@@ -4,16 +4,18 @@ import { useDataStore } from "~~/store/stateStore";
 
 const posts = await useFetch("/api/ghostPosts").data;
 
+const config = useRuntimeConfig();
+
 useHead({
   script: [
     {
-      src: "https://www.googletagmanager.com/gtag/js?id=G-9RC5KEMBYY",
+      src: `https://www.googletagmanager.com/gtag/js?id=${config.gtagId}`,
       async: true,
     },
     {
       innerHTML: ` window.dataLayer = window.dataLayer || []; function
     gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
-    'G-9RC5KEMBYY', {page_path: window.location.pathname});`,
+    '${config.gtagId}', {page_path: window.location.pathname});`,
       type: "text/javascript",
     },
   ],
