@@ -15,6 +15,23 @@ const videos: VideoLinks[] = [
     link: "https://www.youtube.com/embed/kvWBwVzKSac",
   },
 ];
+
+const config = useRuntimeConfig();
+
+useHead({
+  script: [
+    {
+      src: `https://www.googletagmanager.com/gtag/js?id=${config.gtagId}`,
+      async: true,
+    },
+    {
+      innerHTML: ` window.dataLayer = window.dataLayer || []; function
+    gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
+    '${config.gtagId}', {page_path: window.location.pathname});`,
+      type: "text/javascript",
+    },
+  ],
+});
 </script>
 
 <template>
