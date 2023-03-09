@@ -188,11 +188,7 @@ useHead({
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-<<<<<<< HEAD
-          <button class="mt-4 btn">Coming Soon</button>
-=======
           <button class="btn">Coming Soon</button>
->>>>>>> main
         </div>
       </div>
       <div
