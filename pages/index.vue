@@ -25,9 +25,6 @@ const { data: inflation } = await useFetch(() => {
 });
 main.hydrateState(inflation._value);
 
-// const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
-// main.updateCurrentTime(time._value.datetime);
-
 async function fetchState() {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;

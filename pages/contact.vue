@@ -64,7 +64,7 @@ useHead({
       <form
         class="flex flex-col gap-4"
         name="Main Contact"
-        method="post"
+        method="POST"
         data-netlify="true"
         netlify-honeypot="bot-filter"
       >

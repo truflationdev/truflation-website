@@ -8,7 +8,6 @@ import {
   GraphData,
   TimePeriod,
 } from "~~/components/categoryTypes";
-import { getPosts } from "~~/server/api/ghostPosts";
 
 export const categoryData: string[] = [
   "This covers food and non-alcoholic beverages consumed at home which is generally purchased at Supermarkets, Kiosks etc as well as food purchased away from home in quick service restaurants, restaurants, Hotels, bars etc.",
@@ -55,7 +54,39 @@ export const useDataStore = defineStore({
         Inflation: 0 as number,
         change: 0 as number,
       },
-
+      calculator: {
+        personalInflationArray: [] as number[],
+        personalInflation: 0 as number,
+        monthlyEffect: 0 as number,
+      },
+      currentIndexes: {
+        "Food & Non Alcoholic Beverages": 2735.427862,
+        "Alcoholic beverages & Tobacco": 603.2400129,
+        Apparel: 1380.231189,
+        Housing: 988.6610318,
+        Utilities: 1230.177566,
+        "Household Durables": 1963.324948,
+        Health: 756.3998851,
+        Transport: 2330.912375,
+        Communication: 138.2488479,
+        "Recreation & Culture": 1171.854363,
+        Education: 360.8052001,
+        "Other expenditure items": 909.8978087,
+      },
+      yearlyIndexes: {
+        "Food & Non Alcoholic Beverages": 2487.132388,
+        "Alcoholic beverages & Tobacco": 583.2964571,
+        Apparel: 1298.560561,
+        Housing: 893.8662333,
+        Utilities: 751.6302067,
+        "Household Durables": 1816.902684,
+        Health: 729.5626903,
+        Transport: 1986.653111,
+        Communication: 134.562212,
+        "Recreation & Culture": 1134.384658,
+        Education: 342.5409188,
+        "Other expenditure items": 878.8573291,
+      },
       MainData: {
         datasets: [
           {
@@ -304,6 +335,42 @@ export const useDataStore = defineStore({
       this.blog = blogData;
     },
 
+    updatePersonalInflation(financeObject: object, fetchedWeights: any) {
+      const personalInflationArray: number[] = [];
+      const EstimateArray: number[] = [];
+      const sum = Object.values(financeObject).reduce((a, b) => a + b, 0);
+
+      fetchedWeights.forEach((element: any) => {
+        const yearWeights: number[] = [];
+        const CurrentWeights: number[] = [];
+
+        Object.keys(financeObject).map((e: any) => {
+          const result = Object.values(element);
+          CurrentWeights.push(
+            result[0][e].currentIndex * (financeObject[e] / sum)
+          );
+          yearWeights.push(
+            result[0][e].oneYearIndex * (financeObject[e] / sum)
+          );
+        });
+
+        const adjustedYearAmount = yearWeights.reduce((a, b) => a + b);
+        const adjustedCurrentAmount = CurrentWeights.reduce((a, b) => a + b);
+
+        const InflationRate =
+          (adjustedCurrentAmount / adjustedYearAmount - 1) * 100;
+        personalInflationArray.push(InflationRate);
+        const estimatedIncrease =
+          sum * (adjustedCurrentAmount / adjustedYearAmount - 1);
+        EstimateArray.push(estimatedIncrease);
+      });
+
+      this.calculator.personalInflationArray = personalInflationArray;
+      this.calculator.personalInflation =
+        personalInflationArray[personalInflationArray.length - 1];
+      this.calculator.monthlyEffect = EstimateArray[EstimateArray.length - 1];
+    },
+
     updateSelectedCountry(country: SelectedCountry) {
       this.selectedCountry = country;
     },
@@ -438,6 +505,8 @@ export const useDataStore = defineStore({
 
     updateMainLabel(period: number, timePeriod: TimePeriod) {
       const currentLabels = this.chartLables.totalLabels;
+      this.chartLables.generalChart = [];
+
       const newArray = currentLabels.slice(
         currentLabels.length - period,
         currentLabels.length
@@ -452,6 +521,8 @@ export const useDataStore = defineStore({
 
     updateMainLabelYTD(timePeriod: TimePeriod) {
       const currentLabels = this.chartLables.totalLabels;
+      this.chartLables.generalChart = [];
+
       const index = currentLabels.indexOf("2023-01-01");
       const newArray = currentLabels.slice(index, currentLabels.length);
       this.chartLables.generalChart = newArray;
@@ -464,6 +535,12 @@ export const useDataStore = defineStore({
       const newArray = currentLabels.slice(index, currentLabels.length);
       this.chartLables.categoryChart = newArray;
       this.chartLables.categorySelection = timePeriod;
+    },
+
+    resetCalculator() {
+      this.calculator.personalInflation = 0;
+      this.calculator.personalInflationArray = [];
+      this.calculator.monthlyEffect = 0;
     },
   },
   getters: {
@@ -520,6 +597,40 @@ export const useDataStore = defineStore({
       const object = {
         labels: state.chartLables.generalChart,
         datasets: [dataset],
+      };
+      return object;
+    },
+
+    getCalculatorChart: (state) => (data: GraphData) => {
+      const newArray = data.datasets[0].data.slice(
+        data.datasets[0].data.length - state.chartLables.generalChart.length,
+        data.datasets[0].data.length
+      );
+
+      const dataset: DataSet = {
+        label: data.datasets[0].label,
+        borderWidth: 5,
+        borderColor: "#0D58C6",
+        backgroundColor: "#0D58C6",
+        data: newArray,
+      };
+
+      const array = [dataset];
+
+      if (state.calculator.personalInflationArray.length > 1) {
+        const personalDataset: DataSet = {
+          label: "Personal Inflation",
+          borderWidth: 5,
+          borderColor: "#F59E0B",
+          backgroundColor: "#F59E0B",
+          data: state.calculator.personalInflationArray,
+        };
+        array.push(personalDataset);
+      }
+
+      const object = {
+        labels: state.chartLables.generalChart,
+        datasets: array,
       };
       return object;
     },
