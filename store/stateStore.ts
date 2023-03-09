@@ -11,8 +11,8 @@ import {
 
 export const govData = {
   label: "Government Data",
-  borderColor: "#F59E0B",
-  backgroundColor: "#F59E0B",
+  borderColor: "#002152",
+  backgroundColor: "#002152",
   data: [
     { x: "2022-02-14", y: 7.9 },
     { x: "2022-03-14", y: 8.5 },
@@ -31,8 +31,8 @@ export const govData = {
 
 export const ukGovData = {
   label: "Government Data",
-  borderColor: "#F59E0B",
-  backgroundColor: "#F59E0B",
+  borderColor: "#002152",
+  backgroundColor: "#002152",
   data: [
     { x: "2022-02-14", y: 6.2 },
     { x: "2022-03-14", y: 7 },
@@ -82,8 +82,8 @@ export const useDataStore = defineStore({
       govData: {
         UK: {
           label: "Government Data",
-          borderColor: "#F59E0B",
-          backgroundColor: "#F59E0B",
+          borderColor: "#002152",
+          backgroundColor: "#002152",
           data: [
             { x: "2022-02-14", y: 6.2 },
             { x: "2022-03-14", y: 7 },
@@ -101,8 +101,8 @@ export const useDataStore = defineStore({
         },
         US: {
           label: "Government Data",
-          borderColor: "#F59E0B",
-          backgroundColor: "#F59E0B",
+          borderColor: "#002152",
+          backgroundColor: "#002152",
           data: [
             { x: "2022-02-14", y: 7.9 },
             { x: "2022-03-14", y: 8.5 },
