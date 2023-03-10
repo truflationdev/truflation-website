@@ -201,11 +201,6 @@ useHead({
           <p class="mt-1 mb-10">Business Development Manager</p>
         </li>
         <li class="flex flex-col items-center gap-1">
-          <img src="../assets/img/staff/nat.png" alt="" />
-          <p class="mt-4 text-xl font-semibold">Natalia Nowakowska</p>
-          <p class="mt-1 mb-10">Product Marketing and Community</p>
-        </li>
-        <li class="flex flex-col items-center gap-1">
           <img src="../assets/img/staff/Joseph-wang.png" alt="" />
           <p class="mt-4 text-xl font-semibold">Joseph Wang</p>
           <p class="mt-1">Architecture Lead</p>
