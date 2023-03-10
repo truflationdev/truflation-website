@@ -25,9 +25,6 @@ const { data: inflation } = await useFetch(() => {
 });
 main.hydrateState(inflation._value);
 
-// const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
-// main.updateCurrentTime(time._value.datetime);
-
 async function fetchState() {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
@@ -188,7 +185,9 @@ useHead({
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <button class="btn">Coming Soon</button>
+          <a href="/solutions/calculator">
+            <button class="btn">Use Now</button></a
+          >
         </div>
       </div>
       <div
