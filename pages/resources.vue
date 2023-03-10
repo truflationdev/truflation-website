@@ -62,30 +62,32 @@ useHead({
       content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
   </Head>
-  <body>
-    <div class="resource-bg flex flex-col mb-[88px]">
-      <WhitePapaerModal />
+  <div>
+    <div class="resource-bg flex flex-col mb-[88px] px-5">
       <Banner :isLight="true" />
+      <WhitePapaerModal />
 
       <div
-        class="mx-auto container mt-24 pb-16 justify-between flex flex-row flex-wrap-reverse"
+        class="mx-auto px-10 container mt-24 pb-16 justify-between flex flex-row flex-wrap-reverse"
       >
         <div
           class="flex flex-row text-white flex-wrap md:text-left text-center lg:items-baseline items-center lg:flex-col gap-6 justify-center md:max-w-2xl"
         >
-          <h1 class="text-[62px] font-semibold">Resources</h1>
+          <h1 class="text-5xl md:text-[62px] font-semibold">Resources</h1>
           <p class="text-[18px] max-w-[402px]">
             Discover the vision, research, and updates behind the Truflation2
             project.
           </p>
           <a href="#my-modal"
-            ><p class="flex text-[18px] btn flex-row items-center gap-3">
+            ><p
+              class="text-base md:text-[18px] btn flex-row items-center gap-3"
+            >
               Watch Explainer Video
               <img src="../assets/img/icons/Play-button.svg" alt="" /></p
           ></a>
         </div>
         <div
-          class="flex mx-5 bg-[url('assets/img/presentation.png')] rounded-lg items-center justify-center w-[670px] lg:h-[400px] bg-cover"
+          class="mx-5 bg-[url('assets/img/presentation.png')] rounded-lg items-center justify-center hidden lg:flex w-[400px] xl:w-[670px] lg:h-[400px] bg-cover"
         >
           <a
             href="#my-modal"
@@ -107,20 +109,22 @@ useHead({
       </div>
     </div>
     <div
-      class="container items-center justify-center mx-auto mt-7 flex gap-16 flex-row flex-wrap"
+      class="container items-center px-5 md:mx-auto mt-7 flex justify-center md:justify-between flex-row flex-wrap"
     >
-      <div class="flex flex-col flex-wrap gap-6">
+      <div class="flex flex-col flex-wrap gap-6 px-5 md:px-0">
         <h1 class="text-[32px] font-semibold">Whitepaper & Research</h1>
-        <p class="max-w-xl text-black/60">
-          Your two essential resources are our Discord, for getting live
+        <p class="md:max-w-xl max-w-xs text-black/60">
+          Your two essential resources are our Discord, for getting live2
           support, and also our Github quickstart for all the info you will need
           to get coding.
         </p>
-        <div>
+        <div class="">
           <ul class="flex flex-col gap-[18px]">
             <li>
               <a href="https://whitepaper.truflation.com/" target="_blank">
-                <div class="flex flex-row items-center py-7 shadow-md px-12">
+                <div
+                  class="flex flex-col md:flex-row items-center text-center md:text-left py-7 gap-2 md:gap-0 shadow-md px-12"
+                >
                   <svg
                     width="42"
                     height="42"
@@ -135,13 +139,13 @@ useHead({
                       fill="#0D58C6"
                     />
                   </svg>
-                  <h1 class="text-lg font-medium ml-[18px]">WhitePaper</h1>
-                  <p class="text-xs text-black/80 mx-[64px] max-w-xs">
+                  <h1 class="text-lg font-medium md:ml-[18px]">WhitePaper</h1>
+                  <p class="text-xs text-black/80 md:mx-[64px] sm:max-w-xs">
                     The best place to start your Truflation journey, our
                     whitepaper lays out the vision for the protocol
                   </p>
                   <svg
-                    class="ml-auto"
+                    class="ml-auto hidden md:flex"
                     width="16"
                     height="16"
                     viewBox="0 0 16 16"
@@ -160,7 +164,9 @@ useHead({
             </li>
             <li>
               <a href="/methodology">
-                <div class="flex flex-row items-center py-7 shadow-md px-12">
+                <div
+                  class="flex flex-col md:flex-row items-center text-center md:text-left py-7 gap-2 md:gap-0 shadow-md px-12"
+                >
                   <svg
                     width="42"
                     height="42"
@@ -177,12 +183,12 @@ useHead({
                   </svg>
 
                   <h1 class="text-lg font-medium ml-[18px]">Methodology</h1>
-                  <p class="text-xs text-black/80 mx-[64px] max-w-xs">
+                  <p class="text-xs text-black/80 md:mx-[64px] sm:max-w-xs">
                     Review the core methodology that underlies the Truflation
                     oracle and provides transparent, verifiable calculations.
                   </p>
                   <svg
-                    class="ml-auto"
+                    class="ml-auto hidden md:flex"
                     width="16"
                     height="16"
                     viewBox="0 0 16 16"
@@ -200,8 +206,10 @@ useHead({
               </a>
             </li>
             <li>
-              <a href="">
-                <div class="flex flex-row items-center py-7 shadow-md px-12">
+              <a href="https://token.truflation.com/" target="_blank">
+                <div
+                  class="flex flex-col md:flex-row items-center text-center md:text-left py-7 gap-2 md:gap-0 shadow-md px-12"
+                >
                   <svg
                     width="40"
                     height="40"
@@ -251,12 +259,12 @@ useHead({
                   </svg>
 
                   <h1 class="text-lg font-medium ml-[18px]">TFI Token</h1>
-                  <p class="text-xs text-black/80 mx-[64px] max-w-xs">
+                  <p class="text-xs text-black/80 md:mx-[64px] sm:max-w-xs">
                     Explore the token that governs the Truflation ecosystem and
                     solves the centralisation issue of previous oracles.
                   </p>
                   <svg
-                    class="ml-auto"
+                    class="ml-auto hidden md:flex"
                     width="16"
                     height="16"
                     viewBox="0 0 16 16"
@@ -276,16 +284,16 @@ useHead({
           </ul>
         </div>
       </div>
-      <img class="mt-10" src="../assets/img/globe.png" alt="" />
+      <img class="mt-10 hidden lg:flex" src="../assets/img/globe.png" alt="" />
     </div>
-    <div class="my-36">
+    <div class="my-10 md:my-36">
       <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
     </div>
     <div class="flex">
       <NewsLetter />
     </div>
     <FooterComp />
-  </body>
+  </div>
 </template>
 
 <style scoped></style>
