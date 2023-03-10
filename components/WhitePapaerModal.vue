@@ -8,7 +8,7 @@
   </head>
   <div
     id="my-modal"
-    class="modal w-full h-full bg-black/60 z-0 backdrop-blur-lg"
+    class="modal w-full h-95% bg-black/60 z-100 backdrop-blur-lg"
   >
     <div class="py-3 px-8 relative w-4/5">
       <a class="absolute z-20 -top-5 -right-2" href="#modal"

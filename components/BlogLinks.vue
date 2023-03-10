@@ -3,10 +3,8 @@ const { videos, title } = defineProps(["data", "title", "videos"]);
 </script>
 
 <template>
-  <div
-    class="px-10 lg:mx-auto flex gap-10 justify-center text-center items-center flex-col container"
-  >
-    <h1 class="text-4xl font-medium text-slate-700">{{ title }}</h1>
+  <div class="px-10 lg:mx-auto flex gap-10 justify-center flex-col container">
+    <h1 class="text-2xl font-medium text-slate-700">{{ title }}</h1>
     <div
       class="grid grid-cols-1 gap-5 xl:grid-cols-3 items-center justify-center w-full"
     >
