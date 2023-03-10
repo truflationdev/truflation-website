@@ -33,6 +33,16 @@
     @apply bg-[url('assets/img/about-background.svg')] bg-cover;
   }
 
+  .resource-bg {
+    background: linear-gradient(
+      102.38deg,
+      #1a2b6b 2.59%,
+      #0d58c6 28.05%,
+      #6f8bef 48.02%,
+      #ffffff 98.45%
+    );
+  }
+
   .widget-hero {
     @apply bg-[url('assets/img/widget-background.svg')];
   }
