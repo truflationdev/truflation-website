@@ -14,7 +14,6 @@ export const govData = {
   borderColor: "#002152",
   backgroundColor: "#002152",
   data: [
-    { x: "2022-02-14", y: 7.9 },
     { x: "2022-03-14", y: 8.5 },
     { x: "2022-04-14", y: 8.3 },
     { x: "2022-05-14", y: 8.6 },
@@ -34,7 +33,6 @@ export const ukGovData = {
   borderColor: "#002152",
   backgroundColor: "#002152",
   data: [
-    { x: "2022-02-14", y: 6.2 },
     { x: "2022-03-14", y: 7 },
     { x: "2022-04-14", y: 9 },
     { x: "2022-05-14", y: 9.1 },
@@ -85,7 +83,6 @@ export const useDataStore = defineStore({
           borderColor: "#002152",
           backgroundColor: "#002152",
           data: [
-            { x: "2022-02-14", y: 6.2 },
             { x: "2022-03-14", y: 7 },
             { x: "2022-04-14", y: 9 },
             { x: "2022-05-14", y: 9.1 },
@@ -104,7 +101,6 @@ export const useDataStore = defineStore({
           borderColor: "#002152",
           backgroundColor: "#002152",
           data: [
-            { x: "2022-02-14", y: 7.9 },
             { x: "2022-03-14", y: 8.5 },
             { x: "2022-04-14", y: 8.3 },
             { x: "2022-05-14", y: 8.6 },
@@ -537,8 +533,12 @@ export const useDataStore = defineStore({
         this.govData.US.data = newGovArray;
       }
       if (this.selectedCountry === SelectedCountry.GBR) {
+        if (period < 60) {
+          this.govData.UK.data = [];
+          return;
+        }
         const newGovArray = ukGovData.data.slice(
-          ukGovData.data.length - period / 12,
+          ukGovData.data.length - period / 30 + 1,
           govData.data.length
         );
         this.govData.UK.data = newGovArray;
@@ -560,8 +560,9 @@ export const useDataStore = defineStore({
         this.govData.US.data = newGovArray;
       }
       if (this.selectedCountry === SelectedCountry.GBR) {
-        const newGovArray = ukGovData.data.slice(-1);
-        this.govData.UK.data = newGovArray;
+        const index = ukGovData.data.indexOf("2023-01-14");
+        const newGovArray = ukGovData.data.slice(index, ukGovData.data.length);
+        this.govData.US.data = newGovArray;
       }
 
       this.chartLables.generalChart = newArray;

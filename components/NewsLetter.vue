@@ -2,26 +2,26 @@
 
 <template>
   <div
-    class="flex self-center flex-col px-[120px] lg:flex-row gap-5 flex-wrap w-full sm:justify-center items-center py-20 bg-gradient-to-r from-[#1A2B6B] to-[#6F8BEF]"
+    class="flex self-center flex-col px-10 lg:px-[120px] lg:flex-row gap-5 w-full sm:justify-center md:items-center py-20 bg-gradient-to-r from-[#1A2B6B] to-[#6F8BEF]"
   >
     <div class="flex gap-3 flex-col">
-      <p class="text-4xl max-w-lg text-white font-semibold">
+      <p class="text-4xl max-w-xs md:max-w-lg text-white font-semibold">
         Stay updated on the latest Truflation news
       </p>
       <a href="https://t.me/truflation" target="_blank"
         ><p class="text-white underline">Our Join the Community</p></a
       >
     </div>
-    <div class="flex text-center sm:text-left flex-col md:flex-row lg:ml-auto">
+    <div class="flex text-center sm:text-left flex-col sm:flex-row lg:ml-auto">
       <form
         name="Subscribe Newsletter"
-        class="flex flex-col sm:flex-row flex-wrap gap-3"
+        class="flex flex-col sm:flex-row gap-3"
         method="post"
         data-netlify="true"
         netlify-honeypot="bot-filter"
       >
         <input
-          class="ml-auto w-auto md:w-80 rounded-lg px-4 mr-3 py-3 border-gray-10 border"
+          class="md:ml-auto w-auto md:w-80 max-w-[300px] rounded-lg px-4 mr-3 py-3 border-gray-10 border"
           type="email"
           placeholder="John@gmail.com"
           name="email"

@@ -16,8 +16,6 @@ import { options } from "../assets/chartConfig.ts";
 import { useDataStore, SelectedCountry } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
 import { TimePeriod } from "./categoryTypes";
-import * as htmlToImage from "html-to-image";
-import download from "downloadjs";
 
 const { locationOptions } = defineProps(["locationOptions"]);
 const name = "lineChart";
@@ -40,22 +38,22 @@ ChartJS.register(
   Legend
 );
 
-function copyToClipBoard() {
-  navigator.clipboard.writeText("truflation.com").then(() => {
-    copyStatus.value = true;
-  });
-}
+// function copyToClipBoard() {
+//   navigator.clipboard.writeText("truflation.com").then(() => {
+//     copyStatus.value = true;
+//   });
+// }
 
-function DisplayChart() {
-  htmlToImage
-    .toJpeg(document.getElementById("main-chart"), { quality: 0.95 })
-    .then(function (dataUrl) {
-      var link = document.createElement("a");
-      link.download = "my-image-name.jpeg";
-      link.href = dataUrl;
-      link.click();
-    });
-}
+// function DisplayChart() {
+//   htmlToImage
+//     .toJpeg(document.getElementById("main-chart"), { quality: 0.95 })
+//     .then(function (dataUrl) {
+//       var link = document.createElement("a");
+//       link.download = "my-image-name.jpeg";
+//       link.href = dataUrl;
+//       link.click();
+//     });
+// }
 </script>
 
 <template>
@@ -200,7 +198,7 @@ function DisplayChart() {
       </div>
       <div
         v-if="selectedCountry === SelectedCountry.GBR"
-        class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
+        class="text-white w-full px-2 py-1 mt-2 text-center bg-truflation-600 rounded-lg"
       >
         UK govt reported rate: 10.1%
       </div>
@@ -312,7 +310,7 @@ function DisplayChart() {
             </button>
           </li>
         </ul>
-        <a @click="DisplayChart()">
+        <!-- <a @click="DisplayChart()">
           <svg
             width="24"
             height="24"
@@ -328,9 +326,9 @@ function DisplayChart() {
               stroke-linejoin="round"
             />
           </svg>
-        </a>
+        </a> -->
         <div class="dropdown dropdown-end">
-          <label tabindex="0" class="hover:cursor-pointer">
+          <!-- <label tabindex="0" class="hover:cursor-pointer">
             <svg
               width="24"
               height="24"
@@ -346,9 +344,9 @@ function DisplayChart() {
                 stroke-linejoin="round"
               />
             </svg>
-          </label>
+          </label> -->
 
-          <ul
+          <!-- <ul
             tabindex="0"
             class="dropdown-content menu mt-4 bg-white gap-0 shadow rounded-box w-[180px]"
           >
@@ -418,7 +416,7 @@ function DisplayChart() {
                 Share on Twitter</a
               >
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <Line

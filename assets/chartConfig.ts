@@ -17,7 +17,7 @@ export const options = {
   },
   plugins: {
     legend: {
-      display: true,
+      display: false,
     },
     tooltip: {
       titleColor: "#00000066",
