@@ -371,12 +371,8 @@ function reset() {
               </li>
             </ul>
           </div>
-          <div
-            class="flex-row col-span-1 md:col-span-2 gap-6 flex items-center justify-center pr-4"
-          >
-            <button @click="Calculate()" class="btn md:w-[75%]">
-              Calculate
-            </button>
+          <div class="flex-row col-span-1 md:col-span-2 gap-6 flex">
+            <button @click="Calculate()" class="btn w-2/3">Calculate</button>
             <!-- <button
               @click="reset()"
               class="grid col-span-3 ml-auto rounded-full h-fit px-11 py-3 font-semibold bg-black/[8%]"
