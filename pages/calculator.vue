@@ -1,8 +1,8 @@
 <script setup>
-import { blogData } from "../../static/data/staffData";
+import { blogData } from "../static/data/staffData";
 import "chartjs-adapter-date-fns";
-import { TimePeriod } from "../../components/categoryTypes";
-import { options } from "../../assets/chartConfig";
+import { TimePeriod } from "../components/categoryTypes";
+import { options } from "../assets/chartConfig";
 import { useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
 import {
@@ -145,19 +145,163 @@ function reset() {
   <Banner />
 
   <div class="flex relative flex-col z-0 mx-auto container mt-[77px]">
-    <div id="monthlyValues" class="grid z-20 grid-cols-7 gap-5">
-      <h1 class="grid col-span-4 text-3xl font-semibold">
+    <div class="flex flex-col w-full items-center px-4 mb-48 lg:hidden">
+      <h1 class="text-[32px] text-center font-semibold">
         Individual Personalized Inflation Calculator
       </h1>
-      <button
+      <div class="flex flex-col gap-5 mt-10">
+        <p class="text-[18px] text-black/60">Household Annual Income</p>
+        <div class="flex flex-row">
+          <p class="h-10 flex bg-gray-50 items-center px-3">$</p>
+          <input
+            v-model.lazy="wageFields.netIncome"
+            @input="$emit('wageFields:[index]', $event.target.value)"
+            placeholder="0"
+            type="number"
+            min="0"
+            max="1000000"
+            class="p-2 font-semibold w-full"
+          />
+        </div>
+        <div class="">
+          <ul class="flex flex-col gap-[40px]">
+            <li class="flex flex-col gap-4" v-for="(field, index) in fields">
+              <p class="font-semibold">{{ field.slice(0, 30) }}</p>
+              <div class="flex flex-row gap-5">
+                <div class="flex flex-col gap-2">
+                  <p class="text-sm"><strong>Monthly</strong> (USD)</p>
+
+                  <div class="flex flex-row">
+                    <p class="h-full flex bg-gray-50 items-center px-3">$</p>
+                    <input
+                      placeholder="0"
+                      v-model.lazy="inputFields[field]"
+                      @input="$emit('inputFields:[index]', $event.target.value)"
+                      type="number"
+                      class="p-2 font-semibold w-24"
+                    />
+                  </div>
+                </div>
+                <div class="flex flex-col items-baseline gap-2">
+                  <p class="text-sm"><strong>Annually</strong> (USD)</p>
+
+                  <p placeholder="0" class="p-2 bg-gray-100 font-semibold w-24">
+                    {{ inputFields[field] * 12 }}
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-row my-8 gap-6 flex pr-4">
+        <button @click="Calculate()" class="btn px-12">Calculate</button>
+      </div>
+
+      <div
+        class="flex mb-48 flex-col max-h-[300px] md:ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+      >
+        <div class="flex flex-col gap-4">
+          <div
+            class="flex flex-col h-fit text-center gap-8 p-5 rounded-[4px] bg-truflation-500 text-white"
+          >
+            <h1 class="font-semibold text-3xl">
+              {{ calculator.personalInflation.toFixed(2) }}%
+            </h1>
+            <p>Personal inflation rate for your household</p>
+          </div>
+          <div
+            class="flex flex-col h-fit text-center gap-8 p-5 rounded-[4px] bg-truflation-500 text-white"
+          >
+            <h1 class="font-semibold text-3xl">
+              ${{ calculator.monthlyEffect.toFixed(2) }}
+            </h1>
+            <p>Estimated increase in your monthly spend</p>
+          </div>
+        </div>
+        <div class="flex mt-8 flex-row items-center">
+          <ul
+            class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
+          >
+            <li class="p-0.5">
+              <button
+                :class="{
+                  'active-period':
+                    chartLables.mainSelection === TimePeriod.OneWeek,
+                }"
+                @click="main?.updateMainLabel(7, TimePeriod.OneWeek)"
+              >
+                1W
+              </button>
+            </li>
+            <li class="p-0.5">
+              <button
+                :class="{
+                  'active-period':
+                    chartLables.mainSelection === TimePeriod.OneMonth,
+                }"
+                @click="main?.updateMainLabel(30, TimePeriod.OneMonth)"
+              >
+                1M
+              </button>
+            </li>
+            <li class="p-0.5">
+              <button
+                :class="{
+                  'active-period':
+                    chartLables.mainSelection === TimePeriod.SixMonths,
+                }"
+                @click="main?.updateMainLabel(150, TimePeriod.SixMonths)"
+              >
+                6M
+              </button>
+            </li>
+            <li class="p-0.5">
+              <button
+                :class="{
+                  'active-period': chartLables.mainSelection === TimePeriod.YTD,
+                }"
+                @click="main?.updateMainLabelYTD(TimePeriod.YTD)"
+              >
+                YTD
+              </button>
+            </li>
+            <li class="p-0.5">
+              <button
+                :class="{
+                  'active-period':
+                    chartLables.mainSelection === TimePeriod.OneYear,
+                }"
+                @click="main?.updateMainLabel(365, TimePeriod.OneYear)"
+              >
+                1Y
+              </button>
+            </li>
+          </ul>
+        </div>
+        <Line
+          v-if="MainData"
+          id="calculator-chart"
+          :options="options"
+          :data="main?.getCalculatorChart(main?.MainData)"
+        />
+      </div>
+    </div>
+    <div id="monthlyValues" class="hidden lg:grid z-20 grid-cols-7 gap-5">
+      <h1 class="col-span-7 px-8 md:col-span-4 text-3xl font-semibold">
+        Individual Personalized Inflation Calculator
+      </h1>
+      <!-- <button
         @click="scrollToText()"
         class="grid col-span-3 ml-auto w-fit px-4 py-3 font-semibold bg-black/[8%]"
       >
         Personal inflation Guide
-      </button>
-      <div class="grid col-span-7 mt-6 grid-cols-4 gap-8">
-        <div class="grid grid-cols-2 col-span-2 gap-10">
-          <p class="text-[18px] text-black/60">HouseHold net income.</p>
+      </button> -->
+      <div class="grid col-span-7 px-5 mt-6 md:grid-cols-4 gap-8">
+        <div
+          class="md:grid hidden col-span-7 px-5 md:col-span-4 xl:col-span-2 md:grid-cols-2 gap-10"
+        >
+          <p class="text-[18px] text-black/60">Household Annual Income</p>
           <div class="flex flex-row">
             <p class="h-full flex bg-gray-50 items-center px-3">$</p>
             <input
@@ -177,15 +321,20 @@ function reset() {
           <select class="p-4 h-fit" placeholder="select" name="" id="">
             <option value="Select">Select</option>
           </select> -->
-          <p class="font-semibold">Household expenses.</p>
-          <div class="justify-between flex flex-row">
+          <p class="font-semibold col-span-7 md:col-span-1">
+            Household Expenses
+          </p>
+          <div class="justify-between hidden md:flex flex-row">
             <p><strong>Monthly</strong> (USD)</p>
             <p><strong>Annually</strong> (USD)</p>
           </div>
-          <ul class="flex justify-center flex-col font-semibold gap-8">
-            <li v-for="field in fields">{{ field }}</li>
+
+          <ul
+            class="hidden md:flex justify-center flex-col font-semibold gap-8"
+          >
+            <li v-for="field in fields">{{ field.slice(0, 30) }}</li>
           </ul>
-          <div class="flex col-span-1 gap-9 flex-row">
+          <div class="hidden md:flex col-span-1 gap-9 flex-row">
             <ul class="flex flex-col gap-4">
               <li
                 class="flex bg-white flex-row items-center"
@@ -201,7 +350,7 @@ function reset() {
                 />
               </li>
             </ul>
-            <ul class="flex flex-col gap-4">
+            <ul class="flex flex-col md:ml-auto xl:ml-0 gap-4">
               <!-- <input
                 v-for="(field, index) in fields"
                 placeholder="0"
@@ -220,9 +369,11 @@ function reset() {
             </ul>
           </div>
           <div
-            class="flex-row col-span-2 gap-6 flex items-center justify-center pr-4"
+            class="flex-row col-span-1 md:col-span-2 gap-6 flex items-center justify-center pr-4"
           >
-            <button @click="Calculate()" class="btn w-[75%]">Calculate</button>
+            <button @click="Calculate()" class="btn md:w-[75%]">
+              Calculate
+            </button>
             <!-- <button
               @click="reset()"
               class="grid col-span-3 ml-auto rounded-full h-fit px-11 py-3 font-semibold bg-black/[8%]"
@@ -231,7 +382,7 @@ function reset() {
             </button> -->
           </div>
         </div>
-        <div class="grid grid-cols-2 col-span-2 h-fit gap-8">
+        <div class="grid col-span-7 xl:col-span-2 md:grid-cols-2 h-fit gap-8">
           <div
             v-if="calculated"
             class="grid col-span-1 h-fit text-center w-full gap-8 p-5 rounded-[4px] bg-truflation-500 text-white"
@@ -239,7 +390,7 @@ function reset() {
             <h1 class="font-semibold text-3xl">
               {{ calculator.personalInflation.toFixed(2) }}%
             </h1>
-            <p>Personal inflation Rate for your Household</p>
+            <p>Personal inflation rate for your household</p>
           </div>
           <div
             v-if="calculated"
@@ -250,7 +401,7 @@ function reset() {
             </h1>
             <p>Estimated increase in your monthly spend</p>
           </div>
-          <h1 class="col-span-2 text-lg font-semibold text-center">
+          <!-- <h1 class="col-span-2 text-lg font-semibold text-center">
             Is your income growing as fast as the national average
           </h1>
           <div
@@ -264,9 +415,9 @@ function reset() {
           >
             <h1 class="font-semibold text-3xl">$225</h1>
             <p>Average Wage inflation vs year ago</p>
-          </div>
+          </div> -->
           <div
-            class="md:col-span-2 max-h-[500px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+            class="grid col-span-4 xl:col-span-2 max-h-[500px] md:ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
           >
             <div class="flex flex-row items-center">
               <ul
@@ -339,7 +490,7 @@ function reset() {
         </div>
       </div>
 
-      <h1
+      <!-- <h1
         id="calculator-text"
         class="grid col-span-4 mt-20 text-3xl font-semibold"
       >
@@ -419,19 +570,17 @@ function reset() {
           13. Other expenditure items (Personal care, Social protection,
           Financial Charges, Other fees & services)
         </li>
-      </ul>
+      </ul> -->
     </div>
 
-    <div class="grid col-span-7 mt-20">
+    <div class="flex lg:grid lg:col-span-7 mt-48">
       <BlogLinks :title="`News & Media`" :data="blogData" :videos="videos" />
     </div>
     <div class="grid col-span-full mt-24 mb-20">
       <Investors />
     </div>
-    <div class="grid col-span-full">
-      <NewsLetter />
-    </div>
   </div>
+  <NewsLetter />
   <FooterComp />
 </template>
 

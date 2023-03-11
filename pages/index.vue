@@ -185,9 +185,7 @@ useHead({
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <a href="/solutions/calculator">
-            <button class="btn">Use Now</button></a
-          >
+          <a href="/calculator"> <button class="btn">Use Now</button></a>
         </div>
       </div>
       <div
