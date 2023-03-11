@@ -107,6 +107,8 @@ const { showBanner } = storeToRefs(main);
             </a>
             <ul class="z-20 bg-white">
               <li><a href="/">Truflation Dashboard</a></li>
+              <li><a href="/calculator">Inflation Calculator</a></li>
+
               <li>
                 <a href="https://marketplace.truflation.com/"
                   >Marketplace

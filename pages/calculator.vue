@@ -2,7 +2,7 @@
 import { blogData } from "../static/data/staffData";
 import "chartjs-adapter-date-fns";
 import { TimePeriod } from "../components/categoryTypes";
-import { options } from "../assets/chartConfig";
+import { CalcOptions } from "../assets/chartConfig";
 import { useDataStore } from "~~/store/stateStore";
 import { storeToRefs } from "pinia";
 import {
@@ -199,7 +199,7 @@ function reset() {
       </div>
 
       <div
-        class="flex mb-48 flex-col max-h-[300px] md:ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
+        class="flex mb-36 flex-col max-h-[400px] md:ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
       >
         <div class="flex flex-col gap-4">
           <div
@@ -219,9 +219,12 @@ function reset() {
             <p>Estimated increase in your monthly spend</p>
           </div>
         </div>
-        <div class="flex mt-8 flex-row items-center">
+        <div class="flex mt-8 gap-4 flex-col">
+          <p class="font-semibold">
+            individual and average inflation Comparison
+          </p>
           <ul
-            class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
+            class="flex flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
           >
             <li class="p-0.5">
               <button
@@ -282,7 +285,7 @@ function reset() {
         <Line
           v-if="MainData"
           id="calculator-chart"
-          :options="options"
+          :options="CalcOptions"
           :data="main?.getCalculatorChart(main?.MainData)"
         />
       </div>
@@ -420,6 +423,9 @@ function reset() {
             class="grid col-span-4 xl:col-span-2 max-h-[500px] md:ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
           >
             <div class="flex flex-row items-center">
+              <p class="ml-5 font-semibold">
+                individual and average inflation Comparison
+              </p>
               <ul
                 class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
               >
@@ -483,7 +489,7 @@ function reset() {
             <Line
               v-if="MainData"
               id="calculator-chart"
-              :options="options"
+              :options="CalcOptions"
               :data="main?.getCalculatorChart(main?.MainData)"
             />
           </div>

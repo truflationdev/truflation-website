@@ -178,7 +178,7 @@ useHead({
     >
       <div class="flex flex-row w-full bg-[#F8F9FB]">
         <div
-          class="flex flex-col w-full gap-2 p-10 bg-no-repeat bg-right md:bg-[url('~/assets/img/cash-calculator.png')]"
+          class="flex flex-col md:w-full gap-2 p-10 bg-no-repeat bg-right md:bg-[url('~/assets/img/cash-calculator.png')]"
         >
           <h1 class="text-2xl font-bold">Personal Inflation Calculator</h1>
           <p>
@@ -198,7 +198,7 @@ useHead({
         </div>
       </div>
     </div>
-    <div class="flex flex-col mt-12">
+    <div class="flex flex-col md:mt-12">
       <NewsLetter />
     </div>
     <FooterComp />

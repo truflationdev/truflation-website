@@ -251,7 +251,7 @@ ChartJS.register(
       class="md:col-span-2 max-h-[425px] lg:max-h-[500px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex gap-2 flex-row items-center">
-        <!-- <h2 class="font-semibold">Today's Truflation Rate</h2> -->
+        <h2 class="">Truflation Timeframe</h2>
         <ul
           class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-truflation-200 align-middle items-center"
         >
