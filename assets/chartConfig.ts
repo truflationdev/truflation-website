@@ -13,7 +13,13 @@ export const options = {
         unit: "month",
       },
     },
-    y: {},
+    y: {
+      ticks: {
+        callback: (value, index, values) => {
+          return `${value}%`;
+        },
+      },
+    },
   },
   plugins: {
     legend: {

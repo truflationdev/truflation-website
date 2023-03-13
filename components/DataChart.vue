@@ -198,13 +198,13 @@ ChartJS.register(
       </div>
       <div
         v-if="selectedCountry === SelectedCountry.GBR"
-        class="text-white w-full px-2 py-1 mt-2 text-center bg-truflation-600 rounded-lg"
+        class="text-white w-full px-2 py-1 mt-2 text-center bg-truflation-700 rounded-lg"
       >
         UK govt reported rate: 10.1%
       </div>
       <div
         v-if="selectedCountry === SelectedCountry.USA"
-        class="text-white w-full px-2 py-1 mt-2 text-center bg-truflation-600 rounded-lg"
+        class="text-white w-full px-2 py-1 mt-2 text-center bg-truflation-700 rounded-lg"
       >
         US govt reported rate: 6.4%
       </div>
@@ -251,7 +251,10 @@ ChartJS.register(
       class="md:col-span-2 max-h-[425px] lg:max-h-[500px] ml-3 bg-truflation-100 p-5 gap-4 rounded-sm"
     >
       <div class="flex gap-2 flex-row items-center">
-        <h2 class="">Truflation Timeframe</h2>
+        <h2 class="font-medium text-xs">Truflation Timeframe</h2>
+
+        <div class="w-3 h-3 ml-4 rounded-full bg-[#0D58C6]"></div>
+        <p class="text-xs">Truflation Rate</p>
         <ul
           class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-truflation-200 align-middle items-center"
         >
