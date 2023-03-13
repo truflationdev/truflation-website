@@ -47,7 +47,7 @@ useHead({
       content="Our methodology relies on multiple data sources and the prices of millions of items across the economy. The result is an aggregated data feed that portrays real-world inflation values."
     />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <Meta name="twitter:card" content="summary_large_image" />

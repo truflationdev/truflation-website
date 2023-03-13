@@ -99,7 +99,7 @@ useHead({
       content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
   </Head>
