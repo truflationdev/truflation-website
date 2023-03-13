@@ -159,10 +159,12 @@ function reset() {
   ></div>
   <Banner />
 
-  <div class="flex relative flex-col z-0 mx-auto container mt-[77px]">
+  <div
+    class="flex relative flex-col z-0 mx-auto container mt-[77px] max-w-[1300px]"
+  >
     <div class="flex flex-col w-full items-center px-4 mb-48 lg:hidden">
       <h1 class="text-[32px] text-center font-semibold">
-        Individual Personalized Inflation Calculator
+        Individual and average inflation comparison
       </h1>
       <div class="flex flex-col gap-5 mt-10">
         <p class="text-[18px] text-black/60">Household Annual Income</p>
@@ -391,7 +393,9 @@ function reset() {
               </li>
             </ul>
           </div>
-          <div class="flex-col col-span-1 md:col-span-2 gap-4 flex">
+          <div
+            class="flex-col col-span-1 md:col-span-2 justify-end items-end gap-4 flex"
+          >
             <button @click="Calculate()" class="btn w-2/3">
               Calculate
               <svg
@@ -463,7 +467,7 @@ function reset() {
           >
             <div class="flex flex-row items-center">
               <p class="ml-5 font-semibold">
-                individual and average inflation Comparison
+                Individual and average inflation comparison
               </p>
               <ul
                 class="flex ml-auto flex-row w-fit px-3 py-1 rounded-2xl gap-3 bg-black/5 align-middle items-center"
