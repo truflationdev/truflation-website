@@ -26,7 +26,7 @@
           placeholder="John@gmail.com"
           name="email"
         />
-        <button class="btn">
+        <button class="btn border-none">
           Sign up
           <svg
             width="13"
