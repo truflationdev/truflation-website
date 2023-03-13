@@ -12,9 +12,9 @@ const { selectedCategory } = storeToRefs(main);
   <div
     class="flex flex-col text-center sm:text-start container max-w-[90%] md:mx-auto mt-12 gap-3"
   >
-    <h1 class="text-2xl font-semibold">Categories</h1>
+    <h1 class="text-[32px] font-semibold">Categories</h1>
     <ul
-      class="hidden md:grid grid-cols-1 mt-6 md:grid-cols-3 2xl:grid-cols-4 gap-y-8 justify-center text-gray-600"
+      class="hidden md:grid grid-cols-1 mt-6 md:grid-cols-3 lg:grid-cols-4 gap-y-4 justify-center text-gray-600"
     >
       <li
         class="border-b-2 flex flex-row gap-2 pb-3 items-center"
@@ -56,7 +56,7 @@ const { selectedCategory } = storeToRefs(main);
               </defs>
             </svg>
           </div>
-          {{ CategoryType.FoodAndBev.slice(0, 30) }}
+          Food & Beverages
         </button>
       </li>
       <li
@@ -272,7 +272,7 @@ const { selectedCategory } = storeToRefs(main);
               </defs>
             </svg>
           </div>
-          {{ CategoryType.HouseDailyItems.slice(0, 30) }}
+          Household & Daily Items
         </button>
       </li>
       <li
@@ -536,7 +536,7 @@ const { selectedCategory } = storeToRefs(main);
               </defs>
             </svg>
           </div>
-          {{ CategoryType.Others.slice(0, 30) }}
+          {{ CategoryType.Others.slice(0, 30) }}s
         </button>
       </li>
     </ul>

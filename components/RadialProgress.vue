@@ -14,9 +14,9 @@ const { selectedCategory } = storeToRefs(main);
     <circle-progress
       :percent="value"
       :size="80"
-      :border-bg-width="8"
+      :border-bg-width="4"
       :fill-color="fill"
-      :border-width="8"
+      :border-width="4"
     />
     <p v-if="!percent" class="absolute flex">{{ value }}%</p>
   </div>

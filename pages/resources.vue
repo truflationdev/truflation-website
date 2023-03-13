@@ -43,7 +43,7 @@ useHead({
       content="Discover the vision, research, and updates behind the Truflation project."
     />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <Meta

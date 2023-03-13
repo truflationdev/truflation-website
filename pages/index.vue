@@ -25,9 +25,6 @@ const { data: inflation } = await useFetch(() => {
 });
 main.hydrateState(inflation._value);
 
-// const { data: time } = await useFetch(() => `http://worldtimeapi.org/api/ip`);
-// main.updateCurrentTime(time._value.datetime);
-
 async function fetchState() {
   const tag = route.query.tag ?? "";
   const host = route.query.host ?? defaultHost;
@@ -102,7 +99,7 @@ useHead({
       content="https://res.cloudinary.com/djy27wpqd/image/upload/v1676338258/2023-02-14_09.00.20_cwqgmm.jpg"
     />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
   </Head>
@@ -119,7 +116,9 @@ useHead({
         >
           Today's CPI Data by Truflation
         </h2>
-        <div class="flex items-center justify-center md:flex-row px-2">
+        <div
+          class="flex items-center justify-center bg-truflation-200 md:flex-row px-2"
+        >
           <img
             v-if="selectedCountry === SelectedCountry.USA"
             src="~/assets/img/usa-flag.svg"
@@ -133,7 +132,7 @@ useHead({
           <select
             v-on:change="fetchState()"
             v-model="selectedCountry"
-            class="p-3 border-r-[10px] border-transparent bg-transparent text-center mx-2"
+            class="p-1 border-r-[10px] border-transparent bg-truflation-200 outline-none text-center"
           >
             <option :value="SelectedCountry.USA">USA</option>
             <option :value="SelectedCountry.GBR">
@@ -172,36 +171,34 @@ useHead({
       <Category v-if="MainData" :category="selectedCategory" />
     </div>
     <div class="flex flex-col mt-24">
-      <DataPartners />
+      <DataPartners :left="true" />
     </div>
     <div
-      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
+      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-16 mt-20"
     >
-      <div
-        class="flex flex-row text-white w-full bg-gradient-to-br from-truflation-600 to-truflation-300"
-      >
+      <div class="flex flex-row w-full bg-[#F8F9FB]">
         <div
-          class="flex flex-col w-full gap-3 p-8 bg-no-repeat bg-right bg-[url('~/assets/img/layout.svg')]"
+          class="flex flex-col md:w-full gap-2 p-10 bg-no-repeat bg-right md:bg-[url('~/assets/img/cash-calculator.png')]"
         >
-          <h1 class="text-3xl font-bold">Personal Inflation Calculator</h1>
+          <h1 class="text-2xl font-bold">Personal Inflation Calculator</h1>
           <p>
             Calculate how strong your hedge is <br />
             against inflation.
           </p>
-          <button class="btn">Coming Soon</button>
+          <a href="/calculator"> <button class="btn">Use Now</button></a>
         </div>
       </div>
       <div
-        class="flex flex-row w-full md:mx-auto bg-[#F0F4FA] bg-no-repeat bg-right bg-[url('~/assets/img/mail.svg')]"
+        class="flex flex-row w-full md:mx-auto bg-[#F8F9FB] bg-no-repeat bg-right md:bg-[url('~/assets/img/mail-img.png')]"
       >
         <div class="flex flex-col gap-4 p-8">
-          <h1 class="text-3xl font-bold">Send us a Message</h1>
+          <h1 class="text-2xl font-bold">Send us a Message</h1>
           <p>Contact us if you have Queries</p>
           <button class="btn"><a href="/contact"> Contact Us</a></button>
         </div>
       </div>
     </div>
-    <div class="flex flex-col mt-12">
+    <div class="flex flex-col md:mt-12">
       <NewsLetter />
     </div>
     <FooterComp />

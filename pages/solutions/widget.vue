@@ -23,7 +23,7 @@ useHead({
       content=" Integrate the Truflation widget seamlessly into any platform with its customizability. Get real-time inflation data on your website, dashboard, or application."
     />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=work-sans@500,600,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <Meta

@@ -7,7 +7,7 @@ const { left } = defineProps(["left"]);
     :class="{ 'items-center': !left }"
     class="flex flex-col container mx-auto"
   >
-    <h1 class="text-3xl font-semibold mb-6">Data Partners</h1>
+    <h1 class="text-3xl font-semibold ml-10 mb-6">Data Partners</h1>
     <div :class="{ 'justify-center': !left }" class="flex flex-wrap gap-3">
       <img src="~/assets/img/AAA.png" alt="" />
       <img src="~/assets/img/carcurus.png" alt="" />
