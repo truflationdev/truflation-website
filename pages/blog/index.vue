@@ -2,7 +2,9 @@
 import { storeToRefs } from "pinia";
 import { useDataStore } from "~~/store/stateStore";
 
-const posts = await useFetch("/api/ghostPosts").data;
+// const posts = await useFetch("/api/ghostPosts").data;
+
+const { data: posts } = await useFetch("/api/ghostPosts");
 
 const config = useRuntimeConfig();
 

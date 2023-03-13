@@ -10,7 +10,7 @@ const { selectedCategory } = storeToRefs(main);
 
 <template>
   <div
-    class="flex flex-col text-center sm:text-start container max-w-[90%] md:mx-auto mt-12 gap-3"
+    class="flex flex-col text-center md:text-start container md:max-w-[90%] md:mx-auto mt-12 gap-3"
   >
     <h1 class="text-2xl font-semibold">Categories</h1>
     <ul
@@ -543,7 +543,7 @@ const { selectedCategory } = storeToRefs(main);
     <select
       v-on:change="main.updateCategory(selectedCategory)"
       v-model="selectedCategory"
-      class="lg:hidden p-4 rounded text-truflation-500 font-semibold text-center mx-5 shadow-xl"
+      class="md:hidden p-4 rounded text-truflation-500 font-semibold self-center w-3/4 text-center mx-5 shadow-xl"
     >
       <option v-for="cat in CategoryType" :value="cat">{{ cat }}</option>
     </select>

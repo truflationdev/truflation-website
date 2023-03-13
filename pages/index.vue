@@ -175,7 +175,7 @@ useHead({
       <DataPartners />
     </div>
     <div
-      class="container md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
+      class="container px-5 md:px-0 gap-2 md:mx-auto lg:grid-cols-2 grid grid-cols-1 lg:gap-10 mt-20"
     >
       <div
         class="flex flex-row text-white w-full bg-gradient-to-br from-truflation-600 to-truflation-300"
