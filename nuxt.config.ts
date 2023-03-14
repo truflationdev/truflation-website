@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     contentKey: process.env.GHOST_CONTENT_API_KEY,
     public: {
       gtagId: process.env.GTAG_ID,
+      usInflation: process.env.US_INFLATION,
     },
   },
 });

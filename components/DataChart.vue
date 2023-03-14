@@ -19,6 +19,7 @@ import { TimePeriod } from "./categoryTypes";
 
 const { locationOptions } = defineProps(["locationOptions"]);
 const name = "lineChart";
+const config = useRuntimeConfig();
 
 const main = useDataStore();
 const { MainData, chartLables, selectedCountry, currentTime, loading } =
@@ -186,7 +187,7 @@ ChartJS.register(
         v-if="selectedCountry === SelectedCountry.USA"
         class="text-white w-full px-2 py-1 mt-2 text-center bg-[#F59E0B] rounded-lg"
       >
-        US govt reported rate: 6.4%
+        US govt reported rate: {{ config.usInflation }}%
       </div>
       <div class="flex flex-col w-full">
         <div
