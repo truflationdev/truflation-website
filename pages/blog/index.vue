@@ -6,6 +6,8 @@ const posts = await useFetch("/api/ghostPosts").data;
 
 const config = useRuntimeConfig();
 
+//payments deploy
+
 useHead({
   script: [
     {
