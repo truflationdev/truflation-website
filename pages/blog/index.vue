@@ -6,6 +6,7 @@ const posts = await useFetch("/api/ghostPosts").data;
 
 const config = useRuntimeConfig();
 
+//Version v2.2
 useHead({
   script: [
     {
